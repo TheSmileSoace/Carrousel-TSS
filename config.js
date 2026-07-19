@@ -22,6 +22,7 @@ module.exports = {
   // Compte / signature
   handle: "@thesmilespace",
   practitioner: "Dr. Linos Tsague", // nom affiché au pied de page, à côté du logo
+  locations: ["Mons", "Soignies"], // villes des cabinets (pied de page, à droite) — [] pour masquer
   brandName: "The Smile Space",
   logo: "assets/logo.png", // version foncée (fonds clairs) — sinon brandName
   logoLight: "assets/logo-light.png", // version claire (fonds sombres : hook/renversement/cta)

@@ -116,8 +116,15 @@ function footer({ n, total, index, cfg, logoDataUri, logoLightDataUri, onBrand }
         ${idBlock}
       </div>
       <div class="foot-right">
-        ${dots(index, total)}
-        <span class="pageno">${n}/${total}</span>
+        ${
+          cfg.locations && cfg.locations.length
+            ? `<span class="locations">${esc(cfg.locations.join(" · "))}</span>`
+            : ""
+        }
+        <div class="foot-prog">
+          ${dots(index, total)}
+          <span class="pageno">${n}/${total}</span>
+        </div>
       </div>
     </footer>`;
 }
@@ -330,7 +337,13 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .slide.type-hook .brandtext,.slide.type-cta .brandtext,.slide.type-renversement .brandtext{color:#fff;}
 .handle{font-size:23px;color:var(--muted);}
 .foot.on-brand .handle{color:rgba(255,255,255,.7);}
-.foot-right{display:flex;align-items:center;gap:22px;}
+.foot-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+.foot-prog{display:flex;align-items:center;gap:22px;}
+.locations{
+  font-family:var(--f-title);font-weight:600;text-transform:uppercase;
+  letter-spacing:.16em;font-size:20px;color:var(--muted);
+}
+.foot.on-brand .locations{color:rgba(255,255,255,.6);}
 .dots{display:flex;gap:11px;}
 .dot{width:12px;height:12px;border-radius:50%;background:rgba(26,26,26,.18);}
 .dot.on{background:var(--accent);transform:scale(1.15);}
