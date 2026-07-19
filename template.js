@@ -104,11 +104,16 @@ function footer({ n, total, index, cfg, logoDataUri, logoLightDataUri, onBrand }
   const brandMark = src
     ? `<img class="logo" src="${src}" alt="${esc(cfg.brandName)}"/>`
     : `<span class="brandtext">${esc(cfg.brandName)}</span>`;
+  const idBlock = `
+        <span class="foot-id">
+          ${cfg.practitioner ? `<span class="pract">${esc(cfg.practitioner)}</span>` : ""}
+          <span class="handle">${esc(cfg.handle)}</span>
+        </span>`;
   return `
     <footer class="foot ${onBrand ? "on-brand" : ""}">
       <div class="foot-left">
         ${brandMark}
-        <span class="handle">${esc(cfg.handle)}</span>
+        ${idBlock}
       </div>
       <div class="foot-right">
         ${dots(index, total)}
@@ -275,6 +280,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .visual-title{font-family:var(--f-title);font-weight:700;font-size:52px;line-height:1.1;letter-spacing:-.01em;}
 .statement{font-size:38px;line-height:1.3;font-weight:400;max-width:880px;color:var(--dark);}
 .frames{flex:1;min-height:0;display:flex;gap:26px;}
+/* AVANT / APRÈS : cadres paysage empilés verticalement */
+.frames.n2{flex-direction:column;}
 .frame{
   flex:1;min-height:0;border-radius:24px;background:var(--ph);
   border:3px dashed #D8CFC0;padding:24px;
@@ -314,11 +321,14 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   padding-top:30px;margin-top:20px;border-top:1px solid rgba(26,26,26,.12);
 }
 .foot.on-brand{border-top-color:rgba(255,255,255,.18);}
-.foot-left{display:flex;align-items:center;gap:20px;}
-.logo{height:52px;width:auto;object-fit:contain;display:block;}
+.foot-left{display:flex;align-items:center;gap:22px;}
+.logo{height:78px;width:auto;object-fit:contain;display:block;}
+.foot-id{display:flex;flex-direction:column;line-height:1.2;}
+.pract{font-family:var(--f-title);font-weight:700;font-size:27px;color:var(--brand);letter-spacing:-.01em;}
+.foot.on-brand .pract{color:#fff;}
 .brandtext{font-family:var(--f-title);font-weight:700;font-size:28px;color:var(--brand);}
 .slide.type-hook .brandtext,.slide.type-cta .brandtext,.slide.type-renversement .brandtext{color:#fff;}
-.handle{font-size:24px;color:var(--muted);}
+.handle{font-size:23px;color:var(--muted);}
 .foot.on-brand .handle{color:rgba(255,255,255,.7);}
 .foot-right{display:flex;align-items:center;gap:22px;}
 .dots{display:flex;gap:11px;}
