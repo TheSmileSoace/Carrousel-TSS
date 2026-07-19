@@ -1,7 +1,11 @@
 // =====================================================================
-//  GABARIT — une slide = 1080 x 1350
-//  Système piloté par le RÔLE de chaque slide (schéma 27 carrousels).
-//  Rôles : cover (hook) · closer (cta) · visual (photo) · text (éditorial)
+//  GABARIT — une slide = 1080 x 1350  (schéma 27 carrousels, v2.3)
+//  Piloté par le rôle de chaque slide :
+//    hook -> couverture sombre · cta -> clôture sombre
+//    renversement -> pic de tension sombre plein (curiosity_loop)
+//    marqueur [..] dans le texte -> zone image placeholder
+//    sinon -> contenu éditorial (badge/kicker + titre + texte)
+//  Métadonnées jamais dessinées : reel, gabarit, cta_conversion, cta_engagement.
 // =====================================================================
 
 const esc = (s = "") =>
@@ -11,10 +15,9 @@ const esc = (s = "") =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-// Métadonnées par type de slide : libellé de badge + tonalité (couleur du filet/badge).
-//   tone: "accent" (or, insight/twist) · "brand" (anthracite, solution/action) · "plain" (explicatif)
+// Métadonnées par type : libellé + tonalité (couleur du filet/badge)
+//   accent = or (insight/twist) · brand = anthracite (solution/action) · plain = neutre
 const TYPE_META = {
-  // révélation / bascule / insight -> or
   revelation: { label: "LA RÉVÉLATION", tone: "accent" },
   renversement: { label: "LE RENVERSEMENT", tone: "accent" },
   mythe: { label: "LE MYTHE", tone: "accent" },
@@ -22,11 +25,8 @@ const TYPE_META = {
   indice: { label: "L'INDICE", tone: "accent" },
   nuance: { label: "LA NUANCE", tone: "accent" },
   difference: { label: "LA DIFFÉRENCE", tone: "accent" },
-  // observation patient
   identification: { label: "CE QUE TU VOIS", tone: "plain" },
   repere: { label: "LE REPÈRE", tone: "plain" },
-  indice_visuel: { label: "L'INDICE", tone: "plain" },
-  // explicatif -> neutre
   explication: { label: "POURQUOI", tone: "plain" },
   causes: { label: "LES CAUSES", tone: "plain" },
   croissance: { label: "LA CROISSANCE", tone: "plain" },
@@ -36,7 +36,6 @@ const TYPE_META = {
   diagnostic: { label: "LE DIAGNOSTIC", tone: "plain" },
   experience: { label: "L'EXPÉRIENCE", tone: "plain" },
   timing: { label: "LE TIMING", tone: "plain" },
-  // solution / action / leçon -> anthracite
   solution: { label: "LA SOLUTION", tone: "brand" },
   options: { label: "LES OPTIONS", tone: "brand" },
   alternative: { label: "L'ALTERNATIVE", tone: "brand" },
@@ -55,24 +54,39 @@ const TYPE_META = {
   utilite: { label: "L'UTILITÉ", tone: "brand" },
 };
 
-// Libellé lisible pour un type inconnu : "mon_type" -> "MON TYPE"
-const prettyLabel = (type = "") =>
-  type.replace(/_/g, " ").toLocaleUpperCase("fr");
+// Types affichant une pastille badge (comme « CE QUE TU VOIS » des 20)
+const BADGE_TYPES = new Set(["identification"]);
+// Slides à fond sombre plein
+const DARK_TYPES = new Set(["hook", "cta", "renversement"]);
 
-function metaFor(type) {
-  return TYPE_META[type] || { label: prettyLabel(type), tone: "accent" };
+const prettyLabel = (t = "") => t.replace(/_/g, " ").toLocaleUpperCase("fr");
+const metaFor = (t) => TYPE_META[t] || { label: prettyLabel(t), tone: "accent" };
+
+// Extrait les marqueurs [..] du texte -> { labels[], text }
+function splitMarkers(texte = "") {
+  const re = /\[([^\]]+)\]/g;
+  const labels = [];
+  let m;
+  while ((m = re.exec(texte))) labels.push(m[1].trim());
+  const text = texte.replace(re, "").replace(/\s{2,}/g, " ").trim();
+  return { labels, text };
 }
 
-// Rangée de N points de progression
+// Surligne le mot-clé situé après « Écris » (issu du texte, pas d'une métadonnée)
+function highlightEcris(texte = "") {
+  return esc(texte).replace(
+    /(Écris\s+)([0-9A-ZÀ-Ÿ][0-9A-ZÀ-Ÿ'’-]{1,})/u,
+    (_, p1, p2) => `${p1}<span class="cta-key">${p2}</span>`
+  );
+}
+
 function dots(activeIndex, total) {
   let out = '<div class="dots">';
-  for (let i = 0; i < total; i++) {
+  for (let i = 0; i < total; i++)
     out += `<span class="dot${i === activeIndex ? " on" : ""}"></span>`;
-  }
   return out + "</div>";
 }
 
-// Pied de page commun (logo/marque + handle) + n/N + dots
 function footer({ n, total, index, cfg, logoDataUri, onBrand }) {
   const brandMark = logoDataUri
     ? `<span class="logo-chip"><img class="logo" src="${logoDataUri}" alt="${esc(cfg.brandName)}"/></span>`
@@ -90,30 +104,19 @@ function footer({ n, total, index, cfg, logoDataUri, onBrand }) {
     </footer>`;
 }
 
-function photoZone(label) {
-  return `<div class="photozone"><span>${esc(label)}</span></div>`;
+// Rangée de cadres image placeholder
+function frames(labels) {
+  const cells = labels
+    .map((l) => `<div class="frame"><span>${esc(l)}</span></div>`)
+    .join("");
+  return `<div class="frames n${labels.length}">${cells}</div>`;
 }
 
-// Enveloppe le mot-clé (cta_conversion) dans une puce accent, au sein du texte.
-function highlightKeyword(texte, keyword) {
-  const safe = esc(texte);
-  if (!keyword) return safe;
-  const k = esc(keyword);
-  const idx = safe.indexOf(k);
-  if (idx < 0) return safe;
-  return (
-    safe.slice(0, idx) +
-    `<span class="cta-key">${k}</span>` +
-    safe.slice(idx + k.length)
-  );
-}
-
-// Corps de la slide selon son rôle
 function bodyFor({ slide, carrousel, cfg }) {
   const type = slide.type || "";
   const titre = esc(slide.titre || "");
-  const texte = esc(slide.texte || "");
-  const isPhoto = (cfg.photoTypes || []).includes(type);
+  const { labels, text } = splitMarkers(slide.texte || "");
+  const texteEsc = esc(text);
 
   // --- Couverture (hook) ---
   if (type === "hook") {
@@ -121,36 +124,49 @@ function bodyFor({ slide, carrousel, cfg }) {
       <div class="eyebrow">${esc(carrousel.sujet || "")}</div>
       <div class="body body-cover">
         <h1 class="cover-title">${titre}</h1>
-        <p class="cover-sub">${texte}</p>
+        <p class="cover-sub">${texteEsc}</p>
       </div>`;
   }
 
-  // --- Clôture (cta) ---
-  if (type === "cta") {
-    const keyword = carrousel.cta_conversion || "";
-    const engage = carrousel.cta_engagement
-      ? `<p class="cta-engage">${esc(carrousel.cta_engagement)}</p>`
-      : "";
+  // --- Pic de tension (renversement, curiosity_loop) ---
+  if (type === "renversement") {
     return `
-      <div class="eyebrow">On en parle ?</div>
+      <div class="body body-tension">
+        <h1 class="tension-title">${titre}</h1>
+        <p class="tension-sub">${texteEsc}</p>
+      </div>`;
+  }
+
+  // --- Clôture (cta) : titre + texte uniquement ---
+  if (type === "cta") {
+    return `
       <div class="body body-cover">
         <h1 class="lesson-title">${titre}</h1>
-        <p class="cta-line">${highlightKeyword(slide.texte || "", keyword)}</p>
-        ${engage}
+        <p class="cta-line">${highlightEcris(text)}</p>
       </div>`;
   }
 
   const meta = metaFor(type);
   const badgeClass = meta.tone === "accent" ? "badge-accent" : "badge-neutral";
 
-  // --- Slide visuelle (photo) ---
-  if (isPhoto) {
+  // --- Zone image via marqueur(s) [..] ---
+  if (labels.length) {
     return `
       <div class="badge ${badgeClass}">${esc(meta.label)}</div>
       <div class="body body-visual">
         <h2 class="visual-title">${titre}</h2>
-        <p class="statement">${texte}</p>
-        ${photoZone("PHOTO PATIENT")}
+        ${texteEsc ? `<p class="statement">${texteEsc}</p>` : ""}
+        ${frames(labels)}
+      </div>`;
+  }
+
+  // --- Slide à badge pastille (ex. identification) ---
+  if (BADGE_TYPES.has(type)) {
+    return `
+      <div class="badge ${badgeClass}">${esc(meta.label)}</div>
+      <div class="body body-badge">
+        <h2 class="text-title">${titre}</h2>
+        <p class="text-para">${texteEsc}</p>
       </div>`;
   }
 
@@ -160,15 +176,14 @@ function bodyFor({ slide, carrousel, cfg }) {
     <div class="body body-text ${ruleClass}">
       <div class="content-kicker">${esc(meta.label)}</div>
       <h2 class="text-title">${titre}</h2>
-      <p class="text-para">${texte}</p>
+      <p class="text-para">${texteEsc}</p>
     </div>`;
 }
 
-// Gabarit complet d'une slide -> document HTML autonome
 function slideHTML({ slide, carrousel, index, total, cfg, fontsCss, logoDataUri }) {
   const { largeur, hauteur } = cfg.format;
   const c = cfg.colors;
-  const onBrand = slide.type === "hook" || slide.type === "cta";
+  const onBrand = DARK_TYPES.has(slide.type);
 
   return `<!doctype html>
 <html lang="fr">
@@ -193,7 +208,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   padding:90px;display:flex;flex-direction:column;
   background:var(--light);color:var(--dark);
 }
-.slide.type-hook,.slide.type-cta{
+.slide.type-hook,.slide.type-cta,.slide.type-renversement{
   background:linear-gradient(160deg, var(--brand) 0%, var(--brand-deep) 100%);
   color:var(--onbrand);
 }
@@ -203,7 +218,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   font-family:var(--f-title);font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;font-size:22px;opacity:.75;
 }
-.slide.type-hook .eyebrow,.slide.type-cta .eyebrow{color:rgba(255,255,255,.7);}
+.slide.type-hook .eyebrow{color:rgba(255,255,255,.7);}
 
 /* ---------- BADGES ---------- */
 .badge{
@@ -219,36 +234,41 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 
 /* Couverture (hook) + clôture (cta) */
 .body-cover{justify-content:center;gap:32px;}
-.cover-title{
-  font-family:var(--f-title);font-weight:700;font-size:84px;line-height:1.04;
-  letter-spacing:-.02em;
-}
+.cover-title{font-family:var(--f-title);font-weight:700;font-size:84px;line-height:1.04;letter-spacing:-.02em;}
 .cover-sub{font-size:38px;line-height:1.4;opacity:.9;max-width:840px;font-weight:400;}
 
-.lesson-title{
-  font-family:var(--f-title);font-weight:700;font-size:72px;line-height:1.06;
-  letter-spacing:-.015em;max-width:900px;
-}
-.cta-line{font-size:38px;line-height:1.4;max-width:880px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 4px;}
-.cta-engage{margin-top:8px;font-size:28px;color:rgba(255,255,255,.65);}
+.lesson-title{font-family:var(--f-title);font-weight:700;font-size:72px;line-height:1.06;letter-spacing:-.015em;max-width:900px;}
+.cta-line{font-size:38px;line-height:1.4;max-width:880px;}
 .cta-key{
   font-family:var(--f-title);font-weight:700;letter-spacing:.06em;
   background:var(--accent);color:var(--dark);padding:6px 20px;border-radius:12px;
   box-shadow:0 8px 24px rgba(0,0,0,.28);display:inline-block;
 }
 
-/* Slides visuelles (photo) */
+/* Pic de tension (renversement) — trancher visuellement */
+.body-tension{justify-content:center;gap:36px;}
+.tension-title{font-family:var(--f-title);font-weight:700;font-size:96px;line-height:1.0;letter-spacing:-.025em;}
+.tension-sub{font-size:40px;line-height:1.38;opacity:.82;max-width:860px;font-weight:400;}
+
+/* Slides visuelles (marqueurs image) */
 .body-visual{justify-content:flex-start;gap:24px;padding-top:34px;}
 .visual-title{font-family:var(--f-title);font-weight:700;font-size:52px;line-height:1.1;letter-spacing:-.01em;}
 .statement{font-size:38px;line-height:1.3;font-weight:400;max-width:880px;color:var(--dark);}
-.photozone{
+.frames{flex:1;min-height:0;display:flex;gap:26px;}
+.frames.n1{flex-direction:column;}
+.frame{
   flex:1;min-height:0;border-radius:24px;background:var(--ph);
-  border:3px dashed #D8CFC0;display:flex;align-items:center;justify-content:center;
+  border:3px dashed #D8CFC0;display:flex;align-items:flex-end;justify-content:center;padding:24px;
 }
-.photozone span{
-  font-family:var(--f-title);font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;font-size:26px;color:var(--pht);
+.frames.n1 .frame{align-items:center;}
+.frame span{
+  font-family:var(--f-title);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  font-size:26px;color:var(--pht);background:#fff;padding:8px 18px;border-radius:10px;
 }
+.frames.n1 .frame span{background:transparent;}
+
+/* Slide à badge pastille */
+.body-badge{justify-content:center;gap:26px;padding-top:20px;}
 
 /* Slides texte éditoriales */
 .body-text{justify-content:center;gap:26px;padding-left:44px;position:relative;}
@@ -277,7 +297,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .foot.on-brand .logo-chip{box-shadow:0 4px 16px rgba(0,0,0,.28);}
 .logo{height:40px;width:auto;object-fit:contain;display:block;}
 .brandtext{font-family:var(--f-title);font-weight:700;font-size:28px;color:var(--brand);}
-.slide.type-hook .brandtext,.slide.type-cta .brandtext{color:#fff;}
+.slide.type-hook .brandtext,.slide.type-cta .brandtext,.slide.type-renversement .brandtext{color:#fff;}
 .handle{font-size:24px;color:var(--muted);}
 .foot.on-brand .handle{color:rgba(255,255,255,.7);}
 .foot-right{display:flex;align-items:center;gap:22px;}

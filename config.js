@@ -11,9 +11,10 @@ module.exports = {
     "20 carrousels orthodontie The Smile Space v3 diagnostic.json",
   ],
 
-  // Types de slides qui réservent une zone image (placeholder gris).
-  // Vide = tout en texte. Ex. ["identification"] ou ["identification","diagnostic"].
-  photoTypes: ["identification"],
+  // Les zones image sont pilotées par des marqueurs dans le texte des slides :
+  //   [PHOTO PATIENT] · [IMAGE CLINIQUE / RADIO] · [AVANT] [APRÈS] · [SCHÉMA — …]
+  // → un cadre vide légendé est dessiné, le reste du texte devient la légende.
+  // (Aucun marqueur = tout en texte.)
 
   // Dossier de sortie
   outDir: "sortie",
