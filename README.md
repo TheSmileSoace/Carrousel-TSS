@@ -80,9 +80,20 @@ Chaque carrousel utilise : `sujet`, `angle`, `gabarit`, `cta_conversion` (le
 mot-clé mis en avant sur la slide finale), `cta_engagement`, `legende`,
 `hashtags`, et `slides[]` (`n`, `type`, `titre`, `texte`).
 
-Pour réserver une zone photo sur d'autres types de slides, édite
-`config.js` → `photoTypes` (ex. `["identification","diagnostic"]`). Vide = tout
-en texte.
+### Zones image (schéma v2.4)
+
+Chaque slide porte un champ **`image`** que le générateur lit pour poser la zone
+correspondante (placeholder légendé, à remplacer par la vraie image ensuite) :
+
+| `image` | rendu |
+|---------|-------|
+| `null` | slide texte, aucune zone |
+| `photo_patient` | cadre **PHOTO PATIENT** |
+| `image_clinique_radio` | cadre **IMAGE CLINIQUE / RADIO** |
+| `avant_apres` | double cadre **AVANT / APRÈS** |
+| `schema:<légende>` | cadre **SCHÉMA** + la légende après `:` |
+
+Les slides sombres (`hook`, `renversement`, `cta`) n'affichent jamais de zone image.
 
 ## Structure du projet
 

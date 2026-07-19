@@ -62,14 +62,25 @@ const DARK_TYPES = new Set(["hook", "cta", "renversement"]);
 const prettyLabel = (t = "") => t.replace(/_/g, " ").toLocaleUpperCase("fr");
 const metaFor = (t) => TYPE_META[t] || { label: prettyLabel(t), tone: "accent" };
 
-// Extrait les marqueurs [..] du texte -> { labels[], text }
-function splitMarkers(texte = "") {
-  const re = /\[([^\]]+)\]/g;
-  const labels = [];
-  let m;
-  while ((m = re.exec(texte))) labels.push(m[1].trim());
-  const text = texte.replace(re, "").replace(/\s{2,}/g, " ").trim();
-  return { labels, text };
+// Traduit le champ slide.image (v2.4) en zone image.
+//   photo_patient · image_clinique_radio · avant_apres · schema:<légende> · null
+function parseImage(image) {
+  if (!image) return null;
+  const v = String(image).trim();
+  if (v === "photo_patient")
+    return { variant: "single", labels: ["PHOTO PATIENT"] };
+  if (v === "image_clinique_radio")
+    return { variant: "single", labels: ["IMAGE CLINIQUE / RADIO"] };
+  if (v === "avant_apres")
+    return { variant: "double", labels: ["AVANT", "APRÈS"] };
+  if (v.toLowerCase().startsWith("schema"))
+    return {
+      variant: "single",
+      labels: ["SCHÉMA"],
+      caption: v.slice(v.indexOf(":") + 1).trim(),
+    };
+  // valeur inconnue -> cadre légendé avec la valeur brute
+  return { variant: "single", labels: [v.toUpperCase()] };
 }
 
 // Surligne le mot-clé situé après « Écris » (issu du texte, pas d'une métadonnée)
@@ -104,19 +115,26 @@ function footer({ n, total, index, cfg, logoDataUri, onBrand }) {
     </footer>`;
 }
 
-// Rangée de cadres image placeholder
-function frames(labels) {
-  const cells = labels
-    .map((l) => `<div class="frame"><span>${esc(l)}</span></div>`)
+// Rangée de cadres image placeholder (selon parseImage)
+function frames(img) {
+  const cells = img.labels
+    .map((l, i) => {
+      const cap =
+        img.caption && i === 0
+          ? `<small class="frame-cap">${esc(img.caption)}</small>`
+          : "";
+      return `<div class="frame"><span>${esc(l)}</span>${cap}</div>`;
+    })
     .join("");
-  return `<div class="frames n${labels.length}">${cells}</div>`;
+  return `<div class="frames n${img.labels.length}">${cells}</div>`;
 }
 
 function bodyFor({ slide, carrousel, cfg }) {
   const type = slide.type || "";
   const titre = esc(slide.titre || "");
-  const { labels, text } = splitMarkers(slide.texte || "");
+  const text = slide.texte || "";
   const texteEsc = esc(text);
+  const img = parseImage(slide.image);
 
   // --- Couverture (hook) ---
   if (type === "hook") {
@@ -149,14 +167,14 @@ function bodyFor({ slide, carrousel, cfg }) {
   const meta = metaFor(type);
   const badgeClass = meta.tone === "accent" ? "badge-accent" : "badge-neutral";
 
-  // --- Zone image via marqueur(s) [..] ---
-  if (labels.length) {
+  // --- Zone image (champ slide.image) ---
+  if (img) {
     return `
       <div class="badge ${badgeClass}">${esc(meta.label)}</div>
       <div class="body body-visual">
         <h2 class="visual-title">${titre}</h2>
         ${texteEsc ? `<p class="statement">${texteEsc}</p>` : ""}
-        ${frames(labels)}
+        ${frames(img)}
       </div>`;
   }
 
@@ -255,17 +273,22 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .visual-title{font-family:var(--f-title);font-weight:700;font-size:52px;line-height:1.1;letter-spacing:-.01em;}
 .statement{font-size:38px;line-height:1.3;font-weight:400;max-width:880px;color:var(--dark);}
 .frames{flex:1;min-height:0;display:flex;gap:26px;}
-.frames.n1{flex-direction:column;}
 .frame{
   flex:1;min-height:0;border-radius:24px;background:var(--ph);
-  border:3px dashed #D8CFC0;display:flex;align-items:flex-end;justify-content:center;padding:24px;
+  border:3px dashed #D8CFC0;padding:24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;
 }
-.frames.n1 .frame{align-items:center;}
+/* cadre unique (photo/radio/schéma) : contenu centré */
+.frames.n1 .frame{justify-content:center;}
 .frame span{
   font-family:var(--f-title);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   font-size:26px;color:var(--pht);background:#fff;padding:8px 18px;border-radius:10px;
 }
 .frames.n1 .frame span{background:transparent;}
+.frame-cap{
+  font-family:var(--f-body);font-weight:400;font-size:24px;line-height:1.3;
+  color:var(--pht);max-width:82%;text-align:center;letter-spacing:0;text-transform:none;
+}
 
 /* Slide à badge pastille */
 .body-badge{justify-content:center;gap:26px;padding-top:20px;}
