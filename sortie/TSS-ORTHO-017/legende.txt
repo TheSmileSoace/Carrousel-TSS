@@ -1,0 +1,5 @@
+Les mini-vis sont des ancrages temporaires. Elles permettent de contrôler plus précisément les forces et d'éviter certains mouvements indésirables. Elles ne sont pas nécessaires dans tous les traitements.
+
+Écris ANCRAGE en commentaire pour savoir dans quelles situations on les utilise.
+
+#minivis #ancrageorthodontique #orthodontie #MARPE #TheSmileSpace

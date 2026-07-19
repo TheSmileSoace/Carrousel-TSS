@@ -1,0 +1,12 @@
+{
+  "name": "carrousel-tss",
+  "version": "1.0.0",
+  "description": "Générateur de carrousels Instagram pour The Smile Space (1080 x 1350).",
+  "type": "commonjs",
+  "scripts": {
+    "render": "node render.js"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}
