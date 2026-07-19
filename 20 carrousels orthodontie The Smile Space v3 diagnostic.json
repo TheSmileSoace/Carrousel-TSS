@@ -1,0 +1,1334 @@
+{
+  "bibliotheque_carrousels": {
+    "page": "The Smile Space",
+    "format": {
+      "largeur": 1080,
+      "hauteur": 1350
+    },
+    "version": "3.0 - Diagnostic Carousel",
+    "registre": "tutoiement",
+    "structure_slides": [
+      "accroche",
+      "patient_voit",
+      "ortho_voit",
+      "raisonnement",
+      "pourquoi_traitement",
+      "resultat",
+      "lecon_cta"
+    ],
+    "note": "Chaque carrousel suit la structure Diagnostic Carousel en 7 slides et porte sa serie (parmi les 10) + son mot_cle ManyChat.",
+    "carrousels": [
+      {
+        "id": "TSS-ORTHO-001",
+        "sujet": "Manque de place pour les dents",
+        "serie": "1. Ce que tu vois / ce que moi je vois",
+        "mot_cle": "ESPACE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Manque de place… ou manque d'arcade ?",
+            "texte": "Tes dents manquent-elles vraiment de place, ou ta mâchoire n'en offre pas assez ?"
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Des dents qui se chevauchent, tournent ou débordent de l'arcade."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Souvent une arcade trop étroite pour les accueillir, plus que des dents trop grandes."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Croissance, respiration et habitudes orales décident de l'espace disponible."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le choix du traitement",
+            "texte": "Élargir, aligner, gérer l'espace ou parfois extraire — selon le diagnostic, pas une règle."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "De la place gagnée sans pousser les dents hors de leur os."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Des dents serrées ne sont pas forcément trop grandes. Écris ESPACE en commentaire."
+          }
+        ],
+        "legende": "Des dents serrées ne veulent pas toujours dire que tes dents sont trop grandes. Le manque de place vient souvent de la forme ou de la largeur de l'arcade. Un bilan permet de comprendre l'origine avant de choisir la solution la plus adaptée.\n\nÉcris ESPACE en commentaire si tu veux savoir quels éléments on analyse.",
+        "hashtags": [
+          "#orthodontie",
+          "#dentsserrees",
+          "#encombrementdentaire",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-002",
+        "sujet": "Respiration buccale chez l'enfant",
+        "serie": "8. Ce que les parents ne voient pas",
+        "mot_cle": "RESPIRATION",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Bouche ouverte la nuit ?",
+            "texte": "Ton enfant dort la bouche ouverte ? Ce n'est pas toujours une simple habitude."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Lèvres sèches, ronflements, sommeil agité, fatigue au réveil."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Une langue qui ne soutient plus le palais comme elle le devrait."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "La façon de respirer guide la croissance des mâchoires."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où l'approche",
+            "texte": "Un bilan large — ORL, logopédie, parfois allergologie — avant tout appareil."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Rétablir la fonction, pas seulement aligner les dents."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Un appareil ne débouche pas le nez. Écris RESPIRATION en commentaire."
+          }
+        ],
+        "legende": "Dormir la bouche ouverte n'est pas toujours anodin. Respiration, position de la langue et croissance des mâchoires sont étroitement liées. L'objectif n'est pas seulement d'aligner les dents, mais de comprendre pourquoi ton enfant respire ainsi.\n\nÉcris RESPIRATION en commentaire et je t'explique quels professionnels peuvent intervenir.",
+        "hashtags": [
+          "#respirationbuccale",
+          "#orthodontieenfant",
+          "#croissance",
+          "#sommeilenfant",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-003",
+        "sujet": "Orthodontie adulte",
+        "serie": "4. Le plus grand mythe",
+        "mot_cle": "ADULTE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "« Trop vieux pour l'orthodontie »",
+            "texte": "Tes dents ne connaissent pas ta date de naissance."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu crois",
+            "texte": "Que le train est passé et qu'il est trop tard."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Des dents qui se déplacent à tout âge quand les tissus de soutien sont sains."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Chez l'adulte, croissance terminée et antécédents plus complexes changent le plan."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le bilan élargi",
+            "texte": "Gencives, os, restaurations, articulations et attentes esthétiques entrent en jeu."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Un plan pensé pour ta bouche d'adulte, pas calqué sur un ado."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "L'âge n'est pas une contre-indication. Écris ADULTE en commentaire."
+          }
+        ],
+        "legende": "L'âge n'est pas, à lui seul, une contre-indication à l'orthodontie. Chez l'adulte, le traitement tient simplement compte de la santé des gencives, de l'os, des restaurations déjà présentes et de l'absence de croissance.\n\nÉcris ADULTE en commentaire si tu veux connaître les éléments essentiels du bilan.",
+        "hashtags": [
+          "#orthodontieadulte",
+          "#aligneurs",
+          "#bagues",
+          "#sourireadulte",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-004",
+        "sujet": "Dents qui bougent après traitement",
+        "serie": "9. Les erreurs les plus fréquentes",
+        "mot_cle": "CONTENTION",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Tes dents bougeront toute ta vie",
+            "texte": "Si elles rebougent après le traitement, ce n'est pas toujours un échec."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Un léger décalage revenu quelques mois ou années après."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Des tissus encore en réorganisation, ou une contention qui ne joue plus son rôle."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Lèvres, langue, mastication et vieillissement continuent d'agir sur tes dents."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où la contention",
+            "texte": "Fil collé, gouttière ou combinaison, selon ta situation."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Bien portée et surveillée, elle protège ton résultat dans le temps."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Une contention se surveille aussi. Écris CONTENTION en commentaire."
+          }
+        ],
+        "legende": "Tes dents continuent d'évoluer après un traitement. La contention ne fige pas ta bouche, mais elle limite les déplacements indésirables. Encore faut-il la porter, l'entretenir et la faire contrôler.\n\nÉcris CONTENTION en commentaire si tu as remarqué un changement.",
+        "hashtags": [
+          "#contention",
+          "#recidiveorthodontique",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace",
+          "#gouttiere"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-005",
+        "sujet": "Aligneurs transparents",
+        "serie": "4. Le plus grand mythe",
+        "mot_cle": "ALIGNEURS",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Discrets ne veut pas dire simples",
+            "texte": "Les aligneurs sont discrets. Le traitement, lui, reste précis."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Une gouttière transparente, qui a l'air facile à porter."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Chaque mouvement planifié, séquencé et contrôlé en amont."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Les taquets et le temps de port déterminent le résultat, pas la gouttière seule."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le choix",
+            "texte": "Aligneurs, bagues ou approche combinée selon le mouvement à réaliser."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Certaines rotations ou mouvements de racine demandent plus de contrôle."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Discret ne veut pas dire automatique. Écris ALIGNEURS en commentaire."
+          }
+        ],
+        "legende": "Les aligneurs sont une excellente option dans beaucoup de situations, mais ils ne rendent pas l'orthodontie automatique. La qualité du diagnostic, de la planification et du suivi reste essentielle.\n\nÉcris ALIGNEURS en commentaire pour comprendre les critères de choix.",
+        "hashtags": [
+          "#aligneurs",
+          "#orthodontieinvisible",
+          "#orthodontieadulte",
+          "#TheSmileSpace",
+          "#sourire",
+          "#orthodontie"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-006",
+        "sujet": "Extraction de dents en orthodontie",
+        "serie": "4. Le plus grand mythe",
+        "mot_cle": "EXTRACTION",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "« Extraire, c'est un échec »",
+            "texte": "Faux. Mais extraire par principe l'est aussi."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu entends",
+            "texte": "Qu'enlever des dents serait forcément une perte."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Parfois le moyen le plus sûr de créer de l'espace et de préserver les tissus."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Profil, lèvres, gencives et limites osseuses orientent la décision."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où les alternatives",
+            "texte": "Expansion, recul postérieur ou réduction interproximale quand c'est possible."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Gagner de la place à tout prix peut fragiliser l'os — d'où le sur-mesure."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Deux cas semblables, deux plans différents. Écris EXTRACTION en commentaire."
+          }
+        ],
+        "legende": "En orthodontie, les extractions ne doivent être ni systématiques ni exclues par principe. Elles font partie des options possibles quand le manque de place, le profil ou les limites osseuses le justifient.\n\nÉcris EXTRACTION en commentaire pour découvrir les principaux critères de décision.",
+        "hashtags": [
+          "#extractiondentaire",
+          "#orthodontie",
+          "#encombrementdentaire",
+          "#TheSmileSpace",
+          "#sourire"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-007",
+        "sujet": "Sourire étroit",
+        "serie": "2. Le détail qui change tout",
+        "mot_cle": "SOURIRE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Un sourire qui paraît « fermé »",
+            "texte": "Sur tes photos, regarde les coins de ton sourire."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Des zones sombres sur les côtés, entre les dents et les joues."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Les couloirs buccaux et la largeur réelle de ton arcade."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Des dents parfaitement droites peuvent quand même donner un sourire étroit."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où l'approche",
+            "texte": "Repositionnement, expansion, parfois composite ou facettes côté dentiste."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Une largeur qui reste naturelle et cohérente avec ton visage."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "La largeur perçue se travaille. Écris SOURIRE en commentaire."
+          }
+        ],
+        "legende": "La largeur d'un sourire ne dépend pas que de l'alignement : la forme de l'arcade, la position des dents du fond et les couloirs sombres jouent beaucoup sur l'impression visuelle. L'objectif n'est pas d'élargir à tout prix, mais de trouver l'équilibre esthétique et fonctionnel qui te va.\n\nÉcris SOURIRE en commentaire si ce sujet te parle.",
+        "hashtags": [
+          "#sourireetroit",
+          "#couloirbuccal",
+          "#esthetiquedusourire",
+          "#TheSmileSpace",
+          "#sourire"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-008",
+        "sujet": "Consultation orthodontique précoce",
+        "serie": "8. Ce que les parents ne voient pas",
+        "mot_cle": "ENFANT",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Consulter avant toutes les dents ?",
+            "texte": "Pourquoi voir un orthodontiste tôt, avant que tout soit sorti."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Un sourire d'enfant qui semble tout à fait normal."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Décalage des mâchoires, manque de place ou fonctions perturbées."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Certaines corrections ont une fenêtre idéale, tant que la croissance est là."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où l'idée",
+            "texte": "Parfois guider la croissance, pas tout traiter d'un coup."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Consulter tôt ne veut pas dire appareiller tôt."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Le bon moment dépend du problème, pas de l'âge. Écris ENFANT en commentaire."
+          }
+        ],
+        "legende": "Une première consultation sert surtout à détecter les problèmes de croissance, d'éruption et de fonction. Elle ne débouche pas automatiquement sur un traitement immédiat.\n\nÉcris ENFANT en commentaire pour recevoir les principaux signes à surveiller.",
+        "hashtags": [
+          "#orthodontieenfant",
+          "#croissance",
+          "#dentitionmixte",
+          "#TheSmileSpace",
+          "#prevention"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-009",
+        "sujet": "Dents incluses",
+        "serie": "7. Cette radio raconte une histoire",
+        "mot_cle": "INCLUSE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Une dent qui ne sort pas",
+            "texte": "Elle est peut-être là, mais bloquée sous la gencive."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Une dent de lait qui persiste ou un vide dans le sourire."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois à l'imagerie",
+            "texte": "Une dent qui a dévié de sa trajectoire normale."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Les canines supérieures sont particulièrement concernées."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où la stratégie",
+            "texte": "Surveillance, création d'espace, traction orthodontique ou parfois extraction."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Détectée tôt, elle se prend souvent bien mieux en charge."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Absente du sourire ne veut pas dire absente. Écris INCLUSE en commentaire."
+          }
+        ],
+        "legende": "Une dent qui ne sort pas peut être incluse, mal orientée ou manquer d'espace. Un examen clinique et une imagerie adaptée permettent de comprendre la situation et de choisir la stratégie la plus pertinente.\n\nÉcris INCLUSE en commentaire si tu veux connaître les signes d'alerte.",
+        "hashtags": [
+          "#dentincluse",
+          "#canineincluse",
+          "#orthodontie",
+          "#TheSmileSpace",
+          "#dentition"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-010",
+        "sujet": "Dents du bonheur",
+        "serie": "3. Une question qu'on me pose tous les jours",
+        "mot_cle": "DIASTEME",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Faut-il fermer les dents du bonheur ?",
+            "texte": "Pas toujours — mais il faut comprendre pourquoi l'espace existe."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Un espace entre les incisives du haut."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Sa cause : taille des dents, frein, langue ou dent absente."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Fermer sans traiter l'origine expose à la réouverture."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le choix",
+            "texte": "Orthodontie seule ou combinée à une restauration, selon la cause."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Parfois, l'espace fait partie de ton sourire — c'est aussi ta décision."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Comprends la cause avant de fermer. Écris DIASTEME en commentaire."
+          }
+        ],
+        "legende": "Les dents du bonheur peuvent être un choix esthétique assumé ou le signe d'un déséquilibre à analyser. Avant de fermer l'espace, il faut en comprendre l'origine et anticiper la stabilité du résultat.\n\nÉcris DIASTEME en commentaire pour découvrir les causes les plus fréquentes.",
+        "hashtags": [
+          "#diasteme",
+          "#dentsdubonheur",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-011",
+        "sujet": "Classe II et mâchoire inférieure en retrait",
+        "serie": "1. Ce que tu vois / ce que moi je vois",
+        "mot_cle": "PROFIL",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Dents en avant… ou mâchoire en retrait ?",
+            "texte": "Le résultat visuel peut être identique, la cause non."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Des dents du haut projetées, un menton discret, des lèvres difficiles à fermer."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Un problème venant des dents, des mâchoires ou des deux."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Chez l'enfant la croissance aide ; chez l'adulte les options changent."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le plan",
+            "texte": "Correction fonctionnelle, compensation orthodontique ou chirurgie selon la sévérité."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Corriger l'occlusion ne suffit pas : profil et lèvres comptent aussi."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Même apparence, causes différentes. Écris PROFIL en commentaire."
+          }
+        ],
+        "legende": "Des incisives supérieures en avant peuvent venir de leur inclinaison, d'une mâchoire inférieure en retrait ou d'une combinaison des deux. C'est le diagnostic qui détermine le moment et le type de traitement.\n\nÉcris PROFIL en commentaire pour connaître les éléments qu'on analyse.",
+        "hashtags": [
+          "#classe2",
+          "#profil",
+          "#orthodontie",
+          "#croissance",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-012",
+        "sujet": "Classe III et menton en avant",
+        "serie": "8. Ce que les parents ne voient pas",
+        "mot_cle": "CLASSE3",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Un menton en avant chez l'enfant",
+            "texte": "Ce signe mérite parfois d'être observé tôt."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Les dents du bas qui passent devant celles du haut."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Maxillaire en retrait, mandibule en avant ou position fonctionnelle."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "La croissance est imprévisible et souvent liée à la génétique."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le plan",
+            "texte": "Expansion, traction, surveillance ou chirurgie à l'âge adulte."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Agir tôt peut guider la croissance, sans tout maîtriser."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Un suivi long est parfois nécessaire. Écris CLASSE3 en commentaire."
+          }
+        ],
+        "legende": "Une occlusion inversée antérieure peut être d'origine dentaire, fonctionnelle ou squelettique. Chez l'enfant, certaines interventions précoces peuvent guider la croissance, mais un suivi reste souvent nécessaire.\n\nÉcris CLASSE3 en commentaire si tu veux connaître les signes à surveiller.",
+        "hashtags": [
+          "#classe3",
+          "#orthodontieenfant",
+          "#croissance",
+          "#occlusioninverse",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-013",
+        "sujet": "Béance antérieure",
+        "serie": "1. Ce que tu vois / ce que moi je vois",
+        "mot_cle": "BEANCE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Des dents de devant qui ne se touchent pas",
+            "texte": "L'origine n'est pas toujours seulement dentaire."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Un espace qui persiste devant, alors que les molaires sont serrées."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Souvent la langue, une habitude ou la croissance verticale."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "À la déglutition, la langue peut s'interposer entre les dents."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où l'approche",
+            "texte": "Orthodontie, rééducation, arrêt d'une habitude, parfois chirurgie."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Fermer sans corriger la fonction expose à la récidive."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Traite la cause, pas seulement l'espace. Écris BEANCE en commentaire."
+          }
+        ],
+        "legende": "La béance antérieure, c'est une absence de contact entre les dents de devant. Elle peut être liée aux habitudes, à la langue, à la respiration ou à la croissance des mâchoires. Une prise en charge stable passe d'abord par comprendre son origine.\n\nÉcris BEANCE en commentaire pour en savoir plus.",
+        "hashtags": [
+          "#beance",
+          "#deglutition",
+          "#orthodontie",
+          "#respirationbuccale",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-014",
+        "sujet": "Articulations de la mâchoire",
+        "serie": "4. Le plus grand mythe",
+        "mot_cle": "MACHOIRE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Ta mâchoire craque ?",
+            "texte": "Ça ne veut pas dire automatiquement que tes dents sont mal placées."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu ressens",
+            "texte": "Un craquement, parfois une douleur ou un blocage à l'ouverture."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Muscles, disque articulaire, stress et habitudes, tous en jeu."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Aligner les dents ne fait pas disparaître toutes les douleurs d'articulation."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le bilan",
+            "texte": "On cherche plusieurs causes : bruxisme, surcharge musculaire, inflammation."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Un craquement indolore peut rester stable et sous surveillance."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "La décision suit les symptômes. Écris MACHOIRE en commentaire."
+          }
+        ],
+        "legende": "Les bruits articulaires sont fréquents et ne nécessitent pas toujours un traitement. En revanche, la douleur, les blocages ou une limitation d'ouverture justifient une évaluation adaptée. L'orthodontie peut parfois faire partie du projet, mais elle n'est pas la réponse à toutes les douleurs de mâchoire.\n\nÉcris MACHOIRE en commentaire pour connaître les signes d'alerte.",
+        "hashtags": [
+          "#ATM",
+          "#machoire",
+          "#craquement",
+          "#orthodontie",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-015",
+        "sujet": "Hygiène avec appareil orthodontique",
+        "serie": "9. Les erreurs les plus fréquentes",
+        "mot_cle": "BROSSAGE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Les bagues n'abîment pas tes dents",
+            "texte": "Mais la plaque qui s'accumule autour, elle, laisse des traces."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Des marques blanches qui apparaissent près des attaches."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Des déminéralisations là où la plaque est restée trop longtemps."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Autour des brackets et près de la gencive, le nettoyage est plus difficile."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où la routine",
+            "texte": "Brosse adaptée, brossettes interdentaires et dentifrice fluoré."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "La fréquence du sucre compte autant que le brossage."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "La technique protège ton émail. Écris BROSSAGE en commentaire."
+          }
+        ],
+        "legende": "Les appareils ne provoquent pas directement les caries ni les taches blanches : ils rendent simplement certaines zones plus difficiles à nettoyer. Une bonne technique et des habitudes régulières protègent ton émail pendant le traitement.\n\nÉcris BROSSAGE en commentaire pour recevoir une routine simple.",
+        "hashtags": [
+          "#hygienedentaire",
+          "#bagues",
+          "#orthodontie",
+          "#brossagedents",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-016",
+        "sujet": "Durée du traitement orthodontique",
+        "serie": "3. Une question qu'on me pose tous les jours",
+        "mot_cle": "DUREE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "8 mois ou 2 ans ?",
+            "texte": "Pourquoi deux patients n'ont pas du tout la même durée."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu veux savoir",
+            "texte": "Combien de temps le traitement prendra pour toi."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "La difficulté réelle des mouvements à réaliser."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "L'os se remodèle à son rythme, et ta coopération pèse lourd."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où la finition",
+            "texte": "Une dent alignée à l'œil n'est pas toujours parfaitement positionnée."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Forcer n'accélère pas — ça peut compromettre le résultat."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "La durée suit ton cas, pas une moyenne. Écris DUREE en commentaire."
+          }
+        ],
+        "legende": "La durée d'un traitement dépend de la complexité des mouvements, de la biologie, des objectifs et de ta coopération. On peut donner une estimation, mais elle reste liée à l'évolution clinique.\n\nÉcris DUREE en commentaire pour comprendre ce qui peut accélérer ou ralentir un traitement.",
+        "hashtags": [
+          "#traitementorthodontique",
+          "#duree",
+          "#orthodontie",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-017",
+        "sujet": "Mini-vis orthodontiques",
+        "serie": "6. Pourquoi j'ai choisi ce traitement",
+        "mot_cle": "ANCRAGE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "À quoi sert une mini-vis ?",
+            "texte": "À déplacer certaines dents sans faire bouger toutes les autres."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Une petite vis, qui a de quoi inquiéter au premier abord."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "Un point d'appui fixe, directement dans l'os."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Sans elle, tirer une dent peut déplacer aussi le point d'appui."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où son rôle",
+            "texte": "Intrusion, fermeture d'espace, expansion ou correction asymétrique."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Pose rapide sous anesthésie locale ; elle peut parfois devoir être replacée."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Elle évite de déplacer les mauvaises dents. Écris ANCRAGE en commentaire."
+          }
+        ],
+        "legende": "Les mini-vis sont des ancrages temporaires. Elles permettent de contrôler plus précisément les forces et d'éviter certains mouvements indésirables. Elles ne sont pas nécessaires dans tous les traitements.\n\nÉcris ANCRAGE en commentaire pour savoir dans quelles situations on les utilise.",
+        "hashtags": [
+          "#minivis",
+          "#ancrageorthodontique",
+          "#orthodontie",
+          "#MARPE",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-018",
+        "sujet": "Élastiques orthodontiques",
+        "serie": "9. Les erreurs les plus fréquentes",
+        "mot_cle": "ELASTIQUES",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Tes élastiques comptent plus que tu ne crois",
+            "texte": "L'appareil ne corrige pas toujours seul l'emboîtement des mâchoires."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu penses",
+            "texte": "Qu'ils sont un détail secondaire du traitement."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "La clé qui guide les dents du haut et du bas l'une par rapport à l'autre."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Les mettre juste avant le rendez-vous ne rattrape pas les jours manqués."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où le schéma personnalisé",
+            "texte": "Côté, durée et force propres à ton cas, pas copiés sur un autre."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Doubler la dose n'accélère pas — ça déséquilibre."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "La régularité fait tout. Écris ELASTIQUES en commentaire."
+          }
+        ],
+        "legende": "Les élastiques sont souvent indispensables pour corriger l'occlusion. Leur efficacité dépend surtout de la régularité du port et du respect des consignes. Les doubler ou changer leur position peut produire des effets indésirables.\n\nÉcris ELASTIQUES en commentaire pour recevoir quelques astuces de régularité.",
+        "hashtags": [
+          "#elastiquesorthodontiques",
+          "#orthodontie",
+          "#bagues",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-019",
+        "sujet": "Dent de lait conservée chez l'adulte",
+        "serie": "7. Cette radio raconte une histoire",
+        "mot_cle": "AGENESIE",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Une dent de lait à l'âge adulte",
+            "texte": "Elle a peut-être une histoire importante à raconter."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Une petite dent de lait qui a « tenu » jusqu'ici."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois à l'imagerie",
+            "texte": "La dent définitive manquante ou bloquée sous la gencive."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Sa racine, sa forme et sa stabilité décident de son avenir."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où les options",
+            "texte": "La conserver, fermer l'espace ou préparer un remplacement prothétique."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "La décision anticipe l'avenir : implant, bridge ou fermeture n'ont pas les mêmes contraintes."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Cette dent mérite un bilan. Écris AGENESIE en commentaire."
+          }
+        ],
+        "legende": "Une dent de lait encore présente à l'âge adulte peut être liée à l'absence de la dent définitive ou à une dent incluse. La meilleure stratégie dépend de son état et de ton projet orthodontique et restaurateur à long terme.\n\nÉcris AGENESIE en commentaire pour découvrir les options possibles.",
+        "hashtags": [
+          "#agenesiedentaire",
+          "#dentdelait",
+          "#orthodontie",
+          "#implant",
+          "#TheSmileSpace"
+        ]
+      },
+      {
+        "id": "TSS-ORTHO-020",
+        "sujet": "Scanner 3D en orthodontie",
+        "serie": "7. Cette radio raconte une histoire",
+        "mot_cle": "SCANNER",
+        "structure": "Diagnostic Carousel",
+        "slides": [
+          {
+            "n": 1,
+            "type": "accroche",
+            "titre": "Un scanner 3D n'est pas « une radio en plus »",
+            "texte": "Une image en 2D ne montre pas toujours toute l'anatomie."
+          },
+          {
+            "n": 2,
+            "type": "patient_voit",
+            "titre": "Ce que tu vois",
+            "texte": "Encore un examen prescrit, en apparence de trop."
+          },
+          {
+            "n": 3,
+            "type": "ortho_voit",
+            "titre": "Ce que je vois",
+            "texte": "L'anatomie en volume, invisible sur une radio classique."
+          },
+          {
+            "n": 4,
+            "type": "raisonnement",
+            "titre": "Le raisonnement",
+            "texte": "Dents incluses, racines, os, voies aériennes ou sites de mini-vis."
+          },
+          {
+            "n": 5,
+            "type": "pourquoi_traitement",
+            "titre": "D'où son intérêt",
+            "texte": "Il peut modifier tout le plan de traitement."
+          },
+          {
+            "n": 6,
+            "type": "resultat",
+            "titre": "Le résultat visé",
+            "texte": "Il se prescrit quand il apporte une info vraiment utile, pas systématiquement."
+          },
+          {
+            "n": 7,
+            "type": "lecon_cta",
+            "titre": "La leçon",
+            "texte": "Le bon examen répond à la bonne question. Écris SCANNER en commentaire."
+          }
+        ],
+        "legende": "Le scanner 3D (CBCT) apporte une vue en volume utile dans certaines situations : dents incluses, mini-vis, expansion squelettique, racines ou limites osseuses. Il se prescrit quand il apporte une information réellement utile au diagnostic.\n\nÉcris SCANNER en commentaire pour connaître ses principales indications.",
+        "hashtags": [
+          "#CBCT",
+          "#scanner3D",
+          "#orthodontie",
+          "#diagnostic",
+          "#TheSmileSpace"
+        ]
+      }
+    ],
+    "declencheurs_manychat": {
+      "principe": "Un mot-clé de commentaire par carrousel. Chaque réponse automatique reboucle vers le flux CANAPÉ (pré-consultation) au lieu de recréer 20 tunnels séparés.",
+      "liste": [
+        {
+          "mot_cle": "ESPACE",
+          "carrousel_id": "TSS-ORTHO-001",
+          "sujet": "Manque de place pour les dents",
+          "reponse_auto": "Le manque de place vient souvent de l'arcade, pas de la taille des dents. Pour savoir ce qui se passe dans ton cas, écris CANAPÉ ici : je t'oriente vers la pré-consultation."
+        },
+        {
+          "mot_cle": "RESPIRATION",
+          "carrousel_id": "TSS-ORTHO-002",
+          "sujet": "Respiration buccale chez l'enfant",
+          "reponse_auto": "Dormir la bouche ouverte n'est pas toujours anodin chez l'enfant. Écris CANAPÉ ici et je t'explique comment on fait le point (et avec quels professionnels)."
+        },
+        {
+          "mot_cle": "ADULTE",
+          "carrousel_id": "TSS-ORTHO-003",
+          "sujet": "Orthodontie adulte",
+          "reponse_auto": "L'âge n'est pas une contre-indication à l'orthodontie. Écris CANAPÉ ici pour qu'on évalue ce qui est possible pour toi."
+        },
+        {
+          "mot_cle": "CONTENTION",
+          "carrousel_id": "TSS-ORTHO-004",
+          "sujet": "Dents qui bougent après traitement",
+          "reponse_auto": "Si ton sourire a rebougé, ce n'est pas forcément un échec. Écris CANAPÉ ici : on vérifie ta contention et ce qu'il faut ajuster."
+        },
+        {
+          "mot_cle": "ALIGNEURS",
+          "carrousel_id": "TSS-ORTHO-005",
+          "sujet": "Aligneurs transparents",
+          "reponse_auto": "Aligneurs ou bagues, ça dépend surtout du mouvement à réaliser. Écris CANAPÉ ici et on regarde ce qui convient à ton cas."
+        },
+        {
+          "mot_cle": "EXTRACTION",
+          "carrousel_id": "TSS-ORTHO-006",
+          "sujet": "Extraction de dents en orthodontie",
+          "reponse_auto": "Extraire n'est ni systématique ni interdit : tout dépend du diagnostic. Écris CANAPÉ ici pour qu'on en parle sereinement."
+        },
+        {
+          "mot_cle": "SOURIRE",
+          "carrousel_id": "TSS-ORTHO-007",
+          "sujet": "Sourire étroit",
+          "reponse_auto": "Un sourire qui paraît étroit se travaille (couloirs sombres, largeur perçue). Écris CANAPÉ ici pour savoir ce qu'on analyse chez toi."
+        },
+        {
+          "mot_cle": "ENFANT",
+          "carrousel_id": "TSS-ORTHO-008",
+          "sujet": "Consultation orthodontique précoce",
+          "reponse_auto": "Consulter tôt ne veut pas dire traiter tôt. Écris CANAPÉ ici et je te donne les signes qui méritent un bilan."
+        },
+        {
+          "mot_cle": "INCLUSE",
+          "carrousel_id": "TSS-ORTHO-009",
+          "sujet": "Dents incluses",
+          "reponse_auto": "Une dent qui ne sort pas est parfois juste bloquée. Écris CANAPÉ ici pour savoir quand et comment consulter."
+        },
+        {
+          "mot_cle": "DIASTEME",
+          "carrousel_id": "TSS-ORTHO-010",
+          "sujet": "Dents du bonheur",
+          "reponse_auto": "Un espace entre les incisives peut être esthétique… ou révéler une cause. Écris CANAPÉ ici pour comprendre le tien."
+        },
+        {
+          "mot_cle": "PROFIL",
+          "carrousel_id": "TSS-ORTHO-011",
+          "sujet": "Classe II et mâchoire inférieure en retrait",
+          "reponse_auto": "Dents en avant ou mâchoire en retrait ? Ce n'est pas la même chose. Écris CANAPÉ ici pour qu'on mesure d'où vient le décalage."
+        },
+        {
+          "mot_cle": "CLASSE3",
+          "carrousel_id": "TSS-ORTHO-012",
+          "sujet": "Classe III et menton en avant",
+          "reponse_auto": "Un menton en avant chez l'enfant mérite parfois d'être vu tôt. Écris CANAPÉ ici pour savoir quand consulter."
+        },
+        {
+          "mot_cle": "BEANCE",
+          "carrousel_id": "TSS-ORTHO-013",
+          "sujet": "Béance antérieure",
+          "reponse_auto": "Des dents de devant qui ne se touchent pas ont souvent une cause fonctionnelle. Écris CANAPÉ ici pour qu'on l'identifie."
+        },
+        {
+          "mot_cle": "MACHOIRE",
+          "carrousel_id": "TSS-ORTHO-014",
+          "sujet": "Articulations de la mâchoire",
+          "reponse_auto": "Un craquement n'est pas toujours un problème d'alignement. Écris CANAPÉ ici : on distingue ce qui est bénin de ce qui doit être évalué."
+        },
+        {
+          "mot_cle": "BROSSAGE",
+          "carrousel_id": "TSS-ORTHO-015",
+          "sujet": "Hygiène avec appareil orthodontique",
+          "reponse_auto": "Les bagues n'abîment pas les dents, mais la plaque autour, oui. Écris CANAPÉ ici pour recevoir la routine et faire le point."
+        },
+        {
+          "mot_cle": "DUREE",
+          "carrousel_id": "TSS-ORTHO-016",
+          "sujet": "Durée du traitement orthodontique",
+          "reponse_auto": "La durée dépend de ton cas, pas d'une moyenne. Écris CANAPÉ ici pour connaître les facteurs qui jouent chez toi."
+        },
+        {
+          "mot_cle": "ANCRAGE",
+          "carrousel_id": "TSS-ORTHO-017",
+          "sujet": "Mini-vis orthodontiques",
+          "reponse_auto": "Une mini-vis sert d'appui pour ne pas déplacer les mauvaises dents. Écris CANAPÉ ici si on t'en a proposé une et que tu as des questions."
+        },
+        {
+          "mot_cle": "ELASTIQUES",
+          "carrousel_id": "TSS-ORTHO-018",
+          "sujet": "Élastiques orthodontiques",
+          "reponse_auto": "La régularité du port change tout. Écris CANAPÉ ici pour des astuces concrètes et un point sur ton traitement."
+        },
+        {
+          "mot_cle": "AGENESIE",
+          "carrousel_id": "TSS-ORTHO-019",
+          "sujet": "Dent de lait conservée chez l'adulte",
+          "reponse_auto": "Une dent de lait encore là à l'âge adulte a une histoire à raconter. Écris CANAPÉ ici pour connaître les examens utiles."
+        },
+        {
+          "mot_cle": "SCANNER",
+          "carrousel_id": "TSS-ORTHO-020",
+          "sujet": "Scanner 3D en orthodontie",
+          "reponse_auto": "Un CBCT se prescrit quand il apporte vraiment une info utile. Écris CANAPÉ ici pour comprendre ce qu'il montrerait dans ton cas."
+        }
+      ]
+    }
+  }
+}
