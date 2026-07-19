@@ -7,8 +7,13 @@ module.exports = {
   // On accepte le nom "canonique" ou le fichier livré.
   dataFiles: [
     "carrousels.json",
+    "bibliotheque_27_carrousels_TU_final_The_Smile_Space.json",
     "20 carrousels orthodontie The Smile Space v3 diagnostic.json",
   ],
+
+  // Types de slides qui réservent une zone image (placeholder gris).
+  // Vide = tout en texte. Ex. ["identification"] ou ["identification","diagnostic"].
+  photoTypes: ["identification"],
 
   // Dossier de sortie
   outDir: "sortie",

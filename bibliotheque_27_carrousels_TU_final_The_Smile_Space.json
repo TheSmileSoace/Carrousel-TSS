@@ -1,0 +1,1753 @@
+{
+  "bibliotheque_carrousels": {
+    "page": "The Smile Space",
+    "format": {
+      "largeur": 1080,
+      "hauteur": 1350
+    },
+    "version": "2.3",
+    "registre": "tutoiement",
+    "note": "27 carrousels, tutoiement. gabarit=curiosity_loop pour 11 sujets a renversement/twist (003,004,006,010,014,015,016,021,022,026,027 -> 8 slides hook>promesse>indice>renversement>revelation>consequence>lecon>cta) ; les 16 autres en gabarit=clinique (008 a 8 slides). Legende structuree valeur>mot-cle>engagement>adresses.",
+    "carrousels": [
+      {
+        "id": "TSS-ORTHO-001",
+        "reel": null,
+        "sujet": "Manque de place pour les dents",
+        "angle": "Le problème peut venir de l'arcade et pas seulement des dents",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes dents manquent-elles vraiment de place ?",
+            "texte": "Ou est-ce ta mâchoire qui n'en offre pas assez ?"
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Le signe le plus visible",
+            "texte": "Des dents qui se chevauchent, tournent ou sortent en dehors de l'arcade."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Le problème n'est pas toujours la taille des dents.",
+            "texte": "Parfois, c'est surtout l'arcade qui est trop étroite pour les accueillir correctement."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Pourquoi cela arrive ?",
+            "texte": "La croissance, la respiration, les habitudes orales et la forme des mâchoires influencent l'espace disponible."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Plusieurs solutions existent.",
+            "texte": "Expansion, alignement, gestion de l'espace ou parfois extractions : le choix dépend du diagnostic."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Aligner n'est pas simplement pousser les dents.",
+            "texte": "Il faut préserver les gencives, l'os et la stabilité du résultat."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tes dents se chevauchent ?",
+            "texte": "Écris ESPACE en commentaire, je t'explique ce qu'il faut vérifier."
+          }
+        ],
+        "legende": "Des dents serrées ne signifient pas toujours que les dents sont trop grandes. Le manque de place peut aussi être lié à la forme ou à la largeur des arcades. Un bilan orthodontique permet de comprendre l'origine du problème avant de choisir la solution la plus adaptée.\n\nÉcris ESPACE en commentaire, je t'explique.\n\nEnregistre-le pour ton prochain rendez-vous.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#dentsserrees",
+          "#encombrementdentaire",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "ESPACE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-002",
+        "reel": null,
+        "sujet": "Respiration buccale chez l'enfant",
+        "angle": "Un signe fonctionnel à ne pas banaliser",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ton enfant dort la bouche ouverte ?",
+            "texte": "Ce n'est pas toujours une simple habitude."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Les signes à observer",
+            "texte": "Bouche ouverte, lèvres sèches, ronflements, sommeil agité ou fatigue au réveil."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "La respiration influence la croissance.",
+            "texte": "Quand la bouche reste ouverte, la langue ne soutient plus le palais de la même manière."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Cela peut modifier l'équilibre.",
+            "texte": "La position de la langue, des lèvres et des joues participe au développement des mâchoires."
+          },
+          {
+            "n": 5,
+            "type": "orientation",
+            "titre": "L'orthodontiste n'agit pas seul.",
+            "texte": "Selon la cause, un bilan ORL, logopédique ou allergologique peut être nécessaire."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Un appareil ne débouche pas le nez.",
+            "texte": "Il faut identifier la cause avant de traiter ses conséquences."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu observes ces signes chez ton enfant ?",
+            "texte": "Écris RESPIRATION en commentaire pour connaître les premières étapes."
+          }
+        ],
+        "legende": "Dormir la bouche ouverte n'est pas forcément anodin. La respiration, la position de la langue et la croissance des mâchoires sont étroitement liées. L'objectif n'est pas seulement d'aligner les dents, mais de comprendre pourquoi l'enfant respire ainsi.\n\nÉcris RESPIRATION en commentaire, je t'explique.\n\nQuel âge a ton enfant ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#respirationbuccale",
+          "#orthodontieenfant",
+          "#croissance",
+          "#sommeilenfant",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ],
+        "cta_conversion": "RESPIRATION",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-003",
+        "reel": "L5",
+        "sujet": "Orthodontie adulte",
+        "angle": "Il n'est pas trop tard, mais le diagnostic change",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Je suis trop vieux pour l'orthodontie. »",
+            "texte": "C'est la phrase que j'entends le plus."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Et c'est presque toujours faux.",
+            "texte": "Voici pourquoi."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Les dents peuvent bouger à tout âge.",
+            "texte": "Le ligament qui les entoure reste actif toute la vie."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Ce n'est pas l'âge, le vrai obstacle.",
+            "texte": "C'est de croire qu'il est trop tard avant d'avoir demandé."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ce qui change, c'est la biologie.",
+            "texte": "Croissance terminée, gencives, os et restaurations à intégrer."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Le plan est plus personnalisé, parfois plus long.",
+            "texte": "Mais rarement impossible : les mini-vis ouvrent des portes."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Tes dents ne connaissent pas ta date de naissance.",
+            "texte": "On regarde ta bouche, pas ton âge."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu penses qu'il est trop tard ?",
+            "texte": "Écris ADULTE en commentaire, je t'explique ce qui doit être évalué."
+          }
+        ],
+        "legende": "L'âge n'est pas, à lui seul, une contre-indication à l'orthodontie. Chez l'adulte, le traitement doit simplement tenir compte de la santé des gencives, de l'os, des restaurations déjà présentes et de l'absence de croissance.\n\nÉcris ADULTE en commentaire, je t'explique.\n\nEnregistre ce carrousel si tu t'es reconnu.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontieadulte",
+          "#aligneurs",
+          "#bagues",
+          "#sourireadulte",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ],
+        "cta_conversion": "ADULTE",
+        "cta_engagement": "Enregistre ce carrousel si tu t'es reconnu.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-004",
+        "reel": "S3-S12",
+        "sujet": "Dents qui bougent après traitement",
+        "angle": "La récidive n'est pas nécessairement un échec",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le jour où on retire ton appareil…",
+            "texte": "…c'est le jour où tu peux perdre ton sourire."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ça paraît paradoxal. Et pourtant.",
+            "texte": "Voici pourquoi."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Tes dents ont changé de place, oui.",
+            "texte": "Mais les tissus autour continuent de se remodeler."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Le traitement ne fige rien.",
+            "texte": "Sans contention, les dents repartent — parfois des années après."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Les dents bougent toute la vie.",
+            "texte": "Lèvres, langue, mastication et vieillissement les sollicitent en permanence."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une contention se porte… et se surveille.",
+            "texte": "Un fil décollé ou une gouttière déformée ne protège plus rien."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Garder le résultat, c'est un travail qui dure.",
+            "texte": "Fil, gouttière, ou le plus souvent les deux."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Ton sourire a changé ?",
+            "texte": "Écris CONTENTION en commentaire pour savoir quoi vérifier."
+          }
+        ],
+        "legende": "Les dents continuent d'évoluer après un traitement orthodontique. La contention ne fige pas la bouche, mais elle limite les déplacements indésirables. Elle doit être portée, entretenue et contrôlée.\n\nÉcris CONTENTION en commentaire, je t'explique.\n\nEnregistre-le pour ne pas oublier ta contention.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#contention",
+          "#recidiveorthodontique",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace",
+          "#gouttiere"
+        ],
+        "cta_conversion": "CONTENTION",
+        "cta_engagement": "Enregistre-le pour ne pas oublier ta contention.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-005",
+        "reel": null,
+        "sujet": "Aligneurs transparents",
+        "angle": "Discrets ne veut pas dire simples",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Les aligneurs sont-ils vraiment plus simples ?",
+            "texte": "Ils sont discrets. Le traitement, lui, reste précis."
+          },
+          {
+            "n": 2,
+            "type": "mythe",
+            "titre": "Une gouttière ne déplace pas les dents toute seule.",
+            "texte": "Chaque mouvement doit être planifié, séquencé et contrôlé."
+          },
+          {
+            "n": 3,
+            "type": "explication",
+            "titre": "Les taquets ont un rôle.",
+            "texte": "Ces petits reliefs améliorent la prise de l'aligneur et orientent certaines forces."
+          },
+          {
+            "n": 4,
+            "type": "discipline",
+            "titre": "Le port est déterminant.",
+            "texte": "Un aligneur porté trop peu de temps ne peut pas produire le mouvement prévu."
+          },
+          {
+            "n": 5,
+            "type": "limites",
+            "titre": "Tout n'est pas aussi prévisible.",
+            "texte": "Certaines rotations, corrections verticales ou mouvements radiculaires demandent plus de contrôle."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "La meilleure technique dépend du cas.",
+            "texte": "Parfois, les bagues ou une approche combinée sont plus efficaces."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Aligneurs ou bagues ?",
+            "texte": "Écris ALIGNEURS en commentaire, je t'explique comment on choisit."
+          }
+        ],
+        "legende": "Les aligneurs sont une excellente option dans de nombreuses situations, mais ils ne transforment pas l'orthodontie en traitement automatique. La qualité du diagnostic, de la planification et du suivi reste essentielle.\n\nÉcris ALIGNEURS en commentaire, je t'explique.\n\nAligneurs ou bagues : tu aurais répondu quoi ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#aligneurs",
+          "#orthodontieinvisible",
+          "#orthodontieadulte",
+          "#TheSmileSpace",
+          "#sourire",
+          "#orthodontie"
+        ],
+        "cta_conversion": "ALIGNEURS",
+        "cta_engagement": "Aligneurs ou bagues : tu aurais répondu quoi ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-006",
+        "reel": "L2",
+        "sujet": "Extraction de dents en orthodontie",
+        "angle": "Extraire n'est ni systématique ni toujours évitable",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Extraire des dents, c'est un échec. »",
+            "texte": "C'est ce qu'on entend souvent."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "La vérité est plus nuancée.",
+            "texte": "Et elle peut changer ton plan de traitement."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Parfois, extraire est le geste le plus sûr.",
+            "texte": "Pour créer de l'espace et préserver les tissus."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Mais extraire par principe est aussi une erreur.",
+            "texte": "Il existe d'autres façons de créer de l'espace."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Tout dépend de ton visage et de ton os.",
+            "texte": "Lèvres, profil, gencives et limites osseuses décident."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Gagner de la place à tout prix peut fragiliser.",
+            "texte": "Pousser les dents hors de l'os expose à des risques parodontaux."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Deux patients semblables, deux plans différents.",
+            "texte": "Le diagnostic compte plus que la règle."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "On t'a parlé d'extractions ?",
+            "texte": "Écris EXTRACTION en commentaire pour comprendre les critères."
+          }
+        ],
+        "legende": "En orthodontie, les extractions ne doivent être ni systématiques ni exclues par principe. Elles font partie des options possibles lorsque le manque de place, le profil ou les limites osseuses le justifient.\n\nÉcris EXTRACTION en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#extractiondentaire",
+          "#orthodontie",
+          "#encombrementdentaire",
+          "#TheSmileSpace",
+          "#sourire"
+        ],
+        "cta_conversion": "EXTRACTION",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-007",
+        "reel": null,
+        "sujet": "Sourire étroit",
+        "angle": "Le sourire dépend aussi de la largeur des arcades",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi ton sourire paraît-il étroit ?",
+            "texte": "Ce n'est pas toujours une question de petites dents."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Regarde les côtés de ton sourire.",
+            "texte": "Des espaces sombres peuvent apparaître entre les dents et les joues."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "La forme de l'arcade compte.",
+            "texte": "Une arcade étroite peut donner un sourire plus fermé, même avec des dents bien alignées."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Mais élargir a des limites.",
+            "texte": "La position des dents doit rester compatible avec l'os et les gencives."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Le traitement dépend de l'origine.",
+            "texte": "Expansion dentaire, expansion squelettique, alignement ou correction chirurgicale selon le cas."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Un sourire large n'est pas un objectif isolé.",
+            "texte": "Il doit rester naturel, fonctionnel et harmonieux avec le visage."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Ton sourire te semble fermé ?",
+            "texte": "Écris SOURIRE en commentaire pour savoir ce qu'on analyse."
+          }
+        ],
+        "legende": "La largeur du sourire dépend de la forme des arcades, de la position des dents et de l'anatomie du visage. L'objectif n'est pas d'élargir systématiquement, mais d'obtenir un équilibre esthétique et fonctionnel.\n\nÉcris SOURIRE en commentaire, je t'explique.\n\nEnregistre-le pour en parler à ton prochain RDV.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#sourireetroit",
+          "#orthodontie",
+          "#esthetiquedusourire",
+          "#TheSmileSpace",
+          "#sourire"
+        ],
+        "cta_conversion": "SOURIRE",
+        "cta_engagement": "Enregistre-le pour en parler à ton prochain RDV.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-008",
+        "reel": null,
+        "sujet": "Consultation orthodontique précoce",
+        "angle": "Consulter tôt ne signifie pas traiter tôt",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi consulter avant que toutes les dents soient sorties ?",
+            "texte": "Parce qu'observer tôt évite de découvrir trop tard."
+          },
+          {
+            "n": 2,
+            "type": "repere",
+            "titre": "L'âge repère : 7 ans.",
+            "texte": "À cet âge, le mélange de dents de lait et définitives permet déjà de repérer un décalage (recommandation internationale)."
+          },
+          {
+            "n": 3,
+            "type": "mythe",
+            "titre": "Consulter ne veut pas dire poser un appareil.",
+            "texte": "Beaucoup d'enfants ont simplement besoin d'être surveillés."
+          },
+          {
+            "n": 4,
+            "type": "objectif",
+            "titre": "On vérifie surtout la croissance.",
+            "texte": "Décalage des mâchoires, manque de place, dents bloquées ou fonctions perturbées."
+          },
+          {
+            "n": 5,
+            "type": "timing",
+            "titre": "Certaines corrections ont une fenêtre idéale.",
+            "texte": "La croissance peut aider tant qu'elle est encore présente."
+          },
+          {
+            "n": 6,
+            "type": "benefice",
+            "titre": "Intervenir au bon moment peut simplifier.",
+            "texte": "L'objectif est parfois de guider, pas de tout traiter d'un coup."
+          },
+          {
+            "n": 7,
+            "type": "nuance",
+            "titre": "Traiter trop tôt n'est pas toujours utile.",
+            "texte": "Le bon moment dépend du problème, pas seulement de l'âge."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Quand faut-il consulter ?",
+            "texte": "Écris ENFANT en commentaire, je te donne les signes d'alerte."
+          }
+        ],
+        "legende": "Une première consultation orthodontique sert avant tout à détecter les problèmes de croissance, d'éruption et de fonction. L'âge repère est 7 ans, quand dents de lait et définitives coexistent. Elle ne conduit pas automatiquement à un traitement immédiat.\n\nÉcris ENFANT en commentaire, je t'explique.\n\nQuel âge a ton enfant ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontieenfant",
+          "#croissance",
+          "#dentitionmixte",
+          "#TheSmileSpace",
+          "#prevention"
+        ],
+        "cta_conversion": "ENFANT",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-009",
+        "reel": null,
+        "sujet": "Dents incluses",
+        "angle": "Une dent absente du sourire n'est pas forcément absente",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Une dent ne sort pas ?",
+            "texte": "Elle est peut-être présente, mais bloquée sous la gencive."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Le retard peut passer inaperçu.",
+            "texte": "Une dent de lait persiste ou une asymétrie apparaît dans le sourire."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Certaines dents dévient de leur trajet.",
+            "texte": "Les canines supérieures sont particulièrement concernées."
+          },
+          {
+            "n": 4,
+            "type": "diagnostic",
+            "titre": "L'imagerie localise précisément la dent.",
+            "texte": "Elle évalue sa position et ses rapports avec les racines voisines."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Plusieurs stratégies sont possibles.",
+            "texte": "Surveillance, création d'espace, traction orthodontique ou parfois extraction."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Le temps influence le pronostic.",
+            "texte": "Une détection précoce facilite souvent la prise en charge."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Une dent tarde à apparaître ?",
+            "texte": "Écris INCLUSE en commentaire pour savoir quand consulter."
+          }
+        ],
+        "legende": "Une dent qui ne sort pas peut être incluse, mal orientée ou manquer d'espace. Un examen clinique et une imagerie adaptée permettent de comprendre la situation et de choisir la stratégie la plus pertinente.\n\nÉcris INCLUSE en commentaire, je t'explique.\n\nDis-moi ce que tu vois sur la radio.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#dentincluse",
+          "#canineincluse",
+          "#orthodontie",
+          "#TheSmileSpace",
+          "#dentition"
+        ],
+        "cta_conversion": "INCLUSE",
+        "cta_engagement": "Dis-moi ce que tu vois sur la radio.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-010",
+        "reel": "S4",
+        "sujet": "Dents du bonheur",
+        "angle": "Un espace peut être esthétique ou révéler une cause",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Faut-il toujours fermer un diastème ?",
+            "texte": "La réponse n'est pas celle qu'on croit."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Avant de le fermer, il faut comprendre pourquoi il existe.",
+            "texte": "Sinon, il revient."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Tous les espaces ne se ressemblent pas.",
+            "texte": "Taille des dents, frein, langue ou dent absente."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Et surtout : ne le ferme jamais avec un élastique de bricolage.",
+            "texte": "Ces « Gap Bands » glissent sous la gencive et peuvent te faire perdre tes incisives."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Un diastème se ferme en contrôlant les racines.",
+            "texte": "Pas seulement les couronnes que tu vois."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Fermer sans traiter la cause = réouverture.",
+            "texte": "Et parfois, l'espace fait partie de ton sourire."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Comprends la cause avant de fermer.",
+            "texte": "Le bon geste dépend de l'origine, pas de la mode."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu as un espace entre les incisives ?",
+            "texte": "Écris DIASTEME en commentaire pour connaître les causes possibles."
+          }
+        ],
+        "legende": "Les dents du bonheur peuvent être un choix esthétique assumé ou le signe d'un déséquilibre à analyser. Avant de fermer l'espace, il faut comprendre son origine et anticiper la stabilité du résultat.\n\nÉcris DIASTEME en commentaire, je t'explique.\n\nLe fermer ou le garder : tu aurais répondu quoi ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#diasteme",
+          "#dentsdubonheur",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "DIASTEME",
+        "cta_engagement": "Le fermer ou le garder : tu aurais répondu quoi ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-011",
+        "reel": null,
+        "sujet": "Classe II et mâchoire inférieure en retrait",
+        "angle": "Les dents en avant peuvent refléter un décalage des mâchoires",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes dents du haut sont-elles vraiment trop en avant ?",
+            "texte": "Ou ta mâchoire du bas est-elle en retrait ?"
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Le résultat peut sembler identique.",
+            "texte": "Dents supérieures projetées, menton discret ou difficulté à fermer les lèvres."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Deux causes, deux traitements.",
+            "texte": "Le problème peut venir des dents, des mâchoires ou des deux."
+          },
+          {
+            "n": 4,
+            "type": "croissance",
+            "titre": "Chez l'enfant, la croissance compte.",
+            "texte": "Certaines corrections fonctionnelles sont plus pertinentes pendant une croissance active."
+          },
+          {
+            "n": 5,
+            "type": "adulte",
+            "titre": "Chez l'adulte, les options changent.",
+            "texte": "Compensation orthodontique ou chirurgie selon la sévérité et les attentes."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Corriger l'occlusion ne suffit pas toujours.",
+            "texte": "Le profil, les lèvres, la fonction et la stabilité comptent aussi."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu reconnais ce profil ?",
+            "texte": "Écris PROFIL en commentaire pour comprendre ce qu'on mesure."
+          }
+        ],
+        "legende": "Des incisives supérieures en avant peuvent être dues à leur inclinaison, à une mâchoire inférieure en retrait ou à une combinaison des deux. Le diagnostic détermine le moment et le type de traitement.\n\nÉcris PROFIL en commentaire, je t'explique.\n\nTu te reconnais dans ce profil ? Dis-le moi.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#classe2",
+          "#profil",
+          "#orthodontie",
+          "#croissance",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "PROFIL",
+        "cta_engagement": "Tu te reconnais dans ce profil ? Dis-le moi.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-012",
+        "reel": null,
+        "sujet": "Classe III et menton en avant",
+        "angle": "Agir tôt peut parfois guider, pas garantir",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le menton de ton enfant semble en avant ?",
+            "texte": "Ce signe mérite parfois d'être observé tôt."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Les incisives peuvent s'emboîter à l'envers.",
+            "texte": "Les dents du bas passent devant celles du haut."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Le décalage peut venir de plusieurs endroits.",
+            "texte": "Maxillaire trop en retrait, mandibule trop en avant ou position fonctionnelle."
+          },
+          {
+            "n": 4,
+            "type": "timing",
+            "titre": "La croissance est imprévisible.",
+            "texte": "Un traitement précoce peut améliorer la situation, sans toujours contrôler toute la croissance future."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Le traitement dépend de la cause.",
+            "texte": "Expansion, traction, correction dentaire, surveillance ou chirurgie à l'âge adulte."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "La génétique joue souvent un rôle.",
+            "texte": "Un suivi prolongé peut être nécessaire jusqu'à la fin de la croissance."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu observes un décalage inversé ?",
+            "texte": "Écris CLASSE3 en commentaire pour savoir quand consulter."
+          }
+        ],
+        "legende": "Une occlusion inversée antérieure peut être d'origine dentaire, fonctionnelle ou squelettique. Chez l'enfant, certaines interventions précoces peuvent guider la croissance, mais un suivi reste souvent nécessaire.\n\nÉcris CLASSE3 en commentaire, je t'explique.\n\nQuel âge a ton enfant ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#classe3",
+          "#orthodontieenfant",
+          "#croissance",
+          "#occlusioninverse",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "CLASSE3",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-013",
+        "reel": null,
+        "sujet": "Béance antérieure",
+        "angle": "Quand les dents ne se touchent pas",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes dents de devant ne se touchent pas ?",
+            "texte": "L'origine n'est pas toujours uniquement dentaire."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "On parle de béance.",
+            "texte": "Un espace persiste entre les incisives quand les molaires sont serrées."
+          },
+          {
+            "n": 3,
+            "type": "causes",
+            "titre": "Plusieurs facteurs peuvent intervenir.",
+            "texte": "Pouce, tétine prolongée, langue basse, respiration buccale ou croissance verticale."
+          },
+          {
+            "n": 4,
+            "type": "fonction",
+            "titre": "La langue peut entretenir l'espace.",
+            "texte": "À la déglutition ou au repos, elle peut s'interposer entre les dents."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Le traitement doit viser la cause.",
+            "texte": "Orthodontie, rééducation fonctionnelle, arrêt d'une habitude ou chirurgie selon le cas."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "La stabilité est le vrai défi.",
+            "texte": "Fermer l'espace sans corriger la fonction augmente le risque de récidive."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tes incisives restent séparées ?",
+            "texte": "Écris BEANCE en commentaire pour connaître les causes possibles."
+          }
+        ],
+        "legende": "La béance antérieure correspond à une absence de contact entre les dents de devant. Elle peut être liée aux habitudes, à la langue, à la respiration ou à la croissance des mâchoires. Une prise en charge stable nécessite d'en comprendre l'origine.\n\nÉcris BEANCE en commentaire, je t'explique.\n\nEnregistre-le pour ton prochain rendez-vous.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#beance",
+          "#deglutition",
+          "#orthodontie",
+          "#respirationbuccale",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "BEANCE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-014",
+        "reel": null,
+        "sujet": "Articulations de la mâchoire",
+        "angle": "L'orthodontie ne guérit pas tous les craquements",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ta mâchoire craque ?",
+            "texte": "Ce n'est pas ce que tu crois."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce bruit ne veut pas dire ce qu'on t'a dit.",
+            "texte": "Avant de traiter, il faut comprendre."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Craquement, douleur, blocage : ce n'est pas pareil.",
+            "texte": "Chaque symptôme a sa signification."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Aligner tes dents ne fera pas disparaître les douleurs.",
+            "texte": "L'orthodontie n'est pas un traitement universel de l'ATM."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "L'articulation est complexe.",
+            "texte": "Muscles, disque, stress et habitudes entrent en jeu."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Un craquement indolore peut rester stable.",
+            "texte": "Ce sont les symptômes, pas le bruit, qui décident."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "On ne traite pas un bruit. On traite une personne.",
+            "texte": "Le bilan cherche la vraie cause avant d'agir."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Craquement ou douleur ?",
+            "texte": "Écris MACHOIRE en commentaire pour connaître les signes d'alerte."
+          }
+        ],
+        "legende": "Les bruits articulaires sont fréquents et ne nécessitent pas toujours un traitement. En revanche, la douleur, les blocages ou une limitation d'ouverture justifient une évaluation adaptée. L'orthodontie peut parfois faire partie du projet, mais elle n'est pas la réponse à toutes les douleurs de mâchoire.\n\nÉcris MACHOIRE en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#ATM",
+          "#machoire",
+          "#craquement",
+          "#orthodontie",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "MACHOIRE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-015",
+        "reel": null,
+        "sujet": "Hygiène avec appareil orthodontique",
+        "angle": "Les taches ne viennent pas des bagues",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Les bagues abîment-elles les dents ?",
+            "texte": "La réponse va te surprendre."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Le vrai coupable n'est pas celui que tu crois.",
+            "texte": "Et il est évitable."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Les taches blanches existent, c'est vrai.",
+            "texte": "Mais elles ne viennent pas des bagues."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "C'est la plaque autour des attaches, pas le métal.",
+            "texte": "Les bagues ne font que créer des zones dures à nettoyer."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ce sont des déminéralisations de l'émail.",
+            "texte": "Là où la plaque et le sucre restent trop longtemps."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une gencive qui saigne demande plus de brossage.",
+            "texte": "Pas moins : c'est le réflexe inverse du bon."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Les bagues n'abîment rien. La technique protège ton émail.",
+            "texte": "Brosse adaptée, brossettes, fluor, régularité."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu portes des bagues ?",
+            "texte": "Écris BROSSAGE en commentaire pour recevoir la routine essentielle."
+          }
+        ],
+        "legende": "Les appareils orthodontiques ne provoquent pas directement les caries ou les taches blanches. Ils rendent simplement certaines zones plus difficiles à nettoyer. Une bonne technique et des habitudes régulières permettent de protéger l'émail pendant le traitement.\n\nÉcris BROSSAGE en commentaire, je t'explique.\n\nEnvoie-le à quelqu'un qui porte des bagues.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#hygienedentaire",
+          "#bagues",
+          "#orthodontie",
+          "#brossagedents",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "BROSSAGE",
+        "cta_engagement": "Envoie-le à quelqu'un qui porte des bagues.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-016",
+        "reel": "S9",
+        "sujet": "Durée du traitement orthodontique",
+        "angle": "Pourquoi deux patients n'ont pas la même durée",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Deux patients. Le même problème.",
+            "texte": "L'un finit en un an. L'autre en deux."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "La différence n'est pas celle que tu crois.",
+            "texte": "Et elle te concerne directement."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ce n'est pas seulement la difficulté du cas.",
+            "texte": "Ni une question de chance."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Le facteur numéro un, c'est souvent toi.",
+            "texte": "Élastiques, aligneurs, rendez-vous, appareils cassés."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "La biologie impose son rythme.",
+            "texte": "L'os se remodèle progressivement : on ne peut pas le brusquer."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Forcer ne va pas plus vite.",
+            "texte": "Des forces excessives peuvent même ralentir le déplacement."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "La durée suit ton cas, pas une moyenne.",
+            "texte": "Et une grande partie dépend de la coopération."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Combien de temps pour ton cas ?",
+            "texte": "Écris DUREE en commentaire pour connaître les principaux facteurs."
+          }
+        ],
+        "legende": "La durée d'un traitement dépend de la complexité des mouvements, de la biologie, des objectifs et de la coopération. Une estimation peut être donnée, mais elle reste liée à l'évolution clinique.\n\nÉcris DUREE en commentaire, je t'explique.\n\n8 mois ou 2 ans : tu aurais répondu quoi ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#traitementorthodontique",
+          "#duree",
+          "#orthodontie",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "DUREE",
+        "cta_engagement": "8 mois ou 2 ans : tu aurais répondu quoi ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-017",
+        "reel": null,
+        "sujet": "Mini-vis orthodontiques",
+        "angle": "Un petit ancrage pour éviter de déplacer les mauvaises dents",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi placer une mini-vis en orthodontie ?",
+            "texte": "Pour déplacer certaines dents sans faire bouger toutes les autres."
+          },
+          {
+            "n": 2,
+            "type": "probleme",
+            "titre": "Chaque force crée une réaction.",
+            "texte": "Quand on tire une dent, le point d'appui peut lui aussi se déplacer."
+          },
+          {
+            "n": 3,
+            "type": "solution",
+            "titre": "La mini-vis sert d'ancrage temporaire.",
+            "texte": "Elle offre un point d'appui directement dans l'os."
+          },
+          {
+            "n": 4,
+            "type": "indications",
+            "titre": "Elle peut aider dans plusieurs situations.",
+            "texte": "Intrusion, fermeture d'espace, déplacement molaire, expansion ou correction asymétrique."
+          },
+          {
+            "n": 5,
+            "type": "experience",
+            "titre": "La pose est généralement rapide.",
+            "texte": "Elle se fait sous anesthésie locale, avec des consignes d'hygiène précises."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Temporaire ne veut pas dire infaillible.",
+            "texte": "Une mini-vis peut parfois se mobiliser et devoir être replacée."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "On t'a proposé une mini-vis ?",
+            "texte": "Écris ANCRAGE en commentaire pour comprendre son rôle."
+          }
+        ],
+        "legende": "Les mini-vis orthodontiques sont des ancrages temporaires. Elles permettent de contrôler plus précisément les forces et d'éviter certains mouvements indésirables. Elles ne sont pas nécessaires dans tous les traitements.\n\nÉcris ANCRAGE en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#minivis",
+          "#ancrageorthodontique",
+          "#orthodontie",
+          "#MARPE",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "ANCRAGE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-018",
+        "reel": null,
+        "sujet": "Élastiques orthodontiques",
+        "angle": "Un petit accessoire avec un grand rôle",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi tes élastiques sont-ils si importants ?",
+            "texte": "Parce que l'appareil ne peut pas toujours corriger seul l'emboîtement des mâchoires."
+          },
+          {
+            "n": 2,
+            "type": "fonction",
+            "titre": "Ils ajoutent une direction de force.",
+            "texte": "Ils guident les dents du haut et du bas l'une par rapport à l'autre."
+          },
+          {
+            "n": 3,
+            "type": "discipline",
+            "titre": "Le port irrégulier fait perdre du temps.",
+            "texte": "Les mettre juste avant le rendez-vous ne rattrape pas les jours manqués."
+          },
+          {
+            "n": 4,
+            "type": "consigne",
+            "titre": "Ne double pas sans consigne.",
+            "texte": "Plus de force ne veut pas dire un traitement plus rapide."
+          },
+          {
+            "n": 5,
+            "type": "adaptation",
+            "titre": "Une gêne initiale est fréquente.",
+            "texte": "Elle diminue généralement quand le port devient régulier."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Le schéma de port est personnalisé.",
+            "texte": "Le côté, la durée et la force ne se copient pas sur un autre patient."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu oublies tes élastiques ?",
+            "texte": "Écris ELASTIQUES en commentaire pour recevoir des astuces simples."
+          }
+        ],
+        "legende": "Les élastiques orthodontiques sont souvent indispensables pour corriger l'occlusion. Leur efficacité dépend surtout de la régularité du port et du respect des consignes. Doubler les élastiques ou modifier leur position peut produire des effets indésirables.\n\nÉcris ELASTIQUES en commentaire, je t'explique.\n\nEnvoie-le à quelqu'un qui oublie ses élastiques.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#elastiquesorthodontiques",
+          "#orthodontie",
+          "#bagues",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "ELASTIQUES",
+        "cta_engagement": "Envoie-le à quelqu'un qui oublie ses élastiques.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-019",
+        "reel": null,
+        "sujet": "Dent de lait conservée chez l'adulte",
+        "angle": "Une dent de lait peut cacher une agénésie ou une dent incluse",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tu as encore une dent de lait à l'âge adulte ?",
+            "texte": "Elle a peut-être une histoire importante à raconter."
+          },
+          {
+            "n": 2,
+            "type": "revelation",
+            "titre": "La dent définitive peut manquer.",
+            "texte": "On parle alors d'agénésie dentaire."
+          },
+          {
+            "n": 3,
+            "type": "alternative",
+            "titre": "Ou elle peut être bloquée.",
+            "texte": "Une imagerie vérifie si une dent permanente est incluse."
+          },
+          {
+            "n": 4,
+            "type": "decision",
+            "titre": "Faut-il garder la dent de lait ?",
+            "texte": "Cela dépend de sa racine, de sa forme, de sa stabilité et du projet global."
+          },
+          {
+            "n": 5,
+            "type": "options",
+            "titre": "Plusieurs solutions sont possibles.",
+            "texte": "La conserver, fermer l'espace orthodontiquement ou préparer un remplacement prothétique."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "La décision doit anticiper l'avenir.",
+            "texte": "Implant, bridge, restauration ou fermeture d'espace n'ont pas les mêmes contraintes."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Une dent de lait persiste chez toi ?",
+            "texte": "Écris AGENESIE en commentaire pour connaître les examens utiles."
+          }
+        ],
+        "legende": "Une dent de lait présente à l'âge adulte peut être liée à l'absence de la dent définitive ou à une dent incluse. La meilleure stratégie dépend de son état et du projet orthodontique et restaurateur à long terme.\n\nÉcris AGENESIE en commentaire, je t'explique.\n\nEnregistre-le pour ton prochain rendez-vous.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#agenesiedentaire",
+          "#dentdelait",
+          "#orthodontie",
+          "#implant",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "AGENESIE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-020",
+        "reel": null,
+        "sujet": "Scanner 3D en orthodontie",
+        "angle": "Pourquoi toutes les radios ne répondent pas aux mêmes questions",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi demander un scanner 3D ?",
+            "texte": "Parce qu'une image en deux dimensions ne montre pas toujours toute l'anatomie."
+          },
+          {
+            "n": 2,
+            "type": "difference",
+            "titre": "Chaque examen a une indication.",
+            "texte": "Panoramique, téléradiographie et CBCT ne répondent pas aux mêmes questions."
+          },
+          {
+            "n": 3,
+            "type": "utilite",
+            "titre": "Le scanner localise en volume.",
+            "texte": "Dents incluses, racines, os, voies aériennes ou sites de mini-vis."
+          },
+          {
+            "n": 4,
+            "type": "diagnostic",
+            "titre": "Il peut modifier le plan de traitement.",
+            "texte": "Une position invisible sur une radio classique peut changer la stratégie."
+          },
+          {
+            "n": 5,
+            "type": "securite",
+            "titre": "L'examen doit être justifié.",
+            "texte": "Il n'est pas réalisé systématiquement pour tous les patients."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Plus d'images ne veut pas dire meilleur diagnostic.",
+            "texte": "Il faut demander l'examen adapté à la question clinique."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "On t'a prescrit un CBCT ?",
+            "texte": "Écris SCANNER en commentaire pour comprendre ce qu'il peut montrer."
+          }
+        ],
+        "legende": "Le scanner 3D, ou CBCT, apporte une visualisation volumique utile dans certaines situations : dents incluses, mini-vis, expansion squelettique, racines ou limites osseuses. Il doit toutefois être prescrit lorsqu'il apporte une information réellement utile au diagnostic.\n\nÉcris SCANNER en commentaire, je t'explique.\n\nDis-moi ce que tu vois sur cette radio.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#CBCT",
+          "#scanner3D",
+          "#orthodontie",
+          "#diagnostic",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "SCANNER",
+        "cta_engagement": "Dis-moi ce que tu vois sur cette radio.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-021",
+        "reel": "S1",
+        "sujet": "Turkey Teeth : des couronnes sur des dents saines",
+        "angle": "Aligner des dents saines plutôt que les limer pour poser des couronnes",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Elle a payé 4 000 € pour ce sourire.",
+            "texte": "Le problème n'est pas le prix."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce que tu vois n'est pas ce que tu crois.",
+            "texte": "Regarde bien : il manque une information."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ce ne sont pas des facettes.",
+            "texte": "Ce sont des couronnes. Et la nuance change tout."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Chaque dent a été limée jusqu'au moignon.",
+            "texte": "Des dents parfaitement saines, réduites définitivement."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Elles n'étaient pas malades. Juste mal alignées.",
+            "texte": "Un problème que l'orthodontie corrige sans rien détruire."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une couronne se remplace tous les 10 à 15 ans.",
+            "texte": "Une dent limée, elle, ne revient jamais."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Aligner n'est pas remplacer.",
+            "texte": "Le vrai luxe, c'est de garder tes dents à toi."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu hésites entre les deux ?",
+            "texte": "Écris COURONNES en commentaire, je t'explique la différence."
+          }
+        ],
+        "legende": "Des dents mal alignées ne sont pas des dents malades. Les limer pour poser des couronnes est un geste définitif, alors que l'orthodontie déplace les mêmes dents en préservant ton capital dentaire. Plus long, mais tu gardes tes dents.\n\nÉcris COURONNES en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#turkeyteeth",
+          "#couronnesdentaires",
+          "#capitaldentaire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "COURONNES",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-022",
+        "reel": "L1",
+        "sujet": "Ce n'est pas l'appareil qui déplace tes dents",
+        "angle": "Le déplacement dentaire est une réaction biologique, pas une poussée mécanique",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ton appareil ne déplace pas tes dents.",
+            "texte": "Attends… quoi ?"
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce que tu crois voir n'est pas ce qui se passe.",
+            "texte": "Le vrai moteur est invisible."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "L'appareil ne fait qu'une chose : appliquer une force légère.",
+            "texte": "Le reste ne vient pas de lui."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "C'est ton corps qui fait tout le travail.",
+            "texte": "Autour de chaque racine, un ligament déclenche la réaction."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "D'un côté l'os se résorbe, de l'autre il se reconstruit.",
+            "texte": "La dent ne traverse jamais l'os : l'os se remodèle autour d'elle."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Trop de force ne va pas plus vite.",
+            "texte": "Elle bloque la réaction et peut arrêter le mouvement."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "On travaille avec ta biologie.",
+            "texte": "Jamais contre elle."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Envie de comprendre le mécanisme ?",
+            "texte": "Écris BIOLOGIE en commentaire."
+          }
+        ],
+        "legende": "L'appareil ne fait qu'appliquer une force légère et continue. Le vrai travail est biologique : le ligament autour de la racine déclenche la résorption et la reconstruction de l'os. C'est pour ça qu'une force excessive est contre-productive.\n\nÉcris BIOLOGIE en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#biologiedentaire",
+          "#deplacementdentaire",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "BIOLOGIE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-023",
+        "reel": "S7-S11-L3",
+        "sujet": "Avant de prendre rendez-vous : le parcours",
+        "angle": "Un devis est la conclusion d'un diagnostic, pas un tarif donné d'avance",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le 1er rendez-vous ne sert pas à poser un appareil.",
+            "texte": "Ce qui se passe vraiment avant de commencer."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "« Je viens juste pour un prix »",
+            "texte": "Tu penses repartir avec un devis dès la première visite."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Un prix n'a de sens qu'après un diagnostic.",
+            "texte": "Sans examen, aucun chiffre sérieux."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Examen clinique, radios, scanner, analyse à tête reposée.",
+            "texte": "Le devis, c'est la conclusion, pas le point de départ."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Deux temps",
+            "texte": "1er RDV : comprendre. 2e RDV : diagnostic, options, coût. Puis c'est toi qui décides."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Défricher sans te déplacer",
+            "texte": "Une pré-consultation à distance répond à tes premières questions."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Savoir si un traitement est indiqué chez toi ?",
+            "texte": "Écris PRÉ-CONSULTATION en commentaire."
+          }
+        ],
+        "legende": "Un devis n'est pas un prix : c'est la conclusion d'un diagnostic. Le premier rendez-vous sert à comprendre ton problème ; les options et le coût viennent ensuite, à tête reposée. Et pour défricher sans te déplacer, une pré-consultation à distance existe.\n\nÉcris PRÉ-CONSULTATION en commentaire, je t'explique.\n\nEnregistre-le pour ton prochain rendez-vous.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#preconsultation",
+          "#parcoursdesoins",
+          "#devis",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "PRÉ-CONSULTATION",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-024",
+        "reel": "S6",
+        "sujet": "Sourire gingival : on voit trop la gencive",
+        "angle": "La bonne solution dépend de la cause du sourire gingival",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "On voit trop ta gencive quand tu souris ?",
+            "texte": "Avant de couper, il faut comprendre pourquoi."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ce que tu vois",
+            "texte": "Une bande de gencive visible au-dessus des dents dès que tu souris."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Plusieurs causes possibles",
+            "texte": "Et une seule est la bonne chez toi."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Lèvre, dent ou mâchoire",
+            "texte": "Une lèvre qui remonte trop haut, une dent qui n'a pas fini son éruption, ou un maxillaire trop développé."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "À chaque cause sa solution",
+            "texte": "Orthodontie, injection, chirurgie… ou parfois aucun traitement."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Couper la gencive n'est pas toujours la réponse.",
+            "texte": "On cherche l'origine avant d'agir."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Ton sourire te paraît trop gingival ?",
+            "texte": "Écris GENCIVE en commentaire."
+          }
+        ],
+        "legende": "Un sourire gingival peut venir de la lèvre, d'une dent qui n'a pas fini son éruption ou d'un maxillaire trop développé. Selon la cause, la solution va de l'orthodontie à la chirurgie, et parfois aucun traitement n'est nécessaire. Couper la gencive n'est pas un réflexe automatique.\n\nÉcris GENCIVE en commentaire, je t'explique.\n\nTu aurais répondu quoi ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#souriregingival",
+          "#gummysmile",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "GENCIVE",
+        "cta_engagement": "Tu aurais répondu quoi ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-025",
+        "reel": "S8",
+        "sujet": "Est-ce que les bagues font mal ?",
+        "angle": "L'inconfort orthodontique est réel mais bref et gérable",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Est-ce que les bagues font mal ? »",
+            "texte": "Je te réponds honnêtement."
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ce que tu crains",
+            "texte": "Une douleur intense, et permanente."
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "La réalité",
+            "texte": "Une pression quelques jours, pas une douleur vive. Puis le corps s'adapte."
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Pourquoi cette sensation",
+            "texte": "La dent se met en mouvement ; c'est cette mise en tension que tu ressens, surtout au premier repas."
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Comment la traverser",
+            "texte": "Alimentation molle 2 à 3 jours, un antalgique simple si besoin. Ça diminue à chaque activation."
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Quelques jours d'inconfort",
+            "texte": "Pour un sourire qui durera des années."
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu appréhendes la douleur ?",
+            "texte": "Écris DOULEUR en commentaire, je te dis à quoi t'attendre."
+          }
+        ],
+        "legende": "Oui, les bagues gênent, surtout les premiers jours et au premier repas. Mais c'est une pression, pas une douleur vive, et elle diminue à chaque activation. Une alimentation molle et un antalgique simple suffisent le plus souvent.\n\nÉcris DOULEUR en commentaire, je t'explique.\n\nEnvoie-le à quelqu'un qui appréhende ses bagues.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#bagues",
+          "#douleur",
+          "#traitementorthodontique",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "DOULEUR",
+        "cta_engagement": "Envoie-le à quelqu'un qui appréhende ses bagues.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-026",
+        "reel": "S10",
+        "sujet": "L'orthodontie et les racines",
+        "angle": "La résorption radiculaire existe mais reste le plus souvent minime",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« L'orthodontie abîme les racines. »",
+            "texte": "Pour une fois… c'est vrai."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Mais pas comme tu l'imagines.",
+            "texte": "Ce qui suit devrait te rassurer."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ça s'appelle la résorption radiculaire.",
+            "texte": "Et dans la plupart des cas, elle est minime."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Ce n'est pas l'orthodontie en soi le problème.",
+            "texte": "C'est la façon dont elle est menée."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Forces trop fortes, traitements trop longs, certains mouvements.",
+            "texte": "Voilà ce qui aggrave réellement le risque."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "C'est pour ça qu'on n'accélère jamais en forçant.",
+            "texte": "Une surveillance simple suffit le plus souvent."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "On avance en douceur pour protéger tes racines.",
+            "texte": "La prudence n'est pas une lenteur, c'est une protection."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu t'inquiètes pour tes racines ?",
+            "texte": "Écris RACINES en commentaire."
+          }
+        ],
+        "legende": "La résorption radiculaire est réelle, mais dans la très grande majorité des cas elle reste minime et se surveille simplement. Ce qui l'aggrave : des forces excessives et des traitements trop longs. C'est pour ça qu'on ne cherche jamais à accélérer en forçant.\n\nÉcris RACINES en commentaire, je t'explique.\n\nDis-moi ce que tu vois sur cette radio.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#racines",
+          "#resorptionradiculaire",
+          "#securite",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "RACINES",
+        "cta_engagement": "Dis-moi ce que tu vois sur cette radio.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-027",
+        "reel": "L4",
+        "sujet": "Priceless : la valeur de l'expertise",
+        "angle": "Ce qui coûte, c'est le matériel ; ce qui compte, c'est l'expertise",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi ce prix ?",
+            "texte": "Ce que tu paies vraiment n'est pas ce que tu crois."
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Fais la liste, tu vas voir.",
+            "texte": "Et regarde ce qui manque à la fin."
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Bagues, aligneurs, radios, scanner.",
+            "texte": "Deux ans de rendez-vous, une équipe, un cabinet."
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Tout ça a un prix. Mais ce n'est pas le cœur.",
+            "texte": "Le cœur, c'est ce qui ne se voit pas."
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Le diagnostic qui évite le mauvais traitement.",
+            "texte": "Le geste juste, au bon moment."
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "C'est ce qui sépare un traitement d'un bon traitement.",
+            "texte": "Et ça, aucune liste ne le chiffre."
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "L'expertise médicale.",
+            "texte": "Priceless."
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Envie de comprendre ce qui fait la différence ?",
+            "texte": "Écris EXPERTISE en commentaire."
+          }
+        ],
+        "legende": "Le matériel, l'imagerie, les rendez-vous, le cabinet : tout cela a un prix. L'expertise qui transforme tout ça en un plan de traitement juste, elle, n'a pas de prix. C'est ce qui sépare un traitement d'un bon traitement.\n\nÉcris EXPERTISE en commentaire, je t'explique.\n\nTu aurais répondu quoi ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "hashtags": [
+          "#orthodontie",
+          "#expertise",
+          "#priceless",
+          "#sante",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "EXPERTISE",
+        "cta_engagement": "Tu aurais répondu quoi ?",
+        "gabarit": "curiosity_loop"
+      }
+    ]
+  }
+}

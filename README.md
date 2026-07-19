@@ -3,22 +3,24 @@
 Générateur de carrousels Instagram **1080 × 1350** pour **The Smile Space**,
 à partir d'un fichier JSON (`bibliotheque_carrousels.carrousels[]`).
 
-Chaque carrousel produit **7 slides PNG** + un fichier `legende.txt` prêt à coller.
+Le gabarit est **piloté par le rôle de chaque slide** — il s'adapte donc à un
+nombre de slides variable (**7 ou 8**) et à un grand nombre de `type` différents.
 
-## Aperçu des 7 types de slides
+## Rôles de slide
 
-| # | type                  | rendu |
-|---|-----------------------|-------|
-| 1 | `accroche`            | Couverture pleine couleur marque, gros titre + sous-titre, série en eyebrow |
-| 2 | `patient_voit`        | Badge **CE QUE TU VOIS**, fond clair, grande zone `PHOTO PATIENT` |
-| 3 | `ortho_voit`          | Badge **CE QUE JE VOIS** (accent), zone `IMAGE CLINIQUE / RADIO` |
-| 4 | `raisonnement`        | Slide texte épurée, filet **accent** |
-| 5 | `pourquoi_traitement` | Slide texte épurée, liseré **marque** (bascule « solution ») |
-| 6 | `resultat`            | Badge **LE RÉSULTAT**, deux cadres **AVANT / APRÈS** |
-| 7 | `lecon_cta`           | Clôture couleur marque, leçon + `Écris <MOT_CLE>` en évidence |
+| rôle | déclenché par | rendu |
+|------|---------------|-------|
+| **couverture** | `type: hook` (1ʳᵉ slide) | Fond anthracite, gros titre + sous-titre, `sujet` en eyebrow |
+| **contenu — texte** | tous les types « éditoriaux » | Kicker (libellé du type) + titre + texte, filet **or** (insight) ou **anthracite** (solution) |
+| **contenu — photo** | types listés dans `config.photoTypes` (déf. `identification`) | Badge + titre + texte + zone `PHOTO PATIENT` |
+| **clôture** | `type: cta` (dernière slide) | Fond anthracite, titre + `Écris <cta_conversion>` (mot-clé en or) + `cta_engagement` |
 
-Communs à toutes : numéro `n/7`, rangée de 7 points de progression, pied de page
-(logo ou « The Smile Space » + `@thesmilespace`), marges ~90 px.
+Les libellés de badge/kicker et la tonalité (or / anthracite) de chaque type sont
+définis dans `TYPE_META` (fichier `template.js`) ; un type inconnu reçoit
+automatiquement un libellé lisible et un filet or.
+
+Communs à toutes : numéro `n/N`, rangée de `N` points de progression, pied de page
+(logo + `@thesmilespace`), marges ~90 px.
 
 ## Installation
 
@@ -69,9 +71,18 @@ affiché en texte.
 
 ### Données
 
-Le script lit `carrousels.json` s'il existe, sinon
-`20 carrousels orthodontie The Smile Space v3 diagnostic.json`
-(liste modifiable dans `config.js` → `dataFiles`).
+Le script lit le premier fichier existant de `config.js` → `dataFiles` :
+`carrousels.json`, puis
+`bibliotheque_27_carrousels_TU_final_The_Smile_Space.json` (source actuelle, 27
+carrousels), puis l'ancien fichier 20 carrousels.
+
+Chaque carrousel utilise : `sujet`, `angle`, `gabarit`, `cta_conversion` (le
+mot-clé mis en avant sur la slide finale), `cta_engagement`, `legende`,
+`hashtags`, et `slides[]` (`n`, `type`, `titre`, `texte`).
+
+Pour réserver une zone photo sur d'autres types de slides, édite
+`config.js` → `photoTypes` (ex. `["identification","diagnostic"]`). Vide = tout
+en texte.
 
 ## Structure du projet
 

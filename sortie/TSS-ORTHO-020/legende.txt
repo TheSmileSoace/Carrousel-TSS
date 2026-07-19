@@ -1,5 +1,12 @@
-Le scanner 3D (CBCT) apporte une vue en volume utile dans certaines situations : dents incluses, mini-vis, expansion squelettique, racines ou limites osseuses. Il se prescrit quand il apporte une information réellement utile au diagnostic.
+Le scanner 3D, ou CBCT, apporte une visualisation volumique utile dans certaines situations : dents incluses, mini-vis, expansion squelettique, racines ou limites osseuses. Il doit toutefois être prescrit lorsqu'il apporte une information réellement utile au diagnostic.
 
-Écris SCANNER en commentaire pour connaître ses principales indications.
+Écris SCANNER en commentaire, je t'explique.
+
+Dis-moi ce que tu vois sur cette radio.
+
+— The Smile Space —
+Soignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55
+Mons : Rue des Archers 2A, 7000 Mons · 065 14 30 16
+Prendre RDV : thesmilespace.be/contact.php
 
 #CBCT #scanner3D #orthodontie #diagnostic #TheSmileSpace
