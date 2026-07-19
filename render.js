@@ -62,13 +62,21 @@ function loadFontsCss() {
   return "";
 }
 
-function loadLogoDataUri() {
-  const p = path.join(ROOT, cfg.logo);
+function loadLogoDataUri(rel) {
+  if (!rel) return null;
+  const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) return null;
   const ext = path.extname(p).slice(1).toLowerCase();
   const mime = ext === "svg" ? "image/svg+xml" : `image/${ext === "jpg" ? "jpeg" : ext}`;
   const b64 = fs.readFileSync(p).toString("base64");
   return `data:${mime};base64,${b64}`;
+}
+
+// Nom de dossier : reel s'il est présent, sinon id (charte v2.4)
+function folderName(carrousel) {
+  const reel = (carrousel.reel || "").trim();
+  const base = reel || carrousel.id;
+  return base.replace(/[^0-9A-Za-z._-]+/g, "_");
 }
 
 // --- Utilitaires -------------------------------------------------------------
@@ -92,7 +100,8 @@ function writeLegende(dir, carrousel) {
   }
 
   const fontsCss = loadFontsCss();
-  const logoDataUri = loadLogoDataUri();
+  const logoDataUri = loadLogoDataUri(cfg.logo);
+  const logoLightDataUri = loadLogoDataUri(cfg.logoLight);
 
   let carrousels = bib.carrousels || [];
   const filter = process.argv.slice(2);
@@ -129,7 +138,7 @@ function writeLegende(dir, carrousel) {
   let totalImages = 0;
 
   for (const carrousel of carrousels) {
-    const dir = path.join(outRoot, carrousel.id);
+    const dir = path.join(outRoot, folderName(carrousel));
     fs.mkdirSync(dir, { recursive: true });
 
     const slides = (carrousel.slides || []).slice().sort((a, b) => (a.n || 0) - (b.n || 0));
@@ -145,6 +154,7 @@ function writeLegende(dir, carrousel) {
         cfg,
         fontsCss,
         logoDataUri,
+        logoLightDataUri,
       });
 
       await page.setContent(html, { waitUntil: "load" });
@@ -157,7 +167,9 @@ function writeLegende(dir, carrousel) {
     }
 
     writeLegende(dir, carrousel);
-    console.log(`✅ ${carrousel.id.padEnd(16)} → ${slides.length} slides + legende.txt`);
+    const fn = folderName(carrousel);
+    const tag = fn === carrousel.id ? carrousel.id : `${carrousel.id} → ${fn}`;
+    console.log(`✅ ${tag.padEnd(28)} ${slides.length} slides + legende.txt`);
   }
 
   await browser.close();

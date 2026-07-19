@@ -98,9 +98,11 @@ function dots(activeIndex, total) {
   return out + "</div>";
 }
 
-function footer({ n, total, index, cfg, logoDataUri, onBrand }) {
-  const brandMark = logoDataUri
-    ? `<span class="logo-chip"><img class="logo" src="${logoDataUri}" alt="${esc(cfg.brandName)}"/></span>`
+function footer({ n, total, index, cfg, logoDataUri, logoLightDataUri, onBrand }) {
+  // Charte : version claire sur fond sombre, version foncée sur fond clair.
+  const src = onBrand ? logoLightDataUri || logoDataUri : logoDataUri;
+  const brandMark = src
+    ? `<img class="logo" src="${src}" alt="${esc(cfg.brandName)}"/>`
     : `<span class="brandtext">${esc(cfg.brandName)}</span>`;
   return `
     <footer class="foot ${onBrand ? "on-brand" : ""}">
@@ -198,7 +200,7 @@ function bodyFor({ slide, carrousel, cfg }) {
     </div>`;
 }
 
-function slideHTML({ slide, carrousel, index, total, cfg, fontsCss, logoDataUri }) {
+function slideHTML({ slide, carrousel, index, total, cfg, fontsCss, logoDataUri, logoLightDataUri }) {
   const { largeur, hauteur } = cfg.format;
   const c = cfg.colors;
   const onBrand = DARK_TYPES.has(slide.type);
@@ -312,13 +314,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   padding-top:30px;margin-top:20px;border-top:1px solid rgba(26,26,26,.12);
 }
 .foot.on-brand{border-top-color:rgba(255,255,255,.18);}
-.foot-left{display:flex;align-items:center;gap:18px;}
-.logo-chip{
-  display:inline-flex;align-items:center;background:#fff;
-  padding:9px 16px;border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-.foot.on-brand .logo-chip{box-shadow:0 4px 16px rgba(0,0,0,.28);}
-.logo{height:40px;width:auto;object-fit:contain;display:block;}
+.foot-left{display:flex;align-items:center;gap:20px;}
+.logo{height:52px;width:auto;object-fit:contain;display:block;}
 .brandtext{font-family:var(--f-title);font-weight:700;font-size:28px;color:var(--brand);}
 .slide.type-hook .brandtext,.slide.type-cta .brandtext,.slide.type-renversement .brandtext{color:#fff;}
 .handle{font-size:24px;color:var(--muted);}
@@ -336,7 +333,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 <body>
   <div class="slide type-${esc(slide.type || "content")}">
     ${bodyFor({ slide, carrousel, cfg })}
-    ${footer({ n: slide.n || index + 1, total, index, cfg, logoDataUri, onBrand })}
+    ${footer({ n: slide.n || index + 1, total, index, cfg, logoDataUri, logoLightDataUri, onBrand })}
   </div>
 </body>
 </html>`;

@@ -22,7 +22,8 @@ module.exports = {
   // Compte / signature
   handle: "@thesmilespace",
   brandName: "The Smile Space",
-  logo: "assets/logo.png", // si absent → on affiche brandName en pied
+  logo: "assets/logo.png", // version foncée (fonds clairs) — sinon brandName
+  logoLight: "assets/logo-light.png", // version claire (fonds sombres : hook/renversement/cta)
 
   // Palette — dérivée du logo « Le Cabinet Orthodontie »
   // (anthracite chaud + or champagne, sur crème/ivoire)
