@@ -233,8 +233,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 }
 .photozone.clinique{background:#E9EFEF;border-color:#BFD3D3;}
 
-/* Avant / Après */
-.beforeafter{flex:1;min-height:0;display:flex;gap:26px;}
+/* Avant / Après (cadres horizontaux empilés) */
+.beforeafter{flex:1;min-height:0;display:flex;flex-direction:column;gap:26px;}
 .ba-frame{
   flex:1;border-radius:24px;background:var(--ph);border:3px dashed #C6D2D2;
   display:flex;align-items:flex-end;justify-content:flex-start;padding:24px;
