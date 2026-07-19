@@ -322,7 +322,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 }
 .foot.on-brand{border-top-color:rgba(255,255,255,.18);}
 .foot-left{display:flex;align-items:center;gap:22px;}
-.logo{height:78px;width:auto;object-fit:contain;display:block;}
+.logo{height:96px;width:auto;object-fit:contain;display:block;}
 .foot-id{display:flex;flex-direction:column;line-height:1.2;}
 .pract{font-family:var(--f-title);font-weight:700;font-size:27px;color:var(--brand);letter-spacing:-.01em;}
 .foot.on-brand .pract{color:#fff;}
