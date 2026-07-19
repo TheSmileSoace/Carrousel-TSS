@@ -32,7 +32,7 @@ function dots(activeIndex, total = 7) {
 // Pied de page commun (logo/marque + handle) + n/7 + dots
 function footer({ n, total, index, cfg, logoDataUri, onBrand }) {
   const brandMark = logoDataUri
-    ? `<img class="logo" src="${logoDataUri}" alt="${esc(cfg.brandName)}"/>`
+    ? `<span class="logo-chip"><img class="logo" src="${logoDataUri}" alt="${esc(cfg.brandName)}"/></span>`
     : `<span class="brandtext">${esc(cfg.brandName)}</span>`;
   return `
     <footer class="foot ${onBrand ? "on-brand" : ""}">
@@ -159,6 +159,7 @@ ${fontsCss}
   --brand:${c.brand}; --accent:${c.accent}; --light:${c.light};
   --dark:${c.dark}; --onbrand:${c.onBrand}; --muted:${c.muted};
   --ph:${c.placeholder}; --pht:${c.placeholderText};
+  --brand-deep:${c.brandDeep || c.brand};
   --f-title:${cfg.fonts.title}; --f-body:${cfg.fonts.body};
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -172,7 +173,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 }
 /* Couvertures pleine couleur marque */
 .slide.type-accroche,.slide.type-lecon_cta{
-  background:linear-gradient(160deg, var(--brand) 0%, #16293f 100%);
+  background:linear-gradient(160deg, var(--brand) 0%, var(--brand-deep) 100%);
   color:var(--onbrand);
 }
 
@@ -189,8 +190,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   letter-spacing:.1em;text-transform:uppercase;font-size:24px;
   padding:16px 28px;border-radius:999px;
 }
-.badge-neutral{background:#EAF0F0;color:var(--brand);border:2px solid rgba(31,58,95,.15);}
-.badge-accent{background:var(--accent);color:#fff;}
+.badge-neutral{background:#F0EBE1;color:var(--brand);border:2px solid rgba(58,55,51,.16);}
+.badge-accent{background:var(--accent);color:var(--dark);}
 
 /* ---------- CORPS ---------- */
 .body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0;}
@@ -215,8 +216,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .cta-verb{font-family:var(--f-title);font-weight:600;color:rgba(255,255,255,.85);}
 .cta-key{
   font-family:var(--f-title);font-weight:700;letter-spacing:.06em;font-size:36px;
-  background:var(--accent);color:#fff;padding:12px 26px;border-radius:14px;
-  box-shadow:0 10px 30px rgba(44,122,123,.45);
+  background:var(--accent);color:var(--dark);padding:12px 26px;border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
 }
 .cta-tail{color:rgba(255,255,255,.7);font-size:30px;}
 
@@ -225,18 +226,18 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .statement{font-size:42px;line-height:1.32;font-weight:500;max-width:880px;color:var(--dark);}
 .photozone{
   flex:1;min-height:0;border-radius:24px;background:var(--ph);
-  border:3px dashed #C6D2D2;display:flex;align-items:center;justify-content:center;
+  border:3px dashed #D8CFC0;display:flex;align-items:center;justify-content:center;
 }
 .photozone span{
   font-family:var(--f-title);font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;font-size:26px;color:var(--pht);
 }
-.photozone.clinique{background:#E9EFEF;border-color:#BFD3D3;}
+.photozone.clinique{background:#EFE9DE;border-color:#D8CFC0;}
 
 /* Avant / Après (cadres horizontaux empilés) */
 .beforeafter{flex:1;min-height:0;display:flex;flex-direction:column;gap:26px;}
 .ba-frame{
-  flex:1;border-radius:24px;background:var(--ph);border:3px dashed #C6D2D2;
+  flex:1;border-radius:24px;background:var(--ph);border:3px dashed #D8CFC0;
   display:flex;align-items:flex-end;justify-content:flex-start;padding:24px;
 }
 .ba-frame span{
@@ -262,8 +263,13 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   padding-top:30px;margin-top:20px;border-top:1px solid rgba(26,26,26,.12);
 }
 .foot.on-brand{border-top-color:rgba(255,255,255,.18);}
-.foot-left{display:flex;align-items:center;gap:16px;}
-.logo{height:46px;width:auto;object-fit:contain;}
+.foot-left{display:flex;align-items:center;gap:18px;}
+.logo-chip{
+  display:inline-flex;align-items:center;background:#fff;
+  padding:9px 16px;border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+.foot.on-brand .logo-chip{box-shadow:0 4px 16px rgba(0,0,0,.28);}
+.logo{height:40px;width:auto;object-fit:contain;display:block;}
 .brandtext{font-family:var(--f-title);font-weight:700;font-size:28px;color:var(--brand);}
 .slide.type-accroche .brandtext,.slide.type-lecon_cta .brandtext{color:#fff;}
 .handle{font-size:24px;color:var(--muted);}

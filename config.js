@@ -18,17 +18,20 @@ module.exports = {
   brandName: "The Smile Space",
   logo: "assets/logo.png", // si absent → on affiche brandName en pied
 
-  // Palette
+  // Palette — dérivée du logo « Le Cabinet Orthodontie »
+  // (anthracite chaud + or champagne, sur crème/ivoire)
   colors: {
-    brand: "#1F3A5F", // couleur principale (marque)
-    accent: "#2C7A7B", // couleur accent (clinique)
-    light: "#F7FAFA", // fond clair
-    dark: "#1A1A1A", // texte foncé
+    brand: "#3A3733", // couleur principale (anthracite chaud du tracé)
+    accent: "#C3A46E", // couleur accent (or champagne des lettres)
+    light: "#FAF7F1", // fond clair (ivoire/crème)
+    dark: "#2B2926", // texte foncé (presque-noir chaud)
     // dérivés utilitaires
     onBrand: "#FFFFFF",
-    muted: "rgba(26,26,26,0.55)",
-    placeholder: "#E2E8E9",
-    placeholderText: "#9AA6A6",
+    muted: "rgba(43,41,38,0.55)",
+    placeholder: "#ECE6DC", // gris chaud pour zones image
+    placeholderText: "#B0A794",
+    // teinte de fond du dégradé de couverture (variante plus sombre de brand)
+    brandDeep: "#2A2723",
   },
 
   // Polices (embarquées en base64 dans assets/fonts/fonts.css)

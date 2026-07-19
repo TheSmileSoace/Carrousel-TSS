@@ -54,15 +54,18 @@ sortie/
 
 Toute l'identité de marque est dans **`config.js`** :
 
-- couleurs (marque `#1F3A5F`, accent `#2C7A7B`, fond clair, texte foncé) ;
+- couleurs dérivées du logo « Le Cabinet Orthodontie » — anthracite chaud
+  `#3A3733`, or champagne `#C3A46E`, ivoire `#FAF7F1`, texte `#2B2926` ;
 - polices (Poppins pour les titres, Inter pour les textes — embarquées en
   base64 dans `assets/fonts/fonts.css`, aucun accès réseau nécessaire au rendu) ;
 - handle, nom de marque, chemin du logo.
 
 ### Logo
 
-Dépose ton logo dans **`assets/logo.png`** (ou `.svg` / `.jpg`, ajuste `config.js`).
-En son absence, « The Smile Space » est affiché en pied de page.
+Le logo du cabinet est déjà en place dans **`assets/logo.png`** (affiché dans une
+pastille blanche en pied de page, lisible sur fond clair comme sur fond anthracite).
+Pour le remplacer, écrase ce fichier. En son absence, « The Smile Space » est
+affiché en texte.
 
 ### Données
 
