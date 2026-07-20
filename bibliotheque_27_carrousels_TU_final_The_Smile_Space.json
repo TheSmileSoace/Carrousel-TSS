@@ -1455,60 +1455,60 @@
             "n": 1,
             "type": "hook",
             "titre": "Elle a payé 4 000 € pour ce sourire.",
-            "texte": "Le problème n'est pas le prix.",
+            "texte": "Le vrai coût ne se lit pas sur la facture.",
             "image": null
           },
           {
             "n": 2,
             "type": "promesse",
-            "titre": "Ce que tu vois n'est pas ce que tu crois.",
-            "texte": "Regarde bien : il manque une information.",
+            "titre": "Le Reel t'a montré l'histoire.",
+            "texte": "Le carrousel te montre ce qu'il y a sous la couronne.",
             "image": null
           },
           {
             "n": 3,
             "type": "indice",
-            "titre": "Ce ne sont pas des facettes.",
-            "texte": "Ce sont des couronnes. Et la nuance change tout.",
-            "image": "photo_patient"
+            "titre": "Ce ne sont pas des facettes",
+            "texte": "Ce sont des couronnes : bien plus invasif qu'une facette.",
+            "image": "image_clinique_radio"
           },
           {
             "n": 4,
             "type": "renversement",
-            "titre": "Chaque dent a été limée jusqu'au moignon.",
-            "texte": "Des dents parfaitement saines, réduites définitivement.",
+            "titre": "On taille la dent jusqu'à 60–70 %.",
+            "texte": "1 à 2 mm sur tout le pourtour, jusqu'au moignon. L'émail ne repousse jamais.",
             "image": null
           },
           {
             "n": 5,
             "type": "revelation",
-            "titre": "Elles n'étaient pas malades. Juste mal alignées.",
-            "texte": "Un problème que l'orthodontie corrige sans rien détruire.",
+            "titre": "Sous la couronne, la dent est toujours vivante",
+            "texte": "Et fragilisée : près d'une dent couronnée sur dix doit être dévitalisée en 10 ans — d'autant plus qu'on est jeune.",
             "image": null
           },
           {
             "n": 6,
             "type": "consequence",
-            "titre": "Une couronne se remplace tous les 10 à 15 ans.",
-            "texte": "Une dent limée, elle, ne revient jamais.",
-            "image": "avant_apres"
+            "titre": "Une couronne dure 10 à 15 ans",
+            "texte": "Posée à 25 ans, elle sera refaite plusieurs fois. Et chaque réfection retire encore un peu de dent.",
+            "image": null
           },
           {
             "n": 7,
             "type": "lecon",
-            "titre": "Aligner n'est pas remplacer.",
-            "texte": "Le vrai luxe, c'est de garder tes dents à toi.",
+            "titre": "Aligner, ce n'est pas remplacer",
+            "texte": "L'orthodontie déplace la dent sans en sacrifier un gramme. La couronne, elle, a du sens sur une dent déjà très abîmée — pas sur une dent saine mal placée.",
             "image": null
           },
           {
             "n": 8,
             "type": "cta",
-            "titre": "Tu hésites entre les deux ?",
-            "texte": "Écris COURONNES en commentaire, je t'explique la différence.",
+            "titre": "Tes dents sont saines mais mal placées ?",
+            "texte": "Écris COURONNES en commentaire, je t'explique l'alternative qui les préserve.",
             "image": null
           }
         ],
-        "legende": "Des dents mal alignées ne sont pas des dents malades. Les limer pour poser des couronnes est un geste définitif, alors que l'orthodontie déplace les mêmes dents en préservant ton capital dentaire. Plus long, mais tu gardes tes dents.\n\nÉcris COURONNES en commentaire, je t'explique.\n\nQuel détail t'a surpris ?\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "legende": "Les « Turkey teeth » consistent à limer des dents saines pour poser des couronnes. Ce que la vidéo ne montre pas : préparer une couronne retire souvent 60 à 70 % de la dent (1 à 2 mm sur tout le pourtour), et l'émail ne se régénère pas. La dent reste vivante dessous, mais fragilisée : selon les études, 8 à 15 % des dents couronnées doivent être dévitalisées dans les dix ans, un risque plus élevé chez les patients jeunes dont la pulpe est plus volumineuse. Une couronne dure en moyenne 10 à 15 ans : posée jeune, elle impose des réfections successives, chacune retirant encore de la structure. L'orthodontie, elle, déplace la dent sans toucher à l'émail. La couronne garde toute sa valeur sur une dent déjà très délabrée — mais pas sur une dent saine simplement mal alignée.\n\nÉcris COURONNES en commentaire si tu veux comprendre l'alternative adaptée à ton cas.",
         "hashtags": [
           "#orthodontie",
           "#turkeyteeth",
