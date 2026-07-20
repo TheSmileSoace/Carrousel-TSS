@@ -13,59 +13,73 @@
         "id": "TSS-ORTHO-001",
         "reel": null,
         "sujet": "Manque de place pour les dents",
-        "angle": "Le problème peut venir de l'arcade et pas seulement des dents",
+        "angle": "L'encombrement est une dysharmonie dento-maxillaire : espace disponible vs espace requis",
         "slides": [
           {
             "n": 1,
             "type": "hook",
-            "titre": "Tes dents manquent-elles vraiment de place ?",
-            "texte": "Ou est-ce ta mâchoire qui n'en offre pas assez ?",
+            "titre": "Dents qui se chevauchent : trop grandes, ou pas assez de place ?",
+            "texte": "En orthodontie, on appelle ça une dysharmonie dento-maxillaire.",
             "image": null
           },
           {
             "n": 2,
             "type": "identification",
-            "titre": "Le signe le plus visible",
-            "texte": "Des dents qui se chevauchent, tournent ou sortent en dehors de l'arcade.",
+            "titre": "Ce que l'on observe",
+            "texte": "Chevauchements, rotations, une canine hors de l'arcade : c'est l'encombrement.",
             "image": "photo_patient"
           },
           {
             "n": 3,
             "type": "revelation",
-            "titre": "Le problème n'est pas toujours la taille des dents.",
-            "texte": "Parfois, c'est surtout l'arcade qui est trop étroite pour les accueillir correctement.",
+            "titre": "Pas qu'une question de taille",
+            "texte": "L'encombrement, c'est l'écart entre la place disponible sur l'arcade et la place requise par tes dents.",
             "image": "image_clinique_radio"
           },
           {
             "n": 4,
-            "type": "explication",
-            "titre": "Pourquoi cela arrive ?",
-            "texte": "La croissance, la respiration, les habitudes orales et la forme des mâchoires influencent l'espace disponible.",
-            "image": null
+            "type": "diagnostic",
+            "titre": "Comment on le mesure",
+            "texte": "Espace disponible − espace requis = le déficit, en millimètres. L'indice de Little chiffre l'irrégularité.",
+            "image": "schema:espace disponible − espace requis = déficit (mm)"
           },
           {
             "n": 5,
-            "type": "solution",
-            "titre": "Plusieurs solutions existent.",
-            "texte": "Expansion, alignement, gestion de l'espace ou parfois extractions : le choix dépend du diagnostic.",
+            "type": "causes",
+            "titre": "D'où vient le manque de place",
+            "texte": "La taille des dents et des mâchoires est héréditaire ; respiration buccale et langue basse freinent l'élargissement du maxillaire.",
             "image": null
           },
           {
             "n": 6,
-            "type": "nuance",
-            "titre": "Aligner n'est pas simplement pousser les dents.",
-            "texte": "Il faut préserver les gencives, l'os et la stabilité du résultat.",
-            "image": "avant_apres"
+            "type": "explication",
+            "titre": "Pourquoi c'est si fréquent",
+            "texte": "Nos mâchoires ont rétréci plus vite que nos dents : alimentation molle et mastication réduite limitent le développement des arcades.",
+            "image": null
           },
           {
             "n": 7,
+            "type": "solution",
+            "titre": "Comment on récupère de la place",
+            "texte": "Réduire le volume dentaire (stripping, parfois extractions) ou agrandir l'arcade (expansion, distalisation, proclinaison contrôlée).",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "nuance",
+            "titre": "La limite est biologique",
+            "texte": "Chaque dent doit rester dans son os alvéolaire. Trop élargir ou avancer les incisives expose à récession gingivale et récidive.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 9,
             "type": "cta",
-            "titre": "Tes dents se chevauchent ?",
-            "texte": "Écris ESPACE en commentaire, je t'explique ce qu'il faut vérifier.",
+            "titre": "Tu veux comprendre ton manque de place ?",
+            "texte": "Écris ESPACE en commentaire : je t'explique le bilan, étape par étape.",
             "image": null
           }
         ],
-        "legende": "Des dents serrées ne signifient pas toujours que les dents sont trop grandes. Le manque de place peut aussi être lié à la forme ou à la largeur des arcades. Un bilan orthodontique permet de comprendre l'origine du problème avant de choisir la solution la plus adaptée.\n\nÉcris ESPACE en commentaire, je t'explique.\n\nEnregistre-le pour ton prochain rendez-vous.\n\n— The Smile Space —\nSoignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55\nMons : Rue des Archers 2A, 7000 Mons · 065 14 30 16\nPrendre RDV : thesmilespace.be/contact.php",
+        "legende": "Des dents qui se chevauchent ne sont pas forcément « trop grandes ». L'encombrement traduit une dysharmonie dento-maxillaire : un écart entre la place disponible sur l'arcade et la place requise par les dents. Cet écart dépend de l'hérédité (taille des dents et des mâchoires) mais aussi de facteurs fonctionnels — respiration buccale, posture linguale — qui influencent le développement transversal du maxillaire. Le traitement rétablit cet équilibre en respectant l'os alvéolaire et la stabilité à long terme.\n\nÉcris ESPACE en commentaire si tu veux comprendre les étapes du bilan.",
         "hashtags": [
           "#orthodontie",
           "#dentsserrees",
