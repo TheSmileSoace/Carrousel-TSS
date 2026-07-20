@@ -18,68 +18,68 @@
           {
             "n": 1,
             "type": "hook",
-            "titre": "Dents qui se chevauchent : trop grandes, ou pas assez de place ?",
-            "texte": "En orthodontie, on appelle ça une dysharmonie dento-maxillaire.",
+            "titre": "Tes dents se chevauchent ? Ce n'est pas parce qu'elles sont trop grandes.",
+            "texte": "Le vrai sujet, c'est la place que ta mâchoire peut leur offrir.",
             "image": null
           },
           {
             "n": 2,
             "type": "identification",
-            "titre": "Ce que l'on observe",
-            "texte": "Chevauchements, rotations, une canine hors de l'arcade : c'est l'encombrement.",
+            "titre": "Ce que tu vois",
+            "texte": "Des dents qui se chevauchent, tournent, ou une canine qui sort du rang.",
             "image": "photo_patient"
           },
           {
             "n": 3,
             "type": "revelation",
-            "titre": "Pas qu'une question de taille",
-            "texte": "L'encombrement, c'est l'écart entre la place disponible sur l'arcade et la place requise par tes dents.",
+            "titre": "Une place, pas une taille",
+            "texte": "Le plus souvent, la mâchoire est un peu trop étroite : les dents n'ont pas la place de s'aligner.",
             "image": "image_clinique_radio"
           },
           {
             "n": 4,
             "type": "diagnostic",
-            "titre": "Comment on le mesure",
-            "texte": "Espace disponible − espace requis = le déficit, en millimètres. L'indice de Little chiffre l'irrégularité.",
-            "image": "schema:espace disponible − espace requis = déficit (mm)"
+            "titre": "On le mesure, on ne le devine pas",
+            "texte": "On compare la place qu'offre ta mâchoire à celle qu'il faudrait pour aligner tes dents. L'écart se compte en millimètres.",
+            "image": "schema:comme 10 livres sur une étagère prévue pour 8"
           },
           {
             "n": 5,
             "type": "causes",
-            "titre": "D'où vient le manque de place",
-            "texte": "La taille des dents et des mâchoires est héréditaire ; respiration buccale et langue basse freinent l'élargissement du maxillaire.",
+            "titre": "D'où vient ce manque de place",
+            "texte": "Tu hérites de la taille de tes dents et de tes mâchoires. Et respirer par la bouche, enfant, élargit moins le palais.",
             "image": null
           },
           {
             "n": 6,
             "type": "explication",
-            "titre": "Pourquoi c'est si fréquent",
-            "texte": "Nos mâchoires ont rétréci plus vite que nos dents : alimentation molle et mastication réduite limitent le développement des arcades.",
+            "titre": "Pourquoi c'est si courant aujourd'hui",
+            "texte": "Nos ancêtres mâchaient dur, leurs mâchoires étaient larges. On mange plus mou : les mâchoires ont rétréci, pas les dents.",
             "image": null
           },
           {
             "n": 7,
             "type": "solution",
-            "titre": "Comment on récupère de la place",
-            "texte": "Réduire le volume dentaire (stripping, parfois extractions) ou agrandir l'arcade (expansion, distalisation, proclinaison contrôlée).",
+            "titre": "Comment on fait de la place",
+            "texte": "Trois options : limer très finement entre les dents, élargir doucement la mâchoire, ou parfois retirer une dent.",
             "image": null
           },
           {
             "n": 8,
             "type": "nuance",
-            "titre": "La limite est biologique",
-            "texte": "Chaque dent doit rester dans son os alvéolaire. Trop élargir ou avancer les incisives expose à récession gingivale et récidive.",
+            "titre": "On ne force pas les dents",
+            "texte": "Elles doivent rester dans l'os qui les tient. Trop les écarter, et la gencive recule et tout risque de rebouger.",
             "image": "avant_apres"
           },
           {
             "n": 9,
             "type": "cta",
-            "titre": "Tu veux comprendre ton manque de place ?",
-            "texte": "Écris ESPACE en commentaire : je t'explique le bilan, étape par étape.",
+            "titre": "Tu veux savoir d'où vient TON manque de place ?",
+            "texte": "Écris ESPACE en commentaire, je t'explique ce qu'on regarde.",
             "image": null
           }
         ],
-        "legende": "Des dents qui se chevauchent ne sont pas forcément « trop grandes ». L'encombrement traduit une dysharmonie dento-maxillaire : un écart entre la place disponible sur l'arcade et la place requise par les dents. Cet écart dépend de l'hérédité (taille des dents et des mâchoires) mais aussi de facteurs fonctionnels — respiration buccale, posture linguale — qui influencent le développement transversal du maxillaire. Le traitement rétablit cet équilibre en respectant l'os alvéolaire et la stabilité à long terme.\n\nÉcris ESPACE en commentaire si tu veux comprendre les étapes du bilan.",
+        "legende": "Des dents qui se chevauchent ne sont pas forcément « trop grandes ». En orthodontie, on parle de dysharmonie dento-maxillaire : un décalage entre la place disponible sur l'arcade et la place nécessaire aux dents. Ce décalage dépend de l'hérédité (taille des dents et des mâchoires) mais aussi de la fonction — la respiration buccale et une langue qui ne se pose pas au palais réduisent le développement en largeur du maxillaire. Sur le long terme, nos mâchoires se sont aussi réduites avec une alimentation plus molle. Le traitement rétablit l'équilibre — en limant légèrement, en élargissant l'arcade ou en retirant une dent — tout en gardant les racines dans l'os, gage de stabilité.\n\nÉcris ESPACE en commentaire si tu veux comprendre les étapes du bilan.",
         "hashtags": [
           "#orthodontie",
           "#dentsserrees",
