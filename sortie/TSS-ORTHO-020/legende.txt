@@ -1,12 +1,5 @@
-Le scanner 3D, ou CBCT, apporte une visualisation volumique utile dans certaines situations : dents incluses, mini-vis, expansion squelettique, racines ou limites osseuses. Il doit toutefois être prescrit lorsqu'il apporte une information réellement utile au diagnostic.
+Le scanner 3D en orthodontie est un CBCT (cone beam). Contrairement à la radio panoramique (une vue d'ensemble) ou à la téléradiographie de profil (des mesures de croissance), il reconstruit les structures en volume. Il est surtout utile pour localiser une dent incluse, évaluer les racines, l'os disponible, les sites de mini-vis, une expansion squelettique ou le passage de l'air. Il délivre toutefois une dose de rayons plus élevée : son usage suit le principe de justification (ALARA), c'est-à-dire qu'on ne le prescrit que lorsqu'il change réellement le diagnostic ou le traitement. Multiplier les examens n'améliore pas le diagnostic : c'est l'examen adapté à la question clinique qui compte.
 
 Écris SCANNER en commentaire, je t'explique.
-
-Dis-moi ce que tu vois sur cette radio.
-
-— The Smile Space —
-Soignies : Boulevard Roosevelt 23, 7060 Soignies · 067 38 01 55
-Mons : Rue des Archers 2A, 7000 Mons · 065 14 30 16
-Prendre RDV : thesmilespace.be/contact.php
 
 #CBCT #scanner3D #orthodontie #diagnostic #TheSmileSpace
