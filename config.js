@@ -23,6 +23,13 @@ module.exports = {
   handle: "@thesmilespace",
   practitioner: "Dr. Linos Tsague", // nom affiché au pied de page, à côté du logo
   locations: ["Mons", "Soignies"], // villes des cabinets (pied de page, à droite) — [] pour masquer
+
+  // Bloc de contact ajouté au bas de chaque legende.txt (caption Instagram, pas sur l'image).
+  contact: [
+    "📍 The Smile Space — Orthodontie · Dr. Linos Tsague",
+    "Soignies : 23 boulevard Roosevelt, 7060 Soignies · 065 38 01 55 · contact@thesmilespace.be",
+    "Mons : 2A rue des Archers, 7000 Mons · 065 14 30 16 · mons@thesmilespace.be",
+  ],
   brandName: "The Smile Space",
   logo: "assets/logo.png", // version foncée (fonds clairs) — sinon brandName
   logoLight: "assets/logo-light.png", // version claire (fonds sombres : hook/renversement/cta)

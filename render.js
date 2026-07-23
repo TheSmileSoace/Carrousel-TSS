@@ -85,8 +85,11 @@ const pad2 = (n) => String(n).padStart(2, "0");
 function writeLegende(dir, carrousel) {
   const legende = (carrousel.legende || "").trim();
   const tags = (carrousel.hashtags || []).join(" ");
-  const content = `${legende}\n\n${tags}\n`;
-  fs.writeFileSync(path.join(dir, "legende.txt"), content, "utf8");
+  const contact = (cfg.contact || []).join("\n").trim();
+  const parts = [legende];
+  if (contact) parts.push(contact);
+  if (tags) parts.push(tags);
+  fs.writeFileSync(path.join(dir, "legende.txt"), parts.join("\n\n") + "\n", "utf8");
 }
 
 // --- Programme principal -----------------------------------------------------
