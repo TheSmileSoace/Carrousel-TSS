@@ -123,6 +123,7 @@ function build(){
   els.tooth=el('g',{},cam);
   els.root=el('path',{fill:C.dentin,stroke:C.cementum,'stroke-width':6},els.tooth);
   els.crown=el('path',{fill:C.tooth,stroke:'rgba(0,0,0,.06)','stroke-width':2},els.tooth);
+  els.groove=el('path',{fill:'none',stroke:'rgba(90,74,52,.16)','stroke-width':4,'stroke-linecap':'round'},els.tooth);
   // axe de référence (position initiale)
   els.refAxis=el('line',{stroke:'rgba(255,255,255,.32)','stroke-width':3,'stroke-dasharray':'4 12',opacity:0},cam);
   // cellules
@@ -163,7 +164,7 @@ function build(){
 function geom(){
   const d=els.diagram;
   const cx=d.x+d.w/2;
-  const crownTop=d.y+d.h*0.11;
+  const crownTop=d.y+d.h*0.14;
   const neck=d.y+d.h*0.32;          // collet schématique
   const apex=d.y+d.h*0.92;
   return {cx,crownTop,neck,apex};
@@ -281,15 +282,31 @@ function render(tSec){
   for(let i=ys.length-1;i>=0;i--){const y=ys[i]; rd+=' L '+rootR(y)+' '+y;}
   rd+=' Z';
   els.root.setAttribute('d',rd);
-  // couronne
-  const cxN=centerX(g.neck-1), cxT=centerX(g.crownTop);
+  // couronne — prémolaire (deux cuspides arrondies, contour affiné, constriction cervicale)
   const ch=CONFIG.crownHalf;
-  let cr='M '+(cxN-CONFIG.rootNeckHalf)+' '+g.neck;
-  cr+=' L '+(cxN-ch)+' '+(g.neck-(g.neck-g.crownTop)*0.55);
-  cr+=' Q '+(cxT-ch)+' '+g.crownTop+' '+cxT+' '+g.crownTop;
-  cr+=' Q '+(cxT+ch)+' '+g.crownTop+' '+(cxN+ch)+' '+(g.neck-(g.neck-g.crownTop)*0.55);
-  cr+=' L '+(cxN+CONFIG.rootNeckHalf)+' '+g.neck+' Z';
+  const H0=g.neck-g.crownTop;
+  const convY=g.neck-H0*0.40;        // hauteur de contour (max convexité)
+  const cuspY=g.crownTop+H0*0.12;    // sommet des cuspides (arrondies, peu saillantes)
+  const fisY=g.crownTop+H0*0.34;     // sillon central (vallée douce)
+  const nH=CONFIG.rootNeckHalf*0.98; // collet aligné sur la racine
+  const cxN=centerX(g.neck), cxC=centerX(convY), cxT=centerX(cuspY);
+  const cX=ch*0.5;                   // écart des cuspides
+  let cr='M '+(cxN-nH)+' '+g.neck;
+  cr+=' Q '+(cxC-ch)+' '+(convY+H0*0.10)+' '+(cxC-ch)+' '+convY;                 // épaule vestibulaire arrondie
+  cr+=' Q '+(cxC-ch)+' '+(convY-H0*0.14)+' '+(cxT-cX-14)+' '+(cuspY+H0*0.18);    // remontée douce
+  cr+=' Q '+(cxT-cX)+' '+cuspY+' '+(cxT-cX+14)+' '+(cuspY+H0*0.16);              // dôme cuspide vestibulaire
+  cr+=' Q '+(cxT-cX*0.34)+' '+fisY+' '+cxT+' '+fisY;                            // vallée du sillon
+  cr+=' Q '+(cxT+cX*0.34)+' '+fisY+' '+(cxT+cX-14)+' '+(cuspY+H0*0.16);          // dôme cuspide linguale
+  cr+=' Q '+(cxT+cX)+' '+cuspY+' '+(cxT+cX+14)+' '+(cuspY+H0*0.18);
+  cr+=' Q '+(cxC+ch)+' '+(convY-H0*0.14)+' '+(cxC+ch)+' '+convY;
+  cr+=' Q '+(cxC+ch)+' '+(convY+H0*0.10)+' '+(cxN+nH)+' '+g.neck;
+  cr+=' Z';
   els.crown.setAttribute('d',cr);
+  // sillon central + amorces de versants
+  let gv='M '+cxT+' '+(fisY+2)+' L '+cxT+' '+(fisY+H0*0.30);
+  gv+=' M '+(cxT-cX*0.5)+' '+(cuspY+H0*0.14)+' L '+(cxT-cX*0.5)+' '+(cuspY+H0*0.04);
+  gv+=' M '+(cxT+cX*0.5)+' '+(cuspY+H0*0.14)+' L '+(cxT+cX*0.5)+' '+(cuspY+H0*0.04);
+  els.groove.setAttribute('d',gv);
 
   // --- axe de référence (position initiale de la dent) ---
   const refShow=smooth(key([[0,0],[6,0],[7,1],[13.2,1],[13.8,0],[14,0]],t));
