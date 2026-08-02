@@ -67,6 +67,9 @@ const metaFor = (t) => TYPE_META[t] || { label: prettyLabel(t), tone: "accent" }
 function parseImage(image) {
   if (!image) return null;
   const v = String(image).trim();
+  // vraie image intégrée (résolue depuis "file:…" par render.js -> data URI)
+  if (v.startsWith("data:") || v.startsWith("http"))
+    return { variant: "photo", src: v };
   if (v === "photo_patient")
     return { variant: "single", labels: ["PHOTO PATIENT"] };
   if (v === "image_clinique_radio")
@@ -131,6 +134,10 @@ function footer({ n, total, index, cfg, logoDataUri, logoLightDataUri, onBrand }
 
 // Rangée de cadres image placeholder (selon parseImage)
 function frames(img) {
+  // vraie image intégrée
+  if (img.variant === "photo" && img.src) {
+    return `<div class="frames n1"><div class="frame frame-photo"><img class="frame-img" src="${img.src}" alt=""/></div></div>`;
+  }
   const cells = img.labels
     .map((l, i) => {
       const cap =
@@ -305,6 +312,9 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   font-family:var(--f-body);font-weight:400;font-size:24px;line-height:1.3;
   color:var(--pht);max-width:82%;text-align:center;letter-spacing:0;text-transform:none;
 }
+/* cadre contenant une vraie image */
+.frame-photo{padding:0;border:none;overflow:hidden;background:var(--ph);}
+.frame-img{width:100%;height:100%;object-fit:cover;display:block;}
 
 /* Slide à badge pastille */
 .body-badge{justify-content:center;gap:26px;padding-top:20px;}

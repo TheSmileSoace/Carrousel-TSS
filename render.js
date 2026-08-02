@@ -148,7 +148,20 @@ function writeLegende(dir, carrousel) {
     const total = slides.length || 7;
 
     for (let i = 0; i < slides.length; i++) {
-      const slide = slides[i];
+      let slide = slides[i];
+      // "file:<chemin>" -> data URI (image intégrée dans la slide)
+      if (typeof slide.image === "string" && slide.image.startsWith("file:")) {
+        const rel = slide.image.slice(5).trim();
+        const p = path.join(ROOT, rel);
+        if (fs.existsSync(p)) {
+          const ext = path.extname(p).slice(1).toLowerCase();
+          const mime = ext === "svg" ? "image/svg+xml" : `image/${ext === "jpg" ? "jpeg" : ext}`;
+          slide = { ...slide, image: `data:${mime};base64,${fs.readFileSync(p).toString("base64")}` };
+        } else {
+          console.warn(`⚠  image introuvable: ${rel}`);
+          slide = { ...slide, image: null };
+        }
+      }
       const html = slideHTML({
         slide,
         carrousel,
