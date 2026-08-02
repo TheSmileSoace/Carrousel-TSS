@@ -1484,14 +1484,14 @@
             "type": "promesse",
             "titre": "Ce sourire paraît parfait.",
             "texte": "Mais ce qu'on ne voit pas est souvent le plus important.",
-            "image": "file:assets/illus/beau_sourire.png"
+            "image": "file:assets/photos/sourire_reel.jpg"
           },
           {
             "n": 3,
             "type": "indice",
             "titre": "Ce ne sont pas des facettes.",
             "texte": "Ce sont des couronnes : un traitement bien plus invasif.",
-            "image": "file:assets/illus/moignons.png"
+            "image": "file:assets/illus/couronne_vs_facette_fr.png"
           },
           {
             "n": 4,
@@ -1511,7 +1511,7 @@
             "n": 6,
             "type": "consequence",
             "titre": "Une couronne dure 10 à 15 ans.",
-            "texte": "Posée à 25 ans, elle sera refaite plusieurs fois. Et chaque remplacement retire encore un peu de dent.",
+            "texte": "Posée jeune, elle sera refaite plusieurs fois. Chaque réfection retire encore un peu de dent — jusqu'à devoir la dévitaliser, puis parfois l'extraire.",
             "image": null
           },
           {
@@ -1529,7 +1529,7 @@
             "image": null
           }
         ],
-        "legende": "Les « Turkey teeth » consistent à limer des dents saines pour poser des couronnes. Ce que la vidéo ne montre pas, c'est le prix biologique : préparer une couronne retire souvent 60 à 70 % de la dent visible (1 à 2 mm sur tout le pourtour), et l'émail ne se régénère jamais. La dent reste vivante dessous, mais fragilisée — près d'une dent couronnée sur dix devra être dévitalisée dans les années qui suivent, un risque plus élevé chez les patients jeunes dont la pulpe est plus volumineuse. Une couronne dure en moyenne 10 à 15 ans : posée jeune, elle impose des réfections successives, chacune retirant encore de la structure. L'orthodontie, elle, déplace la dent sans toucher à l'émail. Une couronne garde toute sa valeur sur une dent déjà très abîmée — mais aucune ne vaut une dent saine.\n\nDis-nous en commentaire ce que tu choisirais — et écris COURONNES si tu veux qu'on t'explique l'alternative adaptée à ton cas.",
+        "legende": "Les « Turkey teeth » consistent à limer des dents saines pour poser des couronnes. Ce que la vidéo ne montre pas, c'est le prix biologique : préparer une couronne retire souvent 60 à 70 % de la dent visible (1 à 2 mm sur tout le pourtour), et l'émail ne se régénère jamais. La dent reste vivante dessous, mais fragilisée — près d'une dent couronnée sur dix devra être dévitalisée dans les années qui suivent, un risque plus élevé chez les patients jeunes dont la pulpe est plus volumineuse. Une couronne dure en moyenne 10 à 15 ans : posée jeune, elle impose des réfections successives, chacune retirant encore de la structure — au fil des cycles, la dent peut devoir être dévitalisée, voire extraite. L'orthodontie, elle, déplace la dent sans toucher à l'émail. Une couronne garde toute sa valeur sur une dent déjà très abîmée — mais aucune ne vaut une dent saine.\n\nDis-nous en commentaire ce que tu choisirais — et écris COURONNES si tu veux qu'on t'explique l'alternative adaptée à ton cas.",
         "hashtags": [
           "#orthodontie",
           "#turkeyteeth",
