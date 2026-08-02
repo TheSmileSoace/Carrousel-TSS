@@ -1512,7 +1512,8 @@
             "type": "consequence",
             "titre": "Une couronne dure 10 à 15 ans.",
             "texte": "Posée jeune, elle sera refaite plusieurs fois. Chaque réfection retire encore un peu de dent — jusqu'à devoir la dévitaliser, puis parfois l'extraire.",
-            "image": null
+            "image": null,
+            "watermark": "file:assets/photos/dent_perdue.jpg"
           },
           {
             "n": 7,

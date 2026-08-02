@@ -72,6 +72,20 @@ function loadLogoDataUri(rel) {
   return `data:${mime};base64,${b64}`;
 }
 
+// Résout un champ "file:<chemin>" -> data URI. Renvoie {done, uri}.
+function resolveFileUri(val) {
+  if (typeof val !== "string" || !val.startsWith("file:")) return { done: false };
+  const rel = val.slice(5).trim();
+  const p = path.join(ROOT, rel);
+  if (fs.existsSync(p)) {
+    const ext = path.extname(p).slice(1).toLowerCase();
+    const mime = ext === "svg" ? "image/svg+xml" : `image/${ext === "jpg" ? "jpeg" : ext}`;
+    return { done: true, uri: `data:${mime};base64,${fs.readFileSync(p).toString("base64")}` };
+  }
+  console.warn(`⚠  fichier introuvable: ${rel}`);
+  return { done: true, uri: null };
+}
+
 // Nom de dossier : reel s'il est présent, sinon id (charte v2.4)
 function folderName(carrousel) {
   const reel = (carrousel.reel || "").trim();
@@ -149,19 +163,11 @@ function writeLegende(dir, carrousel) {
 
     for (let i = 0; i < slides.length; i++) {
       let slide = slides[i];
-      // "file:<chemin>" -> data URI (image intégrée dans la slide)
-      if (typeof slide.image === "string" && slide.image.startsWith("file:")) {
-        const rel = slide.image.slice(5).trim();
-        const p = path.join(ROOT, rel);
-        if (fs.existsSync(p)) {
-          const ext = path.extname(p).slice(1).toLowerCase();
-          const mime = ext === "svg" ? "image/svg+xml" : `image/${ext === "jpg" ? "jpeg" : ext}`;
-          slide = { ...slide, image: `data:${mime};base64,${fs.readFileSync(p).toString("base64")}` };
-        } else {
-          console.warn(`⚠  image introuvable: ${rel}`);
-          slide = { ...slide, image: null };
-        }
-      }
+      // "file:<chemin>" -> data URI (image intégrée + filigrane éventuel)
+      const imgR = resolveFileUri(slide.image);
+      if (imgR.done) slide = { ...slide, image: imgR.uri };
+      const wmR = resolveFileUri(slide.watermark);
+      if (wmR.done) slide = { ...slide, watermark: wmR.uri };
       const html = slideHTML({
         slide,
         carrousel,

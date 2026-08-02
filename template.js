@@ -223,6 +223,10 @@ function slideHTML({ slide, carrousel, index, total, cfg, fontsCss, logoDataUri,
   const { largeur, hauteur } = cfg.format;
   const c = cfg.colors;
   const onBrand = DARK_TYPES.has(slide.type);
+  const wm =
+    typeof slide.watermark === "string" && slide.watermark.startsWith("data:")
+      ? slide.watermark
+      : null;
 
   return `<!doctype html>
 <html lang="fr">
@@ -251,6 +255,17 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
   background:linear-gradient(160deg, var(--brand) 0%, var(--brand-deep) 100%);
   color:var(--onbrand);
 }
+
+/* ---------- FILIGRANE (image de fond discrète) ---------- */
+.watermark{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-repeat:no-repeat;background-position:center;background-size:cover;
+  opacity:.20;mix-blend-mode:multiply;filter:grayscale(1) contrast(.92);
+}
+.has-watermark > .body,
+.has-watermark > .foot,
+.has-watermark > .badge,
+.has-watermark > .eyebrow{position:relative;z-index:1;}
 
 /* ---------- EYEBROW ---------- */
 .eyebrow{
@@ -364,7 +379,8 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 </style>
 </head>
 <body>
-  <div class="slide type-${esc(slide.type || "content")}">
+  <div class="slide type-${esc(slide.type || "content")} ${wm ? "has-watermark" : ""}">
+    ${wm ? `<div class="watermark" style="background-image:url('${wm}')"></div>` : ""}
     ${bodyFor({ slide, carrousel, cfg })}
     ${footer({ n: slide.n || index + 1, total, index, cfg, logoDataUri, logoLightDataUri, onBrand })}
   </div>
