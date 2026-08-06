@@ -1,0 +1,10 @@
+# Rushes et exports vidéo — ne pas versionner (fichiers lourds)
+rushes/
+*.mp4
+*.mov
+*.m4v
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.m4a
