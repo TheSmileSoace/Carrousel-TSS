@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#F3ECDE;}svg{display:block}</style>
+<div id="s"></div>
+<script>
+const NS="http://www.w3.org/2000/svg";
+const W=1512,H=1080;
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:W,height:H},document.getElementById("s"));
+el("rect",{x:0,y:0,width:W,height:H,fill:"#F3ECDE"},svg);
+
+const cx=756, gum=560;
+// os alvéolaire
+el("rect",{x:cx-430,y:gum,width:860,height:430,rx:32,fill:"#E7DAC0"},svg);
+for(let i=0;i<80;i++){const x=cx-390+((i*103)%780), y=gum+34+((i*57)%360);el("circle",{cx:x,cy:y,r:3,fill:"#CDBB98",opacity:0.5},svg);}
+// racine (cachée)
+el("path",{d:`M ${cx-88} ${gum} L ${cx-56} ${gum+270} Q ${cx} ${gum+322} ${cx+56} ${gum+270} L ${cx+88} ${gum} Z`,
+  fill:"#EFE1C4",stroke:"#C9A86E","stroke-width":4,opacity:0.5},svg);
+// couronne (visible)
+el("path",{d:`M ${cx-92} ${gum} L ${cx-88} ${gum-268} Q ${cx-84} ${gum-352} ${cx} ${gum-356} Q ${cx+84} ${gum-352} ${cx+88} ${gum-268} L ${cx+92} ${gum} Z`,
+  fill:"#FBF7EF",stroke:"#E7DCC6","stroke-width":3},svg);
+// ligne de gencive
+el("rect",{x:cx-455,y:gum-16,width:910,height:32,rx:16,fill:"#E2C3B2"},svg);
+// zone invisible
+el("rect",{x:cx-250,y:gum+34,width:500,height:352,rx:24,fill:"none",stroke:"#9B8663","stroke-width":4,"stroke-dasharray":"9 12"},svg);
+el("text",{x:cx,y:gum+232,"font-family":"Poppins,Inter,sans-serif","font-size":185,"font-weight":700,fill:"#9B8663",opacity:0.36,"text-anchor":"middle"},svg).textContent="?";
+// étiquettes
+function label(x,y,txt,col){const t=el("text",{x:x,y:y,"font-family":"Poppins,Inter,sans-serif","font-size":31,"font-weight":700,"letter-spacing":"1.5",fill:col,"text-anchor":"middle"},svg);t.textContent=txt;}
+label(cx,86,"CE QUE TU VOIS","#3A3733");
+el("line",{x1:cx,y1:104,x2:cx,y2:gum-352,stroke:"#3A3733","stroke-width":2,opacity:0.32},svg);
+label(cx,1038,"CE QUE SEULE LA RADIO VOIT","#9B8250");
+window.__ready=true;
+</script>
