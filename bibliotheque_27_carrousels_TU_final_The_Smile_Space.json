@@ -2007,7 +2007,7 @@
             "titre": "Des aligneurs commandés en ligne. Sans jamais voir d'orthodontiste.",
             "texte": "Moins cher, plus rapide… mais qu'est-ce qui manque vraiment ?",
             "image": null,
-            "watermark": "file:assets/illus/aligneur.png"
+            "watermark": "file:assets/photos/aligneur_photo.jpg"
           },
           {
             "n": 2,
@@ -2054,7 +2054,7 @@
           {
             "n": 8,
             "type": "cta",
-            "titre": "Avant de cliquer sur « commander »…",
+            "titre": "Avant de cliquer sur « commander »…",
             "texte": "Fais examiner ton cas pour de vrai. Envoie BILAN en MP et on te dit si ton cas s'y prête vraiment.",
             "image": null
           }

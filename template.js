@@ -270,7 +270,7 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .slide.type-hook .watermark,
 .slide.type-cta .watermark,
 .slide.type-renversement .watermark{
-  mix-blend-mode:normal;filter:none;opacity:.13;
+  mix-blend-mode:screen;filter:grayscale(1) contrast(1.05);opacity:.16;
 }
 
 /* ---------- EYEBROW ---------- */
