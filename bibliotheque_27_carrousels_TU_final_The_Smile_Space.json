@@ -2006,7 +2006,8 @@
             "type": "hook",
             "titre": "Des aligneurs commandés en ligne. Sans jamais voir d'orthodontiste.",
             "texte": "Moins cher, plus rapide… mais qu'est-ce qui manque vraiment ?",
-            "image": null
+            "image": null,
+            "watermark": "file:assets/illus/aligneur.png"
           },
           {
             "n": 2,
@@ -2020,7 +2021,7 @@
             "type": "explication",
             "titre": "Personne n'a regardé sous tes dents.",
             "texte": "Sans radio ni examen, l'état des racines, de l'os et des gencives reste invisible.",
-            "image": "file:assets/illus/sous_gencive.png"
+            "image": "file:assets/photos/radio_annotee.png"
           },
           {
             "n": 4,
@@ -2032,8 +2033,8 @@
           {
             "n": 5,
             "type": "limites",
-            "titre": "Une appli ne voit pas ce qui dérape.",
-            "texte": "Pas de contrôle réel : si un mouvement part de travers, personne ne le rattrape à temps.",
+            "titre": "Une appli ne voit pas sous la gencive.",
+            "texte": "Elle scanne tes dents en surface. Pas tes racines, pas ton os, pas tes gencives.",
             "image": null
           },
           {
@@ -2054,11 +2055,11 @@
             "n": 8,
             "type": "cta",
             "titre": "Avant de cliquer sur « commander »…",
-            "texte": "Fais examiner ton cas pour de vrai. Écris BILAN en commentaire et on t'explique la marche à suivre.",
+            "texte": "Fais examiner ton cas pour de vrai. Envoie BILAN en MP et on te dit si ton cas s'y prête vraiment.",
             "image": null
           }
         ],
-        "legende": "Les aligneurs transparents commandés en ligne — sans examen clinique ni radiographies — sautent l'étape la plus importante : le diagnostic. Déplacer une dent, c'est appliquer une force à une racine ancrée dans l'os ; le mouvement n'est sûr que si le parodonte (os + gencive) est sain. Or une parodontite, une racine courte ou une résorption ne se voient pas à l'œil nu : seules des radios et un bilan les révèlent. Appliquer des forces sur un parodonte affaibli peut aggraver la perte osseuse, jusqu'à la mobilité voire la perte de la dent. Sans suivi régulier, un mouvement imprévu (bascule, béance, contact prématuré) n'est pas corrigé à temps, et la contention finale — indispensable contre la rechute — est souvent négligée. Les aligneurs sont d'excellents dispositifs quand ils sont prescrits et suivis par un orthodontiste : le dispositif exécute, mais c'est le diagnostic et le suivi qui protègent tes dents.\n\nTu as déjà vu passer ces pubs d'aligneurs « 100 % en ligne » ? Dis-nous en commentaire — et écris BILAN si tu veux qu'on vérifie d'abord si ton cas s'y prête vraiment.",
+        "legende": "Les aligneurs transparents commandés en ligne — sans examen clinique ni radiographies — sautent l'étape la plus importante : le diagnostic. Déplacer une dent, c'est appliquer une force à une racine ancrée dans l'os ; le mouvement n'est sûr que si le parodonte (os + gencive) est sain. Or une parodontite, une racine courte ou une résorption ne se voient pas à l'œil nu : seules des radios et un bilan les révèlent. Appliquer des forces sur un parodonte affaibli peut aggraver la perte osseuse, jusqu'à la mobilité voire la perte de la dent. Sans suivi régulier, un mouvement imprévu (bascule, béance, contact prématuré) n'est pas corrigé à temps, et la contention finale — indispensable contre la rechute — est souvent négligée. Les aligneurs sont d'excellents dispositifs quand ils sont prescrits et suivis par un orthodontiste : le dispositif exécute, mais c'est le diagnostic et le suivi qui protègent tes dents.\n\nTu as déjà vu passer ces pubs d'aligneurs « 100 % en ligne » ? Dis-nous en commentaire — et envoie-nous BILAN en MP si tu veux qu'on vérifie d'abord si ton cas s'y prête vraiment.",
         "hashtags": [
           "#aligneurs",
           "#aligneursinvisibles",

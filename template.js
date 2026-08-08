@@ -89,7 +89,7 @@ function parseImage(image) {
 // Surligne le mot-clé situé après « Écris » (issu du texte, pas d'une métadonnée)
 function highlightEcris(texte = "") {
   return esc(texte).replace(
-    /(Écris\s+)([0-9A-ZÀ-Ÿ][0-9A-ZÀ-Ÿ'’-]{1,})/u,
+    /((?:Écris|Envoie|Envoyez|Envoie-nous)\s+)([0-9A-ZÀ-Ÿ][0-9A-ZÀ-Ÿ'’-]{1,})/u,
     (_, p1, p2) => `${p1}<span class="cta-key">${p2}</span>`
   );
 }
@@ -266,6 +266,12 @@ body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering
 .has-watermark > .foot,
 .has-watermark > .badge,
 .has-watermark > .eyebrow{position:relative;z-index:1;}
+/* sur fond sombre : filigrane clair, sans désaturation ni multiply */
+.slide.type-hook .watermark,
+.slide.type-cta .watermark,
+.slide.type-renversement .watermark{
+  mix-blend-mode:normal;filter:none;opacity:.13;
+}
 
 /* ---------- EYEBROW ---------- */
 .eyebrow{
