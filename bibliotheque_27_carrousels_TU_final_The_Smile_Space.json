@@ -2007,7 +2007,7 @@
             "titre": "Des aligneurs commandés en ligne. Sans jamais voir d'orthodontiste.",
             "texte": "Moins cher, plus rapide… mais qu'est-ce qui manque vraiment ?",
             "image": null,
-            "watermark": "file:assets/photos/aligneur_photo.jpg"
+            "watermark": "file:assets/photos/aligneur_tray.jpg"
           },
           {
             "n": 2,
@@ -2049,7 +2049,8 @@
             "type": "solution",
             "titre": "L'aligneur n'est qu'un outil. Le cerveau, c'est l'orthodontiste.",
             "texte": "Radios, plan sur mesure, contrôle à chaque étape : c'est ça qui rend le traitement sûr et le résultat durable.",
-            "image": null
+            "image": null,
+            "watermark": "file:assets/photos/aligneur_photo.jpg"
           },
           {
             "n": 8,
