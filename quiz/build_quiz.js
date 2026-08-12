@@ -45,11 +45,11 @@ async function renderOverlay(out){
   .seg{flex:1;display:flex;align-items:center;justify-content:center;gap:16px}.seg+.seg{border-left:1.5px solid rgba(255,255,255,.18)}
   .lt{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center}
   .tx{color:#fff;font-family:"${FF}";font-weight:700;font-size:50px;text-shadow:0 2px 10px #000c}
-  .foot{position:absolute;left:0;right:0;bottom:34px;display:flex;align-items:center;justify-content:center;gap:16px}
-  .foot img{height:100px}.foot span{color:#fff;font-weight:600;font-size:30px;text-shadow:0 2px 10px #000d}
+  .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
+  .foot img{height:180px}
   </style><div class="st"><div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
-  <div class="foot"><img src="${logo}"><span>@the_smile_space</span></div></div>`;
+  <div class="foot"><img src="${logo}"></div></div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
   const p=await b.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:1});
   await p.setContent(html,{waitUntil:"load"}); await p.evaluate(()=>document.fonts.ready);
