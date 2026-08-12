@@ -15,9 +15,13 @@ const CONFIG={
   question:"Combien de dents de lait y a-t-il sur cette radiographie ?",
   answers:[["A","20"],["B","10"],["C","14"],["D","32"]],
   font:"poppins",          // "poppins" (charte) ou "slab" (Roboto Slab)
-  paneAlpha:0.70,          // opacité des bandes (0.70 = translucide 70%)
-  blurZone:{y:1230,h:600}, // zone du texte incrusté à flouter
-  qTop:1258,qH:196, optsTop:1476, optsH:196,
+  paneAlpha:0.55,          // opacité des bandes
+  // "bands"  : floute uniquement DERRIÈRE les bandes (vidéo propre, reste net)
+  // "zone"   : floute toute une zone (vidéo avec texte incrusté à masquer)
+  frost:"bands",
+  zone:{y:1230,h:600},     // utilisé si frost:"zone"
+  qLeft:56,qRight:56,qTop:1258,qH:196,
+  optsLeft:44,optsRight:44,optsTop:1476,optsH:196,
 };
 
 const ROOT=path.join(__dirname,"..");
@@ -58,8 +62,19 @@ async function renderOverlay(out){
   fs.mkdirSync(path.dirname(out),{recursive:true});
   const ov="/tmp/_quiz_overlay.png";
   await renderOverlay(ov);
-  const {y,h}=CONFIG.blurZone;
-  const fc=`[0:v]split[b][t];[t]crop=1080:${h}:0:${y},boxblur=26:2[bl];[b][bl]overlay=0:${y}[f];[f][1:v]overlay=0:0:format=auto,format=yuv420p[o]`;
+  let fc;
+  if(CONFIG.frost==="zone"){
+    const {y,h}=CONFIG.zone;
+    fc=`[0:v]split[b][t];[t]crop=1080:${h}:0:${y},boxblur=26:2[bl];[b][bl]overlay=0:${y}[f];[f][1:v]overlay=0:0:format=auto,format=yuv420p[o]`;
+  }else{
+    // floute uniquement les deux rectangles des bandes (vidéo reste nette ailleurs)
+    const qx=CONFIG.qLeft, qw=1080-CONFIG.qLeft-CONFIG.qRight, qy=CONFIG.qTop, qh=CONFIG.qH;
+    const ox=CONFIG.optsLeft, ow=1080-CONFIG.optsLeft-CONFIG.optsRight, oy=CONFIG.optsTop, oh=CONFIG.optsH;
+    fc=`[0:v]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2[bq];`
+      +`[0:v]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2[ba];`
+      +`[0:v][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`
+      +`[x2][1:v]overlay=0:0:format=auto,format=yuv420p[o]`;
+  }
   execFileSync(ffmpeg(),["-y","-i",video,"-loop","1","-i",ov,"-filter_complex",fc,
     "-map","[o]","-map","0:a?","-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p","-c:a","aac","-shortest",out],
     {stdio:"inherit"});
