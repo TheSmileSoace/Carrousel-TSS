@@ -40,7 +40,7 @@ async function renderOverlay(out){
   @font-face{font-family:"Slab";src:url(${slab}) format("truetype");font-weight:700}
   *{margin:0;padding:0;box-sizing:border-box}.st{position:relative;width:1080px;height:1920px;font-family:"Inter",sans-serif}
   .pane{background:rgba(14,12,10,${CONFIG.paneAlpha});border:1.5px solid rgba(255,255,255,.18)}
-  .q{position:absolute;left:56px;right:56px;top:${CONFIG.qTop}px;height:${CONFIG.qH}px;border-radius:20px;padding:0 34px;display:flex;align-items:center;color:#fff;font-family:"${FF}";font-weight:700;font-size:44px;line-height:1.14;text-shadow:0 2px 10px #000c}
+  .q{position:absolute;left:56px;right:56px;top:${CONFIG.qTop}px;height:${CONFIG.qH}px;border-radius:20px;padding:0 34px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:"${FF}";font-weight:700;font-size:44px;line-height:1.14;text-shadow:0 2px 10px #000c}
   .opts{position:absolute;left:44px;right:44px;top:${CONFIG.optsTop}px;height:${CONFIG.optsH}px;border-radius:20px;display:flex;align-items:center}
   .seg{flex:1;display:flex;align-items:center;justify-content:center;gap:16px}.seg+.seg{border-left:1.5px solid rgba(255,255,255,.18)}
   .lt{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center}
