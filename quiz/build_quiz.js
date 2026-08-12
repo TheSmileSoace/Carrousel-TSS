@@ -12,6 +12,7 @@ const fs=require("fs"),path=require("path"),{execFileSync}=require("child_proces
 const {chromium}=require("playwright");
 
 const CONFIG={
+  header:"Le quiz !",      // en-tête en haut (pastille or) ; "" pour masquer
   question:"Combien de dents de lait y a-t-il sur cette radiographie ?",
   answers:[["A","20"],["B","10"],["C","14"],["D","32"]],
   font:"poppins",          // "poppins" (charte) ou "slab" (Roboto Slab)
@@ -47,7 +48,8 @@ async function renderOverlay(out){
   .tx{color:#fff;font-family:"${FF}";font-weight:700;font-size:50px;text-shadow:0 2px 10px #000c}
   .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
   .foot img{height:180px}
-  </style><div class="st"><div class="q pane">${esc(CONFIG.question)}</div>
+  .header{position:absolute;top:52px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
+  </style><div class="st">${CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}<div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
   <div class="foot"><img src="${logo}"></div></div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
