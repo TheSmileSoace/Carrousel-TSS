@@ -75,8 +75,12 @@ async function renderOverlay(out){
       +`[0:v][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`
       +`[x2][1:v]overlay=0:0:format=auto,format=yuv420p[o]`;
   }
+  // audio : duplique le son sur les 2 canaux (certaines sources n'ont le son que
+  // sur un canal -> silence sur téléphone). Puis AAC 192k + faststart.
   execFileSync(ffmpeg(),["-y","-i",video,"-loop","1","-i",ov,"-filter_complex",fc,
-    "-map","[o]","-map","0:a?","-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p","-c:a","aac","-shortest",out],
+    "-map","[o]","-map","0:a?","-af","pan=stereo|FL=c0+c1|FR=c0+c1",
+    "-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p",
+    "-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",out],
     {stdio:"inherit"});
   console.log("✅ "+out);
 })();
