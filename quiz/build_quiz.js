@@ -13,6 +13,7 @@ const {chromium}=require("playwright");
 
 const CONFIG={
   header:"Le quiz !",      // en-tête en haut (pastille or) ; "" pour masquer
+  logoPos:"top",           // "top" (zone sûre, recommandé) ou "bottom"
   question:"Combien de dents de lait y a-t-il sur cette radiographie ?",
   answers:[["A","20"],["B","10"],["C","14"],["D","32"]],
   font:"poppins",          // "poppins" (charte) ou "slab" (Roboto Slab)
@@ -33,7 +34,8 @@ const ffmpeg=()=>execFileSync("python3",["-c","import imageio_ffmpeg as f;print(
 async function renderOverlay(out){
   const fonts=fs.readFileSync(path.join(ROOT,"assets/fonts/fonts.css"),"utf8");
   const slab=b64(path.join(ROOT,"assets/fonts/RobotoSlab700.ttf"),"font/ttf");
-  const logo=b64(path.join(ROOT,"assets/logo-light.png"),"image/png");
+  const logo=b64(path.join(ROOT,"assets/logo-light.png"),"image/png");   // clair (bas, sur vidéo sombre)
+  const logoDark=b64(path.join(ROOT,"assets/logo.png"),"image/png");     // foncé (haut, sur plafond clair)
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
   const segs=CONFIG.answers.map(([l,t])=>`<div class="seg"><div class="lt">${l}</div><div class="tx">${esc(t)}</div></div>`).join("");
@@ -48,10 +50,15 @@ async function renderOverlay(out){
   .tx{color:#fff;font-family:"${FF}";font-weight:700;font-size:50px;text-shadow:0 2px 10px #000c}
   .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
   .foot img{height:180px}
-  .header{position:absolute;top:52px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
-  </style><div class="st">${CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}<div class="q pane">${esc(CONFIG.question)}</div>
+  .header{position:absolute;top:66px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
+  .logo-top{position:absolute;top:44px;left:44px;display:flex;align-items:center;background:rgba(14,12,10,.66);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:14px 30px;box-shadow:0 8px 24px #0007}
+  .logo-top img{height:70px;display:block}
+  </style><div class="st">
+  ${CONFIG.logoPos==="top"?`<div class="logo-top"><img src="${logo}"></div>`:""}
+  ${CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
+  <div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
-  <div class="foot"><img src="${logo}"></div></div>`;
+  ${CONFIG.logoPos!=="top"?`<div class="foot"><img src="${logo}"></div>`:""}</div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
   const p=await b.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:1});
   await p.setContent(html,{waitUntil:"load"}); await p.evaluate(()=>document.fonts.ready);
