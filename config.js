@@ -20,7 +20,7 @@ module.exports = {
   outDir: "sortie",
 
   // Compte / signature
-  handle: "@thesmilespace",
+  handle: "@the_smile_space",
   practitioner: "Dr. Linos Tsague", // nom affiché au pied de page, à côté du logo
   locations: ["Mons", "Soignies"], // villes des cabinets (pied de page, à droite) — [] pour masquer
 

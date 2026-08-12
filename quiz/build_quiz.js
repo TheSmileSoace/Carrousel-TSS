@@ -49,7 +49,7 @@ async function renderOverlay(out){
   .foot img{height:100px}.foot span{color:#fff;font-weight:600;font-size:30px;text-shadow:0 2px 10px #000d}
   </style><div class="st"><div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
-  <div class="foot"><img src="${logo}"><span>@thesmilespace</span></div></div>`;
+  <div class="foot"><img src="${logo}"><span>@the_smile_space</span></div></div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
   const p=await b.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:1});
   await p.setContent(html,{waitUntil:"load"}); await p.evaluate(()=>document.fonts.ready);
