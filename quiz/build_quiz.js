@@ -46,7 +46,7 @@ async function renderOverlay(out){
   .lt{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center}
   .tx{color:#fff;font-family:"${FF}";font-weight:700;font-size:50px;text-shadow:0 2px 10px #000c}
   .foot{position:absolute;left:0;right:0;bottom:34px;display:flex;align-items:center;justify-content:center;gap:16px}
-  .foot img{height:62px}.foot span{color:#fff;font-weight:600;font-size:30px;text-shadow:0 2px 10px #000d}
+  .foot img{height:100px}.foot span{color:#fff;font-weight:600;font-size:30px;text-shadow:0 2px 10px #000d}
   </style><div class="st"><div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
   <div class="foot"><img src="${logo}"><span>@thesmilespace</span></div></div>`;
