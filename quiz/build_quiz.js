@@ -51,10 +51,9 @@ async function renderOverlay(out){
   .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
   .foot img{height:180px}
   .header{position:absolute;top:66px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
-  .logo-top{position:absolute;top:44px;left:44px;display:flex;align-items:center;background:rgba(14,12,10,.66);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:14px 30px;box-shadow:0 8px 24px #0007}
-  .logo-top img{height:70px;display:block}
+  .logo-top{position:absolute;top:40px;left:44px;height:150px;filter:drop-shadow(0 3px 12px rgba(0,0,0,.4))}
   </style><div class="st">
-  ${CONFIG.logoPos==="top"?`<div class="logo-top"><img src="${logo}"></div>`:""}
+  ${CONFIG.logoPos==="top"?`<img class="logo-top" src="${logoDark}">`:""}
   ${CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
   <div class="q pane">${esc(CONFIG.question)}</div>
   <div class="opts pane">${segs}</div>
