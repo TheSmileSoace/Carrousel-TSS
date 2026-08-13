@@ -15,6 +15,7 @@ const CONFIG={
   header:"Le quiz !",      // en-tête en haut (pastille or) ; "" pour masquer
   logoPos:"top",           // "top" (zone sûre, recommandé) ou "bottom"
   question:"Combien de dents de lait y a-t-il sur cette radiographie ?",
+  highlight:"dents de lait",  // l'objet de la question (ce dont elle parle) -> mis en beige/or ; "" pour aucun
   answers:[["A","20"],["B","10"],["C","14"],["D","32"]],
   font:"poppins",          // "poppins" (charte) ou "slab" (Roboto Slab)
   logoTopH:113,            // hauteur du logo en haut (px)
@@ -38,11 +39,14 @@ async function renderOverlay(out, parts){
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
   const segs=CONFIG.answers.map(([l,t])=>`<div class="seg"><div class="lt">${l}</div><div class="tx">${esc(t)}</div></div>`).join("");
+  let qHtml=esc(CONFIG.question);
+  if(CONFIG.highlight){const h=esc(CONFIG.highlight); qHtml=qHtml.replace(h,`<span class="hl">${h}</span>`);}
   const html=`<meta charset=utf-8><style>${fonts}
   @font-face{font-family:"Slab";src:url(${slab}) format("truetype");font-weight:700}
   *{margin:0;padding:0;box-sizing:border-box}.st{position:relative;width:1080px;height:1920px;font-family:"Inter",sans-serif}
   .pane{background:rgba(14,12,10,${CONFIG.paneAlpha});border:1.5px solid rgba(255,255,255,.18)}
   .q{position:absolute;left:${CONFIG.qLeft}px;right:${CONFIG.qRight}px;top:${CONFIG.qTop}px;height:${CONFIG.qH}px;border-radius:20px;padding:0 34px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:"${FF}";font-weight:700;font-size:44px;line-height:1.14;text-shadow:0 2px 10px #000c}
+  .q .hl{color:#C3A46E}
   .opts{position:absolute;left:${CONFIG.optsLeft}px;right:${CONFIG.optsRight}px;top:${CONFIG.optsTop}px;height:${CONFIG.optsH}px;border-radius:20px;display:flex;align-items:center}
   .seg{flex:1;display:flex;align-items:center;justify-content:center;gap:16px}.seg+.seg{border-left:1.5px solid rgba(255,255,255,.18)}
   .lt{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center}
@@ -54,7 +58,7 @@ async function renderOverlay(out, parts){
   </style><div class="st">
   ${parts.top&&CONFIG.logoPos==="top"?`<img class="logo-top" src="${logo}">`:""}
   ${parts.top&&CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
-  ${parts.question?`<div class="q pane">${esc(CONFIG.question)}</div>`:""}
+  ${parts.question?`<div class="q pane"><span class="qtext">${qHtml}</span></div>`:""}
   ${parts.options?`<div class="opts pane">${segs}</div>`:""}
   ${parts.top&&CONFIG.logoPos!=="top"?`<div class="foot"><img src="${logo}"></div>`:""}</div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
