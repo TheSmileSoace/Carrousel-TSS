@@ -1,0 +1,10 @@
+{
+  "header":"Le quiz ! #2",
+  "inset":"assets/quiz/taches_dents.jpg",
+  "question":"Ces taches apparues après l'appareil peuvent-elles disparaître ?",
+  "highlight":"taches",
+  "answers":[["A","Avec un détartrage"],["B","Avec un blanchiment"],["C","Elles peuvent être améliorées mais pas simplement effacées"],["D","Il suffit d'attendre"]],
+  "optsLayout":"vertical",
+  "qTop":1150,"qH":196,
+  "optsTop":1372,"optsH":436
+}
