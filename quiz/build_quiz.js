@@ -44,7 +44,8 @@ async function renderOverlay(out, parts){
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
   let qHtml=esc(CONFIG.question);
-  if(CONFIG.highlight){const h=esc(CONFIG.highlight); qHtml=qHtml.replace(h,`<span class="hl">${h}</span>`);}
+  const hs=Array.isArray(CONFIG.highlight)?CONFIG.highlight:(CONFIG.highlight?[CONFIG.highlight]:[]);
+  for(const term of hs){const h=esc(term); qHtml=qHtml.replace(h,`<span class="hl">${h}</span>`);}
   const segsH=CONFIG.answers.map(([l,t])=>`<div class="seg"><div class="lt">${l}</div><div class="tx">${esc(t)}</div></div>`).join("");
   const rowsV=CONFIG.answers.map(([l,t])=>`<div class="rowv"><div class="l">${l}.</div><div class="t">${esc(t)}</div></div>`).join("");
   const optsBlock=CONFIG.optsLayout==="vertical"
@@ -69,7 +70,7 @@ async function renderOverlay(out, parts){
   .header{position:absolute;top:66px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
   .logo-top{position:absolute;top:40px;left:44px;height:${CONFIG.logoTopH}px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(0 4px 16px rgba(0,0,0,.35))}
   .inset{position:absolute;left:${CONFIG.insetSide}px;right:${CONFIG.insetSide}px;top:${CONFIG.insetTop}px;height:${CONFIG.insetH}px;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.5);box-shadow:0 16px 44px rgba(0,0,0,.5)}
-  .inset img{width:100%;height:100%;object-fit:cover;display:block}
+  .inset img{width:100%;height:100%;object-fit:cover;object-position:${CONFIG.insetPos||"center"};display:block}
   </style><div class="st">
   ${parts.top&&inset?`<div class="inset"><img src="${inset}"></div>`:""}
   ${parts.top&&CONFIG.logoPos==="top"?`<img class="logo-top" src="${logo}">`:""}
