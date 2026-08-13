@@ -38,7 +38,7 @@
   "cornerTag": "LE QUIZ · 01",
   "anim": {
     "question": 0.4,
-    "options": 1.8,
+    "options": 1.6,
     "dur": 0.35
   }
 }
