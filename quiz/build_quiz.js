@@ -112,8 +112,9 @@ async function renderOverlay(out, parts){
     execFileSync("python3",["-c",
       `from PIL import Image,ImageDraw;m=Image.new('L',(${cardW},${cardH}),0);ImageDraw.Draw(m).rounded_rectangle([0,0,${cardW-1},${cardH-1}],radius=24,fill=255);m.save('${mask}')`]);
     const rot=CONFIG.insetRotate?`transpose=${CONFIG.insetRotate},`:"";
+    const zoom=CONFIG.insetVideoCrop?`crop=${CONFIG.insetVideoCrop},`:"";  // "w:h:x:y" sur l'image tournée (zoom)
     const fc=
-      `[1:v]${rot}scale=${cardW}:${cardH}:force_original_aspect_ratio=increase,crop=${cardW}:${cardH},setsar=1[ins0];`
+      `[1:v]${rot}${zoom}scale=${cardW}:${cardH}:force_original_aspect_ratio=increase,crop=${cardW}:${cardH},setsar=1[ins0];`
      +`[ins0][2:v]alphamerge[ins];`
      +`[0:v][ins]overlay=${CONFIG.insetSide}:${CONFIG.insetTop}[wv];`
      +frost("[wv]")
