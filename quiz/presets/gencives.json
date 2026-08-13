@@ -5,16 +5,16 @@
   "insetTop": 182,
   "insetH": 560,
   "insetSide": 34,
-  "question": "Pourquoi ces gencives sont-elles gonflées ?",
-  "highlight": "gencives",
+  "question": "À quoi est dû ce gonflement de la gencive après l'enlèvement de l'appareil ?",
+  "highlight": "gonflement de la gencive",
   "answers": [
     [
       "A",
-      "Oui, le métal irrite la gencive"
+      "Au métal qui irrite la gencive"
     ],
     [
       "B",
-      "Non, c'est la plaque retenue autour"
+      "À une hygiène insuffisante"
     ],
     [
       "C",
@@ -26,10 +26,10 @@
     ]
   ],
   "optsLayout": "vertical",
-  "qTop": 1160,
-  "qH": 190,
+  "qTop": 1108,
+  "qH": 252,
   "optsTop": 1404,
-  "optsH": 360,
+  "optsH": 352,
   "insetVideoCrop": "940:520:600:160",
   "brollZoom": 1.6,
   "brollCropX": 324,
