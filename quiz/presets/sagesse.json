@@ -1,6 +1,6 @@
 {
   "header": "Le quiz ! #3",
-  "inset": "assets/quiz/sagesse_radio.jpg",
+  "inset": "assets/quiz/sagesse_radio_clean.jpg",
   "insetH": 384,
   "question": "Les dents de sagesse peuvent-elles pousser les dents de devant et les faire rebouger après un traitement ?",
   "highlight": [
@@ -29,5 +29,6 @@
   "qTop": 1104,
   "qH": 252,
   "optsTop": 1392,
-  "optsH": 344
+  "optsH": 344,
+  "insetCircles": "assets/quiz/sagesse_circles.png"
 }

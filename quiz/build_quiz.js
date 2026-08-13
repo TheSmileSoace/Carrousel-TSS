@@ -41,6 +41,7 @@ async function renderOverlay(out, parts){
   const slab=b64(path.join(ROOT,"assets/fonts/RobotoSlab700.ttf"),"font/ttf");
   const logo=b64(path.join(ROOT,"assets/logo-light.png"),"image/png");
   const inset=CONFIG.inset?b64(path.join(ROOT,CONFIG.inset),"image/jpeg"):null;
+  const insetCircles=CONFIG.insetCircles?b64(path.join(ROOT,CONFIG.insetCircles),"image/png"):null;
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
   let qHtml=esc(CONFIG.question);
@@ -71,11 +72,13 @@ async function renderOverlay(out, parts){
   .logo-top{position:absolute;top:40px;left:44px;height:${CONFIG.logoTopH}px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(0 4px 16px rgba(0,0,0,.35))}
   .inset{position:absolute;left:${CONFIG.insetSide}px;right:${CONFIG.insetSide}px;top:${CONFIG.insetTop}px;height:${CONFIG.insetH}px;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.5);box-shadow:0 16px 44px rgba(0,0,0,.5)}
   .inset img{width:100%;height:100%;object-fit:cover;object-position:${CONFIG.insetPos||"center"};display:block}
+  .inset.circles{border:none;box-shadow:none}
   </style><div class="st">
   ${parts.top&&inset?`<div class="inset"><img src="${inset}"></div>`:""}
   ${parts.top&&CONFIG.logoPos==="top"?`<img class="logo-top" src="${logo}">`:""}
   ${parts.top&&CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
   ${parts.question?`<div class="q pane"><span class="qtext">${qHtml}</span></div>`:""}
+  ${parts.options&&insetCircles?`<div class="inset circles"><img src="${insetCircles}"></div>`:""}
   ${parts.options?optsBlock:""}
   ${parts.top&&CONFIG.logoPos!=="top"?`<div class="foot"><img src="${logo}"></div>`:""}</div>`;
   const b=await chromium.launch({executablePath:fs.existsSync(EXEC)?EXEC:undefined,args:["--no-sandbox"]});
