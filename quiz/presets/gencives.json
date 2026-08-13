@@ -1,0 +1,12 @@
+{
+  "header":"Le quiz ! #1",
+  "insetVideo":"assets/quiz/gencives_appdent.mp4",
+  "insetRotate":2,
+  "insetTop":182,"insetH":560,"insetSide":34,
+  "question":"Pourquoi ces gencives sont-elles gonflées ?",
+  "highlight":"gencives",
+  "answers":[["A","Oui, le métal irrite la gencive"],["B","Non, c'est la plaque retenue autour"],["C","C'est génétique"],["D","C'est hormonal"]],
+  "optsLayout":"vertical",
+  "qTop":1160,"qH":190,
+  "optsTop":1404,"optsH":360
+}

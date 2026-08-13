@@ -13,7 +13,7 @@ const fs=require("fs"),path=require("path"),{execFileSync}=require("child_proces
 const {chromium}=require("playwright");
 
 const CONFIG={
-  header:"Le quiz ! #1",
+  header:"Le quiz ! #4",
   logoPos:"top",
   inset:"",                 // image médicale en carte haut (ex "assets/quiz/xxx.jpg") ; "" = aucune
   insetTop:182, insetH:500, insetSide:34,
@@ -74,7 +74,7 @@ async function renderOverlay(out, parts){
   .inset img{width:100%;height:100%;object-fit:cover;object-position:${CONFIG.insetPos||"center"};display:block}
   .inset.circles{border:none;box-shadow:none}
   </style><div class="st">
-  ${parts.top&&inset?`<div class="inset"><img src="${inset}"></div>`:""}
+  ${parts.top&&inset?`<div class="inset"><img src="${inset}"></div>`:(parts.top&&CONFIG.insetVideo?`<div class="inset"></div>`:"")}
   ${parts.top&&CONFIG.logoPos==="top"?`<img class="logo-top" src="${logo}">`:""}
   ${parts.top&&CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
   ${parts.question?`<div class="q pane"><span class="qtext">${qHtml}</span></div>`:""}
@@ -99,24 +99,48 @@ async function renderOverlay(out, parts){
   const {question:Q, options:O, dur:D}=CONFIG.anim;
   const qx=CONFIG.qLeft, qw=1080-CONFIG.qLeft-CONFIG.qRight, qy=CONFIG.qTop, qh=CONFIG.qH;
   const ox=CONFIG.optsLeft, ow=1080-CONFIG.optsLeft-CONFIG.optsRight, oy=CONFIG.optsTop, oh=CONFIG.optsH;
-  const fc=
-    `[0:v]split=3[b0][b1][b2];`
-   +`[b1]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2,format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[bq];`
-   +`[b2]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2,format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[ba];`
-   +`[b0][bq]overlay=${qx}:${qy}[x1];`
-   +`[x1][ba]overlay=${ox}:${oy}[x2];`
-   +`[2:v]format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[qov];`
-   +`[3:v]format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[oov];`
-   +`[x2][1:v]overlay=0:0[x3];`
-   +`[x3][qov]overlay=0:0[x4];`
-   +`[x4][oov]overlay=0:0,format=yuv420p[o]`;
+  const frost=(base)=>
+     `${base}split=3[b0][b1][b2];`
+    +`[b1]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2,format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[bq];`
+    +`[b2]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2,format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[ba];`
+    +`[b0][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`;
 
-  execFileSync(ffmpeg(),["-y","-i",video,
-    "-loop","1","-i",ovTop,"-loop","1","-i",ovQ,"-loop","1","-i",ovO,
-    "-filter_complex",fc,"-map","[o]","-map","0:a?",
-    "-af","pan=stereo|FL=c0+c1|FR=c0+c1",
-    "-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p",
-    "-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",out],
-    {stdio:"inherit"});
+  if(CONFIG.insetVideo){
+    // incruste une VIDÉO dans la carte (rotation + coins arrondis via masque)
+    const cardW=1080-2*CONFIG.insetSide, cardH=CONFIG.insetH;
+    const mask="/tmp/_card_mask.png";
+    execFileSync("python3",["-c",
+      `from PIL import Image,ImageDraw;m=Image.new('L',(${cardW},${cardH}),0);ImageDraw.Draw(m).rounded_rectangle([0,0,${cardW-1},${cardH-1}],radius=24,fill=255);m.save('${mask}')`]);
+    const rot=CONFIG.insetRotate?`transpose=${CONFIG.insetRotate},`:"";
+    const fc=
+      `[1:v]${rot}scale=${cardW}:${cardH}:force_original_aspect_ratio=increase,crop=${cardW}:${cardH},setsar=1[ins0];`
+     +`[ins0][2:v]alphamerge[ins];`
+     +`[0:v][ins]overlay=${CONFIG.insetSide}:${CONFIG.insetTop}[wv];`
+     +frost("[wv]")
+     +`[3:v]format=yuva420p[topov];`
+     +`[4:v]format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[qov];`
+     +`[5:v]format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[oov];`
+     +`[x2][topov]overlay=0:0[x3];[x3][qov]overlay=0:0[x4];[x4][oov]overlay=0:0,format=yuv420p[o]`;
+    const insetVid=path.isAbsolute(CONFIG.insetVideo)?CONFIG.insetVideo:path.join(ROOT,CONFIG.insetVideo);
+    execFileSync(ffmpeg(),["-y","-i",video,"-i",insetVid,
+      "-loop","1","-i",mask,"-loop","1","-i",ovTop,"-loop","1","-i",ovQ,"-loop","1","-i",ovO,
+      "-filter_complex",fc,"-map","[o]","-map","0:a?",
+      "-af","pan=stereo|FL=c0+c1|FR=c0+c1",
+      "-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p",
+      "-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",out],
+      {stdio:"inherit"});
+  } else {
+    const fc=frost("[0:v]")
+     +`[1:v]format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[qov];`
+     +`[2:v]format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[oov];`
+     +`[x2][3:v]overlay=0:0[x3];[x3][qov]overlay=0:0[x4];[x4][oov]overlay=0:0,format=yuv420p[o]`;
+    execFileSync(ffmpeg(),["-y","-i",video,
+      "-loop","1","-i",ovQ,"-loop","1","-i",ovO,"-loop","1","-i",ovTop,
+      "-filter_complex",fc,"-map","[o]","-map","0:a?",
+      "-af","pan=stereo|FL=c0+c1|FR=c0+c1",
+      "-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p",
+      "-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",out],
+      {stdio:"inherit"});
+  }
   console.log("✅ "+out);
 })();
