@@ -1,5 +1,5 @@
 {
-  "header": "Le quiz ! #1",
+  "header": "",
   "insetVideo": "assets/quiz/gencives_appdent.mp4",
   "insetRotate": 2,
   "insetTop": 182,
@@ -33,5 +33,12 @@
   "insetVideoCrop": "940:520:600:160",
   "brollZoom": 1.6,
   "brollCropX": 324,
-  "brollCropY": 1152
+  "brollCropY": 1152,
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 01",
+  "anim": {
+    "question": 0.5,
+    "options": 1.8,
+    "dur": 0.4
+  }
 }
