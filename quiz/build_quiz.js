@@ -12,7 +12,7 @@ const fs=require("fs"),path=require("path"),{execFileSync}=require("child_proces
 const {chromium}=require("playwright");
 
 const CONFIG={
-  header:"Le quiz !",      // en-tête en haut (pastille or) ; "" pour masquer
+  header:"Le quiz ! #1",   // en-tête en haut (pastille or) — incrémente le # à chaque épisode ; "" pour masquer
   logoPos:"top",           // "top" (zone sûre, recommandé) ou "bottom"
   question:"Combien de dents de lait y a-t-il sur cette radiographie ?",
   highlight:"dents de lait",  // l'objet de la question (ce dont elle parle) -> mis en beige/or ; "" pour aucun
