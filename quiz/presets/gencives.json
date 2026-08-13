@@ -30,5 +30,6 @@
   "qH": 190,
   "optsTop": 1404,
   "optsH": 360,
-  "insetVideoCrop": "1140:632:500:250"
+  "insetVideoCrop": "940:520:600:300",
+  "brollZoom": 1.4
 }

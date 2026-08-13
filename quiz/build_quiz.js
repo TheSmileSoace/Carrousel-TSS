@@ -105,6 +105,14 @@ async function renderOverlay(out, parts){
     +`[b2]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2,format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[ba];`
     +`[b0][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`;
 
+  // zoom éventuel sur le broll de fond
+  const Z=CONFIG.brollZoom||1;
+  const bx=CONFIG.brollCropX!=null?CONFIG.brollCropX:"(iw-1080)/2";
+  const by=CONFIG.brollCropY!=null?CONFIG.brollCropY:"(ih-1920)/2";
+  const bg = Z>1
+    ? `[0:v]scale=${Math.round(1080*Z)}:${Math.round(1920*Z)},crop=1080:1920:${bx}:${by},setsar=1[bg];`
+    : `[0:v]copy[bg];`;
+
   if(CONFIG.insetVideo){
     // incruste une VIDÉO dans la carte (rotation + coins arrondis via masque)
     const cardW=1080-2*CONFIG.insetSide, cardH=CONFIG.insetH;
@@ -114,9 +122,10 @@ async function renderOverlay(out, parts){
     const rot=CONFIG.insetRotate?`transpose=${CONFIG.insetRotate},`:"";
     const zoom=CONFIG.insetVideoCrop?`crop=${CONFIG.insetVideoCrop},`:"";  // "w:h:x:y" sur l'image tournée (zoom)
     const fc=
-      `[1:v]${rot}${zoom}scale=${cardW}:${cardH}:force_original_aspect_ratio=increase,crop=${cardW}:${cardH},setsar=1[ins0];`
+      bg
+     +`[1:v]${rot}${zoom}scale=${cardW}:${cardH}:force_original_aspect_ratio=increase,crop=${cardW}:${cardH},setsar=1[ins0];`
      +`[ins0][2:v]alphamerge[ins];`
-     +`[0:v][ins]overlay=${CONFIG.insetSide}:${CONFIG.insetTop}[wv];`
+     +`[bg][ins]overlay=${CONFIG.insetSide}:${CONFIG.insetTop}[wv];`
      +frost("[wv]")
      +`[3:v]format=yuva420p[topov];`
      +`[4:v]format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[qov];`
@@ -131,7 +140,7 @@ async function renderOverlay(out, parts){
       "-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",out],
       {stdio:"inherit"});
   } else {
-    const fc=frost("[0:v]")
+    const fc=bg+frost("[bg]")
      +`[1:v]format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[qov];`
      +`[2:v]format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[oov];`
      +`[x2][3:v]overlay=0:0[x3];[x3][qov]overlay=0:0[x4];[x4][oov]overlay=0:0,format=yuv420p[o]`;
