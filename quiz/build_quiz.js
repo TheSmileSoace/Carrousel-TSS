@@ -71,7 +71,7 @@ async function renderOverlay(out, parts){
   .foot img{height:180px}
   .header{position:absolute;top:66px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
   .logo-top{position:absolute;top:40px;left:44px;height:${CONFIG.logoTopH}px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(0 4px 16px rgba(0,0,0,.35))}
-  .corner-tag{position:absolute;top:44px;right:44px;background:rgba(14,12,10,.55);color:#EED9AE;font-family:"${FF}";font-weight:700;font-size:26px;letter-spacing:2px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);text-shadow:0 2px 8px #000a}
+  .corner-tag{position:absolute;top:${CONFIG.cornerTagTop||44}px;right:44px;background:rgba(14,12,10,.55);color:#EED9AE;font-family:"${FF}";font-weight:700;font-size:26px;letter-spacing:2px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);text-shadow:0 2px 8px #000a}
   .inset{position:absolute;left:${CONFIG.insetSide}px;right:${CONFIG.insetSide}px;top:${CONFIG.insetTop}px;height:${CONFIG.insetH}px;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.5);box-shadow:0 16px 44px rgba(0,0,0,.5)}
   .inset img{width:100%;height:100%;object-fit:cover;object-position:${CONFIG.insetPos||"center"};display:block}
   .inset.circles{border:none;box-shadow:none}

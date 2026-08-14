@@ -1,21 +1,22 @@
 {
   "header": "",
   "logoPos": "none",
-  "cornerTag": "LE QUIZ",
+  "cornerTag": "LE QUIZ · 02",
+  "cornerTagTop": 110,
   "inset": "assets/quiz/enfants_3photos.png",
   "insetBare": true,
-  "insetTop": 100,
+  "insetTop": 1060,
   "insetH": 760,
   "insetSide": 34,
   "question": "Ces 3 enfants ont 3 ans. Lequel a le plus de risque d'avoir besoin d'un appareil ?",
   "highlight": "plus de risque",
   "answers": [
-    ["1", "Enfant 1"],
-    ["2", "Enfant 2"],
-    ["3", "Enfant 3"]
+    ["A", "Enfant A"],
+    ["B", "Enfant B"],
+    ["C", "Enfant C"]
   ],
   "optsLayout": "horizontal",
-  "qLeft": 48, "qRight": 48, "qTop": 940, "qH": 236,
-  "optsLeft": 40, "optsRight": 40, "optsTop": 1300, "optsH": 150,
+  "qLeft": 48, "qRight": 48, "qTop": 175, "qH": 236,
+  "optsLeft": 40, "optsRight": 40, "optsTop": 455, "optsH": 150,
   "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
 }
