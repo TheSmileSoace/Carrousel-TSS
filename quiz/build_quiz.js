@@ -40,7 +40,8 @@ async function renderOverlay(out, parts){
   const fonts=fs.readFileSync(path.join(ROOT,"assets/fonts/fonts.css"),"utf8");
   const slab=b64(path.join(ROOT,"assets/fonts/RobotoSlab700.ttf"),"font/ttf");
   const logo=b64(path.join(ROOT,"assets/logo-light.png"),"image/png");
-  const inset=CONFIG.inset?b64(path.join(ROOT,CONFIG.inset),"image/jpeg"):null;
+  const insetMime=CONFIG.inset&&/\.png$/i.test(CONFIG.inset)?"image/png":"image/jpeg";
+  const inset=CONFIG.inset?b64(path.join(ROOT,CONFIG.inset),insetMime):null;
   const insetCircles=CONFIG.insetCircles?b64(path.join(ROOT,CONFIG.insetCircles),"image/png"):null;
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
@@ -74,8 +75,10 @@ async function renderOverlay(out, parts){
   .inset{position:absolute;left:${CONFIG.insetSide}px;right:${CONFIG.insetSide}px;top:${CONFIG.insetTop}px;height:${CONFIG.insetH}px;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.5);box-shadow:0 16px 44px rgba(0,0,0,.5)}
   .inset img{width:100%;height:100%;object-fit:cover;object-position:${CONFIG.insetPos||"center"};display:block}
   .inset.circles{border:none;box-shadow:none}
+  .inset.bare{border:none;box-shadow:none;overflow:visible;background:transparent}
+  .inset.bare img{object-fit:contain}
   </style><div class="st">
-  ${parts.top&&inset?`<div class="inset"><img src="${inset}"></div>`:(parts.top&&CONFIG.insetVideo?`<div class="inset"></div>`:"")}
+  ${parts.top&&inset?`<div class="inset${CONFIG.insetBare?" bare":""}"><img src="${inset}"></div>`:(parts.top&&CONFIG.insetVideo?`<div class="inset"></div>`:"")}
   ${parts.top&&CONFIG.logoPos==="top"?`<img class="logo-top" src="${logo}">`:""}
   ${parts.top&&CONFIG.header?`<div class="header">${esc(CONFIG.header)}</div>`:""}
   ${parts.question?`<div class="q pane"><span class="qtext">${qHtml}</span></div>`:""}
