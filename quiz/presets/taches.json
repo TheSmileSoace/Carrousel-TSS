@@ -1,5 +1,8 @@
 {
-  "header": "Le quiz ! #3",
+  "header": "",
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 03",
+  "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 },
   "inset": "assets/quiz/taches_dents.jpg",
   "insetH": 430,
   "insetPos": "center",
