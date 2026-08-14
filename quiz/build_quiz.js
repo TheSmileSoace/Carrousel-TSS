@@ -74,7 +74,7 @@ async function renderOverlay(out, parts){
   .optsBtns.v{flex-direction:column}
   .optsBtns.h{flex-direction:row}
   .optbtn{display:flex;align-items:center;gap:18px;border-radius:18px;padding:16px 26px}
-  .optsBtns.h .optbtn{flex:1;justify-content:center}
+  .optsBtns.h .optbtn{justify-content:center}
   .optbtn .bl{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:30px;display:flex;align-items:center;justify-content:center}
   .optbtn .bt{color:#fff;font-family:"${FF}";font-weight:600;font-size:40px;line-height:1.12;text-shadow:0 2px 10px #000c}
   .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
