@@ -8,8 +8,8 @@
   "insetTop": 940,
   "insetH": 666,
   "insetSide": 60,
-  "question": "Ces 3 enfants ont 3 ans. Lequel a le plus de risque de mettre un appareil dentaire ?",
-  "highlight": "plus de risque",
+  "question": "Ces enfants ont 3 ans !\nLequel risque le plus d'avoir besoin d'un appareil plus tard ?",
+  "highlight": "risque le plus",
   "answers": [
     ["A", ""],
     ["B", ""],
@@ -17,7 +17,7 @@
   ],
   "optsLayout": "horizontal",
   "optsButtons": true,
-  "qLeft": 48, "qRight": 60, "qTop": 175, "qH": 236,
-  "optsLeft": 40, "optsRight": 60, "optsTop": 460, "optsH": 150,
+  "qLeft": 48, "qRight": 60, "qTop": 158, "qH": 288,
+  "optsLeft": 40, "optsRight": 60, "optsTop": 494, "optsH": 140,
   "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
 }

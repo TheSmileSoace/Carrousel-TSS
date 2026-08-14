@@ -45,7 +45,7 @@ async function renderOverlay(out, parts){
   const insetCircles=CONFIG.insetCircles?b64(path.join(ROOT,CONFIG.insetCircles),"image/png"):null;
   const FF=CONFIG.font==="slab"?"Slab":"Poppins";
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ \?/g,"&nbsp;?");
-  let qHtml=esc(CONFIG.question);
+  let qHtml=esc(CONFIG.question).replace(/\n/g,"<br>");
   const hs=Array.isArray(CONFIG.highlight)?CONFIG.highlight:(CONFIG.highlight?[CONFIG.highlight]:[]);
   for(const term of hs){const h=esc(term); qHtml=qHtml.replace(h,`<span class="hl">${h}</span>`);}
   const segsH=CONFIG.answers.map(([l,t])=>`<div class="seg"><div class="lt">${l}</div><div class="tx">${esc(t)}</div></div>`).join("");
