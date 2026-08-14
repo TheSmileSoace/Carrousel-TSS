@@ -50,9 +50,12 @@ async function renderOverlay(out, parts){
   for(const term of hs){const h=esc(term); qHtml=qHtml.replace(h,`<span class="hl">${h}</span>`);}
   const segsH=CONFIG.answers.map(([l,t])=>`<div class="seg"><div class="lt">${l}</div><div class="tx">${esc(t)}</div></div>`).join("");
   const rowsV=CONFIG.answers.map(([l,t])=>`<div class="rowv"><div class="l">${l}.</div><div class="t">${esc(t)}</div></div>`).join("");
-  const optsBlock=CONFIG.optsLayout==="vertical"
-    ? `<div class="optsV pane">${rowsV}</div>`
-    : `<div class="opts pane">${segsH}</div>`;
+  const btns=CONFIG.answers.map(([l,t])=>`<div class="optbtn pane"><div class="bl">${l}</div>${t?`<div class="bt">${esc(t)}</div>`:""}</div>`).join("");
+  const optsBlock=CONFIG.optsButtons
+    ? `<div class="optsBtns ${CONFIG.optsLayout==="horizontal"?"h":"v"}">${btns}</div>`
+    : (CONFIG.optsLayout==="vertical"
+        ? `<div class="optsV pane">${rowsV}</div>`
+        : `<div class="opts pane">${segsH}</div>`);
   const html=`<meta charset=utf-8><style>${fonts}
   @font-face{font-family:"Slab";src:url(${slab}) format("truetype");font-weight:700}
   *{margin:0;padding:0;box-sizing:border-box}.st{position:relative;width:1080px;height:1920px;font-family:"Inter",sans-serif}
@@ -67,6 +70,13 @@ async function renderOverlay(out, parts){
   .rowv{display:flex;align-items:flex-start;gap:16px}
   .rowv .l{flex:0 0 auto;min-width:42px;color:#C3A46E;font-family:"${FF}";font-weight:700;font-size:42px;line-height:1.18}
   .rowv .t{color:#fff;font-family:"${FF}";font-weight:600;font-size:40px;line-height:1.18;text-shadow:0 2px 10px #000c}
+  .optsBtns{position:absolute;left:${CONFIG.optsLeft}px;right:${CONFIG.optsRight}px;top:${CONFIG.optsTop}px;height:${CONFIG.optsH}px;display:flex;justify-content:center;gap:16px}
+  .optsBtns.v{flex-direction:column}
+  .optsBtns.h{flex-direction:row}
+  .optbtn{display:flex;align-items:center;gap:18px;border-radius:18px;padding:16px 26px}
+  .optsBtns.h .optbtn{flex:1;justify-content:center}
+  .optbtn .bl{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:30px;display:flex;align-items:center;justify-content:center}
+  .optbtn .bt{color:#fff;font-family:"${FF}";font-weight:600;font-size:40px;line-height:1.12;text-shadow:0 2px 10px #000c}
   .foot{position:absolute;left:0;right:0;bottom:30px;display:flex;align-items:center;justify-content:center}
   .foot img{height:180px}
   .header{position:absolute;top:66px;left:50%;transform:translateX(-50%);background:#C3A46E;color:#211F1C;font-family:"${FF}";font-weight:700;font-size:46px;letter-spacing:1px;padding:14px 44px;border-radius:999px;box-shadow:0 10px 28px #0007;white-space:nowrap}
@@ -104,11 +114,14 @@ async function renderOverlay(out, parts){
   const {question:Q, options:O, dur:D}=CONFIG.anim;
   const qx=CONFIG.qLeft, qw=1080-CONFIG.qLeft-CONFIG.qRight, qy=CONFIG.qTop, qh=CONFIG.qH;
   const ox=CONFIG.optsLeft, ow=1080-CONFIG.optsLeft-CONFIG.optsRight, oy=CONFIG.optsTop, oh=CONFIG.optsH;
-  const frost=(base)=>
-     `${base}split=3[b0][b1][b2];`
-    +`[b1]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2,format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[bq];`
-    +`[b2]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2,format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[ba];`
-    +`[b0][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`;
+  const frost=(base)=> CONFIG.optsButtons
+    ? `${base}split=2[b0][b1];`
+      +`[b1]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2,format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[bq];`
+      +`[b0][bq]overlay=${qx}:${qy}[x2];`
+    : `${base}split=3[b0][b1][b2];`
+      +`[b1]crop=${qw}:${qh}:${qx}:${qy},boxblur=20:2,format=yuva420p,fade=in:st=${Q}:d=${D}:alpha=1[bq];`
+      +`[b2]crop=${ow}:${oh}:${ox}:${oy},boxblur=20:2,format=yuva420p,fade=in:st=${O}:d=${D}:alpha=1[ba];`
+      +`[b0][bq]overlay=${qx}:${qy}[x1];[x1][ba]overlay=${ox}:${oy}[x2];`;
 
   // zoom éventuel sur le broll de fond
   const Z=CONFIG.brollZoom||1;
