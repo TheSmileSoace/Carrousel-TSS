@@ -17,7 +17,7 @@
   ],
   "optsLayout": "horizontal",
   "optsButtons": true,
-  "qLeft": 48, "qRight": 60, "qTop": 158, "qH": 288,
-  "optsLeft": 40, "optsRight": 60, "optsTop": 494, "optsH": 140,
+  "qLeft": 48, "qRight": 60, "qTop": 196, "qH": 250,
+  "optsLeft": 40, "optsRight": 60, "optsTop": 476, "optsH": 140,
   "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
 }
