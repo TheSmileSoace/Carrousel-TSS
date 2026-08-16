@@ -111,21 +111,21 @@
             "type": "identification",
             "titre": "Les signes qui doivent t'alerter",
             "texte": "Lèvres sèches, ronflements, bave sur l'oreiller, sommeil agité, fatigue dès le réveil.",
-            "image": "photo_patient"
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide2_sleeping.jpg"
           },
           {
             "n": 3,
             "type": "revelation",
             "titre": "Respirer par la bouche change la croissance",
             "texte": "Bouche ouverte, la langue tombe au fond et n'appuie plus vers le haut du palais.",
-            "image": "image_clinique_radio"
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide3_breather_fit.jpg"
           },
           {
             "n": 4,
             "type": "explication",
             "titre": "La langue façonne le palais comme un moule",
             "texte": "Sans son appui, le palais monte en pointe, se resserre, et les dents manquent de place.",
-            "image": "schema:langue posee en haut = moule qui elargit le palais"
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide4_langue_fit.jpg"
           },
           {
             "n": 5,
@@ -139,7 +139,7 @@
             "type": "nuance",
             "titre": "Un appareil ne débouche pas le nez",
             "texte": "On cherche d'abord POURQUOI il respire par la bouche. Sinon on traite le symptôme, pas la cause.",
-            "image": "avant_apres"
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide6_chaine.jpg"
           },
           {
             "n": 7,
