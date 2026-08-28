@@ -9,9 +9,9 @@
   "highlight": "bouche ouverte",
   "answers": [
     ["A", "Aucun, c'est une habitude"],
-    ["B", "Le palais se resserre, moins de place"],
+    ["B", "Un palais plus étroit"],
     ["C", "Les dents s'usent plus vite"],
-    ["D", "Un simple appareil règle tout"]
+    ["D", "Un appareil règle tout"]
   ],
   "optsLayout": "vertical",
   "optsButtons": true,
