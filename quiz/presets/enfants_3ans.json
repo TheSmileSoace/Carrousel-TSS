@@ -3,6 +3,7 @@
   "logoPos": "none",
   "cornerTag": "LE QUIZ · 02",
   "cornerTagTop": 110,
+  "difficultyBadge": "Plus de 98% se trompent",
   "inset": "assets/quiz/enfants_3photos.png",
   "insetBare": true,
   "insetTop": 940,

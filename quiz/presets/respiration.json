@@ -3,6 +3,7 @@
   "logoPos": "none",
   "cornerTag": "LE QUIZ",
   "cornerTagTop": 110,
+  "difficultyBadge": "9 sur 10 se trompent",
   "inset": "",
   "question": "Ton enfant dort souvent la bouche ouverte.\nQuel est le risque pour ses dents ?",
   "highlight": "bouche ouverte",
