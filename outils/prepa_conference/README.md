@@ -69,6 +69,20 @@ python prepa_images_ortho.py `
 > gardez-le en local, ne le mettez **jamais** dans le dossier de sortie ni dans
 > l'archive que vous partagez. Le dossier de sortie, lui, ne contient que des codes.
 
+### Aperçu avant traitement (`--dry-run`)
+
+Ajoutez `--dry-run` à n'importe quelle commande pour **voir ce qui serait produit
+sans rien écrire** (ni images, ni manifest, ni registre, ni dossier de sortie) :
+
+```powershell
+python prepa_images_ortho.py --input "Z:\MARPE" --output "Z:\Conference\MARPE_anonymise" `
+    --lot --dry-run --confirme-selection-anonymisee
+```
+
+Affiche, pour chaque fichier, le chemin de sortie prévu (`P1/T0/intra/…`), les
+fichiers non reconnus, et — en `--lot` — le **mapping code ↔ patient** prévu.
+Idéal pour vérifier l'attribution des codes avant le vrai traitement.
+
 ## Vos 3 décisions (paramètres)
 
 Modifiables en tête de script **ou** en ligne de commande :

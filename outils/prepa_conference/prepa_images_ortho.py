@@ -135,7 +135,8 @@ def luminance(arr: np.ndarray) -> np.ndarray:
 #  3) SÉCURITÉ / ANONYMISATION
 # =============================================================================
 
-def verifier_securite(input_dir: str, output_dir: str, confirme: bool) -> None:
+def verifier_securite(input_dir: str, output_dir: str, confirme: bool,
+                      creer_sortie: bool = True) -> None:
     """Barrières anti-erreur avant tout traitement. Lève SystemExit si un
     invariant de sécurité est violé."""
     in_abs = os.path.abspath(input_dir)
@@ -161,7 +162,8 @@ def verifier_securite(input_dir: str, output_dir: str, confirme: bool) -> None:
     if in_abs.startswith(out_abs + os.sep):
         raise SystemExit("[SÉCURITÉ] --input ne doit pas être à l'intérieur de --output.")
 
-    os.makedirs(out_abs, exist_ok=True)
+    if creer_sortie:
+        os.makedirs(out_abs, exist_ok=True)
 
 
 def purger_metadonnees(chemin: str) -> None:
@@ -586,6 +588,23 @@ RECETTES = {
     "trace":   traiter_tableau_trace,
 }
 
+# Format de sortie par famille (utile aussi pour le --dry-run, sans traiter l'image)
+FORMAT_PAR_TYPE = {"intra": "jpg", "exo": "jpg",
+                   "radio": "png", "tableau": "png", "trace": "png"}
+
+
+def construire_nom(compteur: dict[str, int], code: str, meta: "Meta", fmt: str) -> tuple[str, str]:
+    """Nom de sortie normalisé (code seul) + chemin relatif CODE/Phase/Type.
+    Gère les doublons de vue à une même phase (ajoute le n° ou un index)."""
+    base = f"{code}_{meta.phase_t}_{meta.type_slug}_{meta.vue}"
+    if base in compteur:
+        compteur[base] += 1
+        base = f"{base}_{meta.num or compteur[base]}"
+    else:
+        compteur[base] = 1
+    nom = f"{base}.{fmt}"
+    return nom, os.path.join(code, meta.phase_t, meta.type_slug, nom)
+
 
 # =============================================================================
 #  7) APPARIEMENT (même taille par vue) + MONTAGES
@@ -667,9 +686,27 @@ def lister_images(input_dir: str) -> list[str]:
     return sorted(fichiers)
 
 
-def traiter_dossier(input_dir: str, output_dir: str, code: str) -> None:
+def traiter_dossier(input_dir: str, output_dir: str, code: str, dry_run: bool = False) -> None:
     fichiers = lister_images(input_dir)
     log.info("%d image(s) trouvée(s) dans %s", len(fichiers), input_dir)
+
+    # --- Aperçu (--dry-run) : calcule les noms de sortie SANS rien écrire ------
+    if dry_run:
+        compteur: dict[str, int] = {}
+        plan = ignores = 0
+        for chemin in fichiers:
+            nom = os.path.basename(chemin)
+            meta = parser_nom(nom)
+            if meta is None:
+                ignores += 1
+                log.info("PLAN  [ignoré, non reconnu]        <- %s", nom)
+                continue
+            _, rel = construire_nom(compteur, code, meta, FORMAT_PAR_TYPE[meta.type_cle])
+            plan += 1
+            log.info("PLAN  %-42s <- %s", rel, nom)
+        log.info("PLAN  %d fichier(s) seraient produits, %d ignoré(s). (aucune écriture)",
+                 plan, ignores)
+        return
 
     sorties: list[Sortie] = []
     manifest_rows: list[dict] = []
@@ -709,17 +746,7 @@ def traiter_dossier(input_dir: str, output_dir: str, code: str) -> None:
     # Nommage + écriture (arborescence CODE / Phase / Type)
     compteur: dict[str, int] = {}
     for s in sorties:
-        base = f"{code}_{s.meta.phase_t}_{s.meta.type_slug}_{s.meta.vue}"
-        # gestion des doublons de vue à une même phase (ajoute le n° ou un index)
-        cle = base
-        if cle in compteur:
-            compteur[cle] += 1
-            suffixe = s.meta.num or str(compteur[cle])
-            base = f"{base}_{suffixe}"
-        else:
-            compteur[cle] = 1
-        nom_sortie = f"{base}.{s.format_}"
-        rel = os.path.join(code, s.meta.phase_t, s.meta.type_slug, nom_sortie)
+        nom_sortie, rel = construire_nom(compteur, code, s.meta, s.format_)
         chemin_abs = os.path.join(output_dir, rel)
         enregistrer_propre(s.img, chemin_abs, format_=s.format_)
         s.nom_sortie, s.chemin_rel = nom_sortie, rel
@@ -784,7 +811,8 @@ def prochain_numero(mapping: dict[str, str], prefixe: str) -> int:
     return (max(nums) + 1) if nums else 1
 
 
-def traiter_lot(parent: str, output_dir: str, prefixe: str, registre: str) -> None:
+def traiter_lot(parent: str, output_dir: str, prefixe: str, registre: str,
+                dry_run: bool = False) -> None:
     """Traite chaque sous-dossier patient avec un code auto-assigné et stable."""
     mapping = charger_registre(registre)               # réutilise les codes connus
     n = prochain_numero(mapping, prefixe)
@@ -792,14 +820,21 @@ def traiter_lot(parent: str, output_dir: str, prefixe: str, registre: str) -> No
     if not dossiers:
         raise SystemExit(f"[LOT] Aucun sous-dossier patient dans : {parent}")
 
-    log.info("Mode LOT : %d dossier(s) patient. Registre : %s", len(dossiers), registre)
+    log.info("Mode LOT%s : %d dossier(s) patient. Registre : %s",
+             " (aperçu)" if dry_run else "", len(dossiers), registre)
     for dossier in dossiers:
         if dossier in mapping:
             code = mapping[dossier]                     # code déjà attribué
         else:
             code = f"{prefixe}{n}"; mapping[dossier] = code; n += 1
         log.info("── Patient « %s » -> %s ──", dossier, code)
-        traiter_dossier(os.path.join(parent, dossier), output_dir, code)
+        traiter_dossier(os.path.join(parent, dossier), output_dir, code, dry_run=dry_run)
+
+    if dry_run:
+        log.info("APERÇU : aucun fichier ni registre écrit. Mapping prévu :")
+        for dossier, code in mapping.items():
+            log.info("   %s  ->  %s", code, dossier)
+        return
 
     sauver_registre(registre, mapping)
     log.warning("Registre nom->code écrit : %s  (contient des NOMS : garder en "
@@ -834,6 +869,8 @@ def construire_argparse() -> argparse.ArgumentParser:
     grp2.add_argument("--fond-radio-tel-quel", dest="fond_noir", action="store_false")
     p.add_argument("--montages", action="store_true", default=None,
                    help="Génère les montages T0|T1 par vue.")
+    p.add_argument("--dry-run", action="store_true", dest="dry_run",
+                   help="Aperçu : liste les sorties (et le mapping en --lot) SANS rien écrire.")
     # --- Mode lot multi-patients ---
     p.add_argument("--lot", action="store_true",
                    help="--input est un PARENT : chaque sous-dossier = 1 patient "
@@ -863,14 +900,14 @@ def main(argv=None) -> int:
         log.warning("OpenCV absent : CLAHE/anti-reflets/fond crème en mode repli "
                     "ou désactivés. `pip install opencv-python-headless` recommandé.")
 
-    verifier_securite(args.input, args.output, args.confirme)
+    verifier_securite(args.input, args.output, args.confirme, creer_sortie=not args.dry_run)
 
     if args.lot:
         # registre par défaut : HORS du dossier de sortie (dossier courant)
         registre = args.registre or os.path.join(os.getcwd(), "correspondance_patients.csv")
-        traiter_lot(args.input, args.output, args.prefixe_code, registre)
+        traiter_lot(args.input, args.output, args.prefixe_code, registre, dry_run=args.dry_run)
     else:
-        traiter_dossier(args.input, args.output, args.code)
+        traiter_dossier(args.input, args.output, args.code, dry_run=args.dry_run)
     return 0
 
 
