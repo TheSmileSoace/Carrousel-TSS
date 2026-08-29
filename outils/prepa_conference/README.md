@@ -9,6 +9,23 @@ exporte en **haute qualité** prête à projeter.
 > de démarrer sans le drapeau `--confirme-selection-anonymisee`, qui atteste que
 > `--input` est une **sélection déjà anonymisée** (jamais l'archive brute).
 
+## Lancement en un double-clic (Windows)
+
+Le plus simple : **`Traiter_images_ortho.bat`** (à garder dans le même dossier que
+`prepa_images_ortho.py`).
+
+1. Ouvrez le `.bat` avec le Bloc-notes et réglez les 3 premières lignes :
+   `INPUT` (dossier d'entrée), `OUTPUT` (dossier de sortie), `MODE` (`lot` ou `simple`).
+2. **Double-cliquez** le `.bat`. Il :
+   - vérifie Python et installe au besoin `pillow`, `numpy`, `opencv-python-headless` ;
+   - lance d'abord l'**aperçu** (n'écrit rien) et affiche le plan + les codes ;
+   - demande **O** pour confirmer, puis traite réellement.
+3. Astuce : vous pouvez aussi **glisser un dossier sur le `.bat`** pour l'utiliser
+   comme entrée sans rien éditer.
+
+> (Un `.bat` est double-cliquable ; un `.ps1` ne l'est pas par défaut sous Windows,
+> d'où ce choix.)
+
 ## Installation
 
 ```bash
