@@ -88,7 +88,7 @@ RETIRER_BORDS     = True        # recadre les bandes grises/noires des radios
 FOND_NOIR_RADIO   = True        # met le pourtour des radios en noir (charte sombre)
 
 # --- Réglages secondaires (rarement à toucher) -------------------------------
-EXO_UNIFORM_FOND      = True    # uniformise DOUCEMENT le fond des portraits
+EXO_UNIFORM_FOND      = False   # uniformise le fond des portraits (off : plus naturel/sûr)
 EXO_FOND_CREME        = (250, 247, 241)   # teinte crème de la charte
 INTRA_REDUIRE_REFLETS = True    # atténue de PETITS reflets de salive (conservateur)
 JPEG_QUALITE          = 95      # export JPG haute qualité
@@ -268,13 +268,17 @@ def _detecter_type(txt: str) -> tuple[str, str] | None:
 
 
 def _phase_vers_t(phase_brute: str) -> str:
-    """Dérive un code de phase stable : Avant -> T0, Après N -> T{N}, Fin -> Tfin."""
+    """Dérive un code de phase stable et ordonné :
+    Avant -> T0 ; Étape N -> T{N} ; Après N -> T{N} ; Fin -> Tfin."""
     p = sans_accents(phase_brute)
     if "avant" in p:
         return "T0"
     if "fin" in p:
         return "Tfin"
-    if "apres" in p or "post" in p:
+    m = re.search(r"etape\s*(\d+)", p)      # "Etape 8" -> T8
+    if m:
+        return f"T{m.group(1)}"
+    if "apres" in p or "post" in p:         # "Après traitement 2" -> T2
         m = re.search(r"(\d+)", p)
         return f"T{m.group(1)}" if m else "T1"
     # phase inconnue -> slug lisible, sans planter
@@ -286,34 +290,38 @@ def parser_nom(nom_fichier: str) -> Meta | None:
     """Analyse un nom de fichier vers Meta, ou None si non reconnu."""
     stem, _ = os.path.splitext(nom_fichier)
 
-    typ = _detecter_type(stem)
+    # Date : "(JJ-MM-AA)" ou "JJ-MM-AA" -> extraite puis retirée du texte
+    date = ""
+    md = re.search(r"(\d{2}-\d{2}-\d{2,4})", stem)
+    if md:
+        date = md.group(1)
+    stem_c = re.sub(r"\(\s*\d{2}-\d{2}-\d{2,4}\s*\)", " ", stem)   # (date)
+    stem_c = re.sub(r"\d{2}-\d{2}-\d{2,4}", " ", stem_c)           # date nue éventuelle
+
+    typ = _detecter_type(stem_c)
     if not typ:
         return None
     type_cle, type_slug = typ
 
     # On retire le libellé de type détecté, puis on découpe le reste.
-    n = sans_accents(stem)
-    # longueur du libellé type reconnu (le plus long qui matche)
+    n = sans_accents(stem_c)
     libelle = next(l for l in sorted(TYPES, key=len, reverse=True)
                    if n.startswith(l) and TYPES[l] == typ)
-    reste = stem[len(libelle):]
+    reste = stem_c[len(libelle):]
 
-    # Normalise les séparateurs "_-_" / " - " -> "|", "__" -> "|"
-    norm = reste
-    norm = re.sub(r"[\s_]*-[\s_]*", "|", norm)   # tiret entouré d'espaces/underscores
-    norm = re.sub(r"_{2,}", "|", norm)           # doubles underscores
-    norm = re.sub(r"\|{2,}", "|", norm)          # pipes multiples
+    # Sépare Vue | Phase | N°  (tiret entouré d'espaces/underscores, ou "__").
+    # Gère aussi bien "Type_Vue_-_Phase__..." que "Type Vue - Phase (date) - N°".
+    norm = re.sub(r"[\s_]*-[\s_]*", "|", reste)
+    norm = re.sub(r"_{2,}", "|", norm)
+    norm = re.sub(r"\|{2,}", "|", norm)
     parts = [p.strip(" _") for p in norm.split("|") if p.strip(" _")]
 
-    # parts attendus (souples) : [Vue, Phase, Date, N°]
+    # parts attendus (souples) : [Vue, Phase, N°]
     vue = parts[0] if len(parts) >= 1 else "vue"
     phase_brute = parts[1] if len(parts) >= 2 else "Avant traitement 1"
-    date = ""
     num = ""
     for p in parts[2:]:
-        if re.fullmatch(r"\d{2}-\d{2}-\d{2,4}", p):
-            date = p
-        elif re.fullmatch(r"\d+", p):
+        if re.fullmatch(r"\d+", p):
             num = p
 
     return Meta(
@@ -508,24 +516,27 @@ def clahe_gris(gray: np.ndarray, clip: float) -> np.ndarray:
 
 
 def fond_radio_noir(gray: np.ndarray) -> np.ndarray:
-    """Met le pourtour d'une radio en noir : région claire/uniforme connectée
-    aux bords -> 0. Conservateur (n'affecte pas l'anatomie interne sombre)."""
-    if not _HAS_CV2:
-        # repli simple : les pixels du pourtour proches du fond des coins -> noir
-        fond = np.median(np.concatenate([gray[:6].ravel(), gray[-6:].ravel(),
-                                          gray[:, :6].ravel(), gray[:, -6:].ravel()]))
-        if fond > 40:  # pourtour clair -> on l'assombrit
-            bord = np.abs(gray.astype(int) - fond) < 22
-            g = gray.copy(); g[bord] = 0
-            return g
-        return gray
+    """Met en noir UNIQUEMENT un pourtour clair et uniforme (cadre de scanner)
+    connecté aux bords. Sécurités : ne touche pas un pourtour déjà sombre, et
+    abandonne si la sélection « fuit » vers l'anatomie (évite la radio toute
+    noire)."""
     h, w = gray.shape
-    ff = np.zeros((h + 2, w + 2), np.uint8)
-    src = gray.copy()
-    for sx, sy in [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]:
-        cv2.floodFill(src, ff, (sx, sy), 255, loDiff=20, upDiff=20,
-                      flags=8 | (255 << 8) | cv2.FLOODFILL_MASK_ONLY)
-    bord = ff[1:-1, 1:-1] > 0
+    coins = np.concatenate([gray[:8, :8].ravel(), gray[:8, -8:].ravel(),
+                            gray[-8:, :8].ravel(), gray[-8:, -8:].ravel()])
+    fond = float(np.median(coins))
+    if fond < 55:                         # pourtour déjà sombre -> rien à risquer
+        return gray
+    if _HAS_CV2:
+        ff = np.zeros((h + 2, w + 2), np.uint8)
+        src = gray.copy()
+        for sx, sy in [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]:
+            cv2.floodFill(src, ff, (sx, sy), 255, loDiff=12, upDiff=12,
+                          flags=8 | (255 << 8) | cv2.FLOODFILL_MASK_ONLY)
+        bord = ff[1:-1, 1:-1] > 0
+    else:
+        bord = np.abs(gray.astype(int) - fond) < 14
+    if bord.mean() > 0.40:                # la sélection a débordé -> on n'y touche pas
+        return gray
     g = gray.copy(); g[bord] = 0
     return g
 
@@ -536,8 +547,8 @@ def fond_radio_noir(gray: np.ndarray) -> np.ndarray:
 
 def traiter_intra(img: Image.Image) -> tuple[Image.Image, str]:
     arr = as_float(img)
-    arr = balance_gris_monde(arr, force=0.9)          # WB franche (dominante chaude)
-    arr = normaliser_expo(arr, force=0.8, cible=0.52)  # expo normalisée
+    arr = balance_gris_monde(arr, force=0.6)          # WB mesurée (garde des dents naturelles)
+    arr = normaliser_expo(arr, force=0.7, cible=0.52)  # expo normalisée
     out = Image.fromarray(as_uint8(arr))
     if INTRA_REDUIRE_REFLETS:
         out = attenuer_reflets_salive(out)             # petits reflets de salive
