@@ -44,6 +44,31 @@ python prepa_images_ortho.py `
 > Rappel : `--input` doit pointer sur la **copie de sélection anonymisée**, pas
 > sur votre archive d'origine. `--output` doit être **en dehors** de `--input`.
 
+## Mode lot multi-patients (`--lot`)
+
+Quand `--input` est un **dossier parent** contenant **un sous-dossier par patient**
+(le nom du dossier = le patient ; les fichiers, eux, sont déjà anonymisés) :
+
+```powershell
+python prepa_images_ortho.py `
+    --input  "Z:\MARPE" `
+    --output "Z:\Conference\MARPE_anonymise" `
+    --lot `
+    --confirme-selection-anonymisee
+```
+
+- Chaque sous-dossier reçoit un **code automatique** `P1`, `P2`, … (préfixe réglable
+  via `--prefixe-code`).
+- Les codes sont **stables** d'une exécution à l'autre : un patient déjà traité
+  garde son code, seuls les nouveaux dossiers reçoivent un nouveau code.
+- Un **registre `correspondance_patients.csv`** (nom de dossier → code) est écrit
+  **dans le dossier courant, HORS du dossier de sortie** (chemin réglable via
+  `--registre`).
+
+> 🔒 **Le registre contient des NOMS.** C'est votre clé de traçabilité privée :
+> gardez-le en local, ne le mettez **jamais** dans le dossier de sortie ni dans
+> l'archive que vous partagez. Le dossier de sortie, lui, ne contient que des codes.
+
 ## Vos 3 décisions (paramètres)
 
 Modifiables en tête de script **ou** en ligne de commande :

@@ -732,8 +732,9 @@ def traiter_dossier(input_dir: str, output_dir: str, code: str) -> None:
         nb = generer_montages(sorties, output_dir, code)
         log.info("%d montage(s) T0|T1 généré(s).", nb)
 
-    # Manifest de traçabilité (local)
-    manifest = os.path.join(output_dir, "manifest.csv")
+    # Manifest de traçabilité (local, sans nom : range sous le code patient)
+    manifest = os.path.join(output_dir, code, "manifest.csv")
+    os.makedirs(os.path.dirname(manifest), exist_ok=True)
     with open(manifest, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["origine", "sortie", "type",
                                           "phase", "vue", "statut"])
@@ -742,6 +743,67 @@ def traiter_dossier(input_dir: str, output_dir: str, code: str) -> None:
 
     log.info("Terminé : %d traitée(s), %d non reconnue(s). Manifest : %s",
              len(sorties), non_reconnus, manifest)
+
+
+# =============================================================================
+#  8bis) MODE LOT MULTI-PATIENTS
+#       --input = dossier PARENT ; chaque sous-dossier = un patient.
+#       Codes P1, P2, … assignés de façon STABLE (registre réutilisé) pour que
+#       le même patient garde le même code d'une exécution à l'autre.
+#       ⚠ Le registre associe NOM DE DOSSIER (donc nom patient) -> code :
+#         il est écrit HORS du dossier de sortie et ne doit pas être diffusé.
+# =============================================================================
+
+def sous_dossiers_patients(parent: str) -> list[str]:
+    return sorted(d for d in os.listdir(parent)
+                  if os.path.isdir(os.path.join(parent, d)) and not d.startswith("."))
+
+
+def charger_registre(chemin: str) -> dict[str, str]:
+    mapping: dict[str, str] = {}
+    if chemin and os.path.exists(chemin):
+        with open(chemin, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("dossier"):
+                    mapping[row["dossier"]] = row["code"]
+    return mapping
+
+
+def sauver_registre(chemin: str, mapping: dict[str, str]) -> None:
+    os.makedirs(os.path.dirname(os.path.abspath(chemin)), exist_ok=True)
+    with open(chemin, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["dossier", "code"])
+        w.writeheader()
+        for dossier, code in mapping.items():
+            w.writerow({"dossier": dossier, "code": code})
+
+
+def prochain_numero(mapping: dict[str, str], prefixe: str) -> int:
+    nums = [int(m.group(1)) for c in mapping.values()
+            if (m := re.fullmatch(re.escape(prefixe) + r"(\d+)", c))]
+    return (max(nums) + 1) if nums else 1
+
+
+def traiter_lot(parent: str, output_dir: str, prefixe: str, registre: str) -> None:
+    """Traite chaque sous-dossier patient avec un code auto-assigné et stable."""
+    mapping = charger_registre(registre)               # réutilise les codes connus
+    n = prochain_numero(mapping, prefixe)
+    dossiers = sous_dossiers_patients(parent)
+    if not dossiers:
+        raise SystemExit(f"[LOT] Aucun sous-dossier patient dans : {parent}")
+
+    log.info("Mode LOT : %d dossier(s) patient. Registre : %s", len(dossiers), registre)
+    for dossier in dossiers:
+        if dossier in mapping:
+            code = mapping[dossier]                     # code déjà attribué
+        else:
+            code = f"{prefixe}{n}"; mapping[dossier] = code; n += 1
+        log.info("── Patient « %s » -> %s ──", dossier, code)
+        traiter_dossier(os.path.join(parent, dossier), output_dir, code)
+
+    sauver_registre(registre, mapping)
+    log.warning("Registre nom->code écrit : %s  (contient des NOMS : garder en "
+                "local, NE PAS diffuser avec les images).", os.path.abspath(registre))
 
 
 # =============================================================================
@@ -772,6 +834,16 @@ def construire_argparse() -> argparse.ArgumentParser:
     grp2.add_argument("--fond-radio-tel-quel", dest="fond_noir", action="store_false")
     p.add_argument("--montages", action="store_true", default=None,
                    help="Génère les montages T0|T1 par vue.")
+    # --- Mode lot multi-patients ---
+    p.add_argument("--lot", action="store_true",
+                   help="--input est un PARENT : chaque sous-dossier = 1 patient "
+                        "(code auto P1, P2, …). Ignore --code.")
+    p.add_argument("--prefixe-code", default="P",
+                   help="Préfixe des codes auto en mode --lot.")
+    p.add_argument("--registre", default=None,
+                   help="Chemin du registre nom_dossier->code (défaut : "
+                        "correspondance_patients.csv dans le dossier courant, "
+                        "HORS du dossier de sortie). Contient des noms : à garder en local.")
     return p
 
 
@@ -792,7 +864,13 @@ def main(argv=None) -> int:
                     "ou désactivés. `pip install opencv-python-headless` recommandé.")
 
     verifier_securite(args.input, args.output, args.confirme)
-    traiter_dossier(args.input, args.output, args.code)
+
+    if args.lot:
+        # registre par défaut : HORS du dossier de sortie (dossier courant)
+        registre = args.registre or os.path.join(os.getcwd(), "correspondance_patients.csv")
+        traiter_lot(args.input, args.output, args.prefixe_code, registre)
+    else:
+        traiter_dossier(args.input, args.output, args.code)
     return 0
 
 
