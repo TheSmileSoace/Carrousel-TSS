@@ -9,8 +9,8 @@
   "insetTop": 470,
   "insetH": 666,
   "insetSide": 34,
-  "question": "3 sourires d'enfants. Lequel faut-il corriger sans tarder ?",
-  "highlight": "corriger sans tarder",
+  "question": "3 sourires d'enfants. Lequel a besoin d'un appareil ?",
+  "highlight": "besoin d'un appareil",
   "answers": [
     ["A", ""],
     ["B", ""],
