@@ -48,7 +48,7 @@ const stories=[
 `<div class="tag">Le piège · réponse D</div>
  <div class="wrap">
    <div class="warn">« Un appareil règle tout » ❌</div>
-   <div class="why">Un appareil peut élargir le palais… mais il <b>ne débouche pas le nez</b>. On cherche d'abord <b>POURQUOI</b> l'enfant respire par la bouche : ORL, logopède, parfois allergologue.</div>
+   <div class="why">Un <b>écarteur (expanseur) de palais</b> peut aider à mieux respirer… mais il <b>ne remplace pas</b> l'ORL et le/la logopède. Ces prises en charge se font <b>EN PARALLÈLE</b>, pour traiter la cause.</div>
    <div class="cta">Écris RESPIRATION en MP 💬</div>
  </div>
  <div class="foot"><img src="${logo}"></div>`,
