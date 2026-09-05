@@ -8,9 +8,12 @@
 const fs = require("fs"), path = require("path");
 const PptxGenJS = require("pptxgenjs");
 
+const ROOT = path.join(__dirname, "..");
 const OUT = path.join(__dirname, "out");
 const notes = JSON.parse(fs.readFileSync(path.join(OUT, "notes.json"), "utf8"));
 const text = JSON.parse(fs.readFileSync(path.join(OUT, "text.json"), "utf8"));
+const photosPath = path.join(OUT, "photos_final.json");
+const photos = fs.existsSync(photosPath) ? JSON.parse(fs.readFileSync(photosPath, "utf8")) : {};
 const dest = process.argv[2] || path.join(__dirname, "..", "sortie", "Cas_Mathys_TSS.pptx");
 
 const W = 13.333, H = 7.5;              // 16:9 (pouces)
@@ -33,6 +36,15 @@ bgs.forEach((f) => {
   const slide = pptx.addSlide();
   slide.background = { color: "FAF7F1" };
   slide.addImage({ path: path.join(OUT, f), x: 0, y: 0, w: W, h: H });
+
+  // photos = images natives (déplaçables / redimensionnables / remplaçables)
+  (photos[String(n)] || []).forEach((ph) => {
+    slide.addImage({
+      path: path.join(ROOT, ph.png),
+      x: ph.x * SC, y: ph.y * SC, w: ph.w * SC, h: ph.h * SC,
+      shadow: { type: "outer", color: "2B2926", blur: 9, offset: 4, angle: 90, opacity: 0.16 },
+    });
+  });
 
   (text[String(n)] || []).forEach((it) => {
     const runs = [];

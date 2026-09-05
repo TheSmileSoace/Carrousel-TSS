@@ -56,7 +56,7 @@ const pimg = (sub, file, label = "", { fit = "cover", aspect = null } = {}) => {
   const cls = `pf-img ${fit}` + (aspect ? " fixed" : "");
   const style = aspect ? ` style="aspect-ratio:${aspect}"` : "";
   const cap = label ? `<figcaption>${esc(label)}</figcaption>` : "";
-  return `<figure class="pf"><div class="${cls}"${style}><img src="${src}" alt=""></div>${cap}</figure>`;
+  return `<figure class="pf"><div class="${cls}"${style} data-photo="${sub}/${file}" data-fit="${fit}"><img src="${src}" alt=""></div>${cap}</figure>`;
 };
 const photo = (file, label = "") => pimg("exo", file, label);
 
@@ -219,8 +219,7 @@ const slides = [
   // 3 — Documentation · Photos intra-orales (D / face / G)
   { kind:"intra", dark:false, note:"[Documentation intra-orale — vues latérales et frontale.] Occlusion en intercuspidie : rapports transverses et sagittaux, encombrement.",
     body:`
-    ${head("Cas 1 · Documentation", `Photos <span class="hl">intra-orales</span>`)}
-    <div class="prow vc" style="grid-template-columns:repeat(3,1fr)">
+    <div class="prow vc" style="grid-template-columns:repeat(3,1fr);gap:34px;padding-top:20px">
       ${pimg("intra","droite.jpg","",{aspect:"4/3"})}
       ${pimg("intra","face.jpg","",{aspect:"4/3"})}
       ${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
@@ -229,8 +228,7 @@ const slides = [
   // 4 — Documentation · Occlusales (haut / bas)
   { kind:"occlu", dark:false, note:"[Vues occlusales — arcades maxillaire et mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
     body:`
-    ${head("Cas 1 · Documentation", `Vues <span class="hl">occlusales</span>`)}
-    <div class="prow vc" style="grid-template-columns:repeat(2,1fr);max-width:1180px;margin-left:auto;margin-right:auto">
+    <div class="prow vc" style="grid-template-columns:repeat(2,1fr);gap:44px;padding-top:20px">
       ${pimg("intra","haut.jpg","",{aspect:"4/3"})}
       ${pimg("intra","bas.jpg","",{aspect:"4/3"})}
     </div>` },
@@ -418,7 +416,20 @@ function measureAndHide(selectors) {
     el.style.color = "transparent";
     el.querySelectorAll("*").forEach((c) => { c.style.color = "transparent"; c.style.textShadow = "none"; });
   });
-  return items;
+  // photos : mesurer puis retirer du fond (posées en images natives dans le .pptx)
+  const photos = [];
+  document.querySelectorAll("[data-photo]").forEach((el) => {
+    const r = el.getBoundingClientRect();
+    const im = el.querySelector("img");
+    photos.push({
+      x: r.left, y: r.top, w: r.width, h: r.height,
+      file: el.getAttribute("data-photo"), fit: el.getAttribute("data-fit"),
+      nw: im ? im.naturalWidth : 0, nh: im ? im.naturalHeight : 0,
+    });
+    const fig = el.closest(".pf") || el;
+    fig.style.visibility = "hidden";
+  });
+  return { items, photos };
 }
 
 (async () => {
@@ -426,21 +437,24 @@ function measureAndHide(selectors) {
   const p = await b.newPage({ viewport:{ width:1920, height:1080 }, deviceScaleFactor:2 });
   const notesOut = {};
   const textOut = {};
+  const photoOut = {};
   for (let i = 0; i < slides.length; i++) {
     const s = slides[i];
     const html = shell({ kind:s.kind, n:i+1, total:TOTAL, dark:s.dark, body:s.body });
     await p.setContent(html, { waitUntil:"load" });
     await p.evaluate(() => document.fonts.ready);
     const nn = String(i+1).padStart(2,"0");
-    // rendu complet (aperçu) puis rendu "fond sans texte" pour le .pptx éditable
+    // rendu complet (aperçu) puis rendu "fond sans texte ni photo" pour le .pptx éditable
     await p.screenshot({ path: path.join(OUT, `${nn}.png`) });
-    const items = await p.evaluate(measureAndHide, TEXT_SEL);
+    const { items, photos } = await p.evaluate(measureAndHide, TEXT_SEL);
     await p.screenshot({ path: path.join(OUT, `${nn}_bg.png`) });
     textOut[String(i + 1)] = items;
+    photoOut[String(i + 1)] = photos;
     if (s.note) notesOut[String(i+1)] = s.note;
-    console.log("slide", nn, s.kind, "ok", "(" + items.length + " zones texte)");
+    console.log("slide", nn, s.kind, "ok", "(" + items.length + " textes, " + photos.length + " photos)");
   }
   fs.writeFileSync(path.join(OUT, "notes.json"), JSON.stringify(notesOut, null, 1));
   fs.writeFileSync(path.join(OUT, "text.json"), JSON.stringify(textOut));
+  fs.writeFileSync(path.join(OUT, "photos.json"), JSON.stringify(photoOut, null, 1));
   await b.close();
 })();

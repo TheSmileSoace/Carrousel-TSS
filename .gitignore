@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+deck/out/*.png
+deck/out/photos/
