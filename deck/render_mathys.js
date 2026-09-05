@@ -51,11 +51,14 @@ const frame = (label, cap = "") =>
 
 // cadre avec vraie photo intégrée + légende sous l'image
 const AR = path.join(ROOT, "assets/carrousels/mathys");
-const pimg = (sub, file, label, fit = "cover") => {
+const pimg = (sub, file, label = "", { fit = "cover", aspect = null } = {}) => {
   const src = b64(path.join(AR, sub, file), "image/jpeg");
-  return `<figure class="pf"><div class="pf-img ${fit}"><img src="${src}" alt=""></div><figcaption>${esc(label)}</figcaption></figure>`;
+  const cls = `pf-img ${fit}` + (aspect ? " fixed" : "");
+  const style = aspect ? ` style="aspect-ratio:${aspect}"` : "";
+  const cap = label ? `<figcaption>${esc(label)}</figcaption>` : "";
+  return `<figure class="pf"><div class="${cls}"${style}><img src="${src}" alt=""></div>${cap}</figure>`;
 };
-const photo = (file, label) => pimg("exo", file, label);
+const photo = (file, label = "") => pimg("exo", file, label);
 
 function shell({ kind, n, total, dark, body }) {
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
@@ -100,6 +103,8 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .pf-img img{width:100%;height:100%;object-fit:cover;display:block}
 .pf-img.contain{background:#211F1C}
 .pf-img.contain img{object-fit:contain}
+.pf-img.fixed{flex:none;width:100%;height:auto}
+.prow.vc{align-items:center;align-content:center}
 .pf figcaption{font-family:var(--ft);font-weight:600;letter-spacing:.04em;text-transform:uppercase;
  font-size:22px;color:var(--brand);text-align:center}
 
@@ -205,29 +210,29 @@ const slides = [
   { kind:"exo", dark:false, note:N(2), body:`
     ${head("Cas 1 · Documentation", `Photos <span class="hl">extra-orales</span>`)}
     <div class="prow">
-      ${photo("face.jpg", "Face · repos")}
-      ${photo("face_sourire.jpg", "Face · sourire")}
-      ${photo("profil_droit.jpg", "Profil droit · repos")}
-      ${photo("profil_droit_sourire.jpg", "Profil droit · sourire")}
+      ${photo("face.jpg")}
+      ${photo("face_sourire.jpg")}
+      ${photo("profil_droit.jpg")}
+      ${photo("profil_droit_sourire.jpg")}
     </div>` },
 
   // 3 — Documentation · Photos intra-orales (D / face / G)
   { kind:"intra", dark:false, note:"[Documentation intra-orale — vues latérales et frontale.] Occlusion en intercuspidie : rapports transverses et sagittaux, encombrement.",
     body:`
     ${head("Cas 1 · Documentation", `Photos <span class="hl">intra-orales</span>`)}
-    <div class="prow" style="grid-template-columns:repeat(3,1fr)">
-      ${pimg("intra","droite.jpg","Latéral droit")}
-      ${pimg("intra","face.jpg","Frontal (face)")}
-      ${pimg("intra","gauche.jpg","Latéral gauche")}
+    <div class="prow vc" style="grid-template-columns:repeat(3,1fr)">
+      ${pimg("intra","droite.jpg","",{aspect:"4/3"})}
+      ${pimg("intra","face.jpg","",{aspect:"4/3"})}
+      ${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
     </div>` },
 
   // 4 — Documentation · Occlusales (haut / bas)
   { kind:"occlu", dark:false, note:"[Vues occlusales — arcades maxillaire et mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
     body:`
     ${head("Cas 1 · Documentation", `Vues <span class="hl">occlusales</span>`)}
-    <div class="prow" style="grid-template-columns:repeat(2,1fr);max-width:1360px;margin-left:auto;margin-right:auto">
-      ${pimg("intra","haut.jpg","Occlusale maxillaire — haut")}
-      ${pimg("intra","bas.jpg","Occlusale mandibulaire — bas")}
+    <div class="prow vc" style="grid-template-columns:repeat(2,1fr);max-width:1180px;margin-left:auto;margin-right:auto">
+      ${pimg("intra","haut.jpg","",{aspect:"4/3"})}
+      ${pimg("intra","bas.jpg","",{aspect:"4/3"})}
     </div>` },
 
   // 5 — Documentation · Panoramique
@@ -235,17 +240,16 @@ const slides = [
     body:`
     ${head("Cas 1 · Documentation", `Radiographie <span class="hl">panoramique</span>`)}
     <div class="prow" style="grid-template-columns:1fr">
-      ${pimg("radio","panoramique.jpg","Panoramique — denture mixte · germes", "contain")}
+      ${pimg("radio","panoramique.jpg","",{fit:"contain"})}
     </div>` },
 
   // 6 — Documentation · Profil (téléradio + tracé + analyse)
   { kind:"profil", dark:false, note:"[Téléradiographie de profil + tracé + tableau de mesures.] Rapports squelettiques et dentaires ; base des mesures.",
     body:`
-    ${head("Cas 1 · Documentation", `Profil — <span class="hl">téléradio, tracé & analyse</span>`)}
-    <div class="prow" style="grid-template-columns:repeat(3,1fr)">
-      ${pimg("radio","teleradio.jpg","Téléradiographie de profil", "contain")}
-      ${pimg("radio","trace.jpg","Tracé céphalométrique", "contain")}
-      ${pimg("radio","tableau.jpg","Tableau de mesures", "contain")}
+    ${head("Cas 1 · Documentation", `Profil — <span class="hl">tracé & analyse</span>`)}
+    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px">
+      ${pimg("radio","trace.jpg","",{fit:"contain"})}
+      ${pimg("radio","tableau.jpg","",{fit:"contain"})}
     </div>` },
 
   // 7 — Participation 1
@@ -352,20 +356,91 @@ const slides = [
 
 const TOTAL = slides.length;
 
+// Sélecteurs des textes rendus ÉDITABLES dans le .pptx (posés en zones de texte
+// natives par-dessus un fond sans texte). Le reste (pastilles, puces, chiffres,
+// logos) reste graphique.
+const TEXT_SEL = [
+  ".kicker", ".h-title", ".h-sub",
+  ".cover-eyebrow", ".cover-title", ".cover-meta", ".cover-motif", ".cover-fiche", ".cover-line",
+  ".close-title", ".close-kicker",
+  ".vote-tag", ".vote-q", ".quote",
+  ".num h4", ".num p", ".card h3", ".card li",
+  ".refs-note", ".pf figcaption", ".row div:last-child",
+];
+
+// Mesure la géométrie + le style de chaque texte, puis le rend transparent
+// (graphismes conservés). Exécuté dans le navigateur.
+function measureAndHide(selectors) {
+  const hex = (c) => {
+    const m = (c || "").match(/\d+/g);
+    if (!m) return "FFFFFF";
+    return ((1 << 24) + (+m[0] << 16) + (+m[1] << 8) + +m[2]).toString(16).slice(1).toUpperCase();
+  };
+  const runsOf = (el) => {
+    const out = [];
+    const walk = (node, color, bold) => {
+      node.childNodes.forEach((ch) => {
+        if (ch.nodeType === 3) {
+          if (ch.textContent) out.push({ t: ch.textContent, color, bold });
+        } else if (ch.nodeType === 1) {
+          if (ch.tagName === "BR") { out.push({ br: true }); return; }
+          const cs = getComputedStyle(ch);
+          walk(ch, hex(cs.color), parseInt(cs.fontWeight) >= 600);
+        }
+      });
+    };
+    const cs = getComputedStyle(el);
+    walk(el, hex(cs.color), parseInt(cs.fontWeight) >= 600);
+    return out;
+  };
+  const seen = new Set();
+  const items = [];
+  selectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((el) => {
+      if (seen.has(el) || !el.textContent.trim()) return;
+      seen.add(el);
+      const r = el.getBoundingClientRect();
+      const cs = getComputedStyle(el);
+      items.push({
+        x: r.left, y: r.top, w: r.width, h: r.height,
+        size: parseFloat(cs.fontSize),
+        lh: parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.2,
+        padL: parseFloat(cs.paddingLeft) || 0,
+        align: cs.textAlign, valign: cs.justifyContent,
+        family: /Poppins/.test(cs.fontFamily) ? "Poppins" : "Inter",
+        runs: runsOf(el),
+      });
+    });
+  });
+  // masquer le texte (glyphes) en conservant les graphismes
+  seen.forEach((el) => {
+    el.style.textShadow = "none";
+    el.style.color = "transparent";
+    el.querySelectorAll("*").forEach((c) => { c.style.color = "transparent"; c.style.textShadow = "none"; });
+  });
+  return items;
+}
+
 (async () => {
   const b = await chromium.launch({ executablePath: fs.existsSync(EXEC) ? EXEC : undefined, args:["--no-sandbox"] });
   const p = await b.newPage({ viewport:{ width:1920, height:1080 }, deviceScaleFactor:2 });
   const notesOut = {};
+  const textOut = {};
   for (let i = 0; i < slides.length; i++) {
     const s = slides[i];
     const html = shell({ kind:s.kind, n:i+1, total:TOTAL, dark:s.dark, body:s.body });
     await p.setContent(html, { waitUntil:"load" });
     await p.evaluate(() => document.fonts.ready);
     const nn = String(i+1).padStart(2,"0");
+    // rendu complet (aperçu) puis rendu "fond sans texte" pour le .pptx éditable
     await p.screenshot({ path: path.join(OUT, `${nn}.png`) });
+    const items = await p.evaluate(measureAndHide, TEXT_SEL);
+    await p.screenshot({ path: path.join(OUT, `${nn}_bg.png`) });
+    textOut[String(i + 1)] = items;
     if (s.note) notesOut[String(i+1)] = s.note;
-    console.log("slide", nn, s.kind, "ok");
+    console.log("slide", nn, s.kind, "ok", "(" + items.length + " zones texte)");
   }
   fs.writeFileSync(path.join(OUT, "notes.json"), JSON.stringify(notesOut, null, 1));
+  fs.writeFileSync(path.join(OUT, "text.json"), JSON.stringify(textOut));
   await b.close();
 })();
