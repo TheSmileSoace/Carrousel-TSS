@@ -47,6 +47,13 @@ function foot({ n, total, dark }) {
 const frame = (label, cap = "") =>
   `<div class="frame"><span>${esc(label)}</span>${cap ? `<small>${esc(cap)}</small>` : ""}</div>`;
 
+// cadre avec vraie photo intégrée + légende sous l'image
+const A = path.join(ROOT, "assets/carrousels/mathys/exo");
+const photo = (file, label) => {
+  const src = b64(path.join(A, file), "image/jpeg");
+  return `<figure class="pf"><div class="pf-img"><img src="${src}" alt=""></div><figcaption>${esc(label)}</figcaption></figure>`;
+};
+
 function shell({ kind, n, total, dark, body }) {
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
 ${fonts}
@@ -82,6 +89,14 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
  font-size:21px;color:var(--pht)}
 .slide.dark .frame span{color:rgba(255,255,255,.6)}
 .frame small{font-family:var(--fb);font-weight:400;font-size:19px;line-height:1.3;color:var(--pht);max-width:90%}
+
+/* Rangée de photos intégrées */
+.prow{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:30px;align-items:stretch}
+.pf{display:flex;flex-direction:column;gap:16px;min-height:0}
+.pf-img{flex:1;min-height:0;border-radius:20px;overflow:hidden;background:#EFE7DC;box-shadow:0 16px 40px rgba(43,41,38,.10)}
+.pf-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pf figcaption{font-family:var(--ft);font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+ font-size:22px;color:var(--brand);text-align:center}
 
 /* Colonnes / cartes */
 .cols{flex:1;min-height:0;display:grid;gap:34px;margin-top:30px}
@@ -177,17 +192,14 @@ const slides = [
       <div class="cover-line">« Même outil, deux missions »</div>
     </div>` },
 
-  // 2 — Documentation · Photos extra-orales (superposition + vues)
+  // 2 — Documentation · Photos extra-orales (4 vues réelles)
   { kind:"exo", dark:false, note:N(2), body:`
     ${head("Cas 1 · Documentation", `Photos <span class="hl">extra-orales</span>`)}
-    <div class="grid" style="grid-template-columns:repeat(6,1fr);grid-template-rows:1fr 1.15fr;gap:22px">
-      <div class="frame" style="grid-column:1 / -1"><span>Superposition — profils droit &amp; gauche · repos ↔ sourire</span><small>planche alignée, comme la vue d'origine</small></div>
-      ${frame("Face · repos")}
-      ${frame("Face · sourire")}
-      ${frame("Profil D · repos")}
-      ${frame("Profil D · sourire")}
-      ${frame("Profil G · repos")}
-      ${frame("Profil G · sourire")}
+    <div class="prow">
+      ${photo("face.jpg", "Face · repos")}
+      ${photo("face_sourire.jpg", "Face · sourire")}
+      ${photo("profil_droit.jpg", "Profil droit · repos")}
+      ${photo("profil_droit_sourire.jpg", "Profil droit · sourire")}
     </div>` },
 
   // 3 — Documentation · Photos intra-orales (G / face / D)
