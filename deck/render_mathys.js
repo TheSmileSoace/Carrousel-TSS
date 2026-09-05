@@ -17,6 +17,8 @@ const logoDark = b64(path.join(ROOT, "assets/logo.png"), "image/png");        //
 const logoLight = b64(path.join(ROOT, "assets/logo-light.png"), "image/png");  // fonds sombres
 const ulbPath = path.join(ROOT, "assets/logo-ulb.png");
 const ulb = fs.existsSync(ulbPath) ? b64(ulbPath, "image/png") : null;
+const coverImgPath = path.join(ROOT, "assets/carrousels/mathys/exo/face_sourire_cutout.png");
+const coverImg = fs.existsSync(coverImgPath) ? b64(coverImgPath, "image/png") : null;
 
 // notes du conférencier (nettoyées du n° de page en fin de texte)
 const RAWNOTES = JSON.parse(fs.readFileSync(path.join(__dirname, "mathys_notes.json"), "utf8"));
@@ -156,6 +158,9 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .close-title{font-family:var(--ft);font-weight:700;font-size:76px;line-height:1.14;letter-spacing:-.02em;max-width:1500px}
 .close-title .hl{color:var(--accent)}
 .close-kicker{font-family:var(--ft);font-weight:700;font-size:44px;letter-spacing:-.01em;margin-top:34px}
+.kind-cover .stage{max-width:1080px}
+.cover-portrait{position:absolute;right:120px;bottom:96px;height:80%;width:auto;object-fit:contain;
+ object-position:bottom center;filter:drop-shadow(0 14px 44px rgba(0,0,0,.5));z-index:1}
 
 .foot{display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-top:16px;
  border-top:1px solid rgba(43,41,38,.12)}
@@ -190,7 +195,8 @@ const slides = [
       <div class="cover-motif"><b>Motif de consultation —</b> [ … ]</div>
       <div class="cover-fiche">Angelieri A-B · déficit transverse · encombrement</div>
       <div class="cover-line">« Même outil, deux missions »</div>
-    </div>` },
+    </div>
+    ${coverImg ? `<img class="cover-portrait" src="${coverImg}" alt="">` : ""}` },
 
   // 2 — Documentation · Photos extra-orales (4 vues réelles)
   { kind:"exo", dark:false, note:N(2), body:`
