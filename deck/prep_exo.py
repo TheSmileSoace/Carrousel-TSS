@@ -65,14 +65,20 @@ def eye_angle(im_bgr):
 
 
 def level_eyes(pil):
-    """Fait pivoter l'image pour rendre la ligne bipupillaire horizontale."""
-    im_bgr = cv2.cvtColor(np.asarray(pil), cv2.COLOR_RGB2BGR)
-    a0 = eye_angle(im_bgr)
+    """Fait pivoter l'image pour rendre la ligne bipupillaire horizontale.
+    Essaie les deux sens et garde celui qui minimise l'angle résiduel."""
+    a0 = eye_angle(cv2.cvtColor(np.asarray(pil), cv2.COLOR_RGB2BGR))
     if a0 is None or abs(a0) < 0.15:
         return pil, (a0 or 0.0)
     bg = tuple(int(v) for v in _bg_color(np.asarray(pil).astype(float)))
-    rot = pil.rotate(-a0, resample=Image.BICUBIC, expand=False, fillcolor=bg)
-    return rot, a0
+    best = None
+    for sign in (1, -1):
+        cand = pil.rotate(sign * a0, resample=Image.BICUBIC, expand=False, fillcolor=bg)
+        res = eye_angle(cv2.cvtColor(np.asarray(cand), cv2.COLOR_RGB2BGR))
+        res = 999.0 if res is None else abs(res)
+        if best is None or res < best[0]:
+            best = (res, cand, sign)
+    return best[1], a0
 
 
 def crop_head(pil):
