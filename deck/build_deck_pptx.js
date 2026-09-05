@@ -8,7 +8,10 @@ const fs = require("fs"), path = require("path");
 const PptxGenJS = require("pptxgenjs");
 
 const OUT = path.join(__dirname, "out");
-const notes = JSON.parse(fs.readFileSync(path.join(__dirname, "mathys_notes.json"), "utf8"));
+const notesPath = path.join(OUT, "notes.json");
+const notes = fs.existsSync(notesPath)
+  ? JSON.parse(fs.readFileSync(notesPath, "utf8"))
+  : JSON.parse(fs.readFileSync(path.join(__dirname, "mathys_notes.json"), "utf8"));
 const dest = process.argv[2] || path.join(__dirname, "..", "sortie", "Cas_Mathys_TSS.pptx");
 
 const W = 13.333, H = 7.5; // 16:9
