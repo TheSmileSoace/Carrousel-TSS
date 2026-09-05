@@ -12,13 +12,13 @@ const fs = require("fs"), path = require("path");
 const PptxGenJS = require("pptxgenjs");
 
 const ROOT = path.join(__dirname, "..");
-const OUT = path.join(__dirname, "out");
+const OUT = process.env.DECK_OUT || path.join(__dirname, "out");
 const rd = (f) => JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8"));
 const notes = rd("notes.json"), text = rd("text.json"), shapes = rd("shapes.json");
 const foot = rd("foot.json"), meta = rd("meta.json");
 const photosPath = path.join(OUT, "photos_final.json");
 const photos = fs.existsSync(photosPath) ? JSON.parse(fs.readFileSync(photosPath, "utf8")) : {};
-const dest = process.argv[2] || path.join(ROOT, "sortie", "Cas_Mathys_TSS.pptx");
+const dest = process.argv[2] || process.env.DECK_DEST || path.join(ROOT, "sortie", "Cas_Mathys_TSS.pptx");
 
 const W = 13.333, H = 7.5, SC = W / 1920, PT = 0.5;
 const LOGO_DARK = path.join(ROOT, "assets/logo.png");
@@ -28,7 +28,7 @@ const ULB_LOGO = path.join(ROOT, "assets/logo-ulb.png");
 const pptx = new PptxGenJS();
 pptx.defineLayout({ name: "WIDE169", width: W, height: H });
 pptx.layout = "WIDE169";
-pptx.title = "The Smile Space — Cas 1 · Mathys";
+pptx.title = process.env.DECK_TITLE || "The Smile Space — Cas 1 · Mathys";
 
 const alignOf = (a) => (a === "center" || a === "right" ? a : "left");
 const IN = (px) => px * SC;

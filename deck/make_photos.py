@@ -10,8 +10,8 @@ import json, os
 from PIL import Image, ImageDraw
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-OUT = os.path.join(os.path.dirname(__file__), "out")
-ASSETS = os.path.join(ROOT, "assets/carrousels/mathys")
+OUT = os.environ.get("DECK_OUT", os.path.join(os.path.dirname(__file__), "out"))
+ASSETS = os.environ.get("DECK_ASSETS", os.path.join(ROOT, "assets/carrousels/mathys"))
 PDIR = os.path.join(OUT, "photos")
 os.makedirs(PDIR, exist_ok=True)
 S = 2                # rendu 2x

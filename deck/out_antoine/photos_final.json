@@ -1,0 +1,134 @@
+{
+ "1": [],
+ "2": [
+  {
+   "png": "deck/out_antoine/photos/02_0.png",
+   "x": 104,
+   "y": 161,
+   "w": 405.5,
+   "h": 781,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/02_1.png",
+   "x": 539.5,
+   "y": 161,
+   "w": 405.5,
+   "h": 781,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/02_2.png",
+   "x": 975,
+   "y": 161,
+   "w": 405.5,
+   "h": 781,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/02_3.png",
+   "x": 1410.5,
+   "y": 161,
+   "w": 405.5,
+   "h": 781,
+   "fit": "cover"
+  }
+ ],
+ "3": [
+  {
+   "png": "deck/out_antoine/photos/03_0.png",
+   "x": 104,
+   "y": 345,
+   "w": 548,
+   "h": 411,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/03_1.png",
+   "x": 686,
+   "y": 345,
+   "w": 548,
+   "h": 411,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/03_2.png",
+   "x": 1268,
+   "y": 345,
+   "w": 548,
+   "h": 411,
+   "fit": "cover"
+  }
+ ],
+ "4": [
+  {
+   "png": "deck/out_antoine/photos/04_0.png",
+   "x": 104,
+   "y": 237.75,
+   "w": 834,
+   "h": 625.5,
+   "fit": "cover"
+  },
+  {
+   "png": "deck/out_antoine/photos/04_1.png",
+   "x": 982,
+   "y": 237.75,
+   "w": 834,
+   "h": 625.5,
+   "fit": "cover"
+  }
+ ],
+ "5": [
+  {
+   "png": "deck/out_antoine/photos/05_0.png",
+   "x": 104.0,
+   "y": 188.35824458318035,
+   "w": 1712.0,
+   "h": 724.2835108336393,
+   "fit": "contain"
+  }
+ ],
+ "6": [
+  {
+   "png": "deck/out_antoine/photos/06_0.png",
+   "x": 229.0191190326633,
+   "y": 199.875,
+   "w": 585.9617619346734,
+   "h": 742.125,
+   "fit": "contain"
+  },
+  {
+   "png": "deck/out_antoine/photos/06_1.png",
+   "x": 1095.2911184210525,
+   "y": 199.875,
+   "w": 605.4177631578948,
+   "h": 742.125,
+   "fit": "contain"
+  }
+ ],
+ "7": [],
+ "8": [],
+ "9": [],
+ "10": [],
+ "11": [
+  {
+   "png": "deck/out_antoine/photos/11_0.png",
+   "x": 256.09900086369345,
+   "y": 224.46875,
+   "w": 531.8019982726131,
+   "h": 673.53125,
+   "fit": "contain"
+  },
+  {
+   "png": "deck/out_antoine/photos/11_1.png",
+   "x": 1132.7336094535176,
+   "y": 224.46875,
+   "w": 530.5327810929648,
+   "h": 673.53125,
+   "fit": "contain"
+  }
+ ],
+ "12": [],
+ "13": [],
+ "14": []
+}
