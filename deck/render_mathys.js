@@ -134,6 +134,8 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .row{display:flex;align-items:flex-start;gap:26px;font-size:34px;line-height:1.28}
 .row .rd{font-weight:600}
 .row .rt{color:#57534d;font-weight:400}
+.rows.tight{gap:18px}
+.rows.tight .row{font-size:29px;line-height:1.24}
 .dot{flex:0 0 auto;width:16px;height:16px;border-radius:50%;background:var(--accent);margin-top:12px}
 
 .keybox{margin-top:26px;align-self:flex-start;background:var(--brand);color:#fff;border-radius:18px;
@@ -167,8 +169,18 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .close-title .hl{color:var(--accent)}
 .close-kicker{font-family:var(--ft);font-weight:700;font-size:44px;letter-spacing:-.01em;margin-top:34px}
 .kind-cover .stage{max-width:1080px}
-.cover-portrait{position:absolute;right:120px;bottom:96px;height:80%;width:auto;object-fit:contain;
+.cover-portrait{position:absolute;right:130px;bottom:150px;height:70%;width:auto;object-fit:contain;
  object-position:bottom center;filter:drop-shadow(0 14px 44px rgba(0,0,0,.5));z-index:1}
+
+/* Emplacement image propre (sans pointillés) */
+.ph{border-radius:20px;background:#EFE7DC;display:flex;align-items:center;justify-content:center;min-height:0}
+.ph span{font-family:var(--ft);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:22px;color:#B0A794}
+
+/* QR + citation (dia Sites d'insertion) */
+.qrband{display:flex;align-items:center;gap:30px;margin-top:auto}
+.qrband .pf{width:190px;flex:0 0 auto}
+.qrcap{font-size:24px;line-height:1.4;color:#6a655c;max-width:820px}
+.qrcap b{color:var(--brand)}
 
 .foot{display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-top:16px;
  border-top:1px solid rgba(43,41,38,.12)}
@@ -190,67 +202,60 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 
 const head = (k, t, s = "") =>
   `<div class="kicker">${esc(k)}</div><h1 class="h-title">${t}</h1>${s ? `<div class="h-sub">${s}</div>` : ""}`;
+const kick = (k) => `<div class="kicker">${esc(k)}</div>`;
+const ph = (label) => `<div class="ph"><span>${esc(label)}</span></div>`;
+const qr = (cap) => `<div class="qrband">${pimg("qr", "wilmes_sodo2024.png", "", { fit: "contain", aspect: "1" })}<div class="qrcap">${cap}</div></div>`;
 
 // =====================================================================
 //  Contenu des slides  (note = notes conférencier)
 // =====================================================================
 const slides = [
-  // 1 — Couverture (âge + motif de consultation)
+  // 1 — Couverture
   { kind:"cover", dark:true, note:N(1), body:`<div class="stage" style="justify-content:center">
       <div class="cover-eyebrow">The Smile Space · Cas 1</div>
       <div class="cover-title">Mathys</div>
-      <div class="cover-meta">Denture mixte · [ … ] ans</div>
-      <div class="cover-motif"><b>Motif de consultation —</b> [ … ]</div>
+      <div class="cover-meta">Denture mixte · 12,5 ans</div>
+      <div class="cover-motif"><b>Motif de consultation —</b> Encombrement dentaire</div>
       <div class="cover-fiche">Angelieri A-B · déficit transverse · encombrement</div>
       <div class="cover-line">« Même outil, deux missions »</div>
     </div>
-    ${coverImg ? `<img class="cover-portrait" src="${coverImg}" alt="">` : ""}` },
+    ${coverImg ? `<img class="cover-portrait" src="${coverImg}" data-portrait="assets/carrousels/mathys/exo/face_sourire_cutout.png" alt="">` : ""}` },
 
-  // 2 — Documentation · Photos extra-orales (4 vues réelles)
-  { kind:"exo", dark:false, note:N(2), body:`
-    ${head("Cas 1 · Documentation", `Photos <span class="hl">extra-orales</span>`)}
-    <div class="prow">
-      ${photo("face.jpg")}
-      ${photo("face_sourire.jpg")}
-      ${photo("profil_droit.jpg")}
-      ${photo("profil_droit_sourire.jpg")}
+  // 2 — Documentation · exo
+  { kind:"exo", dark:false, note:N(2), body:`${kick("Cas 1 · Documentation")}
+    <div class="prow" style="padding-top:26px">
+      ${photo("face.jpg")}${photo("face_sourire.jpg")}${photo("profil_droit.jpg")}${photo("profil_droit_sourire.jpg")}
     </div>` },
 
-  // 3 — Documentation · Photos intra-orales (D / face / G)
-  { kind:"intra", dark:false, note:"[Documentation intra-orale — vues latérales et frontale.] Occlusion en intercuspidie : rapports transverses et sagittaux, encombrement.",
-    body:`
-    <div class="prow vc" style="grid-template-columns:repeat(3,1fr);gap:34px;padding-top:20px">
-      ${pimg("intra","droite.jpg","",{aspect:"4/3"})}
-      ${pimg("intra","face.jpg","",{aspect:"4/3"})}
-      ${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
+  // 3 — Documentation · intra
+  { kind:"intra", dark:false, note:"[Doc intra — latéral D / face / latéral G.] Occlusion, rapports transverses et sagittaux, encombrement.",
+    body:`${kick("Cas 1 · Documentation")}
+    <div class="prow vc" style="grid-template-columns:repeat(3,1fr);gap:34px;padding-top:24px">
+      ${pimg("intra","droite.jpg","",{aspect:"4/3"})}${pimg("intra","face.jpg","",{aspect:"4/3"})}${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
     </div>` },
 
-  // 4 — Documentation · Occlusales (haut / bas)
-  { kind:"occlu", dark:false, note:"[Vues occlusales — arcades maxillaire et mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
-    body:`
-    <div class="prow vc" style="grid-template-columns:repeat(2,1fr);gap:44px;padding-top:20px">
-      ${pimg("intra","haut.jpg","",{aspect:"4/3"})}
-      ${pimg("intra","bas.jpg","",{aspect:"4/3"})}
+  // 4 — Documentation · occlusales
+  { kind:"occlu", dark:false, note:"[Vues occlusales — maxillaire / mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
+    body:`${kick("Cas 1 · Documentation")}
+    <div class="prow vc" style="grid-template-columns:repeat(2,1fr);gap:44px;padding-top:24px">
+      ${pimg("intra","haut.jpg","",{aspect:"4/3"})}${pimg("intra","bas.jpg","",{aspect:"4/3"})}
     </div>` },
 
-  // 5 — Documentation · Panoramique
-  { kind:"pano", dark:false, note:"[Radiographie panoramique — denture mixte.] Présence et position des germes, séquence d'éruption, bilan général.",
-    body:`
-    ${head("Cas 1 · Documentation", `Radiographie <span class="hl">panoramique</span>`)}
-    <div class="prow" style="grid-template-columns:1fr">
+  // 5 — Documentation · panoramique
+  { kind:"pano", dark:false, note:"[Panoramique — denture mixte.] Germes, séquence d'éruption, bilan général.",
+    body:`${kick("Cas 1 · Documentation")}
+    <div class="prow" style="grid-template-columns:1fr;padding-top:24px">
       ${pimg("radio","panoramique.jpg","",{fit:"contain"})}
     </div>` },
 
-  // 6 — Documentation · Profil (téléradio + tracé + analyse)
-  { kind:"profil", dark:false, note:"[Téléradiographie de profil + tracé + tableau de mesures.] Rapports squelettiques et dentaires ; base des mesures.",
-    body:`
-    ${head("Cas 1 · Documentation", `Profil — <span class="hl">tracé & analyse</span>`)}
-    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px">
-      ${pimg("radio","trace.jpg","",{fit:"contain"})}
-      ${pimg("radio","tableau.jpg","",{fit:"contain"})}
+  // 6 — Documentation · profil
+  { kind:"profil", dark:false, note:"[Téléradio + tracé + tableau.] Rapports squelettiques et dentaires ; base des mesures.",
+    body:`${kick("Cas 1 · Documentation")}
+    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px;padding-top:24px">
+      ${pimg("radio","trace.jpg","",{fit:"contain"})}${pimg("radio","tableau.jpg","",{fit:"contain"})}
     </div>` },
 
-  // 7 — Participation 1
+  // 7 — Participation
   { kind:"vote", dark:true, note:N(3), body:`<div class="stage">
       <div class="vote-tag">Participation</div>
       <div class="vote-q">Suture ouverte. Stade A-B. Aucune résistance.<br><span class="hl">Et pourtant, des vis.</span> Pourquoi ?</div>
@@ -259,7 +264,7 @@ const slides = [
 
   // 8 — La réponse
   { kind:"answer", dark:false, note:N(4), body:`
-    ${head("Cas 1 · La réponse", `<span class="hl">Ancrage</span>, pas résistance.`)}
+    ${head("Cas 1 · La réponse", `<span class="hl">Ancrage</span> vs résistance.`)}
     <div class="nums">
       <div class="num"><div class="no">1</div><h4>La suture cède</h4><p>À cet âge elle est ouverte — elle ne résiste pas.</p></div>
       <div class="num"><div class="no">2</div><h4>Le vrai problème : l'ancrage</h4><p>Les dents de lait ne tiennent pas les forces.</p></div>
@@ -272,54 +277,44 @@ const slides = [
       <span class="ref">Mohamed 2018 · 10.2319/091717-624.1</span>
     </div>` },
 
-  // 9 — Le dispositif
+  // 9 — Sites d'insertion (+ QR)
+  { kind:"sites", dark:false, note:N(9), body:`
+    ${head("Cas 1 · Sites d'insertion", `À 12 ans : <span class="hl">7 mm suffisent</span>.`)}
+    <div class="rows" style="flex:none;margin-top:26px">
+      <div class="row"><div class="dot"></div><div><span class="rd">T-zone</span> <span class="rt">— ni guide, ni ancrage bicortical indispensables à cet âge</span></div></div>
+    </div>
+    ${qr(`<b>Tarraf &amp; Wilmes</b>, Semin Orthod 2024 — CC BY 4.0,<br>avec l'aimable autorisation du Pr Wilmes.`)}` },
+
+  // 10 — Le dispositif
   { kind:"device", dark:false, note:N(5), body:`
-    ${head("Cas 1 · Le dispositif", `MARPE + 2 vis de <span class="hl">distalisation</span>`)}
-    <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:30px">
-      ${frame("Photo : MARPE + 2 vis", "occlusal + 3/4")}
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:20px">
+    ${head("Cas 1 · Le dispositif", `MARPE + 2 vérins de <span class="hl">distalisation</span>`)}
+    <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
+      ${ph("Photo — MARPE + 2 vérins")}
+      <div class="rows tight" style="justify-content:center">
         <div class="row"><div class="dot"></div><div><span class="rd">Vérin central</span> <span class="rt">— expansion transverse</span></div></div>
-        <div class="row"><div class="dot"></div><div><span class="rd">2 vis de distalisation</span> <span class="rt">— recul des quadrants I et II</span></div></div>
+        <div class="row"><div class="dot"></div><div><span class="rd">2 vérins de distalisation</span> <span class="rt">— recul des quadrants I &amp; II</span></div></div>
         <div class="row"><div class="dot"></div><div><span class="rd">Ancrage osseux paramédian</span> <span class="rt">— en arrière des incisives</span></div></div>
         <div class="keybox"><b>À cet âge —</b> 7 mm d'ancrage osseux suffisent (faible résistance suturale).</div>
       </div>
     </div>` },
 
-  // 10 — Résultats avant/après
-  { kind:"results", dark:false, note:N(6), body:`
-    ${head("Cas 1 · Résultats", `Avant / <span class="hl">après</span>`)}
-    <div class="grid" style="grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
-      ${frame("Occlusale — AVANT")}
-      ${frame("Occlusale — APRÈS")}
-      ${frame("CBCT / profil — AVANT")}
-      ${frame("CBCT / profil — APRÈS")}
+  // 11 — Evolution (occlusal)
+  { kind:"evolution", dark:false, note:N(6), body:`
+    ${head("Cas 1 · Evolution", `Occlusal — avant / <span class="hl">après</span>`)}
+    <div class="prow" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
+      ${ph("AVANT")}${ph("APRÈS")}
     </div>` },
 
-  // 11 — Vidéo (pose)
-  { kind:"video", dark:false, note:N(7), body:`
-    ${head("Vidéo", `La pose, en <span class="hl">trente secondes</span>.`)}
-    <div class="grid" style="grid-template-columns:1.15fr .85fr;margin-top:30px">
-      ${frame("Vidéo : pose des vis")}
-      <div class="card">
-        <h3>Le tempo</h3>
-        <ul style="padding:0;margin:0">
-          <li>On repère.</li>
-          <li>Un quart de tour, deux, trois… la <b>stabilité primaire</b>.</li>
-          <li>Pas de forcing — on s'arrête quand la tête touche la gencive.</li>
-        </ul>
-      </div>
+  // 12 — Evolution (profil / sourire)
+  { kind:"evolution", dark:false, note:N(6), body:`
+    ${head("Cas 1 · Evolution", `Profil &amp; sourire — avant / <span class="hl">après</span>`)}
+    <div class="prow" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
+      ${ph("AVANT")}${ph("APRÈS")}
     </div>` },
 
-  // 12 — Participation 2
-  { kind:"vote", dark:true, note:N(8), body:`<div class="stage">
-      <div class="vote-tag">Participation</div>
-      <div class="vote-q">L'ancrage bicortical —<br><span class="hl">indispensable à 12 ans ?</span></div>
-      <div class="vote-hand">✋ À main levée</div>
-    </div>` },
-
-  // 13 — Tips & protocole
+  // 13 — Conseils & protocole
   { kind:"tips", dark:false, note:N(9), body:`
-    ${head("Cas 1 · Tips & protocole", `<span class="hl">7 mm</span> suffisent.`)}
+    ${head("Cas 1 · Conseils & protocole", `À 12 ans : <span class="hl">7 mm suffisent</span>.`)}
     <div class="rows">
       <div class="row"><div class="dot"></div><div><span class="rd">T-zone</span> <span class="rt">— ni guide ni bicortical nécessaires à cet âge</span></div></div>
       <div class="row"><div class="dot"></div><div><span class="rd">7 mm d'ancrage osseux</span> <span class="rt">— faible résistance suturale</span></div></div>
@@ -328,7 +323,31 @@ const slides = [
     </div>
     <div class="refs-note">« 7 mm, dans ma pratique » — expérience clinique, pas un seuil publié.</div>` },
 
-  // 14 — Ce que ça change (deux colonnes)
+  // 14 — Vidéo (pose)
+  { kind:"video", dark:false, note:N(7), body:`
+    ${head("Cas 1 · Vidéo", `La pose, en <span class="hl">trente secondes</span>.`)}
+    <div class="grid" style="grid-template-columns:1.15fr .85fr;margin-top:30px">
+      ${ph("Vidéo — pose des vis")}
+      <div class="card"><h3>Le tempo</h3><ul style="padding:0;margin:0">
+        <li>On repère.</li>
+        <li>Un quart de tour, deux, trois… la <b>stabilité primaire</b>.</li>
+        <li>Pas de forcing — on s'arrête quand la tête touche la gencive.</li>
+      </ul></div>
+    </div>` },
+
+  // 15 — Vidéo (appareil en bouche)
+  { kind:"video", dark:false, note:N(7), body:`
+    ${head("Cas 1 · Vidéo", `L'appareil <span class="hl">en bouche</span>.`)}
+    <div class="prow" style="grid-template-columns:1fr;padding-top:24px">${ph("Vidéo / photo — appareil en bouche")}</div>` },
+
+  // 16 — Participation 2
+  { kind:"vote", dark:true, note:N(8), body:`<div class="stage">
+      <div class="vote-tag">Participation</div>
+      <div class="vote-q">L'ancrage bicortical —<br><span class="hl">indispensable à 12 ans ?</span></div>
+      <div class="vote-hand">À main levée</div>
+    </div>` },
+
+  // 17 — Ce que ça change
   { kind:"change", dark:false, note:N(10), body:`
     ${head("Cas 1 · Ce que ça change", `Pour <span class="hl">lui</span>. Pour <span class="hl">nous</span>.`)}
     <div class="cols" style="grid-template-columns:1fr 1fr">
@@ -344,19 +363,18 @@ const slides = [
       </ul></div>
     </div>` },
 
-  // 15 — La chute
+  // 18 — La chute
   { kind:"closing", dark:true, note:N(11), body:`<div class="stage" style="justify-content:center">
       <div class="cover-eyebrow">La leçon</div>
-      <div class="close-title" style="margin-top:26px">Chez l'adulte, la vis <span class="hl">vainc l'os</span>.<br>Chez l'enfant, elle ne vainc rien : elle <span class="hl">ancre</span>.</div>
+      <div class="close-title" style="margin-top:26px">Chez l'adulte, la vis <span class="hl">vainc l'os</span>.<br>Chez l'enfant, elle <span class="hl">ancre</span>.</div>
       <div class="close-kicker">Même outil, deux missions.</div>
     </div>` },
 ];
 
 const TOTAL = slides.length;
 
-// Sélecteurs des textes rendus ÉDITABLES dans le .pptx (posés en zones de texte
-// natives par-dessus un fond sans texte). Le reste (pastilles, puces, chiffres,
-// logos) reste graphique.
+// Textes éditables (zones natives). Inclut aussi les textes DANS des formes
+// (chiffres de carte, boîte "à cet âge", pastilles réf, "à main levée").
 const TEXT_SEL = [
   ".kicker", ".h-title", ".h-sub",
   ".cover-eyebrow", ".cover-title", ".cover-meta", ".cover-motif", ".cover-fiche", ".cover-line",
@@ -364,6 +382,19 @@ const TEXT_SEL = [
   ".vote-tag", ".vote-q", ".quote",
   ".num h4", ".num p", ".card h3", ".card li",
   ".refs-note", ".pf figcaption", ".row div:last-child",
+  ".num .no", ".keybox", ".ref", ".vote-hand", ".ph span", ".qrcap",
+];
+
+// Formes décoratives -> objets natifs : [selector, type, options]
+const SHAPE_DEFS = [
+  [".card", "roundrect", { fill: "FFFFFF", line: "E7E1D5", lw: 1, rad: 22, shadow: 1 }],
+  [".num", "roundrect", { fill: "FFFFFF", line: "E7E1D5", lw: 1, rad: 22, shadow: 1 }],
+  [".num .no", "roundrect", { fill: "3A3733", rad: 16 }],
+  [".keybox", "roundrect", { fill: "3A3733", rad: 18 }],
+  [".ref", "roundrect", { fill: "F0EBE1", line: "E1D9C9", lw: 1, rad: 999 }],
+  [".vote-hand", "roundrect", { fill: "C3A46E", rad: 14 }],
+  [".ph", "roundrect", { fill: "EFE7DC", rad: 20 }],
+  [".dot", "ellipse", { fill: "C3A46E" }],
 ];
 
 // Mesure la géométrie + le style de chaque texte, puis le rend transparent
@@ -393,68 +424,87 @@ function measureAndHide(selectors) {
   };
   const seen = new Set();
   const items = [];
-  selectors.forEach((sel) => {
+  selectors.textSel.forEach((sel) => {
     document.querySelectorAll(sel).forEach((el) => {
       if (seen.has(el) || !el.textContent.trim()) return;
       seen.add(el);
       const r = el.getBoundingClientRect();
       const cs = getComputedStyle(el);
+      const mid = (cs.display === "flex" && cs.alignItems === "center") || cs.justifyContent === "center";
       items.push({
-        x: r.left, y: r.top, w: r.width, h: r.height,
+        sel, x: r.left, y: r.top, w: r.width, h: r.height,
         size: parseFloat(cs.fontSize),
         lh: parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.2,
-        padL: parseFloat(cs.paddingLeft) || 0,
-        align: cs.textAlign, valign: cs.justifyContent,
+        padL: parseFloat(cs.paddingLeft) || 0, padT: parseFloat(cs.paddingTop) || 0,
+        padR: parseFloat(cs.paddingRight) || 0,
+        align: cs.textAlign, mid,
         family: /Poppins/.test(cs.fontFamily) ? "Poppins" : "Inter",
         runs: runsOf(el),
       });
     });
   });
-  // masquer le texte (glyphes) en conservant les graphismes
-  seen.forEach((el) => {
-    el.style.textShadow = "none";
-    el.style.color = "transparent";
-    el.querySelectorAll("*").forEach((c) => { c.style.color = "transparent"; c.style.textShadow = "none"; });
+  // formes décoratives -> objets natifs
+  const shapes = [];
+  selectors.shapeDefs.forEach(([sel, type, opt]) => {
+    document.querySelectorAll(sel).forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.width < 1 || r.height < 1) return;
+      let rad = opt.rad;
+      if (rad === 999) rad = Math.min(r.width, r.height) / 2;
+      shapes.push({ type, x: r.left, y: r.top, w: r.width, h: r.height,
+        fill: opt.fill, line: opt.line || null, lw: opt.lw || 0, rad: rad || 0, shadow: opt.shadow ? 1 : 0 });
+    });
   });
-  // photos : mesurer puis retirer du fond (posées en images natives dans le .pptx)
+  // photos (images natives)
   const photos = [];
   document.querySelectorAll("[data-photo]").forEach((el) => {
     const r = el.getBoundingClientRect();
     const im = el.querySelector("img");
-    photos.push({
-      x: r.left, y: r.top, w: r.width, h: r.height,
+    photos.push({ x: r.left, y: r.top, w: r.width, h: r.height,
       file: el.getAttribute("data-photo"), fit: el.getAttribute("data-fit"),
-      nw: im ? im.naturalWidth : 0, nh: im ? im.naturalHeight : 0,
-    });
-    const fig = el.closest(".pf") || el;
-    fig.style.visibility = "hidden";
+      nw: im ? im.naturalWidth : 0, nh: im ? im.naturalHeight : 0 });
   });
-  return { items, photos };
+  // pied de page + portrait de couverture
+  const foot = {};
+  const f = document.querySelector(".foot");
+  if (f) { const r = f.getBoundingClientRect(); foot.lineY = r.top; foot.lineX0 = r.left; foot.lineX1 = r.right; foot.dark = f.classList.contains("on-brand"); }
+  const tss = document.querySelector(".tss");
+  if (tss) { const r = tss.getBoundingClientRect(); foot.logo = { x: r.left, y: r.top, w: r.width, h: r.height }; }
+  const ulb = document.querySelector(".ulb, .ulb-ph");
+  if (ulb) { const r = ulb.getBoundingClientRect(); foot.ulb = { x: r.left, y: r.top, w: r.width, h: r.height, img: ulb.tagName === "IMG" }; }
+  const pg = document.querySelector(".pageno");
+  if (pg) { const r = pg.getBoundingClientRect(); const cs = getComputedStyle(pg); foot.num = { x: r.left, y: r.top, w: r.width, h: r.height, size: parseFloat(cs.fontSize), color: hex(cs.color), align: cs.textAlign }; }
+  const cp = document.querySelector(".cover-portrait");
+  if (cp) { const r = cp.getBoundingClientRect(); foot.portrait = { x: r.left, y: r.top, w: r.width, h: r.height, src: cp.getAttribute("data-portrait") || "" }; }
+  // FOND PLAT : masquer tout le contenu du .slide, ne garder que sa couleur/texture
+  document.querySelectorAll(".slide > *").forEach((el) => { el.style.visibility = "hidden"; });
+  return { items, shapes, photos, foot };
 }
 
 (async () => {
   const b = await chromium.launch({ executablePath: fs.existsSync(EXEC) ? EXEC : undefined, args:["--no-sandbox"] });
   const p = await b.newPage({ viewport:{ width:1920, height:1080 }, deviceScaleFactor:2 });
-  const notesOut = {};
-  const textOut = {};
-  const photoOut = {};
+  const notesOut = {}, textOut = {}, shapeOut = {}, photoOut = {}, footOut = {}, metaOut = {};
   for (let i = 0; i < slides.length; i++) {
     const s = slides[i];
     const html = shell({ kind:s.kind, n:i+1, total:TOTAL, dark:s.dark, body:s.body });
     await p.setContent(html, { waitUntil:"load" });
     await p.evaluate(() => document.fonts.ready);
     const nn = String(i+1).padStart(2,"0");
-    // rendu complet (aperçu) puis rendu "fond sans texte ni photo" pour le .pptx éditable
-    await p.screenshot({ path: path.join(OUT, `${nn}.png`) });
-    const { items, photos } = await p.evaluate(measureAndHide, TEXT_SEL);
-    await p.screenshot({ path: path.join(OUT, `${nn}_bg.png`) });
-    textOut[String(i + 1)] = items;
-    photoOut[String(i + 1)] = photos;
-    if (s.note) notesOut[String(i+1)] = s.note;
-    console.log("slide", nn, s.kind, "ok", "(" + items.length + " textes, " + photos.length + " photos)");
+    await p.screenshot({ path: path.join(OUT, `${nn}.png`) });               // aperçu complet
+    const { items, shapes, photos, foot } = await p.evaluate(measureAndHide, { textSel: TEXT_SEL, shapeDefs: SHAPE_DEFS });
+    await p.screenshot({ path: path.join(OUT, `${nn}_bg.png`) });            // fond plat (couleur/texture)
+    const k = String(i + 1);
+    textOut[k] = items; shapeOut[k] = shapes; photoOut[k] = photos; footOut[k] = foot;
+    metaOut[k] = { dark: !!s.dark, kind: s.kind };
+    if (s.note) notesOut[k] = s.note;
+    console.log("slide", nn, s.kind, `ok (${items.length} txt, ${shapes.length} formes, ${photos.length} photos)`);
   }
   fs.writeFileSync(path.join(OUT, "notes.json"), JSON.stringify(notesOut, null, 1));
   fs.writeFileSync(path.join(OUT, "text.json"), JSON.stringify(textOut));
+  fs.writeFileSync(path.join(OUT, "shapes.json"), JSON.stringify(shapeOut));
   fs.writeFileSync(path.join(OUT, "photos.json"), JSON.stringify(photoOut, null, 1));
+  fs.writeFileSync(path.join(OUT, "foot.json"), JSON.stringify(footOut, null, 1));
+  fs.writeFileSync(path.join(OUT, "meta.json"), JSON.stringify(metaOut, null, 1));
   await b.close();
 })();
