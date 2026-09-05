@@ -1,0 +1,24 @@
+{
+  "header": "",
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 04",
+  "cornerTagTop": 110,
+  "difficultyBadge": "Plus de 90% se trompent",
+  "inset": "assets/quiz/quiz04/quiz04_cards.png",
+  "insetBare": true,
+  "insetTop": 470,
+  "insetH": 666,
+  "insetSide": 34,
+  "question": "3 sourires d'enfants. Lequel a besoin d'un appareil ?",
+  "highlight": "besoin d'un appareil",
+  "answers": [
+    ["A", ""],
+    ["B", ""],
+    ["C", ""]
+  ],
+  "optsLayout": "horizontal",
+  "optsButtons": true,
+  "qLeft": 48, "qRight": 60, "qTop": 175, "qH": 236,
+  "optsLeft": 40, "optsRight": 60, "optsTop": 1300, "optsH": 150,
+  "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
+}

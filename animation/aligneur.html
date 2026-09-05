@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<style>html,body{margin:0;background:transparent;}svg{display:block}</style>
+<div id="s"></div>
+<script>
+const NS="http://www.w3.org/2000/svg";
+const W=1080,H=1350;
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:W,height:H},document.getElementById("s"));
+const g=el("g",{},svg);
+
+const cx=540, yfront=1080, depth=600, xspan=372;
+const LINE="#F0E4CB";
+function pt(t){return [cx+t*xspan, yfront-(t*t)*depth];}
+function tang(t){const dx=xspan, dy=-2*t*depth; const m=Math.hypot(dx,dy); return [dx/m,dy/m];}
+function norm(t){const [tx,ty]=tang(t); return [ty,-tx];}  // vers l'extérieur (haut/dehors)
+
+// --- coque de l'aligneur : deux bords lissés (extérieur + intérieur) ---
+function rim(off){
+  let d="";
+  for(let i=0;i<=48;i++){
+    const t=-1+i/24;               // -1..1
+    const [x,y]=pt(t); const [nx,ny]=norm(t);
+    const X=x+nx*off, Y=y+ny*off;
+    d+=(i?"L":"M")+X.toFixed(1)+" "+Y.toFixed(1)+" ";
+  }
+  return d;
+}
+el("path",{d:rim(72),fill:"none",stroke:LINE,"stroke-width":9,"stroke-linecap":"round",opacity:0.95},g);
+el("path",{d:rim(-70),fill:"none",stroke:LINE,"stroke-width":7,"stroke-linecap":"round",opacity:0.75},g);
+
+// --- dents (le long de l'arcade) ---
+const N=14;
+for(let i=0;i<N;i++){
+  const t=-1+ (i+0.5)*2/N;
+  const [x,y]=pt(t); const ang=Math.atan2(...[norm(t)[1],norm(t)[0]])*180/Math.PI;
+  const w=60-Math.abs(t)*10, h=104-Math.abs(t)*30;
+  const g2=el("g",{transform:`translate(${x} ${y}) rotate(${ang})`},g);
+  el("rect",{x:-w/2,y:-h/2,width:w,height:h,rx:20,fill:"none",stroke:LINE,"stroke-width":5,opacity:0.9},g2);
+}
+window.__ready=true;
+</script>

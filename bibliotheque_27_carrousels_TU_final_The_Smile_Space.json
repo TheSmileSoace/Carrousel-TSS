@@ -1,0 +1,2093 @@
+{
+  "bibliotheque_carrousels": {
+    "page": "The Smile Space",
+    "format": {
+      "largeur": 1080,
+      "hauteur": 1350
+    },
+    "version": "2.4",
+    "registre": "tutoiement",
+    "note": "27 carrousels, tutoiement. gabarit=curiosity_loop pour 11 sujets a renversement/twist (003,004,006,010,014,015,016,021,022,026,027 -> 8 slides hook>promesse>indice>renversement>revelation>consequence>lecon>cta) ; les 16 autres en gabarit=clinique (008 a 8 slides). Legende structuree valeur>mot-cle>engagement>adresses.",
+    "carrousels": [
+      {
+        "id": "TSS-ORTHO-001",
+        "reel": null,
+        "sujet": "Manque de place pour les dents",
+        "angle": "L'encombrement est une dysharmonie dento-maxillaire : espace disponible vs espace requis",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes dents se chevauchent ? Ce n'est pas parce qu'elles sont trop grandes.",
+            "texte": "Le vrai sujet, c'est la place que ta mâchoire peut leur offrir.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ce que tu vois",
+            "texte": "Des dents qui se chevauchent, tournent, ou une canine qui sort du rang.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Une place, pas une taille",
+            "texte": "Le plus souvent, la mâchoire est un peu trop étroite : les dents n'ont pas la place de s'aligner.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "diagnostic",
+            "titre": "On le mesure, on ne le devine pas",
+            "texte": "On compare la place qu'offre ta mâchoire à celle qu'il faudrait pour aligner tes dents. L'écart se compte en millimètres.",
+            "image": "schema:comme 10 livres sur une étagère prévue pour 8"
+          },
+          {
+            "n": 5,
+            "type": "causes",
+            "titre": "D'où vient ce manque de place",
+            "texte": "Tu hérites de la taille de tes dents et de tes mâchoires. Et respirer par la bouche, enfant, élargit moins le palais.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "explication",
+            "titre": "Pourquoi c'est si courant aujourd'hui",
+            "texte": "Nos ancêtres mâchaient dur, leurs mâchoires étaient larges. On mange plus mou : les mâchoires ont rétréci, pas les dents.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "solution",
+            "titre": "Comment on fait de la place",
+            "texte": "Trois options : limer très finement entre les dents, élargir doucement la mâchoire, ou parfois retirer une dent.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "nuance",
+            "titre": "On ne force pas les dents",
+            "texte": "Elles doivent rester dans l'os qui les tient. Trop les écarter, et la gencive recule et tout risque de rebouger.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 9,
+            "type": "cta",
+            "titre": "Tu veux savoir d'où vient TON manque de place ?",
+            "texte": "Écris ESPACE en commentaire, je t'explique ce qu'on regarde.",
+            "image": null
+          }
+        ],
+        "legende": "Des dents qui se chevauchent ne sont pas forcément « trop grandes ». En orthodontie, on parle de dysharmonie dento-maxillaire : un décalage entre la place disponible sur l'arcade et la place nécessaire aux dents. Ce décalage dépend de l'hérédité (taille des dents et des mâchoires) mais aussi de la fonction — la respiration buccale et une langue qui ne se pose pas au palais réduisent le développement en largeur du maxillaire. Sur le long terme, nos mâchoires se sont aussi réduites avec une alimentation plus molle. Le traitement rétablit l'équilibre — en limant légèrement, en élargissant l'arcade ou en retirant une dent — tout en gardant les racines dans l'os, gage de stabilité.\n\nÉcris ESPACE en commentaire si tu veux comprendre les étapes du bilan.",
+        "hashtags": [
+          "#orthodontie",
+          "#dentsserrees",
+          "#encombrementdentaire",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "ESPACE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-002",
+        "reel": null,
+        "sujet": "Respiration buccale chez l'enfant",
+        "angle": "Un signe fonctionnel à ne pas banaliser",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ton enfant dort la bouche ouverte ?",
+            "texte": "Ce n'est pas toujours un mauvais pli : parfois son nez n'arrive pas à faire le travail.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Les signes qui doivent t'alerter",
+            "texte": "Lèvres sèches, ronflements, bave sur l'oreiller, sommeil agité, fatigue dès le réveil.",
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide2_sleeping.jpg"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Respirer par la bouche change la croissance",
+            "texte": "Bouche ouverte, la langue tombe au fond et n'appuie plus vers le haut du palais.",
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide3_breather_fit.jpg"
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "La langue façonne le palais comme un moule",
+            "texte": "Sans son appui, le palais monte en pointe, se resserre, et les dents manquent de place.",
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide4_langue_fit.jpg"
+          },
+          {
+            "n": 5,
+            "type": "orientation",
+            "titre": "L'orthodontiste ne travaille jamais seul",
+            "texte": "Selon la cause : un ORL pour le nez, un logopède pour la langue, parfois l'allergologue.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Un appareil ne débouche pas le nez",
+            "texte": "On cherche d'abord POURQUOI il respire par la bouche. Sinon on traite le symptôme, pas la cause.",
+            "image": "file:assets/carrousels/TSS-ORTHO-002/slide6_chaine.jpg"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu reconnais ton enfant là-dedans ?",
+            "texte": "Écris RESPIRATION en commentaire, je te dis par quoi commencer.",
+            "image": null
+          }
+        ],
+        "legende": "La respiration nasale, la posture de la langue et la croissance des maxillaires sont étroitement liées. Chez l'enfant, une respiration buccale chronique s'accompagne souvent d'une langue en position basse : le palais, privé de cet appui, se développe en hauteur et en étroitesse (palais dit ogival), ce qui réduit la place disponible pour les dents. Les causes sont variées — obstruction nasale (végétations, allergies), grosses amygdales, habitude installée — d'où l'intérêt d'un bilan pluridisciplinaire ORL, logopédique et parfois allergologique. L'appareil orthodontique peut élargir le palais, mais il ne traite pas l'obstruction : il faut identifier la cause avant d'en corriger les conséquences.\n\nÉcris RESPIRATION en commentaire, je t'explique par où commencer.",
+        "hashtags": [
+          "#respirationbuccale",
+          "#orthodontieenfant",
+          "#croissance",
+          "#sommeilenfant",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ],
+        "cta_conversion": "RESPIRATION",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-003",
+        "reel": "L5",
+        "sujet": "Orthodontie adulte",
+        "angle": "Il n'est pas trop tard, mais le diagnostic change",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Je suis trop vieux pour l'orthodontie. »",
+            "texte": "C'est la phrase que j'entends le plus chez les adultes.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Et c'est presque toujours faux.",
+            "texte": "Mais ce qui change vraiment avec l'âge, on te l'explique rarement.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Une dent bouge à 15 ans comme à 55 ans.",
+            "texte": "Le ligament qui l'entoure ne prend jamais sa retraite.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Le vrai frein n'est pas ton âge.",
+            "texte": "C'est l'état de tes gencives — et ça, on le soigne d'abord.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ton os adulte est plus dense et moins irrigué.",
+            "texte": "Résultat : la dent avance un peu plus doucement, avec des forces adaptées.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Ta bouche a un passé : couronnes, implants, dents manquantes.",
+            "texte": "On le range dans la stratégie, souvent avec ton dentiste traitant.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Et la technique a rattrapé l'âge.",
+            "texte": "Les mini-vis d'ancrage réalisent des mouvements hier réservés au bloc opératoire.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu penses qu'il est trop tard ?",
+            "texte": "Écris ADULTE en commentaire, je te dis ce qu'on évalue vraiment chez l'adulte.",
+            "image": null
+          }
+        ],
+        "legende": "L'âge n'est pas, en soi, une contre-indication à l'orthodontie : le ligament parodontal reste actif toute la vie, donc les dents restent mobilisables. Chez l'adulte, l'os alvéolaire est plus dense et moins vascularisé, ce qui ralentit légèrement le déplacement et impose des forces plus légères. Le point clé est la santé parodontale : une maladie des gencives active doit être stabilisée avant de déplacer une dent, sous peine de la faire bouger sur un support osseux diminué. On compose aussi avec les restaurations existantes — un implant est ankylosé et ne se déplace pas, il sert au contraire d'ancrage. Les mini-vis (dispositifs d'ancrage temporaire) élargissent le champ des mouvements possibles et évitent parfois une chirurgie.\n\nÉcris ADULTE en commentaire, je t'explique.",
+        "hashtags": [
+          "#orthodontieadulte",
+          "#aligneurs",
+          "#bagues",
+          "#sourireadulte",
+          "#TheSmileSpace",
+          "#orthodontie"
+        ],
+        "cta_conversion": "ADULTE",
+        "cta_engagement": "Enregistre ce carrousel si tu t'es reconnu.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-004",
+        "reel": "S3-S12",
+        "sujet": "Dents qui bougent après traitement",
+        "angle": "La récidive n'est pas nécessairement un échec",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le jour où on retire ton appareil…",
+            "texte": "…peut être le jour où tu commences à perdre ton sourire.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ça paraît absurde. Et pourtant.",
+            "texte": "Ce qui se joue les mois suivants, on t'en parle trop peu.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Tes dents ont bougé. Les fibres autour, elles, ont de la mémoire.",
+            "texte": "Elles tirent pour ramener la dent d'où elle vient.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Une dent alignée n'est pas une dent stabilisée.",
+            "texte": "Les premiers mois, elle ne demande qu'à repartir.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ce sont les rotations et les espaces fermés qui récidivent le plus.",
+            "texte": "Là, l'os et les fibres mettent le plus de temps à se réorganiser.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Un fil collé peut lâcher sans que tu le sentes.",
+            "texte": "Silencieux, il ne protège plus rien : d'où les contrôles réguliers.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "La contention, c'est à vie — parce que tes dents bougent à vie.",
+            "texte": "Le plus souvent : un fil collé plus une gouttière la nuit.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Ta contention tient toujours ?",
+            "texte": "Écris CONTENTION en commentaire, je te dis quoi vérifier.",
+            "image": null
+          }
+        ],
+        "legende": "Après un traitement, les dents ont changé de place mais les tissus continuent de se remodeler. Les fibres gingivales supra-alvéolaires ont une élasticité « à mémoire » qui tend à ramener les dents vers leur position d'origine, et leur réorganisation peut prendre jusqu'à un an. Ce sont les rotations corrigées et les diastèmes fermés qui récidivent le plus. À cela s'ajoute une dérive physiologique lente, notamment un encombrement tardif des incisives du bas qui se poursuit avec l'âge, indépendamment des dents de sagesse. Un fil de contention collé peut se décoller silencieusement sans que tu le sentes : d'où l'intérêt des contrôles. La contention (fil collé, gouttière nocturne, ou les deux) est recommandée sur le long terme, tant que l'on souhaite conserver le résultat.\n\nÉcris CONTENTION en commentaire, je t'explique.",
+        "hashtags": [
+          "#contention",
+          "#recidiveorthodontique",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace",
+          "#gouttiere"
+        ],
+        "cta_conversion": "CONTENTION",
+        "cta_engagement": "Enregistre-le pour ne pas oublier ta contention.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-005",
+        "reel": null,
+        "sujet": "Aligneurs transparents",
+        "angle": "Discrets ne veut pas dire simples",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Les aligneurs, c'est vraiment plus simple ?",
+            "texte": "Plus discret, oui. Plus simple à mener, pas vraiment.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "mythe",
+            "titre": "Une gouttière ne bouge pas les dents toute seule",
+            "texte": "Chaque petit mouvement est calculé, mis dans l'ordre, puis vérifié rendez-vous après rendez-vous.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "explication",
+            "titre": "Ces petits reliefs ne sont pas là pour rien",
+            "texte": "Les taquets sont des poignées collées sur la dent : sans eux, la gouttière glisse sans accrocher.",
+            "image": "schema:taquets = petites poignees collees sur la dent"
+          },
+          {
+            "n": 4,
+            "type": "discipline",
+            "titre": "22 heures par jour, sinon rien",
+            "texte": "Une gouttière trop peu portée ne fait pas le mouvement prévu — et tout le plan prend du retard.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "limites",
+            "titre": "Tout n'est pas facile pour une gouttière",
+            "texte": "Faire pivoter une dent ronde, la rentrer ou la sortir en hauteur : ça reste plus dur à obtenir.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "La meilleure technique dépend de ton cas",
+            "texte": "Parfois les bagues, ou un mélange des deux, vont plus droit au but. Ce n'est pas un concours de discrétion.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Aligneurs ou bagues, pour toi ?",
+            "texte": "Écris ALIGNEURS en commentaire, je t'explique comment on tranche.",
+            "image": null
+          }
+        ],
+        "legende": "Les aligneurs transparents sont une excellente option dans de nombreuses situations, mais ils ne rendent pas l'orthodontie automatique. Le résultat repose sur un mouvement planifié étape par étape, sur des taquets (attachments) collés qui donnent prise à la gouttière et orientent les forces, et surtout sur un port d'environ 22 h/24. Certains mouvements restent moins prévisibles en gouttière seule : rotations de dents rondes (canines, prémolaires), corrections verticales (ingression / égression) et mouvements de la racine. Selon le cas, les bagues ou une approche combinée sont parfois plus efficaces — le bon choix dépend du diagnostic, pas de la seule discrétion.\n\nÉcris ALIGNEURS en commentaire, je t'explique comment on choisit.",
+        "hashtags": [
+          "#aligneurs",
+          "#orthodontieinvisible",
+          "#orthodontieadulte",
+          "#TheSmileSpace",
+          "#sourire",
+          "#orthodontie"
+        ],
+        "cta_conversion": "ALIGNEURS",
+        "cta_engagement": "Aligneurs ou bagues : tu aurais répondu quoi ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-006",
+        "reel": "L2",
+        "sujet": "Extraction de dents en orthodontie",
+        "angle": "Extraire n'est ni systématique ni toujours évitable",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Extraire des dents, c'est forcément un échec. »",
+            "texte": "C'est ce qu'on entend le plus souvent.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "La vérité est plus nuancée.",
+            "texte": "Et elle peut changer tout ton plan de traitement.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Créer de la place, ça se fait de plusieurs façons.",
+            "texte": "Limer finement entre les dents, élargir, reculer… ou extraire.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Extraire par principe est une faute. Refuser par principe aussi.",
+            "texte": "Aucune règle toute faite ne remplace ton diagnostic.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Quand on extrait, ce sont souvent les prémolaires.",
+            "texte": "Elles libèrent plusieurs millimètres de chaque côté, sans toucher au sourire.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Reculer les dents change ton profil.",
+            "texte": "Un atout si tes lèvres avancent, un risque si ton profil est déjà plat.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Deux bouches identiques, deux bonnes décisions différentes.",
+            "texte": "On traite une personne et un visage, pas une radio.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "On t'a parlé d'extractions ?",
+            "texte": "Écris EXTRACTION en commentaire, je t'explique les critères de décision.",
+            "image": null
+          }
+        ],
+        "legende": "En orthodontie, l'extraction n'est ni systématique ni interdite : c'est une option parmi d'autres pour gagner de la place, aux côtés du stripping interproximal, de l'expansion et de la distalisation (souvent sur mini-vis). Quand on extrait, il s'agit le plus souvent des premières prémolaires, dont la largeur libère un espace qui permet de reculer et redresser les incisives. Ce recul modifie le profil : bénéfique en cas de protrusion dento-alvéolaire (lèvres avancées), il peut au contraire aplatir un profil déjà droit ou concave. La décision repose sur l'importance de l'encombrement, l'inclinaison des incisives, le soutien des lèvres et les limites osseuses — pas sur une doctrine « avec » ou « sans » extraction.\n\nÉcris EXTRACTION en commentaire, je t'explique.",
+        "hashtags": [
+          "#extractiondentaire",
+          "#orthodontie",
+          "#encombrementdentaire",
+          "#TheSmileSpace",
+          "#sourire"
+        ],
+        "cta_conversion": "EXTRACTION",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-007",
+        "reel": null,
+        "sujet": "Sourire étroit",
+        "angle": "Le sourire dépend aussi de la largeur des arcades",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ton sourire te paraît étroit ?",
+            "texte": "Ce n'est pas forcément parce que tes dents sont petites.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Regarde les coins de ton sourire",
+            "texte": "Deux zones d'ombre entre tes dents et tes joues ? On appelle ça des couloirs sombres.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "C'est souvent une histoire de largeur",
+            "texte": "Une arcade en U trop serré referme le sourire, même quand les dents sont bien alignées.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Mais on n'élargit pas à l'infini",
+            "texte": "Les dents doivent rester dans l'os qui les tient : trop les pousser dehors, et la gencive recule.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Le bon geste dépend de l'origine",
+            "texte": "Élargir l'arcade, élargir l'os du palais chez le jeune, aligner, ou parfois passer par la chirurgie.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Un sourire large n'est pas un but en soi",
+            "texte": "Il doit rester naturel et tenir dans le temps, pas juste paraître plus grand sur une photo.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Ton sourire te semble trop fermé ?",
+            "texte": "Écris SOURIRE en commentaire, je te dis ce qu'on regarde.",
+            "image": null
+          }
+        ],
+        "legende": "La largeur perçue d'un sourire dépend de la forme et de la largeur des arcades, de la position des dents et de l'anatomie du visage. Des « couloirs sombres » (espaces négatifs entre les dents postérieures et les joues) donnent une impression de sourire étroit, souvent liée à une arcade transversalement réduite. On peut y répondre par une expansion dentaire, une expansion squelettique (surtout tant que la suture du palais n'est pas soudée, chez l'enfant et l'adolescent), un alignement ou, dans les cas sévères, une approche chirurgicale. L'expansion a toutefois des limites biologiques : pousser les dents au-delà de l'os expose à une récession de la gencive et à une instabilité. L'objectif n'est pas d'élargir systématiquement, mais de trouver un équilibre esthétique et fonctionnel.\n\nÉcris SOURIRE en commentaire, je t'explique ce qu'on analyse.",
+        "hashtags": [
+          "#sourireetroit",
+          "#orthodontie",
+          "#esthetiquedusourire",
+          "#TheSmileSpace",
+          "#sourire"
+        ],
+        "cta_conversion": "SOURIRE",
+        "cta_engagement": "Enregistre-le pour en parler à ton prochain RDV.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-008",
+        "reel": null,
+        "sujet": "Consultation orthodontique précoce",
+        "angle": "Consulter tôt ne signifie pas traiter tôt",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Il est bien trop petit pour un orthodontiste. »",
+            "texte": "C'est la phrase que j'entends le plus... et elle fait rater la meilleure fenêtre.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Pourtant, il existe un âge repère précis",
+            "texte": "Un chiffre recommandé partout dans le monde. Voici lequel — et surtout pourquoi.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Vers 7 ans, la bouche parle déjà",
+            "texte": "Dents de lait et premières dents définitives cohabitent : on lit la croissance en direct.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Consulter tôt ne veut PAS dire traiter tôt.",
+            "texte": "Le plus souvent, on ne pose aucun appareil. On observe.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ce qu'on cherche, c'est un décalage caché",
+            "texte": "Mâchoires qui ne s'emboîtent pas, manque de place, dent bloquée, pouce, respiration par la bouche.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Certaines corrections ont une fenêtre",
+            "texte": "Élargir un palais ou guider une mâchoire est plus simple tant que ton enfant grandit encore.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Le bon moment dépend du problème, pas de l'âge",
+            "texte": "Parfois on agit à 8 ans, souvent on attend, parfois on surveille des années. Traiter trop tôt n'aide pas.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu ne sais pas s'il faut déjà consulter ?",
+            "texte": "Écris ENFANT en commentaire, je te donne les signes qui doivent alerter.",
+            "image": null
+          }
+        ],
+        "legende": "Les sociétés d'orthodontie recommandent une première consultation vers l'âge de 7 ans. À ce stade de denture mixte (coexistence de dents de lait et de dents définitives), on peut repérer précocement un décalage des bases osseuses, un manque de place, une dent incluse, une occlusion inversée ou une dysfonction (succion, respiration orale). L'objectif de cette visite n'est pas de traiter, mais de dépister : dans la majorité des cas, on se contente d'une surveillance de la croissance. Quand une intervention est utile, certaines corrections (expansion du palais, orthopédie fonctionnelle) sont facilitées par la croissance encore présente et perdent en efficacité une fois celle-ci terminée. Consulter tôt sert donc à choisir le bon moment — qui n'est pas forcément « maintenant ».\n\nÉcris ENFANT en commentaire, je te donne les signes d'alerte.",
+        "hashtags": [
+          "#orthodontieenfant",
+          "#croissance",
+          "#dentitionmixte",
+          "#TheSmileSpace",
+          "#prevention"
+        ],
+        "cta_conversion": "ENFANT",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-009",
+        "reel": null,
+        "sujet": "Dents incluses",
+        "angle": "Une dent absente du sourire n'est pas forcément absente",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Il manque une dent dans ce sourire.",
+            "texte": "Sauf qu'elle n'est pas perdue. Elle est là — cachée.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Où se cache une dent qui ne sort pas ?",
+            "texte": "La réponse est juste sous tes yeux... et sous ta gencive.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "L'indice : une dent de lait qui s'accroche",
+            "texte": "Vers 12-13 ans, une canine de lait encore en place cache souvent la définitive coincée derrière.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "La dent n'a pas disparu. Elle est bloquée dans l'os.",
+            "texte": "On appelle ça une dent incluse. La canine du haut est la championne toutes catégories.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Une radio 3D la retrouve exactement",
+            "texte": "On voit sa position, son inclinaison, et si elle appuie sur la racine des dents voisines.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Laissée là, elle peut faire des dégâts silencieux",
+            "texte": "Elle peut abîmer la racine d'à côté ou former un kyste, sans le moindre signe pour toi.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Le plus souvent, on peut aller la chercher",
+            "texte": "On ouvre de la place, on colle une petite attache, et on la tire doucement jusqu'à sa place.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Une dent tarde à sortir chez toi ou ton ado ?",
+            "texte": "Écris INCLUSE en commentaire, je te dis quand consulter.",
+            "image": null
+          }
+        ],
+        "legende": "Une dent « absente » du sourire n'est pas toujours manquante : elle peut être incluse, c'est-à-dire présente mais bloquée dans l'os ou sous la gencive. Après la dent de sagesse, la canine supérieure est la dent la plus fréquemment incluse ; sa mise en place normale se fait autour de 11-13 ans. Un signe d'appel classique est la persistance de la canine de lait au-delà de cet âge. Une imagerie (panoramique, souvent complétée par un CBCT / scanner 3D) localise précisément la dent et évalue le risque de résorption des racines voisines. Selon la position et l'âge, on peut ouvrir un espace puis réaliser une traction orthodontique (collage d'une attache et déplacement guidé), surveiller, ou parfois extraire — et une détection précoce améliore nettement le pronostic.\n\nÉcris INCLUSE en commentaire, je t'explique quand consulter.",
+        "hashtags": [
+          "#dentincluse",
+          "#canineincluse",
+          "#orthodontie",
+          "#TheSmileSpace",
+          "#dentition"
+        ],
+        "cta_conversion": "INCLUSE",
+        "cta_engagement": "Dis-moi ce que tu vois sur la radio.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-010",
+        "reel": "S4",
+        "sujet": "Dents du bonheur",
+        "angle": "Un espace peut être esthétique ou révéler une cause",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Faut-il vraiment fermer les « dents du bonheur » ?",
+            "texte": "La réponse n'est pas celle que tu crois.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Avant de fermer un espace, il faut savoir pourquoi il est là.",
+            "texte": "Sinon, il revient.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Un frein trop épais, de petites dents, une dent absente, la langue…",
+            "texte": "Chaque diastème a sa cause bien à lui.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "L'élastique « maison » pour fermer un espace peut te coûter deux incisives.",
+            "texte": "Il glisse sous la gencive, étrangle la racine, en quelques semaines.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Fermer un espace, c'est déplacer les racines, pas juste rapprocher les couronnes.",
+            "texte": "Sinon les racines restent écartées et l'espace se rouvre.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Parfois, on traite d'abord la cause.",
+            "texte": "Un frein trop épais peut demander un petit geste avant, pour que ça tienne.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Chez l'enfant, un espace peut se fermer tout seul.",
+            "texte": "Quand les canines poussent, le sourire se réorganise : on ne se précipite pas.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Un espace entre tes incisives ?",
+            "texte": "Écris DIASTEME en commentaire, on regarde d'où il vient.",
+            "image": null
+          }
+        ],
+        "legende": "Un diastème peut être un choix esthétique assumé ou le signe d'un déséquilibre à analyser. Les causes sont multiples : frein labial trop inséré, discordance entre la taille des dents et des mâchoires (dents étroites), agénésie d'une incisive latérale, interposition de la langue, ou espacement généralisé. Chez l'enfant, un diastème médian transitoire (phase du « vilain petit canard ») se ferme souvent spontanément à l'éruption des canines. Attention à la tendance des « Gap Bands » : un élastique posé sur les couronnes migre sous la gencive et le long de la racine, étrangle l'attache parodontale et peut entraîner la perte des incisives en quelques semaines. Une fermeture correcte suppose un déplacement contrôlé des racines (mouvement de translation), parfois une freinectomie, et toujours une contention car le diastème est très sujet à la récidive.\n\nÉcris DIASTEME en commentaire, je t'explique.",
+        "hashtags": [
+          "#diasteme",
+          "#dentsdubonheur",
+          "#orthodontie",
+          "#sourire",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "DIASTEME",
+        "cta_engagement": "Le fermer ou le garder : tu aurais répondu quoi ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-011",
+        "reel": null,
+        "sujet": "Classe II et mâchoire inférieure en retrait",
+        "angle": "Les dents en avant peuvent refléter un décalage des mâchoires",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Mes dents du haut avancent trop. »",
+            "texte": "Et si le problème n'était pas devant, mais derrière ?",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce que tu prends pour des dents en avant...",
+            "texte": "...cache souvent une tout autre histoire. Regarde-toi de profil.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Le menton donne l'indice",
+            "texte": "Dents du haut projetées, menton un peu fuyant, lèvres qui se ferment mal : observe le bas du visage.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Souvent, ce ne sont pas les dents. C'est la mâchoire du bas, trop en retrait.",
+            "texte": "Les dents ne font que suivre le mouvement.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Une radio de profil fait la différence",
+            "texte": "Elle mesure si le décalage vient des dents, des mâchoires, ou des deux à la fois.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Et ça change tout sur le traitement",
+            "texte": "Enfant : on guide la mâchoire pendant la croissance. Adulte : elle est finie, on compense ou on opère.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Aligner les dents ne recule pas une mâchoire",
+            "texte": "Bien nommer le problème — dents ou mâchoires — décide du bon plan et du bon moment.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu te reconnais dans ce profil ?",
+            "texte": "Écris PROFIL en commentaire, je t'explique ce qu'on mesure.",
+            "image": null
+          }
+        ],
+        "legende": "Des incisives supérieures « en avant » (classe II) peuvent traduire trois situations différentes : des dents trop inclinées vers l'avant, une mandibule (mâchoire inférieure) en retrait, ou une combinaison des deux. Très souvent, la composante principale est squelettique — la mâchoire du bas est trop reculée — et non purement dentaire. Une téléradiographie de profil (radio de profil) et son analyse permettent de faire la part des choses. Cela conditionne le traitement : chez l'enfant et l'adolescent en croissance, on peut guider l'avancée de la mandibule (traitement fonctionnel) ; une fois la croissance terminée, on compense par les dents ou, dans les cas sévères, on recourt à la chirurgie orthognathique. Le profil, les lèvres et la stabilité comptent autant que l'emboîtement des dents.\n\nÉcris PROFIL en commentaire, je t'explique ce qu'on mesure.",
+        "hashtags": [
+          "#classe2",
+          "#profil",
+          "#orthodontie",
+          "#croissance",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "PROFIL",
+        "cta_engagement": "Tu te reconnais dans ce profil ? Dis-le moi.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-012",
+        "reel": null,
+        "sujet": "Classe III et menton en avant",
+        "angle": "Agir tôt peut parfois guider, pas garantir",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le menton de ton enfant avance un peu ?",
+            "texte": "Parfois ce n'est rien. Parfois, mieux vaut y regarder tôt.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Un signe facile à repérer",
+            "texte": "Bouche fermée, les dents du bas passent devant celles du haut.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Ce n'est pas toujours le menton en cause",
+            "texte": "Parfois la mâchoire du haut est trop en retrait, parfois celle du bas est trop en avant.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Souvent, c'est une histoire de famille",
+            "texte": "Un menton en avant se transmet souvent d'un parent à l'enfant.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Ce qu'on peut faire dépend de la cause",
+            "texte": "Élargir la mâchoire du haut, la tirer vers l'avant, corriger les dents, ou attendre l'âge adulte.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Agir tôt peut guider, pas tout garantir",
+            "texte": "On accompagne la croissance sans la commander : elle continue jusqu'à la fin de l'adolescence, d'où un suivi long.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Ton enfant a le menton un peu en avant ?",
+            "texte": "Écris CLASSE3 en commentaire, je te dis à quel âge une consultation est utile.",
+            "image": null
+          }
+        ],
+        "legende": "En orthodontie, un menton en avant avec les incisives du bas devant celles du haut s'appelle une classe III, ou occlusion inversée antérieure. L'origine peut être dentaire, fonctionnelle (la mâchoire glisse en avant à la fermeture) ou squelettique (un vrai décalage des os). Chez l'enfant, certaines interventions précoces — expansion du maxillaire, masque de traction — peuvent guider la croissance, mais la mandibule continue de grandir jusqu'à la fin de l'adolescence et son évolution reste en partie imprévisible. Un suivi prolongé est donc souvent nécessaire, et une correction chirurgicale reste parfois l'option à l'âge adulte.\n\nÉcris CLASSE3 en commentaire, je t'explique.",
+        "hashtags": [
+          "#classe3",
+          "#orthodontieenfant",
+          "#croissance",
+          "#occlusioninverse",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "CLASSE3",
+        "cta_engagement": "Quel âge a ton enfant ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-013",
+        "reel": null,
+        "sujet": "Béance antérieure",
+        "angle": "Quand les dents ne se touchent pas",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes dents de devant ne se touchent jamais ?",
+            "texte": "Même quand tu serres les molaires, un espace reste ouvert à l'avant.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ça porte un nom : la béance",
+            "texte": "Les dents du fond se touchent, mais devant il reste un trou — dur de croquer une tartine.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "causes",
+            "titre": "D'où ça vient ?",
+            "texte": "Pouce ou tétine gardés trop longtemps, langue qui pousse en avant, ou respiration par la bouche.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "fonction",
+            "titre": "Souvent, c'est la langue qui entretient le trou",
+            "texte": "En avalant, des centaines de fois par jour, elle se faufile entre les dents et les repousse.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "On soigne la cause, pas seulement l'espace",
+            "texte": "Arrêter l'habitude, rééduquer la langue avec un logopède, aligner, et parfois la chirurgie.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Refermer est facile. Garder fermé, c'est le vrai défi.",
+            "texte": "Si la langue continue de pousser, l'espace revient. La stabilité passe par la fonction.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tes incisives restent séparées ?",
+            "texte": "Écris BEANCE en commentaire, je te dis d'où ça peut venir.",
+            "image": null
+          }
+        ],
+        "legende": "La béance antérieure, c'est l'absence de contact entre les dents du haut et du bas à l'avant, alors que les dents postérieures s'engrènent. Elle est rarement « juste dentaire » : succions prolongées (pouce, tétine), déglutition avec interposition de la langue, respiration buccale et schéma de croissance vertical des mâchoires y participent souvent, seuls ou combinés. C'est pourquoi une simple fermeture orthodontique de l'espace, sans corriger la fonction (posture et déglutition de la langue, respiration), expose à un fort risque de récidive. La prise en charge associe, selon les cas, orthodontie, rééducation logopédique, arrêt des habitudes et, dans les formes squelettiques sévères, chirurgie. Comprendre l'origine est la condition d'un résultat stable.\n\nÉcris BEANCE en commentaire, je t'explique les causes possibles.",
+        "hashtags": [
+          "#beance",
+          "#deglutition",
+          "#orthodontie",
+          "#respirationbuccale",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "BEANCE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-014",
+        "reel": null,
+        "sujet": "Articulations de la mâchoire",
+        "angle": "L'orthodontie ne guérit pas tous les craquements",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ta mâchoire craque quand tu ouvres la bouche ?",
+            "texte": "Avant de t'inquiéter, il faut savoir ce que ce bruit veut dire.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Un bruit n'est pas forcément un problème.",
+            "texte": "Ce qui compte, ce n'est pas qu'elle craque : c'est ce que tu ressens.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Craquer, avoir mal, se bloquer : trois choses différentes.",
+            "texte": "On les mélange souvent, alors qu'on ne les prend pas en charge de la même façon.",
+            "image": "schema:craquement · douleur · blocage"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Aligner tes dents ne fera pas taire ce craquement.",
+            "texte": "L'orthodontie n'est pas le remède miracle de la mâchoire.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Cette articulation, c'est bien plus que tes dents.",
+            "texte": "Un petit disque qui amortit, des muscles, le stress, le grincement de la nuit : tout entre en jeu.",
+            "image": "schema:l'articulation de la mâchoire (ATM)"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Un craquement qui ne fait pas mal peut rester tranquille des années.",
+            "texte": "C'est la douleur, le blocage ou une ouverture limitée qui doivent t'amener à consulter, pas le bruit.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "On ne soigne pas un bruit. On soigne une personne.",
+            "texte": "Le bilan cherche d'abord d'où ça vient, avant de proposer quoi que ce soit.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Craquement ou vraie douleur ?",
+            "texte": "Écris MACHOIRE en commentaire, je te dis quels signes doivent vraiment t'alerter.",
+            "image": null
+          }
+        ],
+        "legende": "En orthodontie, on parle de l'ATM, l'articulation temporo-mandibulaire : celle qui relie ta mâchoire au crâne, avec un petit disque qui sert d'amortisseur. Les bruits articulaires (les fameux clics) sont très fréquents et, seuls, ne signent pas une maladie. Ce sont la douleur, les blocages, une ouverture limitée ou un déplacement du disque qui justifient une évaluation. Le trouble est le plus souvent multifactoriel : muscles, stress, serrement ou grincement nocturne, posture des dents. L'orthodontie peut parfois faire partie du plan, mais elle n'est jamais, à elle seule, le traitement de toutes les douleurs de mâchoire.\n\nÉcris MACHOIRE en commentaire, je t'explique quels signes doivent t'alerter et quand consulter.",
+        "hashtags": [
+          "#ATM",
+          "#machoire",
+          "#craquement",
+          "#orthodontie",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "MACHOIRE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-015",
+        "reel": null,
+        "sujet": "Hygiène avec appareil orthodontique",
+        "angle": "Les taches ne viennent pas des bagues",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Les bagues abîment-elles vraiment tes dents ?",
+            "texte": "La réponse n'est pas celle qu'on entend d'habitude.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Le vrai responsable des taches n'est pas le métal.",
+            "texte": "Et la bonne nouvelle, c'est qu'il est évitable.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ces petites taches blanches sur l'émail, ça existe.",
+            "texte": "Mais ce ne sont pas les bagues qui les créent.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Le coupable, c'est la plaque coincée autour des attaches.",
+            "texte": "La bague ne fait que créer des recoins plus durs à nettoyer.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Ces taches, c'est de l'émail qui se déminéralise.",
+            "texte": "Là où le sucre et la plaque stagnent trop longtemps, l'émail perd ses minéraux et blanchit.",
+            "image": "schema:tache blanche = début de déminéralisation"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une gencive qui saigne, ce n'est pas une raison d'arrêter de brosser.",
+            "texte": "C'est le contraire : elle réclame un brossage plus doux, mais plus régulier.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Les bagues ne cassent rien. C'est ta technique qui protège l'émail.",
+            "texte": "Brossette entre les attaches, dentifrice au fluor, et de la régularité.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu portes un appareil fixe ?",
+            "texte": "Écris BROSSAGE en commentaire, je t'envoie la routine qui protège ton émail.",
+            "image": null
+          }
+        ],
+        "legende": "Un appareil fixe ne provoque pas les caries ni les taches par lui-même : il crée simplement des zones de rétention où la plaque s'accumule. Ces taches blanches autour des attaches sont des déminéralisations de l'émail (les white spot lesions) : quand le sucre et la plaque restent en place, le milieu devient acide et l'émail perd son calcium. Une gencive qui saigne est un signe d'inflammation liée à la plaque, pas une raison de moins brosser. Brossettes interdentaires, dentifrice fluoré et régularité aident à reminéraliser l'émail et à garder la gencive saine pendant tout le traitement.\n\nÉcris BROSSAGE en commentaire, je t'envoie la routine simple qui protège ton émail sous les bagues.",
+        "hashtags": [
+          "#hygienedentaire",
+          "#bagues",
+          "#orthodontie",
+          "#brossagedents",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "BROSSAGE",
+        "cta_engagement": "Envoie-le à quelqu'un qui porte des bagues.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-016",
+        "reel": "S9",
+        "sujet": "Durée du traitement orthodontique",
+        "angle": "Pourquoi deux patients n'ont pas la même durée",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Deux patients. Le même problème.",
+            "texte": "L'un termine en un an. L'autre en deux.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "La différence ne vient pas du hasard.",
+            "texte": "Et une bonne partie dépend de toi.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Une dent avance en moyenne d'environ 1 mm par mois.",
+            "texte": "C'est le rythme de ton os, pas celui de ton agenda.",
+            "image": null
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Forcer ne fait pas gagner du temps. Ça en fait perdre.",
+            "texte": "Trop de pression écrase le ligament et met le déplacement en pause.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Le facteur numéro un reste souvent le patient.",
+            "texte": "Aligneurs 22 h par jour, élastiques portés, rendez-vous tenus.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une attache décollée non signalée, et le plan prend du retard.",
+            "texte": "Chaque semaine perdue s'ajoute à la précédente.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "La durée suit ton cas, pas une moyenne trouvée en ligne.",
+            "texte": "Complexité, biologie, coopération : trois curseurs, un seul dépend de toi.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Combien de temps pour ton cas ?",
+            "texte": "Écris DUREE en commentaire, je te donne les vrais facteurs.",
+            "image": null
+          }
+        ],
+        "legende": "Le déplacement dentaire est plafonné par la biologie : une dent avance en moyenne d'environ 1 mm par mois, au rythme du remodelage osseux, qu'aucune force ne peut brusquer. Au contraire, une pression excessive comprime le ligament au point d'occlure ses vaisseaux : la zone se nécrose (hyalinisation) et le mouvement se met en pause le temps que l'os soit résorbé par en dessous — plus lent et plus douloureux. La durée dépend ensuite de la complexité des mouvements (les déplacements de racine et le torque sont plus lents que de simples bascules), de la présence d'extractions, de l'âge et de la densité osseuse. Mais le facteur le plus décisif reste la coopération : port des aligneurs environ 22 h/24, port des élastiques, signalement rapide d'une attache décollée et respect des rendez-vous.\n\nÉcris DUREE en commentaire, je t'explique.",
+        "hashtags": [
+          "#traitementorthodontique",
+          "#duree",
+          "#orthodontie",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "DUREE",
+        "cta_engagement": "8 mois ou 2 ans : tu aurais répondu quoi ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-017",
+        "reel": null,
+        "sujet": "Mini-vis orthodontiques",
+        "angle": "Un petit ancrage pour éviter de déplacer les mauvaises dents",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Une petite vis pour déplacer les bonnes dents",
+            "texte": "Sans faire bouger toutes les autres au passage.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "probleme",
+            "titre": "Le souci quand on tire sur une dent",
+            "texte": "La dent qui sert de point d'appui bouge aussi. On risque de déplacer les mauvaises dents.",
+            "image": "schema:tirer une corde depuis une barque, la barque avance aussi"
+          },
+          {
+            "n": 3,
+            "type": "solution",
+            "titre": "La mini-vis, c'est un point d'appui fixe",
+            "texte": "Vissée dans l'os, elle ne bouge pas : on tire dessus sans déranger tes autres dents.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "indications",
+            "titre": "Elle rend service dans plusieurs cas",
+            "texte": "Refermer un trou, rentrer une dent qui dépasse, reculer des molaires, corriger une asymétrie.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "experience",
+            "titre": "La pose est courte, sous anesthésie",
+            "texte": "Un petit geste au cabinet, puis quelques consignes d'hygiène autour de la vis.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Temporaire, et pas magique",
+            "texte": "Elle peut se desserrer et devoir être replacée. Et tous les traitements n'en ont pas besoin.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "On t'a proposé une mini-vis ?",
+            "texte": "Écris ANCRAGE en commentaire, je t'explique son rôle sans jargon.",
+            "image": null
+          }
+        ],
+        "legende": "En orthodontie, chaque force provoque une réaction égale et opposée : quand on tire une dent vers un point d'appui, ce point d'appui tend à se déplacer lui aussi. C'est tout le problème de l'ancrage. Les mini-vis, ou dispositifs d'ancrage temporaire (TADs), se vissent directement dans l'os et offrent un appui quasi immobile, ce qui permet de contrôler précisément quelles dents bougent. Elles servent notamment aux intrusions, fermetures d'espace, reculs de molaires ou corrections d'asymétrie. Elles ne s'intègrent pas complètement à l'os et peuvent se mobiliser ; on les retire en fin de traitement, et elles ne sont pas nécessaires dans tous les cas.\n\nÉcris ANCRAGE en commentaire, je t'explique.",
+        "hashtags": [
+          "#minivis",
+          "#ancrageorthodontique",
+          "#orthodontie",
+          "#MARPE",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "ANCRAGE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-018",
+        "reel": null,
+        "sujet": "Élastiques orthodontiques",
+        "angle": "Un petit accessoire avec un grand rôle",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tes élastiques font la moitié du travail",
+            "texte": "L'appareil aligne tes dents. Les élastiques emboîtent tes mâchoires.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "fonction",
+            "titre": "Ils tirent là où l'appareil ne peut pas",
+            "texte": "Ils relient le haut et le bas pour caler ton emboîtement.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "discipline",
+            "titre": "La régularité fait tout",
+            "texte": "Les mettre juste avant le rendez-vous ne rattrape pas les jours oubliés.",
+            "image": null
+          },
+          {
+            "n": 4,
+            "type": "consigne",
+            "titre": "Doubler n'accélère rien",
+            "texte": "Plus de force ne va pas plus vite. Ça peut au contraire abîmer une dent ou son attache.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "adaptation",
+            "titre": "Ça tire un peu les premiers jours",
+            "texte": "La gêne passe justement quand tu les portes en continu, pas par à-coups.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Ton schéma n'est pas celui du voisin",
+            "texte": "Le côté, la durée et la force sont réglés pour toi. Ne copie pas un autre patient.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Et toi, tu les oublies souvent ?",
+            "texte": "Dis ton astuce en commentaire — ou écris ELASTIQUES pour recevoir les miennes.",
+            "image": null
+          }
+        ],
+        "legende": "Les élastiques intermaxillaires ajoutent une force que l'appareil seul ne produit pas : ils relient l'arcade du haut à celle du bas pour corriger l'emboîtement (classes II ou III, béances, décalages). Leur efficacité repose presque entièrement sur l'observance : une force continue déplace les dents, une force portée par à-coups ne fait qu'irriter. L'élastique perd de sa tension au fil des heures, d'où un renouvellement régulier, souvent plusieurs fois par jour. Doubler les élastiques ou changer leur position sans consigne peut créer des mouvements indésirables, voire une souffrance dentaire. Le schéma de port est propre à chaque patient et ne se transpose pas d'une bouche à l'autre.\n\nÉcris ELASTIQUES en commentaire, je t'explique.",
+        "hashtags": [
+          "#elastiquesorthodontiques",
+          "#orthodontie",
+          "#bagues",
+          "#aligneurs",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "ELASTIQUES",
+        "cta_engagement": "Envoie-le à quelqu'un qui oublie ses élastiques.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-019",
+        "reel": null,
+        "sujet": "Dent de lait conservée chez l'adulte",
+        "angle": "Une dent de lait peut cacher une agénésie ou une dent incluse",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Tu as encore une dent de lait à 30 ans ?",
+            "texte": "Ce n'est pas de la chance. C'est un message.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Pourquoi est-elle toujours là ?",
+            "texte": "Une dent de lait ne s'éternise jamais par hasard. Voici ce qu'elle cache.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "L'indice : elle est souvent plus petite et plus basse",
+            "texte": "Un peu usée, plus courte que ses voisines : elle n'était pas prévue pour durer si longtemps.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Si elle est encore là, c'est que rien n'a poussé pour la remplacer.",
+            "texte": "La dent définitive manque... ou est restée bloquée dans l'os.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Une radio tranche en une image",
+            "texte": "Soit la dent définitive n'existe pas (agénésie), soit elle est là mais coincée sous la gencive.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une dent de lait adulte n'est pas éternelle",
+            "texte": "Sa racine, jamais prévue pour durer, peut fondre avec les années et la dent finir par lâcher.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "La garder ou la remplacer ? Ça s'anticipe.",
+            "texte": "Selon son état : la conserver un temps, fermer l'espace avec l'ortho, ou préparer un implant.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Une dent de lait persiste chez toi ?",
+            "texte": "Écris AGENESIE en commentaire, je te dis quels examens font le point.",
+            "image": null
+          }
+        ],
+        "legende": "Une dent de lait (temporaire) encore présente à l'âge adulte est presque toujours le signe d'un problème de la dent définitive correspondante : soit une agénésie (la dent définitive ne s'est jamais formée), soit une inclusion (elle existe mais reste bloquée dans l'os). Les incisives latérales supérieures et les deuxièmes prémolaires figurent parmi les dents les plus souvent concernées par l'agénésie. Une radiographie panoramique confirme la situation. La conservation de la dent de lait dépend de l'état de sa racine (souvent en résorption progressive), de sa forme et du projet global : selon les cas, on la garde temporairement, on ferme l'espace orthodontiquement, ou on prépare un remplacement prothétique (implant, bridge). La bonne décision anticipe les décennies à venir, car ces solutions n'ont pas les mêmes contraintes.\n\nÉcris AGENESIE en commentaire, je t'explique les examens utiles.",
+        "hashtags": [
+          "#agenesiedentaire",
+          "#dentdelait",
+          "#orthodontie",
+          "#implant",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "AGENESIE",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-020",
+        "reel": null,
+        "sujet": "Scanner 3D en orthodontie",
+        "angle": "Pourquoi toutes les radios ne répondent pas aux mêmes questions",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi un scanner 3D et pas une simple radio ?",
+            "texte": "Parce qu'une image plate ne montre pas tout le relief.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "difference",
+            "titre": "Chaque radio répond à une question différente",
+            "texte": "La panoramique fait le tour, la radio de profil mesure, le scanner 3D montre le volume.",
+            "image": "schema:panoramique, profil, 3D — trois questions différentes"
+          },
+          {
+            "n": 3,
+            "type": "utilite",
+            "titre": "Le scanner 3D voit en relief",
+            "texte": "Il situe précisément une dent coincée, une racine, l'os ou le passage de l'air.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "diagnostic",
+            "titre": "Ça peut changer le plan de traitement",
+            "texte": "Une dent invisible sur une image plate peut, une fois localisée, changer toute la stratégie.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "securite",
+            "titre": "On ne le prescrit pas à tout le monde",
+            "texte": "C'est plus de rayons : on le demande seulement quand il apporte vraiment une réponse.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Plus d'images ne veut pas dire meilleur diagnostic",
+            "texte": "Le bon examen, c'est celui qui répond à la question posée. Pas forcément le plus détaillé.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "On t'a prescrit un scanner 3D ?",
+            "texte": "Écris SCANNER en commentaire, je t'explique ce qu'il peut montrer chez toi.",
+            "image": null
+          }
+        ],
+        "legende": "Le scanner 3D en orthodontie est un CBCT (cone beam). Contrairement à la radio panoramique (une vue d'ensemble) ou à la téléradiographie de profil (des mesures de croissance), il reconstruit les structures en volume. Il est surtout utile pour localiser une dent incluse, évaluer les racines, l'os disponible, les sites de mini-vis, une expansion squelettique ou le passage de l'air. Il délivre toutefois une dose de rayons plus élevée : son usage suit le principe de justification (ALARA), c'est-à-dire qu'on ne le prescrit que lorsqu'il change réellement le diagnostic ou le traitement. Multiplier les examens n'améliore pas le diagnostic : c'est l'examen adapté à la question clinique qui compte.\n\nÉcris SCANNER en commentaire, je t'explique.",
+        "hashtags": [
+          "#CBCT",
+          "#scanner3D",
+          "#orthodontie",
+          "#diagnostic",
+          "#TheSmileSpace"
+        ],
+        "cta_conversion": "SCANNER",
+        "cta_engagement": "Dis-moi ce que tu vois sur cette radio.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-021",
+        "reel": "S1",
+        "sujet": "Turkey Teeth : des couronnes sur des dents saines",
+        "angle": "Aligner des dents saines plutôt que les limer pour poser des couronnes",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "On lui a taillé 20 dents parfaitement saines.",
+            "texte": "Le problème n'est pas le résultat — c'est le prix biologique pour l'obtenir.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce sourire paraît parfait.",
+            "texte": "Mais ce qu'on ne voit pas est souvent le plus important.",
+            "image": "file:assets/photos/sourire_reel.jpg"
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ce ne sont pas des facettes.",
+            "texte": "Ce sont des couronnes : un traitement bien plus invasif.",
+            "image": "file:assets/illus/couronne_vs_facette_fr.png"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "On retire jusqu'à 60–70 % de la dent.",
+            "texte": "1 à 2 mm tout autour, jusqu'au moignon. L'émail ne repousse jamais.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Sous la couronne, la dent est toujours vivante.",
+            "texte": "Simplement plus fragile : près d'une dent couronnée sur dix devra être dévitalisée dans les années qui suivent — d'autant plus qu'on est jeune.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Une couronne dure 10 à 15 ans.",
+            "texte": "Posée à 23 ans, elle sera refaite plusieurs fois. Chaque réfection retire encore un peu de dent — jusqu'à devoir la dévitaliser, puis parfois l'extraire.",
+            "image": null,
+            "watermark": "file:assets/photos/dent_perdue.jpg"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Notre priorité : conserver ta dent naturelle.",
+            "texte": "Aligner corrige la position sans sacrifier de tissu. Une couronne a sa place sur une dent déjà très abîmée — mais aucune ne vaut une dent saine.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Et toi, tu choisirais quoi ?",
+            "texte": "On a tous autour de nous quelqu'un qui préfère aller vite plutôt que prendre le temps. Partage-lui ce carrousel — et dis-moi en commentaire ce que toi, tu choisirais.",
+            "image": null
+          }
+        ],
+        "legende": "Les « Turkey teeth » consistent à limer des dents saines pour poser des couronnes. Ce que la vidéo ne montre pas, c'est le prix biologique : préparer une couronne retire souvent 60 à 70 % de la dent visible (1 à 2 mm sur tout le pourtour), et l'émail ne se régénère jamais. La dent reste vivante dessous, mais fragilisée — près d'une dent couronnée sur dix devra être dévitalisée dans les années qui suivent, un risque plus élevé chez les patients jeunes dont la pulpe est plus volumineuse. Une couronne dure en moyenne 10 à 15 ans : posée jeune, elle impose des réfections successives, chacune retirant encore de la structure — au fil des cycles, la dent peut devoir être dévitalisée, voire extraite. L'orthodontie, elle, déplace la dent sans toucher à l'émail. Une couronne garde toute sa valeur sur une dent déjà très abîmée — mais aucune ne vaut une dent saine.\n\nDis-nous en commentaire ce que tu choisirais — et écris COURONNES si tu veux qu'on t'explique l'alternative adaptée à ton cas.",
+        "hashtags": [
+          "#orthodontie",
+          "#turkeyteeth",
+          "#couronnesdentaires",
+          "#capitaldentaire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "COURONNES",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-022",
+        "reel": "L1",
+        "sujet": "Ce n'est pas l'appareil qui déplace tes dents",
+        "angle": "Le déplacement dentaire est une réaction biologique, pas une poussée mécanique",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Ton appareil ne déplace pas tes dents.",
+            "texte": "Attends… quoi ?",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Ce que tu crois voir n'est pas ce qui se passe.",
+            "texte": "Le vrai moteur est invisible, et biologique.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "L'appareil fait une seule chose : appliquer une force légère et continue.",
+            "texte": "Tout le reste, c'est ton corps qui s'en charge.",
+            "image": null
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "La dent ne traverse jamais l'os.",
+            "texte": "C'est l'os qui se démolit d'un côté et se reconstruit de l'autre.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "Côté pression, l'os fond. Côté tension, l'os se forme.",
+            "texte": "Des cellules dédiées démolissent d'un côté et rebâtissent de l'autre.",
+            "image": "schema:côté pression / côté tension — remodelage osseux"
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Trop de force écrase les petits vaisseaux du ligament.",
+            "texte": "Le sang ne passe plus, la zone s'étouffe, et le mouvement s'arrête.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "Léger et continu bat fort et brutal.",
+            "texte": "On travaille avec ta biologie, jamais contre elle.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Envie de comprendre le mécanisme ?",
+            "texte": "Écris BIOLOGIE en commentaire, je te détaille tout ça.",
+            "image": null
+          }
+        ],
+        "legende": "L'appareil ne fait qu'appliquer une force légère et continue ; le déplacement, lui, est biologique. Sous l'effet de la pression, le ligament parodontal se comprime d'un côté : les ostéoclastes y résorbent l'os, tandis que du côté opposé, en tension, les ostéoblastes en déposent du nouveau. La dent ne traverse donc jamais l'os — c'est l'os qui se remodèle autour d'elle. Tout repose sur une force optimale, assez légère pour maintenir la circulation dans les capillaires du ligament. Une force excessive occlut ces vaisseaux et provoque une zone de nécrose (hyalinisation) qui bloque le déplacement jusqu'à ce que l'os soit résorbé par en dessous. C'est pour cela qu'une force trop forte est contre-productive — et qu'un alignement « en une semaine » est biologiquement impossible.\n\nÉcris BIOLOGIE en commentaire, je t'explique.",
+        "hashtags": [
+          "#orthodontie",
+          "#biologiedentaire",
+          "#deplacementdentaire",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "BIOLOGIE",
+        "cta_engagement": "Quel détail t'a surpris ?",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-023",
+        "reel": "S7-S11-L3",
+        "sujet": "Avant de prendre rendez-vous : le parcours",
+        "angle": "Un devis est la conclusion d'un diagnostic, pas un tarif donné d'avance",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Le premier rendez-vous ne sert pas à poser un appareil.",
+            "texte": "Voici ce qui se passe vraiment avant de commencer un traitement.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "« Je viens juste pour connaître le prix. »",
+            "texte": "C'est la phrase qu'on entend le plus souvent, et c'est bien normal.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Un prix, ça se calcule après le diagnostic.",
+            "texte": "Un devis, ce n'est pas un tarif donné d'avance : c'est la conclusion d'un examen.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Le 1er RDV, on parle et on examine.",
+            "texte": "Ce qui te gêne, tes attentes, puis un examen clinique et l'analyse de tes radios et de ton scanner. Rien de plus ce jour-là.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Le diagnostic vient au 2e RDV, à tête reposée.",
+            "texte": "On te présente les options, leurs avantages, leurs limites et leur coût. Ensuite, c'est toi qui décides.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "anticipation",
+            "titre": "Un traitement ne démarre pas le jour du 1er RDV.",
+            "texte": "Examen, analyse, diagnostic, remboursements, choix de l'appareil : prends de l'avance plutôt que d'attendre la rentrée.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "nuance",
+            "titre": "Tu peux défricher sans même te déplacer.",
+            "texte": "Une pré-consultation à distance répond à tes premières questions. Elle ne remplace pas la consultation, elle te dit si le moment est bon.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Savoir si un traitement est indiqué chez toi ?",
+            "texte": "Écris PRÉ-CONSULTATION en commentaire, je t'envoie le lien pour tester sans te déplacer.",
+            "image": null
+          }
+        ],
+        "legende": "Un devis n'est pas un prix affiché : c'est la conclusion d'un diagnostic. Le premier rendez-vous sert à comprendre ta demande et à réunir les éléments (examen clinique, radios panoramique et de profil, scanner) ; l'analyse et le plan de traitement se font ensuite, à tête reposée, et sont présentés au rendez-vous suivant avec les options, leurs limites et leur coût. Un traitement ne commence donc jamais le jour de la première visite : mieux vaut prendre de l'avance que d'attendre la rentrée, période où les délais s'allongent. Et pour poser tes premières questions sans te déplacer, une pré-consultation à distance existe : elle ne remplace pas la consultation, mais elle t'aide à savoir si le moment est le bon.\n\nÉcris PRÉ-CONSULTATION en commentaire, je t'envoie le lien pour faire le point à distance.",
+        "hashtags": [
+          "#orthodontie",
+          "#preconsultation",
+          "#parcoursdesoins",
+          "#devis",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "PRÉ-CONSULTATION",
+        "cta_engagement": "Enregistre-le pour ton prochain rendez-vous.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-024",
+        "reel": "S6",
+        "sujet": "Sourire gingival : on voit trop la gencive",
+        "angle": "La bonne solution dépend de la cause du sourire gingival",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "On voit beaucoup ta gencive quand tu souris ?",
+            "texte": "Avant de vouloir la couper, il faut comprendre d'où ça vient.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ce que tu remarques",
+            "texte": "Une bande de gencive rose qui apparaît au-dessus des dents dès que tu souris.",
+            "image": "photo_patient"
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Le problème n'est pas toujours la gencive.",
+            "texte": "Il y a plusieurs causes possibles, et une seule est la bonne chez toi.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Lèvre, dent ou mâchoire ?",
+            "texte": "Une lèvre très mobile qui remonte haut, une dent qui n'a pas fini de sortir, ou un os du haut un peu trop long.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "À chaque cause, sa solution.",
+            "texte": "Injection pour freiner la lèvre, orthodontie pour repositionner les dents, parfois chirurgie… ou parfois rien du tout.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Couper la gencive n'est pas le réflexe par défaut.",
+            "texte": "Bien retaillée, elle ne règle qu'une cause parmi d'autres. On cherche l'origine avant d'agir.",
+            "image": "avant_apres"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Ton sourire te paraît trop gingival ?",
+            "texte": "Écris GENCIVE en commentaire, je t'explique ce qu'on regarde pour trouver la cause.",
+            "image": null
+          }
+        ],
+        "legende": "Un sourire dit gingival, c'est un excès de gencive visible au sourire, et il n'a pas une seule origine. La cause peut être une hypermobilité de la lèvre supérieure qui remonte trop haut, une éruption passive incomplète (la dent n'a pas fini de se dégager de la gencive), ou un excès vertical du maxillaire, l'os du haut. Selon le cas, la réponse va d'une simple injection de toxine botulique à l'orthodontie, parfois à la chirurgie, et parfois aucun traitement n'est justifié. La gingivectomie (retailler la gencive) ne corrige qu'une des causes possibles : c'est pour cela qu'on identifie d'abord l'origine avant de proposer une solution.\n\nÉcris GENCIVE en commentaire, je t'explique ce qu'on regarde pour trouver la vraie cause chez toi.",
+        "hashtags": [
+          "#orthodontie",
+          "#souriregingival",
+          "#gummysmile",
+          "#sourire",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "GENCIVE",
+        "cta_engagement": "Tu aurais répondu quoi ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-025",
+        "reel": "S8",
+        "sujet": "Est-ce que les bagues font mal ?",
+        "angle": "L'inconfort orthodontique est réel mais bref et gérable",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« Est-ce que les bagues, ça fait mal ? »",
+            "texte": "Je te réponds franchement, sans enjoliver.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Ce que tu redoutes",
+            "texte": "Une douleur forte, et qui ne s'arrête jamais.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "La réalité est plus douce.",
+            "texte": "C'est une pression, pas une douleur vive, et seulement quelques jours.",
+            "image": null
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Pourquoi cette sensation ?",
+            "texte": "La dent commence à bouger : c'est cette mise sous tension que tu ressens, surtout au premier repas.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "solution",
+            "titre": "Comment passer ce cap.",
+            "texte": "Alimentation molle 2 à 3 jours, un antalgique simple si besoin. Et ça se calme vite.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "À chaque réglage, la gêne est plus courte.",
+            "texte": "Quelques jours d'inconfort au début, pour un sourire qui tient des années.",
+            "image": "schema:courbe d'inconfort qui décroît à chaque activation"
+          },
+          {
+            "n": 7,
+            "type": "cta",
+            "titre": "Tu appréhendes la douleur ?",
+            "texte": "Écris DOULEUR en commentaire, je te dis exactement à quoi t'attendre les premiers jours.",
+            "image": null
+          }
+        ],
+        "legende": "Oui, un appareil peut gêner, surtout dans les jours qui suivent la pose ou un réglage, et souvent au premier repas. Mais il s'agit d'une sensation de pression, pas d'une douleur vive : elle vient de la mise en tension du ligament parodontal, autour de la racine, où l'organisme déclenche la réaction biologique qui déplace la dent. Cette sensibilité est transitoire et diminue à chaque activation, à mesure que le corps s'adapte. Une alimentation molle sur 2 à 3 jours et, si besoin, un antalgique simple suffisent le plus souvent à passer ce cap.\n\nÉcris DOULEUR en commentaire, je te dis à quoi t'attendre les premiers jours et comment les rendre plus faciles.",
+        "hashtags": [
+          "#orthodontie",
+          "#bagues",
+          "#douleur",
+          "#traitementorthodontique",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "DOULEUR",
+        "cta_engagement": "Envoie-le à quelqu'un qui appréhende ses bagues.",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-026",
+        "reel": "S10",
+        "sujet": "L'orthodontie et les racines",
+        "angle": "La résorption radiculaire existe mais reste le plus souvent minime",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "« L'orthodontie abîme les racines. »",
+            "texte": "Pour une fois… c'est vrai.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "promesse",
+            "titre": "Mais pas comme tu l'imagines.",
+            "texte": "Et la suite devrait te rassurer.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "indice",
+            "titre": "Ça s'appelle la résorption radiculaire.",
+            "texte": "Le plus souvent, elle est minime : moins de 2 mm, sans conséquence.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Ce n'est pas l'orthodontie le problème. C'est l'excès.",
+            "texte": "Trop de force, pendant trop longtemps : voilà ce qui abîme.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "revelation",
+            "titre": "La racine est tapissée de cément, qui cicatrise mal.",
+            "texte": "D'où la prudence : ce qui est perdu ne repousse pas vraiment.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Certaines dents et certains mouvements exposent plus.",
+            "texte": "Incisives du haut, gros déplacements de racine : on les surveille de près.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 7,
+            "type": "lecon",
+            "titre": "On n'accélère jamais en forçant.",
+            "texte": "Une radio de contrôle en cours de traitement suffit le plus souvent à veiller.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Tu t'inquiètes pour tes racines ?",
+            "texte": "Écris RACINES en commentaire, je te rassure avec les chiffres.",
+            "image": null
+          }
+        ],
+        "legende": "La résorption radiculaire apicale est réelle et fréquente à un degré léger, mais elle reste le plus souvent inférieure à 2 mm, sans conséquence clinique ; les formes sévères (au-delà de quelques millimètres) sont rares. Les incisives supérieures sont les plus exposées, tout comme certains mouvements — intrusion, torque, grands déplacements de racine — et certaines morphologies radiculaires (racines effilées) ou des antécédents de traumatisme. Le cément qui recouvre la racine cicatrise mal : l'apex résorbé ne se reconstitue pas vraiment, mais le processus s'arrête généralement dès l'arrêt de la force active. Ce qui l'aggrave, ce sont des forces excessives et des traitements inutilement longs — raison pour laquelle on n'accélère jamais en forçant. Une simple surveillance, avec au besoin une radio de contrôle en cours de traitement, suffit dans la très grande majorité des cas.\n\nÉcris RACINES en commentaire, je t'explique.",
+        "hashtags": [
+          "#orthodontie",
+          "#racines",
+          "#resorptionradiculaire",
+          "#securite",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "RACINES",
+        "cta_engagement": "Dis-moi ce que tu vois sur cette radio.",
+        "gabarit": "curiosity_loop"
+      },
+      {
+        "id": "TSS-ORTHO-027",
+        "reel": "L4",
+        "sujet": "Priceless : la valeur de l'expertise",
+        "angle": "Ce qui coûte, c'est le matériel ; ce qui compte, c'est l'expertise",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Pourquoi un traitement d'orthodontie coûte ce prix ?",
+            "texte": "Ce que tu paies vraiment n'est pas ce que tu crois.",
+            "image": null
+          },
+          {
+            "n": 2,
+            "type": "identification",
+            "titre": "Fais la liste de ce qui a un prix.",
+            "texte": "Bagues, aligneurs, radios, scanner, deux ans de rendez-vous, une équipe, un cabinet.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "revelation",
+            "titre": "Tout ça a bien un tarif. Mais ce n'est pas le cœur.",
+            "texte": "Le plus important ne se voit sur aucune facture.",
+            "image": null
+          },
+          {
+            "n": 4,
+            "type": "explication",
+            "titre": "Le cœur, c'est le diagnostic.",
+            "texte": "Comprendre ton cas, choisir le bon geste au bon moment, éviter le traitement qui abîme.",
+            "image": "image_clinique_radio"
+          },
+          {
+            "n": 5,
+            "type": "consequence",
+            "titre": "C'est ce qui sépare un traitement d'un bon traitement.",
+            "texte": "Le même appareil, entre deux mains, ne donne pas le même sourire.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "nuance",
+            "titre": "Un prix élevé ne garantit rien à lui seul.",
+            "texte": "Ce que tu cherches, ce n'est pas le plus cher : c'est le diagnostic juste et une équipe qui l'assume dans la durée.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "synthese",
+            "titre": "L'expertise médicale.",
+            "texte": "Priceless.",
+            "image": null
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Envie de comprendre ce qui fait vraiment la différence ?",
+            "texte": "Écris EXPERTISE en commentaire, je te montre ce qui se joue avant même le premier geste.",
+            "image": null
+          }
+        ],
+        "legende": "Un traitement, c'est du matériel (bagues, aligneurs), de l'imagerie (radios, scanner), près de deux ans de rendez-vous, une équipe formée et un cabinet : tout cela a un coût réel et mesurable. Mais la vraie valeur ne se lit sur aucune facture : c'est le diagnostic, le raisonnement clinique qui choisit le bon plan de traitement, au bon moment, et qui évite l'option qui abîmerait ton capital dentaire. Un prix élevé ne garantit pas ce jugement à lui seul : ce qui compte, c'est l'expertise qui transforme des outils en un traitement adapté à ta situation. C'est précisément ce qui sépare un traitement d'un bon traitement.\n\nÉcris EXPERTISE en commentaire, je t'explique ce qui se joue avant même le premier geste.",
+        "hashtags": [
+          "#orthodontie",
+          "#expertise",
+          "#priceless",
+          "#sante",
+          "#TheSmileSpace",
+          "#soignies",
+          "#mons"
+        ],
+        "cta_conversion": "EXPERTISE",
+        "cta_engagement": "Tu aurais répondu quoi ?",
+        "gabarit": "clinique"
+      },
+      {
+        "id": "TSS-ORTHO-028",
+        "reel": "",
+        "sujet": "Aligneurs commandés en ligne, sans orthodontiste",
+        "angle": "Le dispositif exécute, mais c'est le diagnostic qui protège",
+        "gabarit": "clinique",
+        "cta_conversion": "BILAN",
+        "cta_engagement": "Les aligneurs en ligne : tu aurais tenté, toi ?",
+        "slides": [
+          {
+            "n": 1,
+            "type": "hook",
+            "titre": "Des aligneurs commandés en ligne. Sans jamais voir d'orthodontiste.",
+            "texte": "Moins cher, plus rapide… mais qu'est-ce qui manque vraiment ?",
+            "image": null,
+            "watermark": "file:assets/photos/aligneur_tray.jpg"
+          },
+          {
+            "n": 2,
+            "type": "probleme",
+            "titre": "Bouger une dent, ce n'est jamais anodin.",
+            "texte": "Une dent se déplace dans l'os vivant. Encore faut-il que cet os et la gencive soient sains.",
+            "image": null
+          },
+          {
+            "n": 3,
+            "type": "explication",
+            "titre": "Personne n'a regardé sous tes dents.",
+            "texte": "Sans radio ni examen, l'état des racines, de l'os et des gencives reste invisible.",
+            "image": "file:assets/photos/radio_annotee.png"
+          },
+          {
+            "n": 4,
+            "type": "renversement",
+            "titre": "Déplacer une dent sur un terrain fragile, c'est risquer de la perdre.",
+            "texte": "Sur une gencive déjà malade, la force qui aligne peut déchausser.",
+            "image": null
+          },
+          {
+            "n": 5,
+            "type": "limites",
+            "titre": "Une appli ne voit pas sous la gencive.",
+            "texte": "Elle scanne tes dents en surface. Pas tes racines, pas ton os, pas tes gencives.",
+            "image": null
+          },
+          {
+            "n": 6,
+            "type": "consequence",
+            "titre": "Au bout : rechute, dents mobiles, morsure faussée.",
+            "texte": "Et réparer coûte souvent bien plus cher que d'avoir bien fait dès le départ.",
+            "image": null
+          },
+          {
+            "n": 7,
+            "type": "solution",
+            "titre": "L'aligneur n'est qu'un outil. Le cerveau, c'est l'orthodontiste.",
+            "texte": "Radios, plan sur mesure, contrôle à chaque étape : c'est ça qui rend le traitement sûr et le résultat durable.",
+            "image": null,
+            "watermark": "file:assets/photos/aligneur_photo.jpg"
+          },
+          {
+            "n": 8,
+            "type": "cta",
+            "titre": "Avant de cliquer sur « commander »…",
+            "texte": "Fais examiner ton cas pour de vrai. Envoie BILAN en MP et on te dit si ton cas s'y prête vraiment.",
+            "image": null
+          }
+        ],
+        "legende": "Les aligneurs transparents commandés en ligne — sans examen clinique ni radiographies — sautent l'étape la plus importante : le diagnostic. Déplacer une dent, c'est appliquer une force à une racine ancrée dans l'os ; le mouvement n'est sûr que si le parodonte (os + gencive) est sain. Or une parodontite, une racine courte ou une résorption ne se voient pas à l'œil nu : seules des radios et un bilan les révèlent. Appliquer des forces sur un parodonte affaibli peut aggraver la perte osseuse, jusqu'à la mobilité voire la perte de la dent. Sans suivi régulier, un mouvement imprévu (bascule, béance, contact prématuré) n'est pas corrigé à temps, et la contention finale — indispensable contre la rechute — est souvent négligée. Les aligneurs sont d'excellents dispositifs quand ils sont prescrits et suivis par un orthodontiste : le dispositif exécute, mais c'est le diagnostic et le suivi qui protègent tes dents.\n\nTu as déjà vu passer ces pubs d'aligneurs « 100 % en ligne » ? Dis-nous en commentaire — et envoie-nous BILAN en MP si tu veux qu'on vérifie d'abord si ton cas s'y prête vraiment.",
+        "hashtags": [
+          "#aligneurs",
+          "#aligneursinvisibles",
+          "#orthodontie",
+          "#santédentaire",
+          "#TheSmileSpace",
+          "#mons",
+          "#soignies"
+        ]
+      }
+    ],
+    "charte": {
+      "logo": {
+        "position": "bas de slide, aligné comme sur les 20 carrousels d'origine",
+        "version_claire": "sur slides à fond sombre (hook, renversement, cta)",
+        "version_foncee": "sur slides à fond clair",
+        "marge_securite": "réserver une marge égale à la hauteur du logo tout autour",
+        "a_ameliorer": "À COMPLÉTER PAR LINOS — préciser ce qu'il faut améliorer (netteté / contraste / taille / passer au logo vectoriel / repositionner)"
+      },
+      "zones_image": {
+        "photo_patient": "cadre photo clinique du patient (sourire / dents)",
+        "image_clinique_radio": "cadre radiographie ou image clinique",
+        "avant_apres": "double cadre AVANT / APRÈS",
+        "schema:<legende>": "cadre schéma illustratif ; le texte après ':' est la légende du schéma",
+        "null": "slide texte, aucune zone image"
+      },
+      "note": "Chaque slide porte un champ 'image' : le générateur doit lire slide['image'] et poser la zone correspondante (ou aucune si null), au lieu de deviner d'après la position."
+    }
+  }
+}

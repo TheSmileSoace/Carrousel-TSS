@@ -1,0 +1,395 @@
+<meta charset="utf-8">
+<title>Déplacement dentaire — LAD</title>
+<style>
+  html,body{margin:0;padding:0;background:#2A2723;overflow:hidden;}
+  #stage{position:fixed;inset:0;}
+  svg{display:block;width:100vw;height:100vh;}
+  text{font-family:"Poppins","Inter","Segoe UI",system-ui,sans-serif;}
+</style>
+<div id="stage"></div>
+<script>
+/* =====================================================================
+   The Smile Space — Déplacement dentaire orthodontique au niveau du LAD
+   Animation 2D schématique, scientifiquement fidèle. Config en tête.
+   Rendu déterministe : window.__seek(tSec) dessine une frame précise.
+   ===================================================================== */
+const CONFIG = {
+  totalSec: 14,           // durée de la boucle
+  fps: 30,
+  // Découpage des 4 temps (en secondes, bornes)
+  stages: [
+    { key:'repos',  t0:0.0,  t1:3.0,  title:'1 · Au repos',
+      sub:"Le ligament a la même épaisseur partout." },
+    { key:'force',  t0:3.0,  t1:6.0,  title:'2 · La force s’applique',
+      sub:"La dent bascule : d’un côté ça comprime, de l’autre ça étire." },
+    { key:'cell',   t0:6.0,  t1:10.5, title:'3 · L’os se remodèle',
+      sub:"Côté pression, l’os se résorbe. Côté tension, l’os se reconstruit." },
+    { key:'move',   t0:10.5, t1:13.6, title:'4 · La dent a bougé',
+      sub:"L’os a suivi. Le ligament retrouve son épaisseur." },
+  ],
+  crossfadeSec: 0.5,      // fondu doux au raccord de boucle
+  // Couleurs (charte The Smile Space)
+  colors: {
+    bg:'#2A2723', panel:'#332F2A',
+    bone:'#6E6353', boneHi:'#7C7060',
+    newBone:'#C3A46E', resorb:'#B87A4B',
+    pdl:'#D9D0C0', tooth:'#F7F2E9', dentin:'#EFE1C4', cementum:'#C9A86E',
+    ink:'#FFFFFF', muted:'rgba(255,255,255,.62)', gold:'#C3A46E',
+    pressure:'#C98A55', tension:'#C3A46E', arrow:'#FFFFFF',
+    osteoclast:'#C77F49', osteoblast:'#CBB07A',
+  },
+  // Géométrie schématique (unités = px monde, largeur monde = 1080)
+  pdlWidth: 26,           // épaisseur LAD au repos (exagérée pour lisibilité ; réel 0,15–0,25 mm)
+  pdlMin: 0.34,           // le LAD ne s'écrase jamais à zéro (fraction mini de l'épaisseur)
+  rootNeckHalf: 96,
+  rootApexHalf: 24,
+  crownHalf: 104,
+  netShift: 72,           // déplacement net de la dent sur un cycle
+  tipShear: 15,           // amplitude de la bascule (couronne)
+};
+
+const LOGO = "__LOGO_DATAURI__";
+const SVGNS = "http://www.w3.org/2000/svg";
+const C = CONFIG.colors;
+
+/* ---------- utilitaires ---------- */
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,u)=>a+(b-a)*u;
+const smooth=u=>{u=clamp(u,0,1);return u*u*(3-2*u);};
+function key(pairs,t){ // pairs: [[t,val],...] interpolation smoothstep
+  if(t<=pairs[0][0])return pairs[0][1];
+  for(let i=0;i<pairs.length-1;i++){
+    const [ta,va]=pairs[i],[tb,vb]=pairs[i+1];
+    if(t<=tb)return lerp(va,vb,smooth((t-ta)/(tb-ta)));
+  }
+  return pairs[pairs.length-1][1];
+}
+
+/* ---------- timeline des paramètres ---------- */
+const D=CONFIG.netShift, S=CONFIG.tipShear;
+const P = {
+  // décalage horizontal de la dent (monde px)
+  toothShift: t=>key([[0,0],[3,0],[6,0.14*D],[8.2,0.14*D],[10.5,0.62*D],[13.4,D],[14,D]],t),
+  // migration des parois osseuses (résorption droite / apposition gauche)
+  wallShift:  t=>key([[0,0],[6,0],[7,0.06*D],[10.5,0.60*D],[13.4,D],[14,D]],t),
+  // bascule (cisaillement couronne>apex)
+  tip:        t=>key([[0,0],[3,0],[6,S],[10.5,S],[13.4,0],[14,0]],t),
+  // activité cellulaire (0..1)
+  cells:      t=>key([[0,0],[6.2,0],[7.2,1],[9.6,1],[10.6,0],[14,0]],t),
+  // avancement du remodelage (bandes os neuf / résorbé) 0..1
+  remodel:    t=>key([[0,0],[6,0],[10.5,1],[13.2,1],[13.9,0],[14,0]],t),
+  // flèche de force
+  arrow:      t=>key([[0,0],[2.4,0],[3.2,1],[13.2,1],[13.7,0],[14,0]],t),
+};
+
+/* ---------- construction du DOM SVG ---------- */
+let W=1080,H=1920, root=null, els={};
+function el(tag,attrs,parent){const e=document.createElementNS(SVGNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+
+function build(){
+  document.getElementById('stage').innerHTML='';
+  W=window.innerWidth; H=window.innerHeight;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'xMidYMid slice'},document.getElementById('stage'));
+  root=svg;
+  el('rect',{x:0,y:0,width:W,height:H,fill:C.bg},svg);
+
+  // bandes de zones (haut titre / bas légende) — layout proportionnel
+  // BARE = version « nue » pour insertion dans un carrousel (sans chrome du reel)
+  const BARE=/bare=1/.test(location.search);
+  const topH = BARE? H*0.05 : H*0.155;
+  const botH = BARE? H*0.05 : H*0.175;
+  els.bare=BARE;
+  els.diagram={x:0,y:topH,w:W,h:H-topH-botH};
+
+  // groupe caméra (pan de fin de cycle pour boucle douce)
+  const cam=el('g',{},svg); els.cam=cam;
+
+  // fond os
+  els.boneBg=el('rect',{fill:C.bone},cam);
+  els.boneTexture=el('g',{opacity:0.5},cam);
+  // socket (zone LAD+dent) redessinée par-dessus l'os
+  els.socket=el('path',{fill:C.panel},cam);
+  // bandes de remodelage
+  els.newBone=el('path',{fill:C.newBone,opacity:0},cam);      // apposition (gauche/tension)
+  els.resorb=el('path',{fill:C.panel,opacity:1},cam);         // résorption (droite/pression) = os retiré
+  els.resorbScallop=el('path',{fill:'none',stroke:C.resorb,'stroke-width':4,opacity:0},cam);
+  // LAD
+  els.pdlL=el('path',{fill:C.pdl,opacity:0.95},cam);
+  els.pdlR=el('path',{fill:C.pdl,opacity:0.95},cam);
+  els.fibers=el('g',{stroke:'rgba(120,105,80,.5)','stroke-width':2.4,'stroke-linecap':'round'},cam);
+  // parois (contours)
+  els.wallEdge=el('path',{fill:'none',stroke:C.boneHi,'stroke-width':3,opacity:0.9},cam);
+  // dent
+  els.tooth=el('g',{},cam);
+  els.root=el('path',{fill:C.dentin,stroke:C.cementum,'stroke-width':6},els.tooth);
+  els.crown=el('path',{fill:C.tooth,stroke:'rgba(0,0,0,.06)','stroke-width':2},els.tooth);
+  els.groove=el('path',{fill:'none',stroke:'rgba(90,74,52,.16)','stroke-width':4,'stroke-linecap':'round'},els.tooth);
+  // axe de référence (position initiale)
+  els.refAxis=el('line',{stroke:'rgba(255,255,255,.32)','stroke-width':3,'stroke-dasharray':'4 12',opacity:0},cam);
+  // cellules
+  els.cellsR=el('g',{opacity:0},cam); // ostéoclastes (pression/droite)
+  els.cellsL=el('g',{opacity:0},cam); // ostéoblastes (tension/gauche)
+  // flèche de force
+  els.arrow=el('g',{opacity:0},cam);
+  // étiquettes côté
+  els.labPress=el('text',{'text-anchor':'middle','font-weight':700,'font-size':26,fill:C.pressure,'letter-spacing':2,opacity:0},cam);
+  els.labTens=el('text',{'text-anchor':'middle','font-weight':700,'font-size':26,fill:C.tension,'letter-spacing':2,opacity:0},cam);
+
+  if(!BARE){
+  // titres (hors caméra, fixes)
+  els.stepNo=el('text',{x:W/2,y:topH*0.5,'text-anchor':'middle','font-weight':700,'font-size':Math.round(W*0.052),fill:C.ink},svg);
+  els.stepSub=el('text',{x:W/2,y:topH*0.5+Math.round(W*0.06),'text-anchor':'middle','font-weight':400,'font-size':Math.round(W*0.03),fill:C.muted},svg);
+  // progression 4 points
+  els.dots=el('g',{},svg);
+  for(let i=0;i<4;i++) el('circle',{cx:W/2-60+i*40,cy:topH*0.5+Math.round(W*0.11),r:7,fill:'rgba(255,255,255,.25)','data-d':i},els.dots);
+
+  // pied : légende persistante + logo
+  const fy=H-botH;
+  el('line',{x1:W*0.08,y1:fy+botH*0.34,x2:W*0.92,y2:fy+botH*0.34,stroke:'rgba(255,255,255,.16)','stroke-width':2},svg);
+  el('text',{x:W/2,y:fy+botH*0.22,'text-anchor':'middle','font-weight':600,'font-size':Math.round(W*0.028),fill:'rgba(255,255,255,.8)'},svg).textContent="Une force légère et continue — jamais brutale.";
+  if(LOGO && LOGO.indexOf('__')!==0){
+    const lw=W*0.30, lh=lw*0.545;
+    el('image',{href:LOGO,x:(W-lw)/2,y:fy+botH*0.46,width:lw,height:lh,opacity:0.95},svg);
+  } else {
+    el('text',{x:W/2,y:fy+botH*0.62,'text-anchor':'middle','font-weight':700,'font-size':Math.round(W*0.036),fill:'#fff'},svg).textContent="The Smile Space";
+  }
+  el('text',{x:W/2,y:fy+botH*0.9,'text-anchor':'middle','font-weight':500,'font-size':Math.round(W*0.024),fill:C.muted},svg).textContent="@thesmilespace";
+  } // fin !BARE
+
+  // overlay de fondu (boucle)
+  els.fade=el('rect',{x:0,y:0,width:W,height:H,fill:C.bg,opacity:0},svg);
+}
+
+/* ---------- géométrie de la dent / du LAD ---------- */
+function geom(){
+  const d=els.diagram;
+  const cx=d.x+d.w/2;
+  const crownTop=d.y+d.h*0.14;
+  const neck=d.y+d.h*0.32;          // collet schématique
+  const apex=d.y+d.h*0.92;
+  return {cx,crownTop,neck,apex};
+}
+// demi-largeur de la racine à l'ordonnée y (entre neck et apex)
+function rootHalf(y,g){
+  const u=clamp((y-g.neck)/(g.apex-g.neck),0,1);
+  // taper doux + apex arrondi
+  return lerp(CONFIG.rootNeckHalf,CONFIG.rootApexHalf,u*u*0.9+u*0.1);
+}
+// facteur coronal pour la bascule : +1 couronne, ~-0.45 apex
+function coronal(y,g){ const u=(y-g.apex)/(g.neck-g.apex); return lerp(-0.45,1,clamp(u,0,1)); }
+
+function samplesY(g,n){const a=[];for(let i=0;i<=n;i++)a.push(lerp(g.neck,g.apex,i/n));return a;}
+
+/* ---------- rendu d'une frame ---------- */
+function render(tSec){
+  const t=((tSec%CONFIG.totalSec)+CONFIG.totalSec)%CONFIG.totalSec;
+  const g=geom(), d=els.diagram;
+  const w0=CONFIG.pdlWidth, wmin=w0*CONFIG.pdlMin;
+  const tsh=P.toothShift(t), wsh=P.wallShift(t), tip=P.tip(t);
+  const cellsA=P.cells(t), rem=P.remodel(t), arrowA=P.arrow(t);
+
+  const ys=samplesY(g,26);
+  // centre de la racine à chaque y (bascule = cisaillement)
+  const centerX=y=>g.cx+tsh+tip*coronal(y,g);
+  // bords racine
+  const rootR=y=>centerX(y)+rootHalf(y,g);
+  const rootL=y=>centerX(y)-rootHalf(y,g);
+  // parois = position de repos (g.cx ± (rootHalf+w0)) décalées par wsh (migration)
+  const wallRx=y=>g.cx+ (rootHalf(y,g)+w0) + wsh;
+  const wallLx=y=>g.cx- (rootHalf(y,g)+w0) + wsh;
+
+  // apex arrondi : point bas
+  const yb=g.apex, xbC=centerX(yb);
+  // --- socket (intérieur entre parois) ---
+  let sp='M '+wallLx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{sp+=' L '+wallLx(y)+' '+y;});
+  sp+=' L '+xbC+' '+(yb+CONFIG.rootApexHalf+6);
+  for(let i=ys.length-1;i>=0;i--){sp+=' L '+wallRx(ys[i])+' '+ys[i];}
+  sp+=' L '+wallRx(g.neck)+' '+g.neck+' Z';
+  els.socket.setAttribute('d',sp);
+
+  // --- os fond (uniquement autour/au-dessous du collet ; la couronne émerge sur fond sombre) ---
+  els.boneBg.setAttribute('x',d.x-40);els.boneBg.setAttribute('y',g.neck);
+  els.boneBg.setAttribute('width',d.w+80);els.boneBg.setAttribute('height',(d.y+d.h)-g.neck+80);
+
+  // --- LAD gauche (tension) : entre rootL et wallL ---
+  let pl='M '+wallLx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{pl+=' L '+wallLx(y)+' '+y;});
+  pl+=' L '+xbC+' '+(yb+CONFIG.rootApexHalf+6);
+  for(let i=ys.length-1;i>=0;i--){const y=ys[i]; pl+=' L '+rootL(y)+' '+y;}
+  pl+=' L '+rootL(g.neck)+' '+g.neck+' Z';
+  els.pdlL.setAttribute('d',pl);
+  // --- LAD droite (pression) : entre rootR et wallR (jamais < wmin) ---
+  let pr='M '+wallRx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{pr+=' L '+wallRx(y)+' '+y;});
+  pr+=' L '+xbC+' '+(yb+CONFIG.rootApexHalf+6);
+  for(let i=ys.length-1;i>=0;i--){const y=ys[i]; pr+=' L '+Math.max(rootR(y),wallRx(y)-(wallRx(y)-rootR(y)>wmin?0:0))+' '+y;}
+  // clamp: garantir épaisseur mini côté pression
+  pr='M '+wallRx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{pr+=' L '+wallRx(y)+' '+y;});
+  pr+=' L '+xbC+' '+(yb+CONFIG.rootApexHalf+6);
+  for(let i=ys.length-1;i>=0;i--){const y=ys[i]; const rr=Math.min(rootR(y),wallRx(y)-wmin); pr+=' L '+rr+' '+y;}
+  pr+=' L '+Math.min(rootR(g.neck),wallRx(g.neck)-wmin)+' '+g.neck+' Z';
+  els.pdlR.setAttribute('d',pr);
+
+  // --- fibres du LAD (elles s'étirent côté tension, se tassent côté pression) ---
+  els.fibers.innerHTML='';
+  const nf=10;
+  for(let k=1;k<nf;k++){
+    const y=lerp(g.neck+10,g.apex-6,k/nf), yo=(k%2?3:-3);
+    el('line',{x1:rootL(y),y1:y,x2:wallLx(y),y2:y+yo},els.fibers);
+    el('line',{x1:Math.min(rootR(y),wallRx(y)-wmin),y1:y,x2:wallRx(y),y2:y+yo},els.fibers);
+  }
+
+  // --- bande d'os neuf (apposition, tension/gauche) : entre wallL de repos et wallL courant ---
+  const remOpa=smooth(rem);
+  let nb='';
+  if(wsh>0.5){
+    nb='M '+(g.cx-(rootHalf(g.neck,g)+w0))+' '+g.neck;
+    ys.forEach(y=>{nb+=' L '+(g.cx-(rootHalf(y,g)+w0))+' '+y;});
+    for(let i=ys.length-1;i>=0;i--){const y=ys[i]; nb+=' L '+wallLx(y)+' '+y;}
+    nb+=' Z';
+  }
+  els.newBone.setAttribute('d',nb||'M0 0');
+  els.newBone.setAttribute('opacity', (0.9*remOpa).toFixed(3));
+
+  // --- zone résorbée (droite) : os retiré = couleur socket, + feston ostéoclaste ---
+  let rb='';
+  if(wsh>0.5){
+    rb='M '+(g.cx+(rootHalf(g.neck,g)+w0))+' '+g.neck;
+    ys.forEach(y=>{rb+=' L '+(g.cx+(rootHalf(y,g)+w0))+' '+y;});
+    for(let i=ys.length-1;i>=0;i--){const y=ys[i]; rb+=' L '+wallRx(y)+' '+y;}
+    rb+=' Z';
+  }
+  els.resorb.setAttribute('d',rb||'M0 0');
+  // feston (bord grignoté) le long de wallR
+  let sc='';
+  ys.forEach((y,i)=>{ if(i%2===0){const x=wallRx(y); sc+=' M '+x+' '+y+' q 11 6 0 13';}});
+  els.resorbScallop.setAttribute('d',sc||'M0 0');
+  els.resorbScallop.setAttribute('opacity',(0.7*remOpa).toFixed(3));
+
+  // --- contour parois ---
+  let we='M '+wallLx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{we+=' L '+wallLx(y)+' '+y;});
+  we+=' M '+wallRx(g.neck)+' '+g.neck;
+  ys.forEach(y=>{we+=' L '+wallRx(y)+' '+y;});
+  els.wallEdge.setAttribute('d',we);
+
+  // --- racine (dent) ---
+  let rd='M '+rootL(g.neck)+' '+g.neck;
+  ys.forEach(y=>{rd+=' L '+rootL(y)+' '+y;});
+  rd+=' Q '+xbC+' '+(yb+CONFIG.rootApexHalf+10)+' '+rootR(g.apex)+' '+g.apex;
+  for(let i=ys.length-1;i>=0;i--){const y=ys[i]; rd+=' L '+rootR(y)+' '+y;}
+  rd+=' Z';
+  els.root.setAttribute('d',rd);
+  // couronne — prémolaire (deux cuspides arrondies, contour affiné, constriction cervicale)
+  const ch=CONFIG.crownHalf;
+  const H0=g.neck-g.crownTop;
+  const convY=g.neck-H0*0.40;        // hauteur de contour (max convexité)
+  const cuspY=g.crownTop+H0*0.12;    // sommet des cuspides (arrondies, peu saillantes)
+  const fisY=g.crownTop+H0*0.34;     // sillon central (vallée douce)
+  const nH=CONFIG.rootNeckHalf*0.98; // collet aligné sur la racine
+  const cxN=centerX(g.neck), cxC=centerX(convY), cxT=centerX(cuspY);
+  const cX=ch*0.5;                   // écart des cuspides
+  let cr='M '+(cxN-nH)+' '+g.neck;
+  cr+=' Q '+(cxC-ch)+' '+(convY+H0*0.10)+' '+(cxC-ch)+' '+convY;                 // épaule vestibulaire arrondie
+  cr+=' Q '+(cxC-ch)+' '+(convY-H0*0.14)+' '+(cxT-cX-14)+' '+(cuspY+H0*0.18);    // remontée douce
+  cr+=' Q '+(cxT-cX)+' '+cuspY+' '+(cxT-cX+14)+' '+(cuspY+H0*0.16);              // dôme cuspide vestibulaire
+  cr+=' Q '+(cxT-cX*0.34)+' '+fisY+' '+cxT+' '+fisY;                            // vallée du sillon
+  cr+=' Q '+(cxT+cX*0.34)+' '+fisY+' '+(cxT+cX-14)+' '+(cuspY+H0*0.16);          // dôme cuspide linguale
+  cr+=' Q '+(cxT+cX)+' '+cuspY+' '+(cxT+cX+14)+' '+(cuspY+H0*0.18);
+  cr+=' Q '+(cxC+ch)+' '+(convY-H0*0.14)+' '+(cxC+ch)+' '+convY;
+  cr+=' Q '+(cxC+ch)+' '+(convY+H0*0.10)+' '+(cxN+nH)+' '+g.neck;
+  cr+=' Z';
+  els.crown.setAttribute('d',cr);
+  // sillon central + amorces de versants
+  let gv='M '+cxT+' '+(fisY+2)+' L '+cxT+' '+(fisY+H0*0.30);
+  gv+=' M '+(cxT-cX*0.5)+' '+(cuspY+H0*0.14)+' L '+(cxT-cX*0.5)+' '+(cuspY+H0*0.04);
+  gv+=' M '+(cxT+cX*0.5)+' '+(cuspY+H0*0.14)+' L '+(cxT+cX*0.5)+' '+(cuspY+H0*0.04);
+  els.groove.setAttribute('d',gv);
+
+  // --- axe de référence (position initiale de la dent) ---
+  const refShow=smooth(key([[0,0],[6,0],[7,1],[13.2,1],[13.8,0],[14,0]],t));
+  els.refAxis.setAttribute('x1',g.cx);els.refAxis.setAttribute('x2',g.cx);
+  els.refAxis.setAttribute('y1',g.crownTop-10);els.refAxis.setAttribute('y2',yb+40);
+  els.refAxis.setAttribute('opacity',(0.32*refShow).toFixed(3));
+
+  // --- cellules ---
+  function placeCells(grp,side,color){
+    grp.innerHTML='';
+    const n=4;
+    for(let i=0;i<n;i++){
+      const y=lerp(g.neck+ (g.apex-g.neck)*0.18, g.apex-(g.apex-g.neck)*0.12, i/(n-1));
+      const x=side>0? wallRx(y): wallLx(y);
+      const cg=el('g',{transform:`translate(${x},${y})`},grp);
+      const pulse=0.5+0.5*Math.sin(t*3.2+i*1.4);
+      const r=11+2.5*pulse;
+      if(side>0){ // ostéoclaste : grosse cellule multinucléée grignotant vers l'os
+        el('path',{d:`M 4 ${-r} A ${r} ${r} 0 1 0 4 ${r} L -2 4 L 4 -2 Z`,fill:color,opacity:0.92},cg);
+        el('circle',{cx:-1,cy:-4,r:2.4,fill:'rgba(0,0,0,.35)'},cg);
+        el('circle',{cx:-4,cy:3,r:2.4,fill:'rgba(0,0,0,.35)'},cg);
+        el('circle',{cx:3,cy:5,r:2.2,fill:'rgba(0,0,0,.35)'},cg);
+      } else { // ostéoblaste : petites cellules alignées déposant l'os
+        el('rect',{x:-8,y:-7,width:16,height:14,rx:5,fill:color,opacity:0.92},cg);
+        el('circle',{cx:0,cy:0,r:2.6,fill:'rgba(0,0,0,.30)'},cg);
+      }
+    }
+  }
+  placeCells(els.cellsR,1,C.osteoclast);
+  placeCells(els.cellsL,-1,C.osteoblast);
+  els.cellsR.setAttribute('opacity',cellsA.toFixed(3));
+  els.cellsL.setAttribute('opacity',cellsA.toFixed(3));
+
+  // --- flèche de force (sur la couronne, vers la droite) ---
+  els.arrow.innerHTML='';
+  const ay=g.crownTop+(g.neck-g.crownTop)*0.30, ax0=cxT-ch-140, ax1=cxT-ch-14;
+  el('line',{x1:ax0,y1:ay,x2:ax1,y2:ay,stroke:C.arrow,'stroke-width':10,'stroke-linecap':'round'},els.arrow);
+  el('path',{d:`M ${ax1+2} ${ay} L ${ax1-26} ${ay-16} L ${ax1-26} ${ay+16} Z`,fill:C.arrow},els.arrow);
+  el('text',{x:ax0,y:ay-24,'font-size':24,'font-weight':600,fill:C.arrow,opacity:0.9},els.arrow).textContent="force légère";
+  els.arrow.setAttribute('opacity',arrowA.toFixed(3));
+
+  // --- étiquettes côté pression / tension ---
+  const labY=g.neck+(g.apex-g.neck)*0.5;
+  const labA=smooth(key([[0,0],[3.4,0],[4.2,1],[13.2,1],[13.7,0],[14,0]],t));
+  els.labPress.setAttribute('x', (g.cx+CONFIG.rootNeckHalf+w0+wsh)+70);
+  els.labPress.setAttribute('y', labY); els.labPress.textContent="CÔTÉ PRESSION";
+  els.labPress.setAttribute('opacity',labA.toFixed(3));
+  els.labTens.setAttribute('x', (g.cx-CONFIG.rootNeckHalf-w0+wsh)-70);
+  els.labTens.setAttribute('y', labY); els.labTens.textContent="CÔTÉ TENSION";
+  els.labTens.setAttribute('opacity',labA.toFixed(3));
+  els.labPress.setAttribute('transform',`rotate(90 ${els.labPress.getAttribute('x')} ${labY})`);
+  els.labTens.setAttribute('transform',`rotate(-90 ${els.labTens.getAttribute('x')} ${labY})`);
+
+  // --- caméra : recentre la dent en fin de cycle (boucle douce) ---
+  const cam=key([[0,0],[10.5,0],[13.4,D],[14,D]],t);
+  els.cam.setAttribute('transform',`translate(${-cam},0)`);
+
+  // --- titres d'étape ---
+  if(!els.bare){
+    let st=CONFIG.stages[0];
+    for(const s of CONFIG.stages){ if(t>=s.t0) st=s; }
+    els.stepNo.textContent=st.title; els.stepSub.textContent=st.sub;
+    const idx=CONFIG.stages.indexOf(st);
+    els.dots.querySelectorAll('circle').forEach((c,i)=>c.setAttribute('fill', i===idx? C.gold:'rgba(255,255,255,.25)'));
+  }
+
+  // --- fondu de boucle ---
+  const cf=CONFIG.crossfadeSec;
+  let fo=0;
+  if(t>CONFIG.totalSec-cf) fo=smooth((t-(CONFIG.totalSec-cf))/cf);
+  else if(t<cf) fo=1-smooth(t/cf);
+  els.fade.setAttribute('opacity',fo.toFixed(3));
+}
+
+/* ---------- API export + preview ---------- */
+window.__meta={total:CONFIG.totalSec,fps:CONFIG.fps};
+window.__seek=function(tSec){ if(!root)build(); render(tSec); };
+let raf=null, t0=null;
+function loop(ts){ if(t0===null)t0=ts; render((ts-t0)/1000); raf=requestAnimationFrame(loop); }
+function start(){ build(); if(!window.__capture){ cancelAnimationFrame(raf); t0=null; raf=requestAnimationFrame(loop);} else render(0); }
+window.addEventListener('resize',()=>{ build(); });
+// si ?still=<sec> : fige une frame
+const m=location.search.match(/still=([\d.]+)/);
+if(m){ window.__capture=true; build(); render(parseFloat(m[1])); }
+else start();
+</script>

@@ -1,0 +1,37 @@
+{
+  "header": "",
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 02",
+  "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 },
+  "inset": "assets/quiz/sagesse_radio_clean.jpg",
+  "insetH": 384,
+  "question": "Les dents de sagesse peuvent-elles pousser les dents de devant et les faire rebouger après un traitement ?",
+  "highlight": [
+    "dents de sagesse",
+    "rebouger"
+  ],
+  "answers": [
+    [
+      "A",
+      "Oui, toujours"
+    ],
+    [
+      "B",
+      "Surtout après 20 ans"
+    ],
+    [
+      "C",
+      "Ce n'est pas démontré"
+    ],
+    [
+      "D",
+      "Seulement en bas"
+    ]
+  ],
+  "optsLayout": "vertical",
+  "qTop": 1104,
+  "qH": 252,
+  "optsTop": 1392,
+  "optsH": 344,
+  "insetCircles": "assets/quiz/sagesse_circles.png"
+}
