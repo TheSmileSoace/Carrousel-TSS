@@ -50,11 +50,12 @@ const frame = (label, cap = "") =>
   `<div class="frame"><span>${esc(label)}</span>${cap ? `<small>${esc(cap)}</small>` : ""}</div>`;
 
 // cadre avec vraie photo intégrée + légende sous l'image
-const A = path.join(ROOT, "assets/carrousels/mathys/exo");
-const photo = (file, label) => {
-  const src = b64(path.join(A, file), "image/jpeg");
-  return `<figure class="pf"><div class="pf-img"><img src="${src}" alt=""></div><figcaption>${esc(label)}</figcaption></figure>`;
+const AR = path.join(ROOT, "assets/carrousels/mathys");
+const pimg = (sub, file, label, fit = "cover") => {
+  const src = b64(path.join(AR, sub, file), "image/jpeg");
+  return `<figure class="pf"><div class="pf-img ${fit}"><img src="${src}" alt=""></div><figcaption>${esc(label)}</figcaption></figure>`;
 };
+const photo = (file, label) => pimg("exo", file, label);
 
 function shell({ kind, n, total, dark, body }) {
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
@@ -97,6 +98,8 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .pf{display:flex;flex-direction:column;gap:16px;min-height:0}
 .pf-img{flex:1;min-height:0;border-radius:20px;overflow:hidden;background:#EFE7DC;box-shadow:0 16px 40px rgba(43,41,38,.10)}
 .pf-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pf-img.contain{background:#211F1C}
+.pf-img.contain img{object-fit:contain}
 .pf figcaption{font-family:var(--ft);font-weight:600;letter-spacing:.04em;text-transform:uppercase;
  font-size:22px;color:var(--brand);text-align:center}
 
@@ -208,41 +211,41 @@ const slides = [
       ${photo("profil_droit_sourire.jpg", "Profil droit · sourire")}
     </div>` },
 
-  // 3 — Documentation · Photos intra-orales (G / face / D)
+  // 3 — Documentation · Photos intra-orales (D / face / G)
   { kind:"intra", dark:false, note:"[Documentation intra-orale — vues latérales et frontale.] Occlusion en intercuspidie : rapports transverses et sagittaux, encombrement.",
     body:`
     ${head("Cas 1 · Documentation", `Photos <span class="hl">intra-orales</span>`)}
-    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
-      ${frame("Intra · latéral droit")}
-      ${frame("Intra · frontal (face)")}
-      ${frame("Intra · latéral gauche")}
+    <div class="prow" style="grid-template-columns:repeat(3,1fr)">
+      ${pimg("intra","droite.jpg","Latéral droit")}
+      ${pimg("intra","face.jpg","Frontal (face)")}
+      ${pimg("intra","gauche.jpg","Latéral gauche")}
     </div>` },
 
   // 4 — Documentation · Occlusales (haut / bas)
   { kind:"occlu", dark:false, note:"[Vues occlusales — arcades maxillaire et mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
     body:`
     ${head("Cas 1 · Documentation", `Vues <span class="hl">occlusales</span>`)}
-    <div class="grid" style="grid-template-columns:1fr 1fr">
-      ${frame("Occlusale maxillaire — haut")}
-      ${frame("Occlusale mandibulaire — bas")}
+    <div class="prow" style="grid-template-columns:repeat(2,1fr);max-width:1360px;margin-left:auto;margin-right:auto">
+      ${pimg("intra","haut.jpg","Occlusale maxillaire — haut")}
+      ${pimg("intra","bas.jpg","Occlusale mandibulaire — bas")}
     </div>` },
 
-  // 5 — Documentation · CBCT
-  { kind:"cbct", dark:false, note:"[CBCT — suture médio-palatine ouverte, stade A-B d'Angelieri.] Support de la décision d'expansion et de l'ancrage osseux.",
+  // 5 — Documentation · Panoramique
+  { kind:"pano", dark:false, note:"[Radiographie panoramique — denture mixte.] Présence et position des germes, séquence d'éruption, bilan général.",
     body:`
-    ${head("Cas 1 · Documentation", `<span class="hl">CBCT</span>`, `Suture médio-palatine ouverte — stade A-B d'Angelieri.`)}
-    <div class="grid" style="grid-template-columns:1fr 1fr">
-      ${frame("CBCT · coupe axiale", "suture médio-palatine")}
-      ${frame("CBCT · reconstruction 3D", "transverse · corticales")}
+    ${head("Cas 1 · Documentation", `Radiographie <span class="hl">panoramique</span>`)}
+    <div class="prow" style="grid-template-columns:1fr">
+      ${pimg("radio","panoramique.jpg","Panoramique — denture mixte · germes", "contain")}
     </div>` },
 
-  // 6 — Documentation · Profil (téléradio + tracé)
-  { kind:"profil", dark:false, note:"[Téléradiographie de profil + analyse céphalométrique.] Rapports squelettiques et dentaires ; base des mesures.",
+  // 6 — Documentation · Profil (téléradio + tracé + analyse)
+  { kind:"profil", dark:false, note:"[Téléradiographie de profil + tracé + tableau de mesures.] Rapports squelettiques et dentaires ; base des mesures.",
     body:`
-    ${head("Cas 1 · Documentation", `Profil — <span class="hl">téléradio & tracé</span>`)}
-    <div class="grid" style="grid-template-columns:1.1fr .9fr">
-      ${frame("Téléradiographie de profil · tracé")}
-      ${frame("Analyse céphalométrique", "mesures & chart polygonal")}
+    ${head("Cas 1 · Documentation", `Profil — <span class="hl">téléradio, tracé & analyse</span>`)}
+    <div class="prow" style="grid-template-columns:repeat(3,1fr)">
+      ${pimg("radio","teleradio.jpg","Téléradiographie de profil", "contain")}
+      ${pimg("radio","trace.jpg","Tracé céphalométrique", "contain")}
+      ${pimg("radio","tableau.jpg","Tableau de mesures", "contain")}
     </div>` },
 
   // 7 — Participation 1
