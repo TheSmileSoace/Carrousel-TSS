@@ -12,12 +12,9 @@ const fs = require("fs"), path = require("path");
 const PptxGenJS = require("pptxgenjs");
 
 const ROOT = path.join(__dirname, "..");
-const OUT = process.env.DECK_OUT || path.join(__dirname, "out");
-const rd = (f) => JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8"));
-const notes = rd("notes.json"), text = rd("text.json"), shapes = rd("shapes.json");
-const foot = rd("foot.json"), meta = rd("meta.json");
-const photosPath = path.join(OUT, "photos_final.json");
-const photos = fs.existsSync(photosPath) ? JSON.parse(fs.readFileSync(photosPath, "utf8")) : {};
+// Un ou plusieurs dossiers de rendu (DECK_OUTS = liste séparée par des virgules
+// pour fusionner plusieurs cas dans un seul .pptx).
+const OUTS = (process.env.DECK_OUTS || process.env.DECK_OUT || path.join(__dirname, "out")).split(",");
 const dest = process.argv[2] || process.env.DECK_DEST || path.join(ROOT, "sortie", "Cas_Mathys_TSS.pptx");
 
 const W = 13.333, H = 7.5, SC = W / 1920, PT = 0.5;
@@ -33,11 +30,19 @@ pptx.title = process.env.DECK_TITLE || "The Smile Space — Cas 1 · Mathys";
 const alignOf = (a) => (a === "center" || a === "right" ? a : "left");
 const IN = (px) => px * SC;
 
+let count = 0;
+OUTS.forEach((OUT) => {
+const rd = (f) => JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8"));
+const notes = rd("notes.json"), text = rd("text.json"), shapes = rd("shapes.json");
+const foot = rd("foot.json"), meta = rd("meta.json");
+const photosPath = path.join(OUT, "photos_final.json");
+const photos = fs.existsSync(photosPath) ? JSON.parse(fs.readFileSync(photosPath, "utf8")) : {};
 const bgs = fs.readdirSync(OUT).filter((f) => /^\d+_bg\.png$/.test(f))
   .sort((a, b) => parseInt(a) - parseInt(b));
 
 bgs.forEach((f) => {
   const n = parseInt(f), k = String(n), dark = meta[k] && meta[k].dark;
+  count++;
   const slide = pptx.addSlide();
   // fond = couleur/texture uniquement
   slide.background = { path: path.join(OUT, f) };
@@ -125,8 +130,9 @@ bgs.forEach((f) => {
 
   if (notes[k]) slide.addNotes(notes[k]);
 });
+});
 
 fs.mkdirSync(path.dirname(dest), { recursive: true });
 pptx.writeFile({ fileName: dest }).then(() => {
-  console.log(`✅ ${dest}  (${bgs.length} slides, tout natif, n° dynamique)`);
+  console.log(`✅ ${dest}  (${count} slides, tout natif, n° dynamique)`);
 });
