@@ -60,6 +60,16 @@ const pimg = (sub, file, label = "", { fit = "cover", aspect = null } = {}) => {
 };
 const photo = (file, label = "") => pimg("exo", file, label);
 
+// cadre photo générique (photos réelles du cas, dossier "light"), mime auto.
+// onDark => matte sur l'anthracite (coins arrondis nets sur fond sombre).
+const mimeOf = (f) => (/\.png$/i.test(f) ? "image/png" : "image/jpeg");
+const limg = (file, { fit = "cover", aspect = null, onDark = false } = {}) => {
+  const src = b64(path.join(AR, "light", file), mimeOf(file));
+  const cls = `pf-img ${fit}` + (aspect ? " fixed" : "");
+  const style = aspect ? ` style="aspect-ratio:${aspect}"` : "";
+  return `<figure class="pf"><div class="${cls}"${style} data-photo="light/${file}" data-fit="${fit}" data-dark="${onDark ? 1 : 0}"><img src="${src}" alt=""></div></figure>`;
+};
+
 function shell({ kind, n, total, dark, body }) {
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
 ${fonts}
@@ -221,45 +231,48 @@ const slides = [
     </div>
     ${coverImg ? `<img class="cover-portrait" src="${coverImg}" data-portrait="assets/carrousels/mathys/exo/face_sourire_cutout.png" alt="">` : ""}` },
 
-  // 2 — Documentation · exo
+  // 2 — Documentation · exo (photos réelles du cas)
   { kind:"exo", dark:false, note:N(2), body:`${kick("Cas 1 · Documentation")}
     <div class="prow" style="padding-top:26px">
-      ${photo("face.jpg")}${photo("face_sourire.jpg")}${photo("profil_droit.jpg")}${photo("profil_droit_sourire.jpg")}
+      ${limg("s02_0.png")}${limg("s02_1.png")}${limg("s02_2.png")}${limg("s02_3.png")}
     </div>` },
 
   // 3 — Documentation · intra
   { kind:"intra", dark:false, note:"[Doc intra — latéral D / face / latéral G.] Occlusion, rapports transverses et sagittaux, encombrement.",
     body:`${kick("Cas 1 · Documentation")}
     <div class="prow vc" style="grid-template-columns:repeat(3,1fr);gap:34px;padding-top:24px">
-      ${pimg("intra","droite.jpg","",{aspect:"4/3"})}${pimg("intra","face.jpg","",{aspect:"4/3"})}${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
+      ${limg("s03_0.jpg",{aspect:"3/2"})}${limg("s03_1.jpg",{aspect:"3/2"})}${limg("s03_2.jpg",{aspect:"3/2"})}
     </div>` },
 
   // 4 — Documentation · occlusales
   { kind:"occlu", dark:false, note:"[Vues occlusales — maxillaire / mandibulaire.] Forme d'arcade, déficit transverse, encombrement.",
     body:`${kick("Cas 1 · Documentation")}
     <div class="prow vc" style="grid-template-columns:repeat(2,1fr);gap:44px;padding-top:24px">
-      ${pimg("intra","haut.jpg","",{aspect:"4/3"})}${pimg("intra","bas.jpg","",{aspect:"4/3"})}
+      ${limg("s04_0.jpg",{aspect:"3/2"})}${limg("s04_1.jpg",{aspect:"3/2"})}
     </div>` },
 
   // 5 — Documentation · panoramique
   { kind:"pano", dark:false, note:"[Panoramique — denture mixte.] Germes, séquence d'éruption, bilan général.",
     body:`${kick("Cas 1 · Documentation")}
     <div class="prow" style="grid-template-columns:1fr;padding-top:24px">
-      ${pimg("radio","panoramique.jpg","",{fit:"contain"})}
+      ${limg("s05_0.png",{fit:"contain"})}
     </div>` },
 
   // 6 — Documentation · profil
   { kind:"profil", dark:false, note:"[Téléradio + tracé + tableau.] Rapports squelettiques et dentaires ; base des mesures.",
     body:`${kick("Cas 1 · Documentation")}
-    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px;padding-top:24px">
-      ${pimg("radio","trace.jpg","",{fit:"contain"})}${pimg("radio","tableau.jpg","",{fit:"contain"})}
+    <div class="prow vc" style="grid-template-columns:1fr 1fr;gap:40px;padding-top:24px">
+      ${limg("s06_0.png",{fit:"contain"})}${limg("s06_1.png",{fit:"contain"})}
     </div>` },
 
-  // 7 — Participation
-  { kind:"vote", dark:true, note:N(3), body:`<div class="stage">
-      <div class="vote-tag">Participation</div>
-      <div class="vote-q">Suture ouverte. Stade A-B. Aucune résistance.<br><span class="hl">Et pourtant, des vis.</span> Pourquoi ?</div>
-      <div class="quote">« La première idée à laquelle on pourrait tous penser : pas de résistance, donc pas besoin de vis… »</div>
+  // 7 — Participation (+ CBCT)
+  { kind:"vote", dark:true, note:N(3), body:`<div class="stage" style="display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column">
+        <div class="vote-tag">Participation</div>
+        <div class="vote-q" style="font-size:64px">Suture ouverte. Stade A-B. Aucune résistance.<br><span class="hl">Et pourtant, des vis.</span> Pourquoi ?</div>
+        <div class="quote">« La première idée à laquelle on pourrait tous penser : pas de résistance, donc pas besoin de vis… »</div>
+      </div>
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s07_0.jpg",{fit:"contain",onDark:true})}</div>
     </div>` },
 
   // 8 — La réponse
@@ -277,19 +290,20 @@ const slides = [
       <span class="ref">Mohamed 2018 · 10.2319/091717-624.1</span>
     </div>` },
 
-  // 9 — Sites d'insertion (+ QR)
+  // 9 — Sites d'insertion (diagramme + CBCT + QR)
   { kind:"sites", dark:false, note:N(9), body:`
-    ${head("Cas 1 · Sites d'insertion", `À 12 ans : <span class="hl">7 mm suffisent</span>.`)}
-    <div class="rows" style="flex:none;margin-top:26px">
-      <div class="row"><span class="rb">▪  </span><span class="rd">T-zone</span> <span class="rt">— ni guide, ni ancrage bicortical indispensables à cet âge</span></div>
+    <div class="kicker">Cas 1 · Sites d'insertion</div>
+    <h1 class="h-title" style="font-size:46px;margin-top:8px">À 12 ans : <span class="hl">7 mm suffisent</span>.</h1>
+    <div class="prow vc" style="grid-template-columns:1.35fr 1fr 1fr;gap:22px;margin-top:18px;flex:1;min-height:0">
+      ${limg("s09_0.png",{fit:"contain"})}${limg("s09_1.jpg",{fit:"contain"})}${limg("s09_2.png",{fit:"contain"})}
     </div>
-    ${qr(`<b>Tarraf &amp; Wilmes</b>, Semin Orthod 2024 — CC BY 4.0,<br>avec l'aimable autorisation du Pr Wilmes.`)}` },
+    ${qr(`<b>T-zone —</b> ni guide, ni ancrage bicortical indispensables à cet âge.<br><b>Tarraf &amp; Wilmes</b>, Semin Orthod 2024 — CC BY 4.0, avec l'aimable autorisation du Pr Wilmes.`)}` },
 
   // 10 — Le dispositif
   { kind:"device", dark:false, note:N(5), body:`
     ${head("Cas 1 · Le dispositif", `MARPE + 2 vérins de <span class="hl">distalisation</span>`)}
-    <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
-      ${ph("Photo — MARPE + 2 vérins")}
+    <div class="grid" style="grid-template-columns:0.9fr 1.1fr;margin-top:30px;gap:40px">
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s10_0.jpg",{fit:"cover"})}</div>
       <div class="rows tight" style="justify-content:center">
         <div class="row"><span class="rb">▪  </span><span class="rd">Vérin central</span> <span class="rt">— expansion transverse</span></div>
         <div class="row"><span class="rb">▪  </span><span class="rd">2 vérins de distalisation</span> <span class="rt">— recul des quadrants I &amp; II</span></div>
@@ -298,18 +312,18 @@ const slides = [
       </div>
     </div>` },
 
-  // 11 — Evolution (occlusal)
+  // 11 — Evolution (montage occlusal maxillaire)
   { kind:"evolution", dark:false, note:N(6), body:`
-    ${head("Cas 1 · Evolution", `Occlusal — avant / <span class="hl">après</span>`)}
-    <div class="prow" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
-      ${ph("AVANT")}${ph("APRÈS")}
+    ${head("Cas 1 · Evolution", `Occlusal maxillaire — <span class="hl">du dispositif au résultat</span>`)}
+    <div class="prow montage" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:20px;padding-top:20px">
+      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s11_${i}.jpg`)).join("")}
     </div>` },
 
-  // 12 — Evolution (profil / sourire)
+  // 12 — Evolution (montage occlusal — suite)
   { kind:"evolution", dark:false, note:N(6), body:`
-    ${head("Cas 1 · Evolution", `Profil &amp; sourire — avant / <span class="hl">après</span>`)}
-    <div class="prow" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
-      ${ph("AVANT")}${ph("APRÈS")}
+    ${head("Cas 1 · Evolution", `Occlusal — <span class="hl">séquence complète</span>`)}
+    <div class="prow montage" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:20px;padding-top:20px">
+      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s12_${i}.jpg`)).join("")}
     </div>` },
 
   // 13 — Conseils & protocole
@@ -340,11 +354,14 @@ const slides = [
     ${head("Cas 1 · Vidéo", `L'appareil <span class="hl">en bouche</span>.`)}
     <div class="prow" style="grid-template-columns:1fr;padding-top:24px">${ph("Vidéo / photo — appareil en bouche")}</div>` },
 
-  // 16 — Participation 2
-  { kind:"vote", dark:true, note:N(8), body:`<div class="stage">
-      <div class="vote-tag">Participation</div>
-      <div class="vote-q">L'ancrage bicortical —<br><span class="hl">indispensable à 12 ans ?</span></div>
-      <div class="vote-hand">À main levée</div>
+  // 16 — Participation 2 (+ CBCT ancrage)
+  { kind:"vote", dark:true, note:N(8), body:`<div class="stage" style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column">
+        <div class="vote-tag">Participation</div>
+        <div class="vote-q" style="font-size:66px">L'ancrage bicortical —<br><span class="hl">indispensable à 12 ans ?</span></div>
+        <div class="vote-hand">À main levée</div>
+      </div>
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s16_0.jpg",{fit:"contain",onDark:true})}</div>
     </div>` },
 
   // 17 — Ce que ça change
@@ -363,11 +380,14 @@ const slides = [
       </ul></div>
     </div>` },
 
-  // 18 — La chute
-  { kind:"closing", dark:true, note:N(11), body:`<div class="stage" style="justify-content:center">
-      <div class="cover-eyebrow">La leçon</div>
-      <div class="close-title" style="margin-top:26px">Chez l'adulte, la vis <span class="hl">vainc l'os</span>.<br>Chez l'enfant, elle <span class="hl">ancre</span>.</div>
-      <div class="close-kicker">Même outil, deux missions.</div>
+  // 18 — La chute (+ résultat)
+  { kind:"closing", dark:true, note:N(11), body:`<div class="stage" style="display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;justify-content:center">
+        <div class="cover-eyebrow">La leçon</div>
+        <div class="close-title" style="margin-top:26px">Chez l'adulte, la vis <span class="hl">vainc l'os</span>.<br>Chez l'enfant, elle <span class="hl">ancre</span>.</div>
+        <div class="close-kicker">Même outil, deux missions.</div>
+      </div>
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s18_0.png",{fit:"cover"})}</div>
     </div>` },
 ];
 
@@ -461,6 +481,7 @@ function measureAndHide(selectors) {
     const im = el.querySelector("img");
     photos.push({ x: r.left, y: r.top, w: r.width, h: r.height,
       file: el.getAttribute("data-photo"), fit: el.getAttribute("data-fit"),
+      dark: el.getAttribute("data-dark") === "1",
       nw: im ? im.naturalWidth : 0, nh: im ? im.naturalHeight : 0 });
   });
   // pied de page + portrait de couverture
