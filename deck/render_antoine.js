@@ -276,8 +276,8 @@ const slides = [
   // 27 — LE DISPOSITIF (MARPE modifié · 2 vérins)
   { kind:"device", dark:false, note:"MARPE au sens large, appuis dentaires inclus (Moon, Pereira-Varella) ; vérins de distalisation et effet Classe II anticipés EN SÉCURITÉ, au cas où elle refuserait la 2e chirurgie.",
     body:`${head("Cas 2 · Le dispositif", `MARPE modifié · 2 vérins de <span class="hl">distalisation</span>`)}
-    <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
-      ${ph("Photo — dispositif")}
+    <div class="grid" style="grid-template-columns:0.9fr 1.1fr;margin-top:30px;gap:40px">
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${pimg("device","dispositif.jpg","",{fit:"cover"})}</div>
       <div class="rows tight" style="justify-content:center">
         <div class="row"><span class="rb">▪  </span><span class="rd">MARPE modifié</span> <span class="rt">— appuis dentaires inclus (Moon, Pereira-Varella)</span></div>
         <div class="row"><span class="rb">▪  </span><span class="rd">2 vérins de distalisation</span> <span class="rt">— recul + amorce de l'effet Classe II</span></div>
