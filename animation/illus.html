@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#F3ECDE;}svg{display:block}</style>
+<div id="s"></div>
+<script>
+const NS="http://www.w3.org/2000/svg";
+const W=1080,H=1080;
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:W,height:H},document.getElementById("s"));
+el("rect",{x:0,y:0,width:W,height:H,fill:"#F3ECDE"},svg);
+const which=(location.search.match(/img=(\w+)/)||[])[1]||"sourire";
+
+function beauSourire(){
+  // sourire agrandi et centré verticalement (remplit le cadre)
+  const cx=540, cy=540, S=1.5;
+  const P=(x,y)=>`${cx+(x-540)*S} ${cy+(y-590)*S}`;
+  // lèvres (sourire ouvert)
+  el("path",{d:`M ${P(250,560)} Q ${P(540,455)} ${P(830,560)} Q ${P(700,735)} ${P(540,742)} Q ${P(380,735)} ${P(250,560)} Z`,fill:"#D98C6A"},svg);
+  // intérieur bouche
+  el("path",{d:`M ${P(300,575)} Q ${P(540,515)} ${P(780,575)} Q ${P(660,695)} ${P(540,698)} Q ${P(420,695)} ${P(300,575)} Z`,fill:"#7C3B34"},svg);
+  // dents du haut (rangée, arc)
+  const top=580;
+  for(let i=0;i<10;i++){
+    const t=(i-4.5)/4.5;                 // -1..1
+    const x=540+t*230, y=top+Math.abs(t)*22, w=52-Math.abs(t)*10, h=72-Math.abs(t)*14;
+    const X=cx+(x-540)*S, Y=cy+(y-590)*S, WW=w*S, HH=h*S;
+    el("rect",{x:X-WW/2,y:Y,width:WW,height:HH,rx:14,fill:"#FBF7EF",stroke:"#E7DCC6","stroke-width":2.5},svg);
+  }
+  // liseré dents du bas
+  el("path",{d:`M ${P(360,695)} Q ${P(540,665)} ${P(720,695)} Q ${P(620,712)} ${P(540,712)} Q ${P(460,712)} ${P(360,695)} Z`,fill:"#F0E7D4"},svg);
+}
+
+function moignons(){
+  // ligne gencive
+  el("rect",{x:120,y:640,width:840,height:24,rx:12,fill:"#E7CDBC"},svg);
+  const baseY=640, ivory="#EFE1C4", edge="#C9A86E", peg="#D9D0C0", pegEdge="#B7AC97";
+  // 4 dents : naturelle, moignon(+couronne fantôme), moignon, naturelle
+  const xs=[300,470,640,810];
+  // dent naturelle (haute)
+  function natural(x){
+    el("path",{d:`M ${x-56} ${baseY} L ${x-46} ${baseY-190} Q ${x} ${baseY-240} ${x+46} ${baseY-190} L ${x+56} ${baseY} Z`,fill:ivory,stroke:edge,"stroke-width":4},svg);
+  }
+  // moignon (dent taillée en pilier) + contour fantôme de la dent d'origine + couronne au-dessus
+  function stump(x){
+    // fantôme de la dent d'origine (ce qui a été retiré)
+    el("path",{d:`M ${x-56} ${baseY} L ${x-46} ${baseY-190} Q ${x} ${baseY-240} ${x+46} ${baseY-190} L ${x+56} ${baseY} Z`,fill:"none",stroke:"#B7A98C","stroke-width":3,"stroke-dasharray":"7 11"},svg);
+    // moignon réel (réduit ~60-70%)
+    el("path",{d:`M ${x-38} ${baseY} L ${x-30} ${baseY-90} Q ${x} ${baseY-112} ${x+30} ${baseY-90} L ${x+38} ${baseY} Z`,fill:peg,stroke:pegEdge,"stroke-width":4},svg);
+    // couronne prête à poser (au-dessus)
+    el("path",{d:`M ${x-54} ${baseY-250} L ${x-46} ${baseY-360} Q ${x} ${baseY-405} ${x+46} ${baseY-360} L ${x+54} ${baseY-250} Q ${x} ${baseY-230} ${x-54} ${baseY-250} Z`,fill:"#C3A46E",stroke:"#A9884F","stroke-width":4,opacity:0.95},svg);
+    // flèche couronne -> moignon
+    el("line",{x1:x,y1:baseY-225,x2:x,y2:baseY-135,stroke:"#8A7350","stroke-width":6,"stroke-linecap":"round"},svg);
+    el("path",{d:`M ${x} ${baseY-120} l -13 -20 l 26 0 Z`,fill:"#8A7350"},svg);
+  }
+  natural(xs[0]); stump(xs[1]); stump(xs[2]); natural(xs[3]);
+}
+
+if(which==="moignons") moignons(); else beauSourire();
+window.__ready=true;
+</script>

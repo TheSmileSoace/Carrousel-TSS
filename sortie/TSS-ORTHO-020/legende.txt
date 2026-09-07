@@ -1,0 +1,9 @@
+Le scanner 3D en orthodontie est un CBCT (cone beam). Contrairement à la radio panoramique (une vue d'ensemble) ou à la téléradiographie de profil (des mesures de croissance), il reconstruit les structures en volume. Il est surtout utile pour localiser une dent incluse, évaluer les racines, l'os disponible, les sites de mini-vis, une expansion squelettique ou le passage de l'air. Il délivre toutefois une dose de rayons plus élevée : son usage suit le principe de justification (ALARA), c'est-à-dire qu'on ne le prescrit que lorsqu'il change réellement le diagnostic ou le traitement. Multiplier les examens n'améliore pas le diagnostic : c'est l'examen adapté à la question clinique qui compte.
+
+Écris SCANNER en commentaire, je t'explique.
+
+📍 The Smile Space — Orthodontie · Dr. Linos Tsague
+Soignies : 23 boulevard Roosevelt, 7060 Soignies · 065 38 01 55 · contact@thesmilespace.be
+Mons : 2A rue des Archers, 7000 Mons · 065 14 30 16 · mons@thesmilespace.be
+
+#CBCT #scanner3D #orthodontie #diagnostic #TheSmileSpace

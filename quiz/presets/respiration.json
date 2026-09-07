@@ -1,0 +1,21 @@
+{
+  "header": "",
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 03",
+  "cornerTagTop": 110,
+  "difficultyBadge": "9 sur 10 se trompent",
+  "inset": "",
+  "question": "Ton enfant dort souvent la bouche ouverte.\nQuel est le risque pour ses dents ?",
+  "highlight": "bouche ouverte",
+  "answers": [
+    ["A", "Aucun, c'est une habitude"],
+    ["B", "Un palais plus étroit"],
+    ["C", "Les dents s'usent plus vite"],
+    ["D", "Un appareil règle tout"]
+  ],
+  "optsLayout": "vertical",
+  "optsButtons": true,
+  "qLeft": 48, "qRight": 60, "qTop": 236, "qH": 250,
+  "optsLeft": 44, "optsRight": 70, "optsTop": 560, "optsH": 452,
+  "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
+}

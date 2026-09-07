@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+deck/out/*.png
+deck/out/photos/
+deck/out_antoine/*.png
+deck/out_antoine/photos/

@@ -1,0 +1,102 @@
+{
+ "1": {
+  "dark": true,
+  "kind": "cover"
+ },
+ "2": {
+  "dark": false,
+  "kind": "exo"
+ },
+ "3": {
+  "dark": false,
+  "kind": "intra"
+ },
+ "4": {
+  "dark": false,
+  "kind": "occlu"
+ },
+ "5": {
+  "dark": false,
+  "kind": "pano"
+ },
+ "6": {
+  "dark": false,
+  "kind": "profil"
+ },
+ "7": {
+  "dark": true,
+  "kind": "vote"
+ },
+ "8": {
+  "dark": true,
+  "kind": "vote"
+ },
+ "9": {
+  "dark": false,
+  "kind": "device"
+ },
+ "10": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "11": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "12": {
+  "dark": false,
+  "kind": "device"
+ },
+ "13": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "14": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "15": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "16": {
+  "dark": true,
+  "kind": "vote"
+ },
+ "17": {
+  "dark": false,
+  "kind": "video"
+ },
+ "18": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "19": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "20": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "21": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "22": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "23": {
+  "dark": false,
+  "kind": "change"
+ },
+ "24": {
+  "dark": false,
+  "kind": "change"
+ },
+ "25": {
+  "dark": true,
+  "kind": "closing"
+ }
+}

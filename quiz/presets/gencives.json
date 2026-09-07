@@ -1,0 +1,44 @@
+{
+  "header": "",
+  "insetVideo": "assets/quiz/gencives_appdent.mp4",
+  "insetRotate": 2,
+  "insetTop": 182,
+  "insetH": 560,
+  "insetSide": 34,
+  "question": "À quoi est dû ce gonflement de la gencive après l'enlèvement de l'appareil ?",
+  "highlight": "gonflement de la gencive",
+  "answers": [
+    [
+      "A",
+      "Au métal qui irrite la gencive"
+    ],
+    [
+      "B",
+      "À une hygiène insuffisante"
+    ],
+    [
+      "C",
+      "C'est génétique"
+    ],
+    [
+      "D",
+      "C'est hormonal"
+    ]
+  ],
+  "optsLayout": "vertical",
+  "qTop": 1108,
+  "qH": 252,
+  "optsTop": 1404,
+  "optsH": 352,
+  "insetVideoCrop": "940:520:600:160",
+  "brollZoom": 1.6,
+  "brollCropX": 324,
+  "brollCropY": 1152,
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 01",
+  "anim": {
+    "question": 0.4,
+    "options": 1.6,
+    "dur": 0.35
+  }
+}

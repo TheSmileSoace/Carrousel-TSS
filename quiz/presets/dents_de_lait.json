@@ -1,0 +1,18 @@
+{
+  "header": "",
+  "logoPos": "none",
+  "cornerTag": "LE QUIZ · 04",
+  "inset": "",
+  "question": "Combien de dents de lait y a-t-il sur cette radiographie ?",
+  "highlight": "dents de lait",
+  "answers": [
+    ["A", "20"],
+    ["B", "10"],
+    ["C", "14"],
+    ["D", "32"]
+  ],
+  "optsLayout": "horizontal",
+  "qLeft": 56, "qRight": 56, "qTop": 1258, "qH": 196,
+  "optsLeft": 44, "optsRight": 44, "optsTop": 1476, "optsH": 196,
+  "anim": { "question": 0.4, "options": 1.6, "dur": 0.35 }
+}
