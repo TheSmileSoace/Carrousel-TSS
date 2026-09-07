@@ -63,9 +63,9 @@ const photo = (file, label = "") => pimg("exo", file, label);
 // cadre photo générique (photos réelles du cas, dossier "light"), mime auto.
 // onDark => matte sur l'anthracite (coins arrondis nets sur fond sombre).
 const mimeOf = (f) => (/\.png$/i.test(f) ? "image/png" : "image/jpeg");
-const limg = (file, { fit = "cover", aspect = null, onDark = false } = {}) => {
+const limg = (file, { fit = "cover", aspect = null, onDark = false, onLight = false } = {}) => {
   const src = b64(path.join(AR, "light", file), mimeOf(file));
-  const cls = `pf-img ${fit}` + (aspect ? " fixed" : "");
+  const cls = `pf-img ${fit}` + (aspect ? " fixed" : "") + (onLight ? " onlight" : "");
   const style = aspect ? ` style="aspect-ratio:${aspect}"` : "";
   return `<figure class="pf"><div class="${cls}"${style} data-photo="light/${file}" data-fit="${fit}" data-dark="${onDark ? 1 : 0}"><img src="${src}" alt=""></div></figure>`;
 };
@@ -113,6 +113,7 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 .pf-img img{width:100%;height:100%;object-fit:cover;display:block}
 .pf-img.contain{background:#211F1C}
 .pf-img.contain img{object-fit:contain}
+.pf-img.contain.onlight{background:transparent;box-shadow:none}
 .pf-img.fixed{flex:none;width:100%;height:auto}
 .prow.vc{align-items:center;align-content:center}
 .pf figcaption{font-family:var(--ft);font-weight:600;letter-spacing:.04em;text-transform:uppercase;
@@ -303,7 +304,7 @@ const slides = [
   { kind:"device", dark:false, note:N(5), body:`
     ${head("Cas 1 · Le dispositif", `MARPE + 2 vérins de <span class="hl">distalisation</span>`)}
     <div class="grid" style="grid-template-columns:0.9fr 1.1fr;margin-top:30px;gap:40px">
-      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s10_0.jpg",{fit:"cover"})}</div>
+      <div class="prow" style="margin:0;grid-template-columns:1fr">${limg("s10_0.jpg",{fit:"contain",onLight:true})}</div>
       <div class="rows tight" style="justify-content:center">
         <div class="row"><span class="rb">▪  </span><span class="rd">Vérin central</span> <span class="rt">— expansion transverse</span></div>
         <div class="row"><span class="rb">▪  </span><span class="rd">2 vérins de distalisation</span> <span class="rt">— recul des quadrants I &amp; II</span></div>
@@ -316,14 +317,14 @@ const slides = [
   { kind:"evolution", dark:false, note:N(6), body:`
     ${head("Cas 1 · Evolution", `Occlusal maxillaire — <span class="hl">du dispositif au résultat</span>`)}
     <div class="prow montage" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:20px;padding-top:20px">
-      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s11_${i}.jpg`)).join("")}
+      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s11_${i}.jpg`,{fit:"contain",onLight:true})).join("")}
     </div>` },
 
   // 12 — Evolution (montage occlusal — suite)
   { kind:"evolution", dark:false, note:N(6), body:`
     ${head("Cas 1 · Evolution", `Occlusal — <span class="hl">séquence complète</span>`)}
     <div class="prow montage" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:20px;padding-top:20px">
-      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s12_${i}.jpg`)).join("")}
+      ${[0,1,2,3,4,5,6,7,8].map(i=>limg(`s12_${i}.jpg`,{fit:"contain",onLight:true})).join("")}
     </div>` },
 
   // 13 — Conseils & protocole

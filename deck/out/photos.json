@@ -209,7 +209,7 @@
    "w": 752.390625,
    "h": 733.53125,
    "file": "light/s10_0.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1562,
    "nh": 1041
@@ -222,7 +222,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s11_0.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1562,
    "nh": 1041
@@ -233,7 +233,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s11_1.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1594,
    "nh": 1062
@@ -244,7 +244,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s11_2.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -255,7 +255,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_3.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1067
@@ -266,7 +266,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_4.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1560,
    "nh": 1040
@@ -277,7 +277,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_5.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1562,
    "nh": 1042
@@ -288,7 +288,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_6.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -299,7 +299,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_7.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -310,7 +310,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s11_8.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -323,7 +323,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s12_0.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1516,
    "nh": 1010
@@ -334,7 +334,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s12_1.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1484,
    "nh": 989
@@ -345,7 +345,7 @@
    "w": 557.328125,
    "h": 224.5,
    "file": "light/s12_2.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -356,7 +356,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_3.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -367,7 +367,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_4.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1541,
    "nh": 1028
@@ -378,7 +378,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_5.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1555,
    "nh": 1036
@@ -389,7 +389,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_6.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1507,
    "nh": 1004
@@ -400,7 +400,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_7.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1066
@@ -411,7 +411,7 @@
    "w": 557.328125,
    "h": 224.515625,
    "file": "light/s12_8.jpg",
-   "fit": "cover",
+   "fit": "contain",
    "dark": false,
    "nw": 1600,
    "nh": 1093
