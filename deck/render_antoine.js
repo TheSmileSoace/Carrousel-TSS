@@ -131,12 +131,12 @@ body{font-family:var(--fb);-webkit-font-smoothing:antialiased;text-rendering:geo
 
 /* Liste à filet (tips / dispositif) */
 .rows{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:22px;margin-top:24px}
-.row{display:flex;align-items:flex-start;gap:26px;font-size:34px;line-height:1.28}
+.row{display:block;font-size:34px;line-height:1.28}
+.rb{color:var(--accent);font-weight:700;margin-right:14px}
 .row .rd{font-weight:600}
 .row .rt{color:#57534d;font-weight:400}
 .rows.tight{gap:18px}
 .rows.tight .row{font-size:29px;line-height:1.24}
-.dot{flex:0 0 auto;width:16px;height:16px;border-radius:50%;background:var(--accent);margin-top:12px}
 
 .keybox{margin-top:26px;align-self:flex-start;background:var(--brand);color:#fff;border-radius:18px;
  padding:26px 34px;font-size:30px;line-height:1.3;max-width:1100px}
@@ -278,9 +278,9 @@ const slides = [
     <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
       ${ph("Photo — dispositif")}
       <div class="rows tight" style="justify-content:center">
-        <div class="row"><div class="dot"></div><div><span class="rd">MARPE sur vis + vérins de distalisation</span> <span class="rt">— la sécurité</span></div></div>
-        <div class="row"><div class="dot"></div><div><span class="rd">Armature inférieure d'emblée</span> <span class="rt">— prête pour le Herbst</span></div></div>
-        <div class="row"><div class="dot"></div><div><span class="rd">Ajout en haut</span> <span class="rt">— on complète le montage</span></div></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">MARPE sur vis + vérins de distalisation</span> <span class="rt">— la sécurité</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Armature inférieure d'emblée</span> <span class="rt">— prête pour le Herbst</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Ajout en haut</span> <span class="rt">— on complète le montage</span></div>
         <div class="keybox"><b>L'idée —</b> un seul ancrage osseux, plusieurs plans possibles.</div>
       </div>
     </div>` },
@@ -350,7 +350,7 @@ const TEXT_SEL = [
   ".close-title", ".close-kicker",
   ".vote-tag", ".vote-q", ".quote",
   ".num h4", ".num p", ".card h3", ".card li",
-  ".refs-note", ".pf figcaption", ".row div:last-child",
+  ".refs-note", ".pf figcaption", ".row",
   ".num .no", ".keybox", ".ref", ".vote-hand", ".ph span", ".qrcap",
 ];
 
@@ -363,7 +363,6 @@ const SHAPE_DEFS = [
   [".ref", "roundrect", { fill: "F0EBE1", line: "E1D9C9", lw: 1, rad: 999 }],
   [".vote-hand", "roundrect", { fill: "C3A46E", rad: 14 }],
   [".ph", "roundrect", { fill: "EFE7DC", rad: 20 }],
-  [".dot", "ellipse", { fill: "C3A46E" }],
 ];
 
 // Mesure la géométrie + le style de chaque texte, puis le rend transparent

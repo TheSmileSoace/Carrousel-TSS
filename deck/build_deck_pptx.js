@@ -75,17 +75,17 @@ bgs.forEach((f) => {
     if (it.sel === ".quote") {
       slide.addShape("rect", { x: IN(it.x), y: IN(it.y), w: IN(6), h: IN(it.h), fill: { color: "C3A46E" }, line: { type: "none" } });
     }
-    // puce de liste (carte)
-    if (it.sel === ".card li") {
-      slide.addShape("roundRect", { x: IN(it.x), y: IN(it.y + (it.lh - 14) / 2), w: IN(14), h: IN(14),
-        rectRadius: IN(4), fill: { color: "C3A46E" }, line: { type: "none" } });
-    }
     const runs = [];
+    // puce native de liste (carte) : marqueur DANS la zone de texte
+    if (it.sel === ".card li") {
+      runs.push({ text: "▪  ", options: { color: "C3A46E", bold: true } });
+    }
     (it.runs || []).forEach((r) => {
       if (r.br) { if (runs.length) runs[runs.length - 1].options.breakLine = true; else runs.push({ text: "", options: { breakLine: true } }); }
       else runs.push({ text: r.t, options: { color: r.color || "000000", bold: !!r.bold } });
     });
     if (!runs.length) return;
+    const liBullet = it.sel === ".card li";
     const hasBr = (it.runs || []).some((r) => r.br);
     const singleLine = !hasBr && it.h <= it.lh * 1.6;   // libellé sur une ligne -> pas de retour
     slide.addText(runs, {
@@ -93,7 +93,7 @@ bgs.forEach((f) => {
       align: alignOf(it.align), valign: it.mid ? "middle" : "top",
       fontFace: it.family || "Inter", fontSize: +(it.size * PT).toFixed(1),
       lineSpacingMultiple: +(it.lh / it.size).toFixed(3),
-      margin: [ (it.padT || 0) * PT, (it.padR || 0) * PT, 0, (it.padL || 0) * PT ],
+      margin: [ (it.padT || 0) * PT, (it.padR || 0) * PT, 0, liBullet ? 0 : (it.padL || 0) * PT ],
       isTextBox: true, wrap: !singleLine, autoFit: false,
     });
   });
