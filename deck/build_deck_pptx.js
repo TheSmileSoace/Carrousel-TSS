@@ -44,8 +44,8 @@ bgs.forEach((f) => {
   const n = parseInt(f), k = String(n), dark = meta[k] && meta[k].dark;
   count++;
   const slide = pptx.addSlide();
-  // fond = couleur/texture uniquement
-  slide.background = { path: path.join(OUT, f) };
+  // fond = couleur/texture uniquement (claires : couleur unie ; sombres : dégradé image)
+  slide.background = dark ? { path: path.join(OUT, f) } : { color: "FAF7F1" };
 
   // ---- formes natives ----
   (shapes[k] || []).forEach((sh) => {

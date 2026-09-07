@@ -14,8 +14,9 @@ OUT = os.environ.get("DECK_OUT", os.path.join(os.path.dirname(__file__), "out"))
 ASSETS = os.environ.get("DECK_ASSETS", os.path.join(ROOT, "assets/carrousels/mathys"))
 PDIR = os.path.join(OUT, "photos")
 os.makedirs(PDIR, exist_ok=True)
-S = 2                # rendu 2x
+S = 1.6              # rendu (assez net à la taille d'affichage, fichiers légers)
 RAD = 20             # rayon coins (px CSS)
+CREAM = (250, 247, 241)   # fond crème des diapos claires (matte des coins arrondis)
 
 photos = json.load(open(os.path.join(OUT, "photos.json")))
 final = {}
@@ -35,28 +36,32 @@ def cover(im, tw, th):
     x = (nw - tw) // 2; y = (nh - th) // 2
     return im.crop((x, y, x + tw, y + th))
 
+def save(im_rgba, base, is_qr):
+    """QR -> PNG net ; sinon coins arrondis mattés sur crème -> JPEG léger."""
+    if is_qr:
+        p = base + ".png"; im_rgba.save(p); return p
+    bg = Image.new("RGB", im_rgba.size, CREAM)
+    bg.paste(im_rgba, (0, 0), im_rgba)
+    p = base + ".jpg"; bg.save(p, quality=84, optimize=True); return p
+
 for slide, lst in photos.items():
     out = []
     for i, ph in enumerate(lst):
         src = Image.open(os.path.join(ASSETS, ph["file"])).convert("RGB")
+        is_qr = "qr/" in ph["file"]
+        base = os.path.join(PDIR, f"{int(slide):02d}_{i}")
         if ph["fit"] == "contain":
-            # ajuste l'image (contain) dans le cadre, centrée
-            fw = ph["w"]; fh = ph["h"]
-            iw, ih = src.size
-            sc = min(fw / iw, fh / ih)
-            pw, ph2 = iw * sc, ih * sc
+            fw = ph["w"]; fh = ph["h"]; iw, ih = src.size
+            sc = min(fw / iw, fh / ih); pw, ph2 = iw * sc, ih * sc
             im = src.resize((max(1, int(pw * S)), max(1, int(ph2 * S))), Image.LANCZOS)
-            png = os.path.join(PDIR, f"{int(slide):02d}_{i}.png")
-            rounded(im, RAD * S // 2).save(png)
-            out.append({"png": os.path.relpath(png, ROOT),
+            p = save(rounded(im, RAD * S // 2), base, is_qr)
+            out.append({"png": os.path.relpath(p, ROOT),
                         "x": ph["x"] + (fw - pw) / 2, "y": ph["y"] + (fh - ph2) / 2,
                         "w": pw, "h": ph2, "fit": "contain"})
         else:
             tw, th = int(ph["w"] * S), int(ph["h"] * S)
-            im = rounded(cover(src, tw, th), RAD * S)
-            png = os.path.join(PDIR, f"{int(slide):02d}_{i}.png")
-            im.save(png)
-            out.append({"png": os.path.relpath(png, ROOT),
+            p = save(rounded(cover(src, tw, th), int(RAD * S)), base, is_qr)
+            out.append({"png": os.path.relpath(p, ROOT),
                         "x": ph["x"], "y": ph["y"], "w": ph["w"], "h": ph["h"], "fit": "cover"})
     final[slide] = out
 
