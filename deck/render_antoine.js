@@ -210,7 +210,7 @@ const qr = (cap) => `<div class="qrband">${pimg("qr", "wilmes_sodo2024.png", "",
 //  Contenu des slides  (note = notes conférencier)
 // =====================================================================
 const slides = [
-  // 1 — Couverture (fond sombre)
+  // 19 — COUVERTURE (fond sombre) — inchangée
   { kind:"cover", dark:true, note:"Deuxième patient. Antoine, 15 ans et demi. On monte d'un cran : ici, quelque chose commence à changer. (Énergie : intrigué)",
     body:`<div class="stage" style="justify-content:center">
       <div class="cover-eyebrow">The Smile Space · Cas 2</div>
@@ -222,33 +222,33 @@ const slides = [
     </div>
     ${coverImg ? `<img class="cover-portrait" src="${coverImg}" data-portrait="assets/carrousels/antoine/exo/face_sourire_cutout.png" alt="">` : ""}` },
 
-  // 2 — Documentation · exo
+  // 20 — Documentation · exo
   { kind:"exo", dark:false, note:"Le motif, l'histoire d'Antoine, les 3 avis reçus. Raconter, pas décrire.",
     body:`${kick("Cas 2 · Documentation")}
     <div class="prow" style="padding-top:26px">
       ${photo("face.jpg")}${photo("face_sourire.jpg")}${photo("profil_droit.jpg")}${photo("profil_droit_sourire.jpg")}
     </div>` },
 
-  // 3 — Documentation · intra
+  // 21 — Documentation · intra
   { kind:"intra", dark:false, note:"[Doc intra — latéral D / face / latéral G.] Classe II, rapports transverses.",
     body:`${kick("Cas 2 · Documentation")}
     <div class="prow vc" style="grid-template-columns:repeat(3,1fr);gap:34px;padding-top:24px">
       ${pimg("intra","droite.jpg","",{aspect:"4/3"})}${pimg("intra","face.jpg","",{aspect:"4/3"})}${pimg("intra","gauche.jpg","",{aspect:"4/3"})}
     </div>` },
 
-  // 4 — Documentation · occlusales
+  // 22 — Documentation · occlusales
   { kind:"occlu", dark:false, note:"[Vues occlusales — maxillaire / mandibulaire.] Forme d'arcade, déficit transverse.",
     body:`${kick("Cas 2 · Documentation")}
     <div class="prow vc" style="grid-template-columns:repeat(2,1fr);gap:44px;padding-top:24px">
       ${pimg("intra","haut.jpg","",{aspect:"4/3"})}${pimg("intra","bas.jpg","",{aspect:"4/3"})}
     </div>` },
 
-  // 5 — Documentation · panoramique
+  // 23 — Documentation · panoramique
   { kind:"pano", dark:false, note:"[Panoramique.] Bilan général, dents de sagesse.",
     body:`${kick("Cas 2 · Documentation")}
     <div class="prow" style="grid-template-columns:1fr;padding-top:24px">${pimg("radio","panoramique.jpg","",{fit:"contain"})}</div>` },
 
-  // 6 — Documentation · profil (+ CVS 3-4)
+  // 24 — Documentation · profil (+ CVS 3-4)
   { kind:"profil", dark:false, note:"Classe II squelettique, profil convexe, croissance quasi finie.",
     body:`${kick("Cas 2 · Documentation")}
     <div class="h-sub" style="margin-top:6px"><b>Maturation vertébrale — CVS 3-4</b></div>
@@ -256,58 +256,159 @@ const slides = [
       ${pimg("radio","teleradio.jpg","",{fit:"contain"})}${pimg("radio","tableau.jpg","",{fit:"contain"})}
     </div>` },
 
-  // 7 — Le plan & mon doute (fond sombre)
-  { kind:"vote", dark:true, note:"Je confirme le plan idéal (expansion chirurgicale + avancée chirurgicale) ; la maman refuse tout ; j'assume mon doute sur la 2e chirurgie.",
+  // 25 — LE PLAN (fond sombre)
+  { kind:"vote", dark:true, note:"Quasi certain de corriger le transversal sans chirurgie à son âge ; dit à la maman avec la réserve d'usage, mais j'y crois.",
     body:`<div class="stage">
-      <div class="vote-tag">Le plan &amp; mon doute</div>
-      <div class="vote-q">3 orthodontistes · 2 chirurgies ·<br><span class="hl">la maman refuse</span></div>
-      <div class="quote">« Pour la 1re, j'étais convaincu. La 2e… j'avais un doute. »</div>
+      <div class="vote-tag">Le plan</div>
+      <div class="vote-q">De <span class="hl">2 chirurgies</span><br>à <span class="hl">1 seule</span>.</div>
+      <div class="quote">Corriger le transversal sans chirurgie à son âge — je le dis à la maman avec la réserve d'usage, mais j'y crois.</div>
     </div>` },
 
-  // 8 — La question (fond sombre)
-  { kind:"vote", dark:true, note:"Laisser la salle se positionner avant de révéler.",
+  // 26 — LA QUESTION · VOTE CLIVANT (fond sombre)
+  { kind:"vote", dark:true, note:"Laisser la salle se positionner avant de révéler. Rappel : CVS 3-4, presque 16 ans, Classe II, sommeil, 3 confrères → 2 chirurgies, la maman → 0.",
     body:`<div class="stage">
-      <div class="vote-tag">La question</div>
-      <div class="vote-q">Vous êtes à ma place.<br><span class="hl">Qu'auriez-vous proposé</span> à la maman de ce garçon ?</div>
-      <div class="quote">CVS 3-4 · presque 16 ans · Classe II · sommeil — 3 confrères → 2 chirurgies, la maman → 0.</div>
+      <div class="vote-tag">La question · à main levée</div>
+      <div class="vote-q" style="font-size:56px">Qui aurait posé l'indication de <span class="hl">deux extractions de prémolaires</span> ? Et qui ne l'aurait pas fait ?</div>
+      <div class="vote-hand">Gardez votre position — j'y reviens</div>
+      <div class="quote" style="font-size:26px;margin-top:22px">CVS 3-4 · presque 16 ans · Classe II · sommeil — 3 confrères : 2 chirurgies, la maman : 0.</div>
     </div>` },
 
-  // 9 — Ma réponse : prendre le problème à l'envers
-  { kind:"device", dark:false, note:"Le Herbst sur arcs aurait pris trop de temps à 16 ans ; l'ouverture du maxillaire libère les ATM et réduit déjà la Classe II. « J'avais tout prévu. »",
-    body:`${head("Cas 2 · Ma réponse", `Prendre le problème <span class="hl">à l'envers</span>`)}
+  // 27 — LE DISPOSITIF (MARPE modifié · 2 vérins)
+  { kind:"device", dark:false, note:"MARPE au sens large, appuis dentaires inclus (Moon, Pereira-Varella) ; vérins de distalisation et effet Classe II anticipés EN SÉCURITÉ, au cas où elle refuserait la 2e chirurgie.",
+    body:`${head("Cas 2 · Le dispositif", `MARPE modifié · 2 vérins de <span class="hl">distalisation</span>`)}
     <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
       ${ph("Photo — dispositif")}
       <div class="rows tight" style="justify-content:center">
-        <div class="row"><span class="rb">▪  </span><span class="rd">MARPE sur vis + vérins de distalisation</span> <span class="rt">— la sécurité</span></div>
-        <div class="row"><span class="rb">▪  </span><span class="rd">Armature inférieure d'emblée</span> <span class="rt">— prête pour le Herbst</span></div>
-        <div class="row"><span class="rb">▪  </span><span class="rd">Ajout en haut</span> <span class="rt">— on complète le montage</span></div>
-        <div class="keybox"><b>L'idée —</b> un seul ancrage osseux, plusieurs plans possibles.</div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">MARPE modifié</span> <span class="rt">— appuis dentaires inclus (Moon, Pereira-Varella)</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">2 vérins de distalisation</span> <span class="rt">— recul + amorce de l'effet Classe II</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Anticipé en sécurité</span> <span class="rt">— au cas où la 2e chirurgie serait refusée</span></div>
+        <div class="keybox"><b>Idée —</b> un seul ancrage osseux, plusieurs plans possibles.</div>
       </div>
     </div>` },
 
-  // 10 — Les petits caractères
-  { kind:"evolution", dark:false, note:"« Je pensais avoir tout prévu… mais il y avait des petits caractères que je n'avais pas lus. » Puis la copine, le complexe, 6 semaines, la maman qui craque à 3 mois.",
+  // 28 — ★ APRÈS L'EXPANSION (nouvelle)
+  { kind:"evolution", dark:false, note:"« On se remet 5 ans en arrière. Pour moi, c'était une dinguerie. » (1er sommet, marquer un temps)",
+    body:`${head("Cas 2 · Après l'expansion", `Après le <span class="hl">MARPE</span>`)}
+    <div class="prow vc" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
+      ${ph("Occlusales — gain transverse")}${ph("Intra — articulé croisé corrigé")}
+    </div>` },
+
+  // 29 — LE REFUS + LE CALCUL
+  { kind:"tips", dark:false, note:"2 mm gagnés par le relâchement articulaire + 2 mm possibles par les vérins + un shift d'arcade → « je suis bon » ; mais très tard dans la croissance, déposer pour multibague + Forsus serait trop long.",
+    body:`${head("Cas 2 · Le refus", `La maman dit <span class="hl">non</span> à la 2e chirurgie`)}
+    <div class="rows">
+      <div class="row"><span class="rb">▪  </span><span class="rd">+2 mm</span> <span class="rt">— par le relâchement articulaire</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rd">+2 mm possibles</span> <span class="rt">— par les vérins de distalisation</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rd">+ un shift d'arcade</span> <span class="rt">— « je suis bon »</span></div>
+    </div>
+    <div class="refs-note">Mais trop tard dans la croissance : déposer pour un multibague + Forsus serait trop long.</div>` },
+
+  // 30 — ★ LE PROBLÈME À L'ENVERS
+  { kind:"device", dark:false, note:"« Mon plan tient, je m'en sors sans extraction ni chirurgie. »",
+    body:`${head("Cas 2 · Le problème à l'envers", `Convertir <span class="hl">sans redémarrer</span>`)}
+    <div class="grid" style="grid-template-columns:0.82fr 1.18fr;margin-top:30px;gap:40px">
+      ${ph("Photo — labo / conversion")}
+      <div class="rows tight" style="justify-content:center">
+        <div class="row"><span class="rb">▪  </span><span class="rd">Dépose de l'appareil</span> <span class="rt">— envoi au labo</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Supports Herbst</span> <span class="rt">— sur les 6 bagues supérieures</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Armature dento-portée</span> <span class="rt">— appuis inférieurs</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rd">Pose des pistons</span> <span class="rt">— le Herbst est en place</span></div>
+      </div>
+    </div>` },
+
+  // 31 — ★ APRÈS LE HERBST (nouvelle)
+  { kind:"evolution", dark:false, note:"Le pivot est enclenché, la mandibule avance.",
+    body:`${head("Cas 2 · Herbst en place", `L'effet <span class="hl">sagittal</span> démarre`)}
+    <div class="prow vc" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
+      ${ph("Intra — Herbst posé")}${ph("Profil — la mandibule avance")}
+    </div>` },
+
+  // 32 — LES PETITS CARACTÈRES
+  { kind:"evolution", dark:false, note:"16 ans, la copine, l'appareil pas pratique pour les bisous → il veut qu'on l'enlève → il réclame la chirurgie pour ça. Mais l'appareil est VISSÉ, il ne peut pas l'enlever seul ; et vu le retard de croissance, je l'avais réglé direct en HYPER-Classe I (le coup d'avance).",
     body:`${head("Cas 2 · Les petits caractères", `Ce que je <span class="hl">n'avais pas prévu</span>`)}
     <div class="prow vc" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
       ${ph("T0 + Herbst en bouche")}${ph("Photo / vidéo — témoignage")}
     </div>` },
 
-  // 11 — Le résultat (avant / après)
-  { kind:"evolution", dark:false, note:"Correction sagittale et transverse, réponse de croissance ; « Tout le monde peut finir le cas » ; j'assume avoir capté/orienté une croissance résiduelle (pas créée).",
-    body:`${head("Cas 2 · Le résultat", `Avant / <span class="hl">après</span>`)}
-    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px;padding-top:16px">
+  // 33 — ★ FIN DE TRAITEMENT (nouvelle)
+  { kind:"evolution", dark:false, note:"Sans extraction, sans chirurgie ; les 6 mois → 3 mois, la maman qui craque. Hyper-Classe I tenu, Classe II → quasi Classe III.",
+    body:`${head("Cas 2 · Fin de traitement", `Résultat <span class="hl">final</span>`)}
+    <div class="prow" style="grid-template-columns:repeat(4,1fr);gap:22px;padding-top:14px">
+      ${ph("Face")}${ph("Sourire")}${ph("Profil")}${ph("Occlusales")}
+    </div>
+    <div class="prow" style="grid-template-columns:1fr 1fr;gap:40px;padding-top:12px">
       ${pimg("radio","teleradio.jpg","",{fit:"contain"})}${pimg("radio","teleradio_apres.jpg","",{fit:"contain"})}
     </div>
-    <div class="refs-note" style="text-align:center">Classe II → quasi Classe III · croissance mandibulaire · vérins jamais utilisés</div>` },
+    <div class="refs-note" style="text-align:center">Classe II devenue quasi Classe III · hyper-Classe I tenu · sans extraction, sans chirurgie</div>` },
 
-  // 12 — TAD-first vs TAD-last
+  // 34 — QUIZ DÉPOSE (fond sombre)
+  { kind:"vote", dark:true, note:"Faire réagir la salle avant la vidéo.",
+    body:`<div class="stage">
+      <div class="vote-tag">Quiz · la dépose</div>
+      <div class="vote-q">On enlève les vis.<br><span class="hl">Faut-il anesthésier ?</span></div>
+    </div>` },
+
+  // 35 — RÉPONSE EN VIDÉO
+  { kind:"video", dark:false, note:"La dépose en vidéo — dédramatiser.",
+    body:`${head("Cas 2 · La réponse", `En <span class="hl">vidéo</span>`)}
+    <div class="prow" style="grid-template-columns:1fr;padding-top:24px">${ph("Vidéo — dépose des vis")}</div>` },
+
+  // 36 — LE PALAIS APRÈS DÉPOSE
+  { kind:"evolution", dark:false, note:"Le trou de vis cicatrise sans trace. Illustration sur une autre patiente.",
+    body:`${head("Cas 2 · Le palais après dépose", `Du trou de vis au <span class="hl">site cicatrisé</span>`)}
+    <div class="prow vc" style="grid-template-columns:1fr 1fr;gap:44px;padding-top:24px">
+      ${ph("À la dépose — trou de vis")}${ph("Après — site cicatrisé")}
+    </div>
+    <div class="refs-note" style="text-align:center">Illustration sur une autre patiente</div>` },
+
+  // 37 — LE VRAI COÛT OSSEUX
+  { kind:"tips", dark:false, note:"Ne pas caricaturer l'extraction : c'est une option légitime. Mais le coût osseux n'est pas le même.",
+    body:`${head("Cas 2 · Le vrai coût osseux", `Je réponds à ceux qui auraient <span class="hl">extrait</span>`)}
+    <div class="grid" style="grid-template-columns:1.2fr 0.8fr;margin-top:24px;gap:40px">
+      <div class="rows tight" style="justify-content:center">
+        <div class="row"><span class="rb">▪  </span><span class="rt">On <b>pourrait</b> compenser + extraire 2 prémolaires — une option légitime.</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rt">Trou de vis ~<b>2 mm</b> — cicatrise sans trace.</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rt">Alvéole de prémolaire ~<b>5 × 7 mm</b> — une dizaine de sites de vis.</span></div>
+        <div class="row"><span class="rb">▪  </span><span class="rt">Extraction ortho <b>symétrique</b> : 2 à 4 dents saines. La vis : aucune.</span></div>
+      </div>
+      ${ph("Démo — alvéole vs ronds de vis à l'échelle")}
+    </div>` },
+
+  // 38 — TIPS 1/3 — TAD-first
+  { kind:"tips", dark:false, note:"",
+    body:`${head("Cas 2 · Tips 1/3", `TAD-first — changer de plan <span class="hl">sans redémarrer</span>`)}
+    <div class="rows">
+      <div class="row"><span class="rb">▪  </span><span class="rt">Appareil sur vis : on dépose l'armature, on modifie, on repose <b>sans toucher aux vis</b>.</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt">En TAD-last, il aurait fallu <b>tout redéposer</b>.</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt">Leçon — chez l'ado dont le plan peut bouger, <b>TAD-first = liberté</b> de changer de dispositif en cours de route.</span></div>
+    </div>` },
+
+  // 39 — TIPS 2/3 — anticiper le plan B
+  { kind:"tips", dark:false, note:"",
+    body:`${head("Cas 2 · Tips 2/3", `Anticiper le <span class="hl">plan B</span>`)}
+    <div class="rows">
+      <div class="row"><span class="rb">▪  </span><span class="rt">Prévoir les <b>vérins de distalisation</b> dès la pose (sécurité, ne coûte rien).</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt"><b>Sur-corriger</b> (hyper-Classe I) quand la compliance est incertaine.</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt">Leçon — chez l'ado, on règle en <b>anticipant la non-compliance</b>.</span></div>
+    </div>` },
+
+  // 40 — TIPS 3/3 — labo réactif
+  { kind:"tips", dark:false, note:"Dire sobrement.",
+    body:`${head("Cas 2 · Tips 3/3", `Un labo réactif change les <span class="hl">possibles</span>`)}
+    <div class="rows">
+      <div class="row"><span class="rb">▪  </span><span class="rt">La conversion Herbst rapide n'a été possible que grâce à une <b>fabrication réactive et intégrée</b> (SmileLab).</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt">Un délai rédhibitoire devient une <b>manœuvre de quelques jours</b>.</span></div>
+      <div class="row"><span class="rb">▪  </span><span class="rt">Leçon — <b>piloter la fabrication</b> ouvre des options cliniques.</span></div>
+    </div>` },
+
+  // 41 — TAD-first vs TAD-last (2 colonnes)
   { kind:"change", dark:false, note:"Armature retirée sans toucher aux vis → empreinte → labo → repose ; c'est le TAD-first qui rend ça possible ; les vérins n'ont jamais servi.",
     body:`${head("Cas 2 · TAD-first vs TAD-last", `Changer de plan <span class="hl">sans redémarrer</span>`)}
     <div class="cols" style="grid-template-columns:1fr 1fr">
       <div class="card"><h3>TAD-first</h3><ul style="padding:0;margin:0">
         <li>L'ancrage osseux <b>d'abord</b> — le reste s'y adapte</li>
         <li>Armature retirée sans toucher aux vis</li>
-        <li>Empreinte → labo → repose : on change de cap</li>
+        <li>Empreinte, labo, repose : on change de cap</li>
       </ul></div>
       <div class="card"><h3>TAD-last</h3><ul style="padding:0;margin:0">
         <li>L'ancrage <b>en dernier</b> — le plan est figé</li>
@@ -316,7 +417,7 @@ const slides = [
       </ul></div>
     </div>` },
 
-  // 13 — Pour lui / pour nous
+  // 42 — Pour lui / Pour nous (2 colonnes)
   { kind:"change", dark:false, note:"Dire lentement, avec une pause entre les deux colonnes.",
     body:`${head("Cas 2 · Ce que ça change", `Pour <span class="hl">lui</span>. Pour <span class="hl">nous</span>.`)}
     <div class="cols" style="grid-template-columns:1fr 1fr">
@@ -331,7 +432,7 @@ const slides = [
       </ul></div>
     </div>` },
 
-  // 14 — La chute (fond sombre, sans image)
+  // 43 — LA CHUTE (fond sombre)
   { kind:"closing", dark:true, note:"Coupure de voix avant ; fait le pont avec Mathys.",
     body:`<div class="stage" style="justify-content:center">
       <div class="cover-eyebrow">La chute</div>

@@ -41,17 +41,61 @@
  },
  "11": {
   "dark": false,
-  "kind": "evolution"
+  "kind": "tips"
  },
  "12": {
   "dark": false,
-  "kind": "change"
+  "kind": "device"
  },
  "13": {
   "dark": false,
-  "kind": "change"
+  "kind": "evolution"
  },
  "14": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "15": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "16": {
+  "dark": true,
+  "kind": "vote"
+ },
+ "17": {
+  "dark": false,
+  "kind": "video"
+ },
+ "18": {
+  "dark": false,
+  "kind": "evolution"
+ },
+ "19": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "20": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "21": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "22": {
+  "dark": false,
+  "kind": "tips"
+ },
+ "23": {
+  "dark": false,
+  "kind": "change"
+ },
+ "24": {
+  "dark": false,
+  "kind": "change"
+ },
+ "25": {
   "dark": true,
   "kind": "closing"
  }
